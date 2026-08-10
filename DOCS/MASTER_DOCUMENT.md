@@ -43,8 +43,9 @@ progreso) queda pendiente de definir con Miguel Ángel.
   bando y la app compara contra la jugada esperada — acierto suma
   acierto y encadena la jugada automática del rival, fallo suma
   fallo y permite reintentar; a los 3 fallos seguidos en la misma
-  jugada se revela la jugada correcta con el mensaje "torpe como una
-  oruga" y se continúa la línea. Toda jugada (propia o del motor)
+  jugada se revela la jugada correcta con un diálogo bloqueante
+  (hay que cerrarlo a mano) con el mensaje "torpe como una oruga" y
+  se continúa la línea. Toda jugada (propia o del motor)
   resalta con color la casilla de origen y la de destino.
 - Repertorio embebido como datos de la app (líneas de apertura en
   notación algebraica/FEN), sin backend propio.

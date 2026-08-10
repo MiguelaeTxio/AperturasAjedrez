@@ -68,9 +68,11 @@ Miguel Ángel confirmó, en la primera sesión formal (S1):
      - **Fallo** → suma fallo de la línea, feedback visual, permite
        reintentar la misma jugada.
   4. **Tras 3 fallos seguidos en la misma jugada:** se revela la
-     jugada correcta y se muestra la insignia/mensaje humorístico
-     **"torpe como una oruga"**, luego continúa la línea con la
-     jugada revelada ya aplicada.
+     jugada correcta y se muestra un **diálogo bloqueante** (no un
+     Toast/Snackbar que desaparezca solo) con la insignia/mensaje
+     humorístico **"torpe como una oruga"** — Miguel Ángel tiene que
+     cerrarlo explícitamente para continuar. Al cerrarlo, la línea
+     sigue con la jugada revelada ya aplicada.
   5. Al completar la línea: feedback de "línea completada".
 - **Feedback visual (toda jugada, propia o del motor):** resalte de
   color en la casilla de origen y en la casilla de destino de la
