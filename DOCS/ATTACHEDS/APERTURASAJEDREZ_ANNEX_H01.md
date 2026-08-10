@@ -11,10 +11,12 @@
 - Repertorio de blancas fijado: Gambito de Dama (1.d4 d5 2.c4), única
   línea a entrenar con blancas.
 - Pipeline de CI/CD verificado de punta a punta: secrets configurados
-  (`PA_API_TOKEN`, `PA_USERNAME`, `WEBAPP_DOMAIN`), fallo inicial por
-  falta de icono adaptativo (`mipmap/ic_launcher`) diagnosticado y
-  corregido, workflow en verde (compilación + subida a PythonAnywhere
-  + reload del webapp).
+  (`PA_API_TOKEN`, `PA_USERNAME`), fallo inicial por falta de icono
+  adaptativo (`mipmap/ic_launcher`) diagnosticado y corregido,
+  workflow en verde (compilación + subida a PythonAnywhere). El
+  patrón de despliegue original (ruta Django + reload) se reconcilió
+  con la convención real de MiMoo en S1 — ver incidencia cerrada más
+  abajo.
 
 ## INCIDENCIA CERRADA — repertorio de negras
 
@@ -81,6 +83,37 @@ Miguel Ángel confirmó, en la primera sesión formal (S1):
 
 Con esto no queda ninguna decisión de producto abierta para empezar
 a codificar el tablero.
+
+## INCIDENCIA CERRADA — reconciliación de convención de despliegue con MiMoo (S1)
+
+La inicialización del repositorio (fuera de sesión formal, ver más
+abajo) copió un patrón de despliegue descartado: subida a una ruta
+servida por Django (`panel/static/panel/apk/...`) más un paso de
+"reload web app" con el secret `WEBAPP_DOMAIN`. Miguel Ángel detectó
+la discrepancia comparando contra la estructura real de MiMoo en
+PythonAnywhere (captura de `/home/MiguelAeTxio/ANDROID/MiMoo/`, con
+`apk/` como subcarpeta directa, sin backend Django de por medio).
+
+Corregido para igualar la convención real y ya probada de MiMoo:
+
+- **Despliegue:** subida directa a
+  `/home/MiguelAeTxio/ANDROID/AperturasAjedrez/apk/AperturasAjedrez.apk`
+  vía la API de archivos de PythonAnywhere. Sin paso de reload — no
+  hay ninguna aplicación Django sirviendo el archivo, así que no hay
+  nada que recargar. Retirados el uso de `WEBAPP_DOMAIN`.
+- **`versionCode` dinámico:** recibido como `-PversionCode=N` desde
+  el workflow (`github.run_number`, siempre creciente) en vez de un
+  valor fijo en `build.gradle.kts` — sin esto, Android bloquea las
+  actualizaciones.
+- **Keystore de debug fija:** el workflow restaura siempre la misma
+  keystore (secret `DEBUG_KEYSTORE_BASE64`, generada en S1) antes de
+  compilar, y `signingConfigs.debug` en `build.gradle.kts` apunta a
+  ella de forma explícita — sin esto, cada runner efímero firmaría
+  con una keystore distinta y la siguiente actualización se
+  rechazaría por "conflicto con un paquete".
+- `DOCS/SESSION_VARIABLES.md` reescrito con el mismo formato que el
+  de MiMoo (`APK_DEPLOY_PATH`, lista de secrets con nombre pero sin
+  valor).
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 

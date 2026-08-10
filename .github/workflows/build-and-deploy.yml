@@ -21,8 +21,20 @@ jobs:
         with:
           gradle-version: '8.7'
 
+      # Misma convencion que MiMoo (ver ANDROID_ANNEX del proyecto y
+      # DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md): sin una keystore
+      # de debug fija, cada runner efimero genera una nueva al azar en
+      # el primer build que la necesita, y la siguiente actualizacion
+      # queda firmada con una clave distinta -- Android la rechaza como
+      # "conflicto con un paquete" en vez de actualizar. Restaurar
+      # siempre la misma keystore antes de compilar evita el problema.
+      - name: Restaurar keystore de debug fija
+        run: |
+          mkdir -p ~/.android
+          echo "${{ secrets.DEBUG_KEYSTORE_BASE64 }}" | base64 -d > ~/.android/debug.keystore
+
       - name: Build debug APK
-        run: gradle assembleDebug --stacktrace
+        run: gradle assembleDebug --stacktrace -PversionCode=${{ github.run_number }}
 
       - name: Upload APK to PythonAnywhere
         env:
@@ -32,14 +44,4 @@ jobs:
           curl -s -X POST \
             -H "Authorization: Token ${PA_API_TOKEN}" \
             -F "content=@app/build/outputs/apk/debug/app-debug.apk" \
-            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/files/path/home/${PA_USERNAME}/panel/static/panel/apk/AperturasAjedrez.apk"
-
-      - name: Reload web app
-        env:
-          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
-          PA_USERNAME: ${{ secrets.PA_USERNAME }}
-          WEBAPP_DOMAIN: ${{ secrets.WEBAPP_DOMAIN }}
-        run: |
-          curl -s -X POST \
-            -H "Authorization: Token ${PA_API_TOKEN}" \
-            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/webapps/${WEBAPP_DOMAIN}/reload/"
+            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/files/path/home/${PA_USERNAME}/ANDROID/AperturasAjedrez/apk/AperturasAjedrez.apk"
