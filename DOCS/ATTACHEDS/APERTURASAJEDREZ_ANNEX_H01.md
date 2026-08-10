@@ -10,6 +10,11 @@
   compilación en la nube y despliegue a PythonAnywhere.
 - Repertorio de blancas fijado: Gambito de Dama (1.d4 d5 2.c4), única
   línea a entrenar con blancas.
+- Pipeline de CI/CD verificado de punta a punta: secrets configurados
+  (`PA_API_TOKEN`, `PA_USERNAME`, `WEBAPP_DOMAIN`), fallo inicial por
+  falta de icono adaptativo (`mipmap/ic_launcher`) diagnosticado y
+  corregido, workflow en verde (compilación + subida a PythonAnywhere
+  + reload del webapp).
 
 ## INCIDENCIA ABIERTA — repertorio de negras
 
