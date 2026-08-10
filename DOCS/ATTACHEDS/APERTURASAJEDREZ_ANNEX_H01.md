@@ -49,19 +49,52 @@ trazado, aunque no encaje en el formato habitual de "COMPLETADAS EN
 S0XX" de una sesión numerada — la numeración de sesiones de este
 proyecto empieza en la primera sesión real vía `newflow-android-pisa`.
 
+## INCIDENCIA CERRADA — registro de progreso y mecánica de entrenamiento (S1)
+
+Miguel Ángel confirmó, en la primera sesión formal (S1):
+
+- **Registro de progreso:** aciertos y fallos **acumulados por
+  línea** (contador entero de cada uno, sin fecha ni racha por
+  ahora — se podrá añadir en el futuro sin romper el modelo de
+  datos si el contador simple resulta insuficiente).
+- **Mecánica de entrenamiento por línea:**
+  1. El motor auto-juega el bando contrario, con una pequeña
+     pausa/animación antes de mover (no instantáneo).
+  2. Miguel Ángel mueve su bando (blancas en el Gambito de Dama) en
+     el tablero.
+  3. La app compara la jugada contra la esperada en la línea:
+     - **Acierto** → suma acierto de la línea, el tablero avanza y
+       el motor auto-juega de inmediato la siguiente jugada rival.
+     - **Fallo** → suma fallo de la línea, feedback visual, permite
+       reintentar la misma jugada.
+  4. **Tras 3 fallos seguidos en la misma jugada:** se revela la
+     jugada correcta y se muestra la insignia/mensaje humorístico
+     **"torpe como una oruga"**, luego continúa la línea con la
+     jugada revelada ya aplicada.
+  5. Al completar la línea: feedback de "línea completada".
+- **Feedback visual (toda jugada, propia o del motor):** resalte de
+  color en la casilla de origen y en la casilla de destino de la
+  última pieza movida (estilo estándar `chessboard.js` con overlay
+  de color sobre las casillas, no solo highlight de la pieza).
+
+Con esto no queda ninguna decisión de producto abierta para empezar
+a codificar el tablero.
+
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
 La primera sesión formal del proyecto (vía `newflow-android-pisa`)
 arranca directamente con esto, sin que falte nada por definir a nivel
 de producto:
 
-1. Definir profundidad de líneas y si se registra progreso
-   (aciertos/fallos por línea) — única decisión de producto que
-   sigue abierta.
+1. ~~Definir profundidad de líneas y si se registra progreso~~ —
+   cerrado en S1, ver "INCIDENCIA CERRADA" arriba.
 2. Implementar el tablero interactivo (`WebView` + `chessboard.js` +
    `chess.js` como assets locales, puente `addJavascriptInterface`
    — ver §2 de `MASTER_DOCUMENT.md`) con una única línea jugable de
-   principio a fin: el Gambito de Dama con blancas.
+   principio a fin: el Gambito de Dama con blancas, siguiendo la
+   mecánica de entrenamiento cerrada arriba (auto-juego del motor
+   con pausa, 3 intentos, resalte de casillas, registro de
+   aciertos/fallos por línea).
 3. Verificar el flujo completo (jugada elegida → validación contra
    la línea esperada → feedback visual) con esa única línea antes de
    añadir el resto de variantes de blancas o la escandinava de

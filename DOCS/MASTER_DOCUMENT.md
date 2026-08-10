@@ -37,10 +37,20 @@ progreso) queda pendiente de definir con Miguel Ángel.
   Alternativa descartada: motor nativo tipo Stockfish vía JNI —
   innecesario, aquí no hace falta un motor que juegue, solo validar
   reglas y comparar contra líneas fijas ya conocidas.
+- **Mecánica de entrenamiento (cerrada S1, ver incidencia en el
+  anexo de H01):** el motor auto-juega el bando contrario con una
+  pequeña pausa/animación antes de mover; Miguel Ángel mueve su
+  bando y la app compara contra la jugada esperada — acierto suma
+  acierto y encadena la jugada automática del rival, fallo suma
+  fallo y permite reintentar; a los 3 fallos seguidos en la misma
+  jugada se revela la jugada correcta con el mensaje "torpe como una
+  oruga" y se continúa la línea. Toda jugada (propia o del motor)
+  resalta con color la casilla de origen y la de destino.
 - Repertorio embebido como datos de la app (líneas de apertura en
   notación algebraica/FEN), sin backend propio.
-- Persistencia local pendiente de definir (progreso de aciertos/fallos
-  por línea, si se quiere llevar seguimiento).
+- Persistencia local del progreso: contador entero de aciertos y de
+  fallos acumulados por línea (sin fecha ni racha por ahora — ver
+  incidencia cerrada S1 en `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`).
 
 ## 3. Hoja de Ruta Estratégica
 
