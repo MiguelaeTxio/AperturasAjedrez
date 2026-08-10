@@ -47,6 +47,17 @@ progreso) queda pendiente de definir con Miguel Ángel.
 ### Hito 01 — Fundamentos y repertorio base (EN PROGRESO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`)
 
+### Hito 02 — Repertorio completo de blancas y escandinava completa (PENDIENTE)
+Todas las variantes del Gambito de Dama con blancas (Aceptado,
+Rehusado, Eslava...) y todas las variantes de la escandinava con
+negras contra 1.e4.
+
+### Hito 03 — Defensas de negras contra el resto de aperturas de blancas (PENDIENTE)
+Cobertura de las defensas más habituales contra cualquier primera
+jugada de blancas que no sea 1.e4, empezando por las más jugadas en
+la práctica. Alcance y orden a definir con Miguel Ángel al llegar
+a este hito.
+
 ## 4. Directrices Técnicas Vinculantes
 
 - §4.1 — Antes de codificar sobre un archivo existente, releerlo

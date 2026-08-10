@@ -38,12 +38,34 @@ solo texto. Decisión técnica tomada — ver §2 de `MASTER_DOCUMENT.md`
 (`WebView` + `chessboard.js` + `chess.js` embebidos como assets
 locales).
 
-## HOJA DE RUTA — Hito 01
+## COMPLETADAS FUERA DE SESIÓN DE PROYECTO — creación inicial
 
-- [x] Cerrar la incidencia del repertorio de negras.
-- [x] Decidir el enfoque de tablero/validación de jugadas.
-- [ ] Definir profundidad de líneas y si se registra progreso
-      (aciertos/fallos por línea).
-- [ ] Implementar tablero interactivo mínimo (una sola línea jugable:
-      Gambito de Dama con blancas) para validar el flujo completo
-      antes de añadir el resto de aperturas.
+⚠️ Todo lo anterior (apertura de repositorio + inicialización) se
+acometió **fuera del ciclo formal de sesión de proyecto**: no hubo
+`newflow-android-pisa` (el proyecto no existía aún) ni PAH Momento 1,
+en un hilo de chat cuyo contexto inicial era otro proyecto
+(`System`). Queda registrado aquí explícitamente para que quede
+trazado, aunque no encaje en el formato habitual de "COMPLETADAS EN
+S0XX" de una sesión numerada — la numeración de sesiones de este
+proyecto empieza en la primera sesión real vía `newflow-android-pisa`.
+
+## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
+
+La primera sesión formal del proyecto (vía `newflow-android-pisa`)
+arranca directamente con esto, sin que falte nada por definir a nivel
+de producto:
+
+1. Definir profundidad de líneas y si se registra progreso
+   (aciertos/fallos por línea) — única decisión de producto que
+   sigue abierta.
+2. Implementar el tablero interactivo (`WebView` + `chessboard.js` +
+   `chess.js` como assets locales, puente `addJavascriptInterface`
+   — ver §2 de `MASTER_DOCUMENT.md`) con una única línea jugable de
+   principio a fin: el Gambito de Dama con blancas.
+3. Verificar el flujo completo (jugada elegida → validación contra
+   la línea esperada → feedback visual) con esa única línea antes de
+   añadir el resto de variantes de blancas o la escandinava de
+   negras (eso ya es Hito 02).
+4. Compilar y verificar vía el workflow `build-and-deploy.yml` (ya
+   probado en verde en la inicialización) tras el primer commit de
+   código real.
