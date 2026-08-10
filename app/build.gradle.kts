@@ -52,6 +52,14 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        // AGP 8.x no genera BuildConfig por defecto -- sin esto,
+        // SettingsActivity no compilaria (usa BuildConfig.VERSION_CODE
+        // y BuildConfig.VERSION_NAME para mostrar la version instalada
+        // y comparar contra el manifiesto de actualizaciones).
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -59,4 +67,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
 }

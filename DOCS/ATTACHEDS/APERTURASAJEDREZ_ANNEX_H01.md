@@ -115,25 +115,52 @@ Corregido para igualar la convención real y ya probada de MiMoo:
   de MiMoo (`APK_DEPLOY_PATH`, lista de secrets con nombre pero sin
   valor).
 
+## INCIDENCIA CERRADA — menú, selector, explicaciones y actualizaciones (S1)
+
+Tras probar el mecanizado del tablero en dispositivo real, Miguel
+Ángel pidió ampliar el alcance más allá de la única línea plana de
+H01: menú de navegación, selector de aperturas (preparado aunque solo
+haya una entrada real), explicación de cada jugada (idea/ventaja/
+debilidad) y, dentro de Ajustes, búsqueda e instalación de
+actualizaciones. Decisiones cerradas:
+
+- **Explicaciones de jugada:** las redacta Claude con criterio
+  ajedrecístico general (idea, ventaja principal, debilidad/riesgo
+  principal por jugada), sin fuente externa concreta indicada por
+  Miguel Ángel.
+- **Selector de aperturas:** se monta ya como pantalla propia
+  (`OpeningSelectorActivity`, `RecyclerView`), aunque de momento solo
+  liste la única línea de H01 — sin cambios de arquitectura
+  pendientes para cuando se añadan las demás en H02.
+- **Actualizaciones:** mismo patrón que MiMoo (manifiesto
+  `manifest.json` con `versionCode`/`versionName`/`apkUrl`, alias de
+  GitHub `releases/latest/download/manifest.json`, descarga vía
+  `FileProvider` + `Intent(ACTION_VIEW)`), pero con un repositorio de
+  Releases **propio** (`AperturasAjedrezReleases`), nunca el
+  `AndroidReleases` de MiMoo — compartirlo rompería el alias `latest`
+  para ambas apps, ya que apunta a la Release más reciente de todo el
+  repositorio sin distinguir proyecto. Nuevo secret en este repo:
+  `RELEASES_REPO_TOKEN` (permiso *Contents: Read and write* sobre
+  `AperturasAjedrezReleases` únicamente).
+- Corregido de antemano un bug real que MiMoo sufrió y documentó en
+  H07: sin comprobar `canRequestPackageInstalls()` antes de lanzar el
+  Intent de instalación, este no hace absolutamente nada si falta el
+  permiso — `UpdateChecker.ensureInstallPermissionOrRedirect()` lo
+  comprueba primero y manda a Miguel Ángel a Ajustes del sistema si
+  falta.
+- Arquitectura deliberadamente ligera: sin Retrofit/Hilt para el
+  checker de actualizaciones (`HttpURLConnection` + `Handler`) — la
+  app no tiene esa arquitectura y no se justifica introducirla solo
+  para esto, a diferencia de MiMoo que ya la tenía de antes.
+
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-La primera sesión formal del proyecto (vía `newflow-android-pisa`)
-arranca directamente con esto, sin que falte nada por definir a nivel
-de producto:
-
-1. ~~Definir profundidad de líneas y si se registra progreso~~ —
-   cerrado en S1, ver "INCIDENCIA CERRADA" arriba.
-2. Implementar el tablero interactivo (`WebView` + `chessboard.js` +
-   `chess.js` como assets locales, puente `addJavascriptInterface`
-   — ver §2 de `MASTER_DOCUMENT.md`) con una única línea jugable de
-   principio a fin: el Gambito de Dama con blancas, siguiendo la
-   mecánica de entrenamiento cerrada arriba (auto-juego del motor
-   con pausa, 3 intentos, resalte de casillas, registro de
-   aciertos/fallos por línea).
-3. Verificar el flujo completo (jugada elegida → validación contra
-   la línea esperada → feedback visual) con esa única línea antes de
-   añadir el resto de variantes de blancas o la escandinava de
-   negras (eso ya es Hito 02).
-4. Compilar y verificar vía el workflow `build-and-deploy.yml` (ya
-   probado en verde en la inicialización) tras el primer commit de
-   código real.
+1. Confirmar que `RELEASES_REPO_TOKEN` está añadido y que el
+   workflow publica correctamente en `AperturasAjedrezReleases`
+   (verificar Release + `manifest.json` + asset `AperturasAjedrez.apk`).
+2. Verificar en dispositivo real el flujo completo de este bloque:
+   menú → selector → tablero con explicaciones tras cada jugada →
+   Ajustes → buscar actualización → instalar.
+3. Redactar variantes adicionales del repertorio de blancas y la
+   escandinava completa de negras (Hito 02), reutilizando el selector
+   y el formato de explicación ya cerrados en este bloque.

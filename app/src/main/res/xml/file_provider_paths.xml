@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Expone unicamente la subcarpeta donde se descarga el APK de
+    actualizacion (cacheDir/apk_updates/), nunca el cacheDir completo
+    ni ningun otro directorio de la app, misma convencion que MiMoo.
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res-auto">
+    <cache-path name="apk_updates" path="apk_updates/" />
+</paths>

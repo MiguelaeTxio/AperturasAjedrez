@@ -45,3 +45,35 @@ jobs:
             -H "Authorization: Token ${PA_API_TOKEN}" \
             -F "content=@app/build/outputs/apk/debug/app-debug.apk" \
             "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/files/path/home/${PA_USERNAME}/ANDROID/AperturasAjedrez/apk/AperturasAjedrez.apk"
+
+      - name: Generar manifest.json de version
+        run: |
+          VERSION_NAME=$(grep -oP 'versionName\s*=\s*"\K[^"]+' app/build.gradle.kts)
+          cat > manifest.json <<EOF
+          {
+            "versionCode": ${{ github.run_number }},
+            "versionName": "$VERSION_NAME",
+            "apkUrl": "https://github.com/MiguelaeTxio/AperturasAjedrezReleases/releases/download/v${{ github.run_number }}/AperturasAjedrez.apk"
+          }
+          EOF
+          echo "Manifiesto generado:"
+          cat manifest.json
+          python3 -m json.tool manifest.json > /dev/null && echo "[JSON OK]"
+
+      - name: Preparar APK con nombre fijo para el asset de la Release
+        run: cp app/build/outputs/apk/debug/app-debug.apk AperturasAjedrez.apk
+
+      # Repositorio de Releases PROPIO de este proyecto, nunca el
+      # AndroidReleases de MiMoo -- ver incidencia S1 en
+      # DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md (compartirlo
+      # rompería el alias releases/latest/download para ambas apps).
+      - name: Publicar Release en AperturasAjedrezReleases
+        uses: softprops/action-gh-release@v2
+        with:
+          repository: MiguelaeTxio/AperturasAjedrezReleases
+          token: ${{ secrets.RELEASES_REPO_TOKEN }}
+          tag_name: v${{ github.run_number }}
+          name: AperturasAjedrez v${{ github.run_number }}
+          files: |
+            AperturasAjedrez.apk
+            manifest.json

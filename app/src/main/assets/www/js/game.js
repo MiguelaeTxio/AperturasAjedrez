@@ -6,7 +6,19 @@
   var MAX_ATTEMPTS = 3
   var OPPONENT_PAUSE_MS = 550
 
-  var line = REPERTOIRE_LINES[0]
+  function selectedLineId () {
+    var params = new URLSearchParams(window.location.search)
+    return params.get('line')
+  }
+
+  function findLine (id) {
+    for (var i = 0; i < REPERTOIRE_LINES.length; i++) {
+      if (REPERTOIRE_LINES[i].id === id) return REPERTOIRE_LINES[i]
+    }
+    return REPERTOIRE_LINES[0]
+  }
+
+  var line = findLine(selectedLineId())
   var game = new window.Chess()
   var board = null
   var moveIndex = 0 // indice de la proxima jugada esperada en line.moves
@@ -17,7 +29,22 @@
   var elStatus = document.getElementById('status')
   var elProgress = document.getElementById('progress')
   var elLineName = document.getElementById('lineName')
+  var elOverview = document.getElementById('overview')
   var elRestart = document.getElementById('restartBtn')
+  var elExplain = document.getElementById('explain')
+
+  function showExplanation (moveEntry) {
+    if (!moveEntry || !moveEntry.explain) {
+      elExplain.innerHTML = ''
+      return
+    }
+    var e = moveEntry.explain
+    elExplain.innerHTML =
+      '<div class="explainSan">' + moveEntry.san + '</div>' +
+      '<div class="explainRow"><b>Idea:</b> ' + e.idea + '</div>' +
+      '<div class="explainRow"><b>Ventaja:</b> ' + e.ventaja + '</div>' +
+      '<div class="explainRow"><b>Debilidad:</b> ' + e.debilidad + '</div>'
+  }
 
   function refreshProgressLabel () {
     elProgress.textContent = 'Aciertos: ' + aciertos + ' | Fallos: ' + fallos
@@ -68,6 +95,7 @@
   }
 
   function advanceAfterMove (from, to) {
+    showExplanation(line.moves[moveIndex])
     highlightMove(from, to)
     moveIndex++
     attemptsThisMove = 0
@@ -164,11 +192,13 @@
     attemptsThisMove = 0
     board.position('start')
     clearHighlights()
+    elExplain.innerHTML = ''
     setStatus('Tu turno.')
   }
 
   function init () {
     elLineName.textContent = line.name
+    elOverview.textContent = line.overview || ''
     loadInitialProgress()
 
     board = window.Chessboard('board', {

@@ -40,6 +40,35 @@ html, body {
   text-align: center;
 }
 
+#overview {
+  font-size: 13px;
+  color: #b5b5b5;
+  margin-bottom: 12px;
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.4;
+}
+
+#explain {
+  margin-top: 10px;
+  width: 92vw;
+  max-width: 480px;
+  font-size: 13px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.explainSan {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.explainRow {
+  margin-bottom: 3px;
+  color: #dcdcdc;
+}
+
 #restartBtn {
   margin-top: 16px;
   padding: 10px 20px;

@@ -15,6 +15,7 @@ discrepancias entre proyectos Android de la plataforma.*
 | `MASTER_DOCUMENT_PATH` | `DOCS/MASTER_DOCUMENT.md` |
 | `RESUMPTION_POINT_PATH` | `DOCS/RESUMPTION_POINT.md` |
 | `APK_DEPLOY_PATH` (PythonAnywhere, gestionado por el workflow) | `/home/MiguelAeTxio/ANDROID/AperturasAjedrez/apk/AperturasAjedrez.apk` |
+| `RELEASES_REPO` (Releases públicas para el checker de actualizaciones, propio de este proyecto — nunca `AndroidReleases` de MiMoo) | `https://github.com/MiguelaeTxio/AperturasAjedrezReleases` |
 
 ## Secrets de GitHub Actions (no vive el valor aquí, solo el nombre)
 
@@ -23,6 +24,10 @@ discrepancias entre proyectos Android de la plataforma.*
 - `DEBUG_KEYSTORE_BASE64` (añadido S1 — keystore de debug fija, misma
   convención que MiMoo, para que las actualizaciones no rompan la
   firma entre builds)
+- `RELEASES_REPO_TOKEN` (añadido S1 — permiso *Contents: Read and
+  write* únicamente sobre `AperturasAjedrezReleases`, usado por
+  `softprops/action-gh-release` para publicar el APK y `manifest.json`
+  de cada build)
 
 ## Notas
 

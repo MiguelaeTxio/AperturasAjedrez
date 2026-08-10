@@ -52,6 +52,30 @@ progreso) queda pendiente de definir con Miguel Ángel.
 - Persistencia local del progreso: contador entero de aciertos y de
   fallos acumulados por línea (sin fecha ni racha por ahora — ver
   incidencia cerrada S1 en `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`).
+- **Navegación (cerrada S1):** `MenuActivity` (launcher) → *Entrenar*
+  lleva a `OpeningSelectorActivity` (lista nativa, `RecyclerView`,
+  preparada para más entradas aunque H01 solo tenga una línea real) →
+  al elegir una línea abre `BoardActivity` (el `WebView` del tablero)
+  con esa línea como parámetro. *Ajustes* lleva a `SettingsActivity`.
+- **Explicación de jugadas (cerrada S1):** cada jugada del repertorio
+  lleva asociada una explicación (idea, ventaja principal, debilidad/
+  riesgo principal), redactada por Claude con criterio ajedrecístico
+  general. Se muestra en el tablero justo después de jugarse esa
+  jugada (propia, del motor, o revelada tras 3 fallos).
+- **Actualizaciones (cerrada S1, dentro de Ajustes):** mismo patrón
+  que MiMoo — manifiesto `manifest.json` (`versionCode`/`versionName`/
+  `apkUrl`) publicado como Release en GitHub junto al APK, leído vía
+  el alias `releases/latest/download/manifest.json`, descarga con
+  `FileProvider` + instalación con `Intent(ACTION_VIEW)`. Repositorio
+  de Releases **propio**: `AperturasAjedrezReleases` — nunca el
+  `AndroidReleases` de MiMoo, porque el alias `latest` apunta a la
+  Release más reciente de todo el repositorio y compartirlo rompería
+  el checker de ambas apps. Sin Retrofit/Hilt (arquitectura ligera
+  que ya tenía MiMoo de antes y esta app no): `HttpURLConnection` +
+  `Handler` puro. Comprueba `canRequestPackageInstalls()` antes de
+  lanzar la instalación (bug real ya sufrido y corregido en MiMoo
+  H07: sin esa comprobación, el Intent no hace nada si falta el
+  permiso).
 
 ## 3. Hoja de Ruta Estratégica
 
