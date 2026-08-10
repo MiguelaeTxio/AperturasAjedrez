@@ -1,0 +1,45 @@
+name: build-and-deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Build debug APK
+        run: gradle assembleDebug --stacktrace
+
+      - name: Upload APK to PythonAnywhere
+        env:
+          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
+          PA_USERNAME: ${{ secrets.PA_USERNAME }}
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Token ${PA_API_TOKEN}" \
+            -F "content=@app/build/outputs/apk/debug/app-debug.apk" \
+            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/files/path/home/${PA_USERNAME}/panel/static/panel/apk/AperturasAjedrez.apk"
+
+      - name: Reload web app
+        env:
+          PA_API_TOKEN: ${{ secrets.PA_API_TOKEN }}
+          PA_USERNAME: ${{ secrets.PA_USERNAME }}
+          WEBAPP_DOMAIN: ${{ secrets.WEBAPP_DOMAIN }}
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Token ${PA_API_TOKEN}" \
+            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/webapps/${WEBAPP_DOMAIN}/reload/"
