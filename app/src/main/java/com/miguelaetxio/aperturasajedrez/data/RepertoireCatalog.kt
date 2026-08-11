@@ -104,6 +104,16 @@ object RepertoireCatalog {
             id = "h02-escandinava-qd8",
             title = "Escandinava -- retirada ultra-solida 3...Qd8",
             subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8"
+        ),
+        OpeningEntry(
+            id = "h03-londres-clasica",
+            title = "Sistema Londres -- respuesta clasica con Bd6",
+            subtitle = "Con negras -- 1.d4 d5 2.Bf4 Nf6 3.e3 e6 4.Nf3 Bd6"
+        ),
+        OpeningEntry(
+            id = "h03-londres-fianchetto",
+            title = "Sistema Londres -- respuesta moderna con fianchetto g6",
+            subtitle = "Con negras -- 1.d4 Nf6 2.Bf4 g6 3.e3 Bg7"
         )
     )
 }

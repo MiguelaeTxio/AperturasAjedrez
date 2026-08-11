@@ -2054,6 +2054,340 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h03-londres-clasica',
+    name: 'Sistema Londres -- respuesta clasica con Bd6',
+    userColor: 'b',
+    overview: 'Familia Sistema Londres: blancas montan la misma estructura ' +
+      '(d4, Bf4, e3, Nf3, Bd3/Be2, c3, Nbd2, O-O) contra casi cualquier ' +
+      'respuesta de negras, sin depender de la teoria de la apertura ' +
+      'rival. La respuesta clasica de negras imita el desarrollo natural ' +
+      '(d5, Nf6, e6, Bd6) y evita cambiar los alfiles de forma prematura, ' +
+      'para no facilitar la estructura de peones que blancas busca tras ' +
+      'un cambio en d3.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con el plan concreto.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio, la respuesta mas natural y solida contra el Sistema Londres.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'No impide el plan de blancas -- el Sistema Londres se monta igual sea cual sea la respuesta de negras en las primeras jugadas.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bf4',
+        explain: {
+          idea: 'Sistema Londres: saca el alfil de dama antes de cerrarlo con e3, la jugada que define todo el sistema.',
+          ventaja: 'Desarrollo rapido y sin teoria compleja; blancas monta la misma estructura contra casi cualquier respuesta de negras.',
+          debilidad: 'El alfil puede convertirse en objetivo de un futuro ...Nh5 o ...Qb6 en algunas lineas, aunque no es una amenaza inmediata aqui.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Refuerza d4 y abre la diagonal del alfil de rey antes de decidir su destino (d3 o e2).',
+          ventaja: 'Estructura solida e inflexible ante los planes de negras; casi nunca se sale de este esquema.',
+          debilidad: 'Encierra temporalmente al alfil de dama ya desarrollado en f4 solo en el sentido de reducir su movilidad por detras de la cadena, aunque ya esta fuera de la cadena de peones.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Prepara el desarrollo del alfil de rey a d6 o e7 y sostiene el centro con una estructura solida.',
+          ventaja: 'Posicion flexible que no compromete nada todavia.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones, el mismo problema estructural de siempre contra sistemas de peon en d4.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey antes de decidir entre Bd3 o Be2.',
+          ventaja: 'Jugada solida y flexible que prepara el enroque corto de inmediato.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bd6',
+        explain: {
+          idea: 'Desarrolla el alfil de rey enfrentando directamente al alfil de blancas en f4, buscando el cambio de piezas menores.',
+          ventaja: 'Pieza activa apuntando al flanco de rey de blancas y lista para preparar ...O-O de inmediato.',
+          debilidad: 'Invita al cambio Bxd6 si blancas lo desea, aunque normalmente blancas prefiere retirarse a g3 para mantener la pareja de alfiles activa.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg3',
+        explain: {
+          idea: 'Evita el cambio de alfiles retirandose a g3, manteniendo la pieza activa sobre la diagonal b8-h2.',
+          ventaja: 'Conserva el alfil fuera de la cadena de peones y mantiene la presion diagonal a largo plazo.',
+          debilidad: 'Pierde un tiempo respecto a cambiar directamente, aunque es la eleccion mas ambiciosa en la practica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de flanco de dama.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui negras puede pensar en ...c5 o ...b6.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bd3',
+        explain: {
+          idea: 'Completa el desarrollo de piezas menores enfrentando al alfil de negras en d6, preparando el enroque corto.',
+          ventaja: 'Pieza activa sobre la diagonal b1-h7, apuntando hacia el flanco de rey de negras.',
+          debilidad: 'Si negras cambia con ...Bxg3, blancas debe recapturar con hxg3 abriendo la columna h, una concesion menor pero real que hay que vigilar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Contraataca el centro de blancas en el flanco de dama, el plan tipico de negras contra el Sistema Londres.',
+          ventaja: 'Gana espacio y actividad en el flanco de dama sin descuidar la seguridad del rey.',
+          debilidad: 'Cede parcialmente el control de d5 si blancas encuentra el momento de cambiar ahi, aunque no es una debilidad inmediata.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c3',
+        explain: {
+          idea: 'Refuerza d4 antes de completar el desarrollo con Nbd2, manteniendo la estructura solida tipica del sistema.',
+          ventaja: 'Centro reforzado y flexible; prepara Nbd2 sin bloquear el desarrollo de la dama.',
+          debilidad: 'Ninguna relevante; es la continuacion mas solida y natural.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla el ultimo caballo, presionando d4 y completando el desarrollo de piezas menores.',
+          ventaja: 'Pieza activa que aumenta la presion sobre el centro de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nbd2',
+        explain: {
+          idea: 'Completa el desarrollo de piezas menores, dejando la dama libre para salir por c2 o e2 mas adelante.',
+          ventaja: 'Desarrollo completo y solido, listo para enrocar en la siguiente jugada.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qc7',
+        explain: {
+          idea: 'Desarrolla la dama a una casilla activa, apoyando el avance ...e5 mas adelante y evitando estorbar al resto de piezas.',
+          ventaja: 'Pieza flexible que mantiene varias opciones de plan abiertas en el medio juego.',
+          debilidad: 'Ninguna relevante a este nivel de la apertura.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo completo del Sistema Londres ya esta terminado.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'b6',
+        explain: {
+          idea: 'Prepara el desarrollo del alfil de dama a b7, completando el desarrollo de piezas menores de negras.',
+          ventaja: 'Estructura solida y flexible, con el alfil apuntando hacia el flanco de rey de blancas a traves de la diagonal larga.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h03-londres-fianchetto',
+    name: 'Sistema Londres -- respuesta moderna con fianchetto g6',
+    userColor: 'b',
+    overview: 'Familia Sistema Londres: variante moderna en auge donde ' +
+      'negras responde con un planteamiento de tipo Este de Rey ' +
+      '(fianchetto en g7) en vez del desarrollo clasico con d5. Al no ' +
+      'ocupar el centro de inmediato, negras deja que blancas defina su ' +
+      'estructura y presiona despues desde los flancos con ...c5 y ' +
+      '...b6, una de las formas mas populares de tratar el Londres a ' +
+      'nivel de club en los ultimos anos.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con el plan concreto.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural sin definir todavia la estructura de peones central, dejando abierta la opcion del fianchetto.',
+          ventaja: 'Maxima flexibilidad; negras puede optar por ...g6, ...e6 o ...d5 segun lo que juegue blancas.',
+          debilidad: 'Ninguna relevante a este nivel.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bf4',
+        explain: {
+          idea: 'Sistema Londres: saca el alfil de dama antes de cerrarlo con e3, sin importar la respuesta de negras.',
+          ventaja: 'Desarrollo rapido y sin teoria compleja; blancas monta la misma estructura contra casi cualquier planteamiento.',
+          debilidad: 'Ninguna inmediata; el plan de blancas es independiente de lo que juegue negras.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'g6',
+        explain: {
+          idea: 'Planteamiento moderno tipo Este de Rey: negras prepara el fianchetto del alfil de rey en vez de ocupar el centro con peones.',
+          ventaja: 'Estructura solida y flexible, con el alfil de rey apuntando hacia el centro y el flanco de dama de blancas a largo plazo.',
+          debilidad: 'Cede el centro momentaneamente a blancas, que puede ganar espacio con e4 mas adelante si negras no reacciona a tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Refuerza d4 con una estructura solida, sin arriesgarse a e4 antes de completar el desarrollo.',
+          ventaja: 'Estructura inflexible y dificil de atacar; el plan estandar del Londres funciona igual contra el fianchetto.',
+          debilidad: 'Renuncia a la posibilidad mas ambiciosa de e4, dejando que negras complete su fianchetto sin problemas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg7',
+        explain: {
+          idea: 'Completa el fianchetto, la pieza clave de todo el planteamiento de negras contra el Londres.',
+          ventaja: 'Alfil muy activo sobre la diagonal larga, presionando el centro y el flanco de dama de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey, preparando el enroque corto.',
+          ventaja: 'Jugada solida y flexible que no compromete nada.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de flanco de dama.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui negras puede pensar en ...d6 y ...c5.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'h3',
+        explain: {
+          idea: 'Jugada profilactica que evita cualquier molestia futura de ...Nh5 o ...Ng4 contra el alfil de f4.',
+          ventaja: 'Elimina de raiz cualquier idea tactica de negras sobre el alfil, a cambio de un tiempo.',
+          debilidad: 'Jugada algo lenta que cede un tiempo de desarrollo, aunque es la eleccion mas solida en la practica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd6',
+        explain: {
+          idea: 'Completa la estructura tipo Este de Rey, preparando ...Nbd7 y el avance central ...e5 mas adelante.',
+          ventaja: 'Estructura solida y flexible, con todas las piezas menores a punto de completar su desarrollo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Be2',
+        explain: {
+          idea: 'Desarrolla el ultimo alfil a una casilla solida, evitando exponerlo en d3 contra el fianchetto de negras.',
+          ventaja: 'Desarrollo completo y sin debilidades, listo para enrocar en la siguiente jugada.',
+          debilidad: 'Jugada menos activa que Bd3 en otras variantes, pero mas solida aqui frente al alfil de negras en g7.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nbd7',
+        explain: {
+          idea: 'Desarrolla el ultimo caballo, preparando el avance central ...e5 con apoyo suficiente.',
+          ventaja: 'Pieza flexible que apoya el plan central sin bloquear al resto de piezas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo completo del Sistema Londres ya esta terminado.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Contraataca el centro de blancas en el flanco de dama, el plan tipico de negras contra el Sistema Londres.',
+          ventaja: 'Gana espacio y actividad en el flanco de dama sin descuidar la seguridad del rey.',
+          debilidad: 'Ninguna inmediata; es la continuacion mas activa y natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c3',
+        explain: {
+          idea: 'Refuerza d4 manteniendo la estructura solida tipica del sistema.',
+          ventaja: 'Centro reforzado y flexible frente a la presion de negras.',
+          debilidad: 'Ninguna relevante; es la continuacion mas solida y natural.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'b6',
+        explain: {
+          idea: 'Prepara el desarrollo del alfil de dama a b7, apoyando el control de la diagonal larga junto al alfil de rey en g7.',
+          ventaja: 'Estructura muy solida con ambos alfiles apuntando hacia el centro y el flanco de rey de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      }
+    ]
   }
 ]
 
