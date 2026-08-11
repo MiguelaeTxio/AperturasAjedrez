@@ -12,11 +12,12 @@ el cierre de H03 en S3:
    la partida — el resto del motor (jugada esperada, el rival
    responde, feedback, resaltado de casillas, diálogo de 3 fallos) se
    reutiliza tal cual, sin cambios de arquitectura.
-2. **Problemas de ajedrez**: mecánica distinta a la de líneas/finales
-   — posición suelta + solución corta (encontrar la jugada o 2-3
-   jugadas que ganan material o dan mate), sin la parte de "el motor
-   responde y sigues jugando la partida entera". Clasificados por
-   tema (clavada, horquilla, mate en 2, desviación...).
+2. **Problemas de ajedrez**: posición suelta + solución corta (1-5
+   jugadas que ganan material o dan mate), clasificados por tema
+   (clavada, horquilla, mate en 2, desviación...). *Nota: pese a lo
+   que se preveía al abrir el hito, en la práctica no rompen el
+   patrón de líneas/finales — ver sección "DISEÑO CERRADO (S4)",
+   apartado Problemas, para el hallazgo concreto.*
 
 ## CONTEXTO TÉCNICO
 
@@ -112,54 +113,70 @@ Formato de explicación por jugada: **idéntico** al de las líneas
 (`idea`/`ventaja`/`debilidad` por jugada) -- se reutiliza tal cual, sin
 formato adaptado especial para finales.
 
-### Problemas — alcance (diseño cerrado, contenido pendiente)
-10 problemas de posición suelta + solución corta (1-3 jugadas),
+### Problemas — alcance (CERRADO S4, implementado)
+10 problemas de posición suelta + solución corta (1-5 jugadas),
 clasificados por tema: horquilla, clavada, ataque a la descubierta,
 desviación, atracción, doble ataque de torre, mate en 1, mate en 2,
 sobrecarga, promoción forzada. Verificación: secuencia completa de la
 solución (todas las jugadas, propias y de respuesta forzada) validada
-con `chess.js` real vía `verify.js`, no solo la primera jugada. Tras
-fallar: se reutiliza el mismo diálogo bloqueante de 3 fallos ("torpe
-como una oruga") ya existente -- decisión tomada para no introducir un
-mecanismo nuevo de UI cuando el ya existente cubre la necesidad sin
-cambios.
+con `chess.js` real vía `verify.js`, no solo la primera jugada —
+además, en los problemas con pieza defensora rival capaz de crear
+contrajuego real (desviación, atracción, sobrecarga, subpromoción), la
+secuencia se exploró de forma interactiva con el script de exploración
+en vez de simularse de memoria, igual que con los finales de torre y
+dama. Tras fallar: se reutiliza el mismo diálogo bloqueante de 3
+fallos ("torpe como una oruga") ya existente.
+
+**Hallazgo de esta sesión: los problemas no necesitaron ningún motor
+propio.** El diseño original (ver CONTEXTO TÉCNICO más arriba)
+anticipaba que los problemas "rompen el patrón" de líneas/finales y
+necesitarían una pantalla o `Activity` nueva. En la práctica, un
+problema es exactamente una línea/final más: una posición inicial
+(`startFen`) más una secuencia fija de jugadas (`moves`, con el mismo
+formato `idea`/`ventaja`/`debilidad`) que el motor reproduce igual que
+cualquier línea de apertura o final, terminando cuando el array de
+jugadas se agota. La única diferencia real es un campo nuevo, `tema`,
+usado solo para clasificar y mostrar en el selector nativo — no afecta
+al motor JS en absoluto. Los 10 problemas viven en `problemas.js`
+(`PROBLEMAS_LINES`), con ids con prefijo `h04-problema-`; `game.js`
+busca en la concatenación de `REPERTOIRE_LINES` + `FINALES_LINES` +
+`PROBLEMAS_LINES`.
 
 ### Integración en el menú (CERRADO S4, implementado)
 "Entrenar" pasa a abrir una pantalla intermedia de categoría
 (`CategorySelectorActivity`) con tres opciones: Líneas / Finales /
-Problemas. Líneas y Finales reutilizan `OpeningSelectorActivity` con
-un catálogo distinto según la categoría elegida (`RepertoireCatalog`
-vs `FinalesCatalog`, nuevo); Problemas queda como opción deshabilitada
-("Próximamente") hasta que se implemente su modo propio de
-verificación multi-jugada.
+Problemas. Las tres reutilizan `OpeningSelectorActivity` con un
+catálogo distinto según la categoría elegida (`RepertoireCatalog`,
+`FinalesCatalog` o `ProblemasCatalog`, este último con el `tema` como
+subtítulo en el selector).
 
 ### Arquitectura de motor (CERRADO S4, implementado)
-`game.js` (compartido, sin duplicar) ahora admite un campo opcional
+`game.js` (compartido, sin duplicar) admite un campo opcional
 `startFen` por línea: si está presente, `new window.Chess(startFen)` y
 `board.position(startFen)` en vez de la posición inicial estándar. Las
 líneas de apertura no llevan `startFen` (usan la posición inicial por
 defecto, sin cambios). Los finales viven en `finales.js`
-(`FINALES_LINES`), array nuevo con la misma estructura de objeto que
-`REPERTOIRE_LINES`; `findLine()` en `game.js` busca en la concatenación
-de ambos arrays por `id`, sin necesidad de parámetro de categoría en
-la URL del WebView (los ids de finales llevan el prefijo `h04-final-`
-para evitar colisión).
+(`FINALES_LINES`) y los problemas en `problemas.js`
+(`PROBLEMAS_LINES`), ambos con la misma estructura de objeto que
+`REPERTOIRE_LINES`; `findLine()` en `game.js` busca en la
+concatenación de los tres arrays por `id`, sin necesidad de parámetro
+de categoría en la URL del WebView (ids con prefijo `h04-final-` o
+`h04-problema-` para evitar colisión).
+
+## HITO 04 CERRADO EN CONTENIDO (S4)
+
+Los 6 finales y los 10 problemas quedan completos, verificados con
+`chess.js` real y con build verde en GitHub Actions. Queda pendiente
+solo la valoración con Miguel Ángel de si el hito se da por cerrado
+(PCH hacia el siguiente hito) o se amplía el alcance.
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Redactar los 10 problemas de `PROBLEMS.md`/estructura de datos
-   nueva (a definir el nombre de fichero al llegar a este bloque) y
-   construir el modo de verificación multi-jugada en `BoardActivity`/
-   `game.js` (o una `Activity` nueva si el modo de líneas/finales no
-   encaja sin forzarlo). Mismo rigor de verificación que en finales:
-   toda secuencia SAN pasa por `node verify.js "..."` con chess.js
-   real, y si hay contrajuego real posible en algún problema (una
-   pieza rival que puede desviar la solución), explorar de forma
-   interactiva con el script de exploración en vez de simular de
-   memoria -- ver la lección aprendida con los finales de torre y
-   dama en esta misma sesión.
-2. Habilitar la opción "Problemas" en `CategorySelectorActivity` una
-   vez tenga contenido y motor propio.
-3. Con los 6 finales y los 10 problemas cerrados, valorar con Miguel
-   Ángel si el Hito 04 queda completo o si se amplía el alcance antes
-   de cerrarlo.
+1. Prueba en dispositivo real de finales y problemas (Miguel Ángel
+   pedirá la instalación cuando quiera probarlo; no instalar por
+   iniciativa propia sin que lo pida — mismo criterio ya usado en
+   H01-H03).
+2. Con los 6 finales y los 10 problemas cerrados, valorar con Miguel
+   Ángel si el Hito 04 queda completo o si se amplía el alcance
+   (más finales, más problemas, u otro contenido) antes de cerrarlo
+   con PCH hacia el Hito 05.

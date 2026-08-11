@@ -7,15 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.miguelaetxio.aperturasajedrez.data.FinalesCatalog
 import com.miguelaetxio.aperturasajedrez.data.OpeningEntry
+import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
 import com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog
 
 /**
  * Selector generico de contenido de entrenamiento. Filtra el catalogo
  * segun EXTRA_CATEGORY (H04) -- CATEGORY_LINES (por defecto, si no se
  * recibe el extra, para no romper flujos que aun lancen esta Activity
- * sin categoria) o CATEGORY_ENDGAMES. OpeningAdapter es generico sobre
- * OpeningEntry, asi que FinalEntry se adapta a esa forma antes de
- * pasarlo -- ver mapeo mas abajo.
+ * sin categoria), CATEGORY_ENDGAMES o CATEGORY_PROBLEMS. OpeningAdapter
+ * es generico sobre OpeningEntry, asi que FinalEntry/ProblemEntry se
+ * adaptan a esa forma antes de pasarlos -- ver mapeo mas abajo.
  */
 class OpeningSelectorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,9 @@ class OpeningSelectorActivity : AppCompatActivity() {
         val entries: List<OpeningEntry> = when (category) {
             CATEGORY_ENDGAMES -> FinalesCatalog.entries.map {
                 OpeningEntry(id = it.id, title = it.title, subtitle = it.subtitle)
+            }
+            CATEGORY_PROBLEMS -> ProblemasCatalog.entries.map {
+                OpeningEntry(id = it.id, title = it.title, subtitle = it.tema)
             }
             else -> RepertoireCatalog.entries
         }
@@ -43,5 +47,6 @@ class OpeningSelectorActivity : AppCompatActivity() {
         const val EXTRA_CATEGORY = "extra_category"
         const val CATEGORY_LINES = "linea"
         const val CATEGORY_ENDGAMES = "final"
+        const val CATEGORY_PROBLEMS = "problema"
     }
 }

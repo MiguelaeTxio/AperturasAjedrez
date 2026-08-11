@@ -11,15 +11,22 @@
     return params.get('line')
   }
 
-  // H04: los finales viven en un array nuevo (finales.js, cargado
-  // antes que este fichero) para no mezclar contenido de lineas y de
-  // finales en el mismo fichero. Se buscan por id en la concatenacion
-  // de ambos -- sin parametro de categoria en la URL, los ids de
-  // finales llevan el prefijo "h04-final-" para evitar colision (ver
-  // ANNEX_H04.md, "DISENO CERRADO (S4)").
+  // H04: los finales y los problemas viven en ficheros nuevos
+  // (finales.js, problemas.js, cargados antes que este fichero) para
+  // no mezclar contenido de lineas, finales y problemas en el mismo
+  // fichero. Se buscan por id en la concatenacion de los tres -- sin
+  // parametro de categoria en la URL, los ids de finales y problemas
+  // llevan prefijo propio ("h04-final-", "h04-problema-") para evitar
+  // colision (ver ANNEX_H04.md, "DISENO CERRADO (S4)"). Los
+  // problemas resultaron no necesitar ningun motor propio: la misma
+  // mecanica de "secuencia fija de jugadas, oponente auto-jugado,
+  // dialogo de 3 fallos" ya cubre por completo un problema de
+  // posicion suelta + solucion corta.
   function allLines () {
     return REPERTOIRE_LINES.concat(
       typeof FINALES_LINES !== 'undefined' ? FINALES_LINES : []
+    ).concat(
+      typeof PROBLEMAS_LINES !== 'undefined' ? PROBLEMAS_LINES : []
     )
   }
 

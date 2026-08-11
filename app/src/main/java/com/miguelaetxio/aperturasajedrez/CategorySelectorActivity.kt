@@ -7,11 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Pantalla intermedia de "Entrenar" (H04): elegir categoria antes de
- * abrir el selector de contenido. Lineas y Finales reutilizan
- * OpeningSelectorActivity con un catalogo distinto segun la categoria
- * (ver EXTRA_CATEGORY). Problemas queda deshabilitado hasta que tenga
- * motor propio de verificacion multi-jugada -- ver ANNEX_H04.md,
- * seccion "DISENO CERRADO (S4)".
+ * abrir el selector de contenido. Lineas, Finales y Problemas
+ * reutilizan OpeningSelectorActivity con un catalogo distinto segun
+ * la categoria (ver EXTRA_CATEGORY) -- Problemas resulto no necesitar
+ * ningun motor propio: la mecanica de "linea/final" (secuencia fija
+ * de jugadas, oponente auto-jugado, dialogo de 3 fallos) ya cubre por
+ * completo la mecanica de un problema de posicion suelta + solucion
+ * corta -- ver ANNEX_H04.md, seccion "DISENO CERRADO (S4)".
  */
 class CategorySelectorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +26,9 @@ class CategorySelectorActivity : AppCompatActivity() {
         findViewById<Button>(R.id.categoryEndgamesButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_ENDGAMES)
         }
-        // Problemas: sin contenido ni motor propio todavia -- boton
-        // deshabilitado en el layout (android:enabled="false").
+        findViewById<Button>(R.id.categoryProblemsButton).setOnClickListener {
+            openSelector(OpeningSelectorActivity.CATEGORY_PROBLEMS)
+        }
     }
 
     private fun openSelector(category: String) {
