@@ -28,7 +28,13 @@
   nivel de club y de teoría (Rehusado + Cambio, Aceptado, Eslava +
   Semi-Eslava/Meran, Ortodoxa clásica, Chigorin, Albin, Báltica,
   Simétrica, Tarrasch, Marshall).
-- Las 15 líneas totales verificadas jugada a jugada con chess.js
+- Quinto lote: Semi-Tarrasch (híbrido Ortodoxa/Tarrasch, recaptura
+  con caballo en vez de peón aislado) completa la familia Gambito de
+  Dama; retirada ultra-sólida 3...Qd8 añade la cuarta rama de la
+  familia escandinava (junto a Qa5, Qd6, Nf6 -- cubre ya las
+  retiradas de dama más jugadas en la práctica más la vía de
+  desarrollo directo).
+- Las 17 líneas totales verificadas jugada a jugada con chess.js
   antes de escribirlas.
 - Selector nativo (`RepertoireCatalog.kt`) actualizado con las 4
   entradas nuevas, mismos ids que `repertoire.js`.

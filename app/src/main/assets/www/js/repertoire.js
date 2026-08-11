@@ -1812,6 +1812,248 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h02-semi-tarrasch',
+    name: 'Semi-Tarrasch',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: un hibrido entre la Ortodoxa y el ' +
+      'Tarrasch -- negras desarrolla primero el caballo de rey y solo ' +
+      'despues juega ...c5, recapturando en d5 con el caballo en vez de ' +
+      'quedarse con un peon aislado de peon. Blancas responde ocupando ' +
+      'el centro con e4 y ganando un tiempo sobre el caballo, una ' +
+      'ventaja de desarrollo tipica de todo el plan principal.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Sostiene d5 sin capturar, dejando abierta la opcion de transponer a varios sistemas segun la siguiente jugada.',
+          ventaja: 'Posicion solida y flexible.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza y refuerza el control sobre d5 antes de que negras defina su plan concreto.',
+          ventaja: 'Pieza activa que mantiene la tension central.',
+          debilidad: 'Ninguna relevante en este orden de jugadas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Semi-Tarrasch: desarrolla primero el caballo de rey, dejando la decision de ...c5 para mas adelante en vez de jugarla de inmediato como en el Tarrasch puro.',
+          ventaja: 'Desarrollo natural que mantiene mas flexibilidad que el Tarrasch clasico sobre cuando y como abrir el centro.',
+          debilidad: 'Ninguna inmediata; jugada natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla y prepara el enroque corto antes de que negras decida su plan concreto en el centro.',
+          ventaja: 'Jugada solida y flexible.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Semi-Tarrasch: ahora si contraataca el centro, pero con el caballo ya en f6, listo para recapturar en d5 con la pieza en vez de quedarse con un peon aislado.',
+          ventaja: 'Evita el peon de dama aislado tipico del Tarrasch puro, a cambio de piezas activas igualmente.',
+          debilidad: 'Cede tiempo a blancas para ocupar el centro con e4 tras el cambio en d5.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'cxd5',
+        explain: {
+          idea: 'Cambia en el centro antes de que negras pueda recapturar a su gusto.',
+          ventaja: 'Fuerza a negras a recapturar con el caballo, abriendo la posibilidad de ganar un tiempo con e4 despues.',
+          debilidad: 'Ninguna; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nxd5',
+        explain: {
+          idea: 'Recaptura con el caballo, evitando el peon aislado del Tarrasch puro -- la diferencia clave del Semi-Tarrasch.',
+          ventaja: 'Sin peon debil en la estructura, a cambio de una pieza bien colocada en el centro.',
+          debilidad: 'El caballo en d5 sera blanco de e4 en la siguiente jugada, perdiendo un tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ataca el caballo de d5 ganando espacio y tiempo, el plan principal de blancas contra el Semi-Tarrasch.',
+          ventaja: 'Centro amplio y tiempo ganado sobre el caballo rival.',
+          debilidad: 'Ninguna relevante; es la continuacion mas ambiciosa y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nxc3',
+        explain: {
+          idea: 'Cambia el caballo antes de retirarlo, simplificando la posicion en vez de perder otro tiempo con la retirada.',
+          ventaja: 'Resuelve de inmediato la amenaza sobre el caballo sin conceder mas tiempos.',
+          debilidad: 'Cede el par de alfiles potencial a cambio de la simplificacion, aunque es una concesion menor y muy jugada en la practica.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-escandinava-qd8',
+    name: 'Escandinava -- retirada ultra-solida (3...Qd8)',
+    userColor: 'b',
+    overview: 'Familia Escandinava: la retirada mas conservadora de todas ' +
+      '-- la dama vuelve a su casilla original, perdiendo mas tiempo que ' +
+      'con Qa5 o Qd6 pero sin dejar ningun objetivo de ataque futuro ' +
+      'para blancas. Es la eleccion de jugadores que priorizan la ' +
+      'solidez absoluta sobre la actividad de la dama, muy dificil de ' +
+      'sacar de la teoria conocida.',
+    moves: [
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal de la dama y del alfil de rey.',
+          ventaja: 'Jugada mas popular a todos los niveles, maxima actividad inmediata para las piezas.',
+          debilidad: 'Ninguna real a este nivel.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Escandinava: ataca el peon e4 de inmediato en vez de responder de forma simetrica o cerrada.',
+          ventaja: 'Fuerza a blancas a definir la estructura central en la jugada 2.',
+          debilidad: 'Tras el cambio de peones, la dama de negras tendra que salir pronto y perder algun tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'exd5',
+        explain: {
+          idea: 'Captura el peon ofrecido; casi siempre la respuesta principal.',
+          ventaja: 'Gana un peon de forma momentanea y obliga a negras a recapturar.',
+          debilidad: 'Ninguna; es la continuacion practicamente obligada.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qxd5',
+        explain: {
+          idea: 'Recaptura con la dama, la unica pieza que puede hacerlo de inmediato.',
+          ventaja: 'Recupera el material y desarrolla la dama a una casilla central.',
+          debilidad: 'La dama queda expuesta en el centro, blanco facil para Nc3 con ganancia de tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza atacando la dama de negras, ganando un tiempo de desarrollo gratis.',
+          ventaja: 'Pieza activa con tiempo ganado.',
+          debilidad: 'Ninguna; es la jugada mas natural y fuerte en la posicion.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qd8',
+        explain: {
+          idea: 'Retirada ultra-solida: la dama vuelve a su casilla original, la opcion mas conservadora de toda la familia escandinava.',
+          ventaja: 'Sin ningun objetivo de ataque futuro para blancas -- ni Bd2 ni Nb5 tienen sentido contra la dama en su casilla inicial.',
+          debilidad: 'Pierde mas tiempo que las retiradas a a5 o d6, dejando a blancas con la maxima ventaja de desarrollo de toda la familia.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro con el segundo peon central, aprovechando al maximo la ventaja de tiempo conseguida.',
+          ventaja: 'Centro amplio y mucha ventaja de desarrollo, la compensacion mas clara de blancas dentro de toda la familia escandinava.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Empieza por fin el desarrollo de piezas menores, ya urgente tras varias jugadas de dama.',
+          ventaja: 'Jugada natural que acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.',
+          ventaja: 'Jugada solida que completa el desarrollo rapido tipico de las lineas contra la Escandinava.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg4',
+        explain: {
+          idea: 'Clava el caballo de f3 para dificultar el desarrollo de blancas, buscando algo de contrajuego pese al tiempo perdido.',
+          ventaja: 'Pieza activa que presiona de inmediato el centro de blancas.',
+          debilidad: 'Deja que blancas rompa la clavada con h3 y gane otro tiempo mas.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'h3',
+        explain: {
+          idea: 'Pregunta al alfil de inmediato, ganando otro tiempo mas dentro de una linea ya muy favorable en desarrollo.',
+          ventaja: 'Tiempo extra que amplia aun mas la ventaja de desarrollo de blancas.',
+          debilidad: 'Debilita ligeramente el flanco de rey, un precio menor y asumido en toda la teoria principal.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bh5',
+        explain: {
+          idea: 'Mantiene la clavada en vez de cambiar el alfil, buscando conservar algo de presion pese a la posicion incomoda.',
+          ventaja: 'Sigue presionando el caballo de f3 y la posicion del rey de blancas.',
+          debilidad: 'El alfil puede quedar atrapado mas adelante si blancas encuentra g4 seguido de Ne5, un riesgo real en esta linea.'
+        }
+      }
+    ]
   }
 ]
 

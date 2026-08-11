@@ -94,6 +94,16 @@ object RepertoireCatalog {
             id = "h02-defensa-marshall",
             title = "Defensa Marshall",
             subtitle = "Con blancas -- 1.d4 d5 2.c4 Nf6"
+        ),
+        OpeningEntry(
+            id = "h02-semi-tarrasch",
+            title = "Semi-Tarrasch",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Nf3 c5"
+        ),
+        OpeningEntry(
+            id = "h02-escandinava-qd8",
+            title = "Escandinava -- retirada ultra-solida 3...Qd8",
+            subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8"
         )
     )
 }
