@@ -36,8 +36,21 @@
   desarrollo directo).
 - Las 17 líneas totales verificadas jugada a jugada con chess.js
   antes de escribirlas.
-- Selector nativo (`RepertoireCatalog.kt`) actualizado con las 4
+- Selector nativo (`RepertoireCatalog.kt`) actualizado con las 16
   entradas nuevas, mismos ids que `repertoire.js`.
+
+### CIERRE DEL HITO (S1)
+
+Hito 02 dado por completado en S1: ambas familias del alcance
+(Gambito de Dama y Escandinava) cubren ya las respuestas más
+relevantes a nivel de teoría y de club — Miguel Ángel confirmó
+explícitamente el cierre ("lo hacemos en orden, cerramos, acometemos
+H03 y luego H04") sin pedir más profundidad en este hito por ahora.
+Motor de entrenamiento generalizado a ambos bandos, con las 17 líneas
+totales verificadas y build en verde de principio a fin en cada
+lote. El hito EN PROGRESO pasa a Hito 03 — ver `MASTER_DOCUMENT.md`
+§3 y `APERTURASAJEDREZ_ANNEX_H03.md`. Hito 04 (finales de partida +
+problemas de ajedrez) queda acordado y en cola, después de H03.
 
 ## ALCANCE
 
@@ -63,15 +76,9 @@ cuando Miguel Ángel lo pida explícitamente — no después de cada lote.
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. ~~Cerrar con Miguel Ángel qué variantes concretas...~~ -- resuelto:
-   "hay que meterlas todas, vamos ya a empezar e ir metiendo" (S1).
-   Seguir añadiendo variantes de blancas (p. ej. Defensa Ortodoxa
-   clásica con ...Nbd7, Defensa Semi-Eslava, Contragambito Albin) y
-   más líneas de la escandinava (2...Nf6, 3...Qxd5) de forma
-   incremental, sesión a sesión.
-2. Build en verde y verificación en dispositivo real de las 4 líneas
-   nuevas (selector con 5 entradas, escandinava entrenable con
-   negras -- primera vez que se prueba ese lado del motor).
-3. Seguir iterando: cada bloque nuevo de líneas se redacta, se
-   verifica con chess.js, se compila y se prueba en dispositivo antes
-   de pasar al siguiente.
+Hito cerrado (ver "CIERRE DEL HITO" arriba). Si en el futuro se
+retoma para añadir más profundidad (sub-variantes dentro de líneas ya
+existentes, u otras aperturas que no sean 1.d4/Gambito de Dama ni
+1.e4/Escandinava), habrá que concertar antes con Miguel Ángel el
+alcance concreto — no reanudar sin más "metiendo líneas" de motu
+proprio.

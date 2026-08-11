@@ -82,24 +82,44 @@ progreso) queda pendiente de definir con Miguel Ángel.
 ### Hito 01 — Fundamentos y repertorio base (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`)
 
-### Hito 02 — Repertorio completo de blancas y escandinava completa (EN PROGRESO)
+### Hito 02 — Repertorio completo de blancas y escandinava completa (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H02.md`)
 Todas las variantes del Gambito de Dama con blancas (Aceptado,
 Rehusado, Eslava...) y todas las variantes de la escandinava con
 negras contra 1.e4.
 
-### Hito 03 — Defensas de negras contra el resto de aperturas de blancas (PENDIENTE)
+### Hito 03 — Defensas de negras contra el resto de aperturas de blancas (EN PROGRESO)
+(Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H03.md`)
 Cobertura de las defensas más habituales contra cualquier primera
 jugada de blancas que no sea 1.e4, empezando por las más jugadas en
 la práctica. Alcance y orden a definir con Miguel Ángel al llegar
 a este hito.
+
+### Hito 04 — Entrenamiento de finales de partida y sección de problemas (PENDIENTE)
+Acordado con Miguel Ángel al cierre de Hito 02, para después de
+Hito 03. Dos bloques nuevos de contenido, reutilizando la mecánica de
+entrenamiento existente donde encaje:
+- **Finales de partida**: cada final carga su propia posición inicial
+  (FEN) en vez de partir siempre de la posición inicial de la
+  partida — el resto del motor (jugada esperada, el rival responde,
+  feedback) se reutiliza tal cual.
+- **Problemas de ajedrez**: mecánica distinta a la de líneas/finales
+  — posición suelta + solución corta (encontrar la jugada o
+  2-3 jugadas que ganan material o dan mate), sin la parte de "el
+  motor responde y sigues jugando la partida entera". Clasificados
+  por tema (clavada, horquilla, mate en 2, desviación...).
+Alcance exacto (qué finales, cuántos problemas, cómo se integran en
+el menú) a definir con Miguel Ángel al llegar a este hito.
 
 ## 4. Directrices Técnicas Vinculantes
 
 - §4.1 — Antes de codificar sobre un archivo existente, releerlo
   directamente del clon local en el turno actual (nunca inferir su
   contenido de memoria de turnos anteriores).
-- §4.2 — Pendiente de definir (NavGraph / estructura de navegación)
-  en cuanto haya más de una pantalla.
+- §4.2 — Navegación resuelta en H01: `MenuActivity` (launcher) →
+  `OpeningSelectorActivity` → `BoardActivity`; `SettingsActivity`
+  aparte. Sin `NavGraph`/Jetpack Navigation -- Activities e Intents
+  explícitos, arquitectura deliberadamente ligera acorde al tamaño de
+  la app (ver `MASTER_DOCUMENT.md` §2, "Navegación").
 - §4.7 — Ningún archivo de código lleva como primera línea un
   comentario con su propia ruta.
