@@ -227,18 +227,23 @@ var FINALES_LINES = [
 FINALES_LINES.push(
   {
     id: 'h04-final-mate-torre',
-    name: 'Mate elemental con torre -- la tecnica de la caja',
+    name: 'Mate elemental con torre -- el rey persigue, la torre remata',
     userColor: 'w',
     startFen: '4k3/7R/3K4/8/8/8/8/8 w - - 0 1',
     overview: 'Tecnica basica que hay que dominar antes que cualquier ' +
       'otro final con torre: dar mate con rey y torre contra rey ' +
       'solo. La torre encierra al rey rival en una franja del ' +
-      'tablero (aqui ya esta confinado a la octava fila) mientras el ' +
-      'rey propio se acerca tomando siempre la oposicion directa ' +
-      '(misma columna, dos filas de distancia) para birlarle al rey ' +
-      'rival las casillas de la septima fila. Cuando el rey rival ' +
-      'queda arrinconado, la torre da jaque mate en la misma fila en ' +
-      'la que esta encerrado.',
+      'tablero (aqui ya esta confinado a la octava fila). El error ' +
+      'habitual es fiarlo todo a jaques de torre para empujar al rey: ' +
+      'un jaque obliga a la torre a abandonar la fila que estaba ' +
+      'cortando, y si el rey blanco no esta listo para tapar el hueco, ' +
+      'el rey rival se cuela. La tecnica correcta es la contraria: el ' +
+      'rey blanco persigue con zugzwang -- se acerca por la septima ' +
+      'fila (la torre solo se aparta si queda amenazada, nunca para ' +
+      'dar jaque antes de tiempo) hasta que al rey rival no le queda ' +
+      'ninguna casilla salvo la que el rey blanco decide dejarle. Solo ' +
+      'cuando el rey esta completamente acorralado entra la torre a ' +
+      'dar el mate.',
     moves: [
       {
         color: 'w',
@@ -260,63 +265,9 @@ FINALES_LINES.push(
       },
       {
         color: 'w',
-        san: 'Rh8+',
-        explain: {
-          idea: 'La torre da jaque por la octava fila, empujando al rey negro hacia el lado donde el rey blanco tiene mas control.',
-          ventaja: 'Reduce las casillas disponibles del rey negro en la octava fila a una sola direccion.',
-          debilidad: 'Momentaneo: la torre deja de cubrir la septima fila mientras esta en la octava, pero el rey blanco ya cubre las casillas relevantes junto al rey negro.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kc7',
-        explain: {
-          idea: 'Unica casilla legal: las demas estan cubiertas por el jaque de la torre o por el rey blanco.',
-          ventaja: 'Ninguna: jugada totalmente forzada.',
-          debilidad: 'El rey negro se aleja del centro, facilitando que el rey blanco lo siga acorralando hacia una esquina.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Kd5',
-        explain: {
-          idea: 'El rey blanco avanza en diagonal, acercandose sin perder el control de la zona central.',
-          ventaja: 'Prepara retomar la oposicion directa en la columna donde se encuentre el rey negro.',
-          debilidad: 'Ninguna: acercamiento tipico sin riesgo alguno frente a un rey solo.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kd7',
-        explain: {
-          idea: 'El rey negro vuelve hacia el centro, buscando la maxima libertad posible.',
-          ventaja: 'Recupera algo de espacio frente a la esquina.',
-          debilidad: 'Se coloca justo en la columna del rey blanco, cediendole la oposicion directa en la siguiente jugada.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Rh7+',
-        explain: {
-          idea: 'Con la oposicion ya lograda (misma columna, dos filas), la torre da jaque para empujar al rey negro de vuelta a la octava fila.',
-          ventaja: 'El rey blanco, en oposicion directa, cubre las tres casillas de la septima fila adyacentes: el rey negro no tiene mas remedio que retroceder.',
-          debilidad: 'Ninguna: es exactamente el mecanismo que hace avanzar la tecnica.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kd8',
-        explain: {
-          idea: 'Vuelta forzada a la octava fila: las tres casillas de la septima estan cubiertas por el rey blanco.',
-          ventaja: 'Ninguna: jugada obligada.',
-          debilidad: 'El rey negro sigue perdiendo terreno fila a fila.'
-        }
-      },
-      {
-        color: 'w',
         san: 'Kd6',
         explain: {
-          idea: 'El rey blanco ocupa la oposicion directa exactamente delante del rey negro, ya en la propia octava fila menos dos.',
+          idea: 'El rey blanco retoma la oposicion directa en la nueva columna, sin recurrir a ningun jaque de torre.',
           ventaja: 'Deja al rey negro sin ninguna casilla en la septima fila cercana y lo obliga a moverse lateralmente otra vez.',
           debilidad: 'Ninguna.'
         }
@@ -325,9 +276,9 @@ FINALES_LINES.push(
         color: 'b',
         san: 'Kc8',
         explain: {
-          idea: 'Unico lado disponible: el otro (Ke8) tambien seria posible en general, pero aqui el rey negro se desplaza hacia el ala de dama.',
+          idea: 'Unica direccion posible dentro de la octava fila.',
           ventaja: 'Ninguna practica.',
-          debilidad: 'El rey blanco puede seguirlo sin perder ni una jugada, manteniendo siempre la oposicion.'
+          debilidad: 'El rey blanco puede seguir sin perder ni una jugada, manteniendo siempre la oposicion.'
         }
       },
       {
@@ -345,7 +296,7 @@ FINALES_LINES.push(
         explain: {
           idea: 'El rey negro sigue huyendo hacia la esquina, unica direccion que le queda libre.',
           ventaja: 'Ninguna practica.',
-          debilidad: 'Se acerca cada vez mas a la esquina, donde el mate es inevitable.'
+          debilidad: 'Se acerca cada vez mas a la esquina.'
         }
       },
       {
@@ -353,26 +304,170 @@ FINALES_LINES.push(
         san: 'Kb6',
         explain: {
           idea: 'Oposicion directa una vez mas, esta vez ya muy cerca del borde del tablero.',
-          ventaja: 'El rey negro se va quedando sin espacio: solo le queda la columna a o volver sobre sus pasos.',
+          ventaja: 'El rey negro se va quedando sin espacio.',
           debilidad: 'Ninguna.'
         }
       },
       {
         color: 'b',
-        san: 'Ka8',
+        san: 'Kc8',
         explain: {
-          idea: 'El rey negro se refugia en la esquina, el ultimo rincon que le queda.',
-          ventaja: 'Ninguna: es zugzwang puro, cualquier casilla disponible lleva a la misma situacion.',
-          debilidad: 'La esquina es precisamente donde el mate con torre resulta mas facil de ejecutar: el rey blanco ya cubre las dos casillas de escape relevantes.'
+          idea: 'Aqui esta el punto exacto donde falla la tecnica del jaque prematuro: el rey negro, en vez de refugiarse en la esquina (a8), retrocede hacia el centro.',
+          ventaja: 'Si blancas respondieran ahora con un jaque de torre (Rh8+ o similar), la torre abandonaria la septima fila y el rey negro escaparia por d7 -- el error que este final corrige.',
+          debilidad: 'Aun asi, retroceder no libera al rey negro: el rey blanco puede seguir acosandolo sin necesidad de ningun jaque.'
         }
       },
       {
         color: 'w',
-        san: 'Rh8#',
+        san: 'Ka7',
         explain: {
-          idea: 'La torre da jaque mate por la octava fila: el rey negro no puede capturarla (esta lejos), no puede bloquear (no hay pieza que lo haga) y no tiene ninguna casilla libre.',
-          ventaja: 'Jaque mate: el rey blanco, en oposicion directa, cubre las unicas dos casillas de escape (a7 y b7) mientras la torre cubre toda la octava fila.',
-          debilidad: 'Ninguna: es el resultado final de la tecnica de oposicion y acorralamiento.'
+          idea: 'En vez de perseguir por el mismo lado, el rey blanco aprovecha que negras se alejaron de la esquina de dama para ocupar el lado que quedo libre.',
+          ventaja: 'Desde a7 el rey blanco vigila a8, b8 y c8 a la vez: el rey negro se queda sin ninguna casilla en ese lado del tablero.',
+          debilidad: 'Ninguna: el rey blanco esta perfectamente a salvo, lejos del rey rival.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kd8',
+        explain: {
+          idea: 'Unica casilla legal: a8, b8 y c8 estan vetadas por el rey blanco, y d7 sigue cubierta por la torre.',
+          ventaja: 'Ninguna: jugada totalmente forzada (zugzwang).',
+          debilidad: 'El rey negro se ve arrastrado hacia el otro lado del tablero, exactamente donde el rey blanco quiere llevarlo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kb7',
+        explain: {
+          idea: 'El rey blanco avanza un paso por la septima fila, siguiendo al rey negro sin necesitar ningun jaque de torre.',
+          ventaja: 'Desde b7 sigue vigilando a8, b8 y c8: el rey negro no puede volver atras.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Ke8',
+        explain: {
+          idea: 'Unica casilla legal disponible.',
+          ventaja: 'Ninguna: jugada forzada.',
+          debilidad: 'El rey negro sigue retrocediendo sin remedio.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kc7',
+        explain: {
+          idea: 'El rey blanco continua el acoso por la septima fila.',
+          ventaja: 'Vigila b8, c8 y d8: el rey negro sigue sin poder volver.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kf8',
+        explain: {
+          idea: 'Unica casilla legal disponible.',
+          ventaja: 'Ninguna: jugada forzada.',
+          debilidad: 'Cada vez le queda menos tablero.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kd7',
+        explain: {
+          idea: 'El rey blanco sigue avanzando por la septima fila.',
+          ventaja: 'Vigila c8, d8 y e8.',
+          debilidad: 'Ninguna: pero a partir de aqui hay que vigilar que la propia torre, todavia en h7, no quede al alcance del rey negro cuando este se acerque a esa esquina.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kg8',
+        explain: {
+          idea: 'Unica casilla legal disponible.',
+          ventaja: 'Ninguna: jugada forzada.',
+          debilidad: 'El rey negro se dirige, sin quererlo, justo hacia la esquina donde esta la torre blanca.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Re7',
+        explain: {
+          idea: 'La torre se retira a una casilla segura y sigue cubriendo toda la septima fila -- necesario porque el rey negro ya casi la alcanza en h7.',
+          ventaja: 'Este es el unico momento del final en que la torre se mueve sin dar jaque: no es un jaque prematuro, es un ajuste de seguridad que mantiene intacto el cerco.',
+          debilidad: 'Ninguna: la torre sigue defendida y controlando toda la fila.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kh8',
+        explain: {
+          idea: 'El rey negro se adentra en la esquina, sin ninguna alternativa mejor.',
+          ventaja: 'Ninguna practica.',
+          debilidad: 'Se acerca a su propia sentencia: la esquina es donde el mate con torre resulta mas sencillo de ejecutar.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Ke6',
+        explain: {
+          idea: 'El rey blanco cambia de rumbo hacia el flanco de rey para terminar de apoyar el mate en esa esquina.',
+          ventaja: 'Se acerca sin ningun riesgo, con la torre todavia cubriendo toda la septima fila desde e7.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kg8',
+        explain: {
+          idea: 'Unica casilla legal disponible.',
+          ventaja: 'Ninguna: jugada forzada.',
+          debilidad: 'Sigue sin poder escapar de la vigilancia de la torre.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kf6',
+        explain: {
+          idea: 'El rey blanco sigue acercandose al rincon.',
+          ventaja: 'Cada paso reduce mas el espacio del rey negro.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kh8',
+        explain: {
+          idea: 'El rey negro vuelve a la esquina, sin ninguna alternativa real.',
+          ventaja: 'Ninguna practica.',
+          debilidad: 'Cada vez le queda menos margen.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kg6',
+        explain: {
+          idea: 'Ultimo paso de acercamiento: el rey blanco ya esta listo para apoyar el mate final.',
+          ventaja: 'Deja al rey negro en zugzwang puro.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kg8',
+        explain: {
+          idea: 'Unica casilla legal disponible.',
+          ventaja: 'Ninguna: jugada totalmente forzada.',
+          debilidad: 'A partir de aqui, cualquier jaque de la torre por la octava fila, apoyado por el rey blanco, es mate.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Re8#',
+        explain: {
+          idea: 'La torre da jaque mate por la octava fila.',
+          ventaja: 'Jaque mate: el rey negro no puede capturar la torre (esta lejos), no hay pieza que bloquee el jaque, y el rey blanco en g6 le tapa f7, g7 y h7.',
+          debilidad: 'Ninguna: es el resultado final de perseguir con el rey en vez de fiarlo todo a los jaques de la torre.'
         }
       }
     ]
