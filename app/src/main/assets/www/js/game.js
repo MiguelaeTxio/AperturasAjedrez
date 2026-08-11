@@ -19,6 +19,8 @@
   }
 
   var line = findLine(selectedLineId())
+  var userColor = line.userColor || 'w'
+  var opponentColor = userColor === 'w' ? 'b' : 'w'
   var game = new window.Chess()
   var board = null
   var moveIndex = 0 // indice de la proxima jugada esperada en line.moves
@@ -104,7 +106,7 @@
       return
     }
     var expected = currentExpected()
-    if (expected.color === 'b') {
+    if (expected.color === opponentColor) {
       setStatus('El motor esta pensando...')
       window.setTimeout(playOpponentMove, OPPONENT_PAUSE_MS)
     } else {
@@ -141,14 +143,14 @@
     if (game.isGameOver && game.isGameOver()) return false
     if (moveIndex >= line.moves.length) return false
     var expected = currentExpected()
-    if (!expected || expected.color !== 'w') return false
-    if (piece.search(/^b/) !== -1) return false
+    if (!expected || expected.color !== userColor) return false
+    if (piece.charAt(0) !== userColor) return false
     return true
   }
 
   function onDrop (source, target) {
     var expected = currentExpected()
-    if (!expected || expected.color !== 'w') return 'snapback'
+    if (!expected || expected.color !== userColor) return 'snapback'
 
     var move = game.move({ from: source, to: target, promotion: 'q' })
     if (move === null) return 'snapback'
@@ -186,14 +188,24 @@
     board.position(game.fen())
   }
 
+  function beginLine () {
+    clearHighlights()
+    elExplain.innerHTML = ''
+    var expected = currentExpected()
+    if (expected && expected.color === opponentColor) {
+      setStatus('El motor esta pensando...')
+      window.setTimeout(playOpponentMove, OPPONENT_PAUSE_MS)
+    } else {
+      setStatus('Tu turno.')
+    }
+  }
+
   function restartLine () {
     game.reset()
     moveIndex = 0
     attemptsThisMove = 0
     board.position('start')
-    clearHighlights()
-    elExplain.innerHTML = ''
-    setStatus('Tu turno.')
+    beginLine()
   }
 
   function init () {
@@ -204,14 +216,15 @@
     board = window.Chessboard('board', {
       draggable: true,
       position: 'start',
+      orientation: userColor === 'b' ? 'black' : 'white',
       pieceTheme: 'img/chesspieces/wikipedia/{piece}.png',
       onDragStart: onDragStart,
       onDrop: onDrop,
       onSnapEnd: onSnapEnd
     })
 
-    setStatus('Tu turno.')
     elRestart.addEventListener('click', restartLine)
+    beginLine()
   }
 
   document.addEventListener('DOMContentLoaded', init)
