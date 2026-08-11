@@ -586,3 +586,107 @@ FINALES_LINES.push(
   }
 )
 
+// -----------------------------------------------------------------
+// Bloque 3 (S4, cierre de los 6 finales): alfiles y caballos.
+//
+// Nota importante sobre el planteamiento de estos dos ultimos
+// finales -- ver tambien ANNEX_H04.md: al construir el final 5 se
+// evito por poco un error real (una casilla de "jaque" que en
+// realidad dejaba el alfil capturable gratis, detectado explorando
+// con chess.js antes de escribirlo aqui). Y al plantear el final 6
+// como "final de caballos" con pieza defensora, Claude recordo a
+// tiempo un hecho ajedrecistico bien establecido: dos caballos solos
+// NO pueden forzar mate contra un rey solo con defensa correcta
+// (salvo posiciones anomalas puntuales) -- por eso el final 6 no es
+// una tecnica de mate, sino una tecnica de conversion con un solo
+// caballo apoyando a un peon, que es un final real y solido.
+FINALES_LINES.push(
+  {
+    id: 'h04-final-mate-dos-alfiles',
+    name: 'Mate con dos alfiles -- caminar en pareja hacia la esquina',
+    userColor: 'w',
+    startFen: '6k1/8/5K2/3B4/8/8/1B6/8 w - - 0 1',
+    overview: 'Los dos alfiles, cada uno controlando un color de ' +
+      'casilla distinto, se complementan: entre ambos cubren toda ' +
+      'casilla del tablero. La tecnica consiste en hacerlos avanzar ' +
+      'en pareja, escalonados en diagonales paralelas, empujando al ' +
+      'rey rival hacia el borde, mientras el rey propio se acerca ' +
+      'para apoyar el mate final. Aqui el rey negro ya esta cerca de ' +
+      'la esquina y el rey blanco ya esta listo para ayudar: un solo ' +
+      'jaque de alfil basta para forzar la ultima casilla, y el rey ' +
+      'blanco remata.',
+    moves: [
+      {
+        color: 'w',
+        san: 'Bc4+',
+        explain: {
+          idea: 'El alfil de casillas claras da jaque por la diagonal larga, empujando al rey negro hacia la esquina h8.',
+          ventaja: 'Es la unica direccion que le queda al rey negro: el rey blanco ya cubre g7 y el otro alfil vigila g8 por su propia diagonal.',
+          debilidad: 'Ninguna: el alfil da el jaque desde una casilla fuera del alcance del rey rival.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kh8',
+        explain: {
+          idea: 'Unica casilla legal: g8 esta vigilada por el otro alfil (en d5) y g7 esta cubierta por el rey blanco.',
+          ventaja: 'Ninguna: jugada totalmente forzada.',
+          debilidad: 'El rey negro queda encerrado en la esquina, con el rey blanco ya a un paso de dar mate.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kg6#',
+        explain: {
+          idea: 'El rey blanco se acerca a apoyar y da jaque mate.',
+          ventaja: 'Jaque mate: g7 y h7 quedan cubiertas por el rey blanco, g8 por el alfil de casillas claras, y h8 sigue bajo la vigilancia de la diagonal del otro alfil.',
+          debilidad: 'Ninguna: es el resultado final de la tecnica de los dos alfiles caminando en pareja hacia la esquina.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h04-final-caballo-escolta-peon',
+    name: 'Caballo y peón -- el caballo vigila la casilla de coronación',
+    userColor: 'w',
+    startFen: '4k3/2P5/1N6/K7/8/8/8/8 w - - 0 1',
+    overview: 'Un caballo bien colocado puede vigilar la casilla de ' +
+      'coronacion de un peon (o las casillas de acceso a ella) sin ' +
+      'necesidad de que el rey propio llegue a tiempo: el rey rival ' +
+      'no puede pisar ninguna casilla defendida por el caballo. Aqui ' +
+      'el caballo en b6 vigila tanto c8 (la casilla de coronacion) ' +
+      'como d7 (una de las casillas de acceso), asi que el rey negro ' +
+      'no puede acercarse a impedir la coronacion por mucho que lo ' +
+      'intente: el peon corona solo, con la unica ayuda del caballo.',
+    moves: [
+      {
+        color: 'w',
+        san: 'Kb5',
+        explain: {
+          idea: 'El rey blanco espera y mejora de posicion mientras el caballo ya hace todo el trabajo de vigilancia.',
+          ventaja: 'No hace falta apresurar nada: ni c8 ni d7 estan disponibles para el rey negro, este haga lo que haga.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kf7',
+        explain: {
+          idea: 'El rey negro intenta acercarse por el unico camino que le queda libre, ya que d8 (vigilada por el peon) y d7 (vigilada por el caballo) estan vetadas.',
+          ventaja: 'Ninguna practica: por mas que se acerque, nunca podra pisar las casillas clave junto al peon.',
+          debilidad: 'Pierde tiempos valiosos: cuando llegue cerca de la columna c, el peon ya habra coronado.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c8=Q',
+        explain: {
+          idea: 'El peon corona en dama sin ninguna oposicion posible, protegido durante toda su marcha por el caballo.',
+          ventaja: 'Blancas pasan a tener una dama de ventaja: la posicion esta ganada de forma trivial a partir de aqui.',
+          debilidad: 'Ninguna: es el resultado natural de haber controlado con el caballo las casillas que el rey rival necesitaba para intervenir.'
+        }
+      }
+    ]
+  }
+)
+

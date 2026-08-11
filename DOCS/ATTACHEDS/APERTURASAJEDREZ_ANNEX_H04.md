@@ -60,10 +60,14 @@ progresión de dificultad y alternando el bando que entrena Miguel
 4. Mate elemental con dama -- acorralar sin ahogar (blancas).
    **CERRADO S4 -- sustituye a "torre y peón vs torre: defensa por la
    tercera fila".**
-5. Final de alfiles de distinto color -- defender con inferioridad
-   material (negras) -- pendiente, alcance a revisar (ver nota).
-6. Final de caballos -- triangulación y zugzwang (blancas) --
-   pendiente, alcance a revisar (ver nota).
+5. Mate con dos alfiles -- caminar en pareja hacia la esquina
+   (blancas). **CERRADO S4 -- sustituye a "final de alfiles de
+   distinto color: defender con inferioridad material".**
+6. Caballo y peón -- el caballo vigila la casilla de coronación
+   (blancas). **CERRADO S4 -- sustituye a "final de caballos:
+   triangulación y zugzwang".**
+
+**Los 6 finales del hito quedan completos y verificados en S4.**
 
 **Nota sobre la revisión de items 3 y 4 (misma sesión S4):** el diseño
 original citaba "construir el puente" (técnica tipo Lucena) y "defensa
@@ -85,11 +89,24 @@ disponibles, y en la jugada final se comprobó explícitamente
 `isCheckmate() === true` y `isStalemate() === false` (esto último
 importante: una primera versión de "mate con dama" resultó ser
 ahogado real, detectado y corregido antes de escribirse en
-`finales.js`). Items 5 y 6 (alfiles, caballos) tienen el mismo
-problema potencial que 3 y 4 si se plantean con resistencia real del
-bando defensor -- se revisará su planteamiento concreto (posiblemente
-como técnica de conversión sin pieza defensora rival, en vez de un
-final con ambos bandos armados) al llegar a ese bloque.
+`finales.js`). Items 5 y 6 se replantearon en consecuencia, evitando
+plantearlos como final con resistencia real del bando defensor:
+
+- El final de alfiles pasó a ser un mate elemental (rey y dos alfiles
+  contra rey solo) en vez de un final defensivo con alfiles de ambos
+  bandos -- mismo motivo que items 3 y 4: sin pieza defensora, no hay
+  contrajuego que verificar, solo legalidad y jaque mate real.
+- El final de caballos NO se planteó como mate con dos caballos
+  porque es un hecho ajedrecístico bien establecido que dos caballos
+  solos no pueden forzar mate contra un rey solo con defensa correcta
+  (salvo posiciones anómalas puntuales) -- intentarlo habría sido
+  enseñar una técnica que en general no funciona. Se sustituyó por una
+  técnica de conversión real y sólida: un solo caballo controlando la
+  casilla de coronación de un peón (y sus casillas de acceso), que
+  tampoco tiene pieza defensora rival y es perfectamente verificable.
+
+Los 6 finales del hito quedaron cerrados con este planteamiento
+revisado; no queda ningún final pendiente.
 
 Formato de explicación por jugada: **idéntico** al de las líneas
 (`idea`/`ventaja`/`debilidad` por jugada) -- se reutiliza tal cual, sin
@@ -130,20 +147,19 @@ para evitar colisión).
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Redactar los 2 finales restantes (alfiles, caballos), revisando
-   primero si plantearlos con resistencia real del bando defensor es
-   viable de verificar a mano (ver nota de revisión más arriba) o si
-   conviene adaptarlos también a un formato sin pieza defensora rival.
-   Mismo rigor de verificación: toda secuencia SAN pasa por
-   `node verify.js "..."` con chess.js real antes de escribirse en
-   `finales.js`; si hay contrajuego real posible, explorar de forma
-   interactiva con el script de exploración (comprobando jugadas
-   legales paso a paso) en vez de simular de memoria. Commit tras
-   cerrar cada lote, sin acumular trabajo sin commitear.
-2. Redactar los 10 problemas de `PROBLEMS.md`/estructura de datos
+1. Redactar los 10 problemas de `PROBLEMS.md`/estructura de datos
    nueva (a definir el nombre de fichero al llegar a este bloque) y
    construir el modo de verificación multi-jugada en `BoardActivity`/
    `game.js` (o una `Activity` nueva si el modo de líneas/finales no
-   encaja sin forzarlo).
-3. Habilitar la opción "Problemas" en `CategorySelectorActivity` una
+   encaja sin forzarlo). Mismo rigor de verificación que en finales:
+   toda secuencia SAN pasa por `node verify.js "..."` con chess.js
+   real, y si hay contrajuego real posible en algún problema (una
+   pieza rival que puede desviar la solución), explorar de forma
+   interactiva con el script de exploración en vez de simular de
+   memoria -- ver la lección aprendida con los finales de torre y
+   dama en esta misma sesión.
+2. Habilitar la opción "Problemas" en `CategorySelectorActivity` una
    vez tenga contenido y motor propio.
+3. Con los 6 finales y los 10 problemas cerrados, valorar con Miguel
+   Ángel si el Hito 04 queda completo o si se amplía el alcance antes
+   de cerrarlo.

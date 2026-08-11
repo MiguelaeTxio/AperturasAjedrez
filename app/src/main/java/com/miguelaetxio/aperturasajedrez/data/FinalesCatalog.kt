@@ -38,10 +38,18 @@ object FinalesCatalog {
             id = "h04-final-mate-dama",
             title = "Mate elemental con dama -- acorralar sin ahogar",
             subtitle = "Con blancas -- técnica básica, rey y dama vs rey solo"
+        ),
+        FinalEntry(
+            id = "h04-final-mate-dos-alfiles",
+            title = "Mate con dos alfiles -- caminar en pareja hacia la esquina",
+            subtitle = "Con blancas -- técnica básica, rey y dos alfiles vs rey solo"
+        ),
+        FinalEntry(
+            id = "h04-final-caballo-escolta-peon",
+            title = "Caballo y peón -- el caballo vigila la casilla de coronación",
+            subtitle = "Con blancas -- técnica de conversión, caballo y peón vs rey"
         )
-        // Pendientes (ver ANNEX_H04.md, HOJA DE RUTA): finales con
-        // resistencia real del bando defensor (alfiles, caballos,
-        // torre y peon vs torre con contrajuego) -- alcance revisado
-        // en S4, ver "DISENO CERRADO (S4), revision".
+        // Los 6 finales del alcance cerrado en S4 quedan completos --
+        // ver ANNEX_H04.md, "DISEÑO CERRADO (S4)".
     )
 }
