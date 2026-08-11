@@ -44,7 +44,7 @@ sin sesión de cierre de alcance punto por punto. Decisiones tomadas
 con criterio ajedrecístico propio, mismo patrón ya usado para redactar
 las explicaciones de jugada en H01-H03:
 
-### Finales — alcance
+### Finales — alcance (revisado en esta misma sesión, ver nota más abajo)
 6 finales, contenido propio (no posiciones históricas citadas por
 nombre con pretensión de exactitud de casillas, para no arriesgar una
 atribución incorrecta), cubriendo las categorías fundamentales de
@@ -55,14 +55,41 @@ progresión de dificultad y alternando el bando que entrena Miguel
 1. Peón pasado alejado -- regla del cuadrado (blancas). **CERRADO S4.**
 2. Rey y peón vs rey -- oposición y escolta del rey al peón (blancas).
    **CERRADO S4.**
-3. Torre y peón vs torre -- técnica de "construir el puente" (blancas)
-   -- pendiente.
-4. Torre y peón vs torre -- defensa por la tercera fila (negras) --
-   pendiente.
+3. Mate elemental con torre -- técnica de la caja (blancas). **CERRADO
+   S4 -- sustituye a "torre y peón vs torre: construir el puente".**
+4. Mate elemental con dama -- acorralar sin ahogar (blancas).
+   **CERRADO S4 -- sustituye a "torre y peón vs torre: defensa por la
+   tercera fila".**
 5. Final de alfiles de distinto color -- defender con inferioridad
-   material (negras) -- pendiente.
+   material (negras) -- pendiente, alcance a revisar (ver nota).
 6. Final de caballos -- triangulación y zugzwang (blancas) --
-   pendiente.
+   pendiente, alcance a revisar (ver nota).
+
+**Nota sobre la revisión de items 3 y 4 (misma sesión S4):** el diseño
+original citaba "construir el puente" (técnica tipo Lucena) y "defensa
+por la tercera fila" (técnica tipo Philidor), ambas con resistencia
+real del bando defensor (torre negra activa creando jaques/bloqueos).
+Al intentar construir esas líneas a mano, Claude encontró más de una
+vez recursos tácticos reales para negras que invalidaban la secuencia
+planeada (p. ej. una torre negra capturando gratis la torre blanca en
+una variante, o un rey negro escapando de un supuesto mate que en
+realidad no lo era) -- `chess.js` solo verifica legalidad de jugadas,
+nunca solidez táctica ni si una jugada es realmente la mejor defensa,
+así que no hay forma de garantizar sin motor de análisis que una línea
+de resistencia inventada de memoria sea correcta en cada paso. Un mate
+elemental (rey solo enfrente, sin pieza defensora) no tiene ese
+problema: no hay contrajuego posible, así que toda la secuencia se
+pudo explorar y verificar de forma interactiva con `chess.js` real
+-- en cada jugada se comprobaron las jugadas legales de negras
+disponibles, y en la jugada final se comprobó explícitamente
+`isCheckmate() === true` y `isStalemate() === false` (esto último
+importante: una primera versión de "mate con dama" resultó ser
+ahogado real, detectado y corregido antes de escribirse en
+`finales.js`). Items 5 y 6 (alfiles, caballos) tienen el mismo
+problema potencial que 3 y 4 si se plantean con resistencia real del
+bando defensor -- se revisará su planteamiento concreto (posiblemente
+como técnica de conversión sin pieza defensora rival, en vez de un
+final con ambos bandos armados) al llegar a ese bloque.
 
 Formato de explicación por jugada: **idéntico** al de las líneas
 (`idea`/`ventaja`/`debilidad` por jugada) -- se reutiliza tal cual, sin
@@ -103,11 +130,16 @@ para evitar colisión).
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Redactar los 4 finales restantes (torres x2, alfiles, caballos),
-   con el mismo rigor de verificación: toda secuencia SAN pasa por
+1. Redactar los 2 finales restantes (alfiles, caballos), revisando
+   primero si plantearlos con resistencia real del bando defensor es
+   viable de verificar a mano (ver nota de revisión más arriba) o si
+   conviene adaptarlos también a un formato sin pieza defensora rival.
+   Mismo rigor de verificación: toda secuencia SAN pasa por
    `node verify.js "..."` con chess.js real antes de escribirse en
-   `finales.js`. Commit tras cerrar cada lote, sin acumular trabajo
-   sin commitear.
+   `finales.js`; si hay contrajuego real posible, explorar de forma
+   interactiva con el script de exploración (comprobando jugadas
+   legales paso a paso) en vez de simular de memoria. Commit tras
+   cerrar cada lote, sin acumular trabajo sin commitear.
 2. Redactar los 10 problemas de `PROBLEMS.md`/estructura de datos
    nueva (a definir el nombre de fichero al llegar a este bloque) y
    construir el modo de verificación multi-jugada en `BoardActivity`/

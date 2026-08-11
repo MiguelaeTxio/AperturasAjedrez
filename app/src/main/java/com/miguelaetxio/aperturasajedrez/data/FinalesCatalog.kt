@@ -28,8 +28,20 @@ object FinalesCatalog {
             id = "h04-final-oposicion-escolta",
             title = "Rey y peón vs rey -- oposición y escolta del rey",
             subtitle = "Con blancas -- técnica de conversión, final de peones"
+        ),
+        FinalEntry(
+            id = "h04-final-mate-torre",
+            title = "Mate elemental con torre -- la técnica de la caja",
+            subtitle = "Con blancas -- técnica básica, rey y torre vs rey solo"
+        ),
+        FinalEntry(
+            id = "h04-final-mate-dama",
+            title = "Mate elemental con dama -- acorralar sin ahogar",
+            subtitle = "Con blancas -- técnica básica, rey y dama vs rey solo"
         )
-        // Pendientes (ver ANNEX_H04.md, HOJA DE RUTA): torre y peon vs
-        // torre (x2), alfiles de distinto color, caballos.
+        // Pendientes (ver ANNEX_H04.md, HOJA DE RUTA): finales con
+        // resistencia real del bando defensor (alfiles, caballos,
+        // torre y peon vs torre con contrajuego) -- alcance revisado
+        // en S4, ver "DISENO CERRADO (S4), revision".
     )
 }
