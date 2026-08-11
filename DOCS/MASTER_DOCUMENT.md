@@ -79,10 +79,11 @@ progreso) queda pendiente de definir con Miguel Ángel.
 
 ## 3. Hoja de Ruta Estratégica
 
-### Hito 01 — Fundamentos y repertorio base (EN PROGRESO)
+### Hito 01 — Fundamentos y repertorio base (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`)
 
-### Hito 02 — Repertorio completo de blancas y escandinava completa (PENDIENTE)
+### Hito 02 — Repertorio completo de blancas y escandinava completa (EN PROGRESO)
+(Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H02.md`)
 Todas las variantes del Gambito de Dama con blancas (Aceptado,
 Rehusado, Eslava...) y todas las variantes de la escandinava con
 negras contra 1.e4.

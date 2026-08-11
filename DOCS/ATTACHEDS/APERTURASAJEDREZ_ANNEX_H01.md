@@ -155,12 +155,26 @@ actualizaciones. Decisiones cerradas:
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Confirmar que `RELEASES_REPO_TOKEN` está añadido y que el
-   workflow publica correctamente en `AperturasAjedrezReleases`
-   (verificar Release + `manifest.json` + asset `AperturasAjedrez.apk`).
-2. Verificar en dispositivo real el flujo completo de este bloque:
-   menú → selector → tablero con explicaciones tras cada jugada →
-   Ajustes → buscar actualización → instalar.
-3. Redactar variantes adicionales del repertorio de blancas y la
-   escandinava completa de negras (Hito 02), reutilizando el selector
-   y el formato de explicación ya cerrados en este bloque.
+~~1. Confirmar que `RELEASES_REPO_TOKEN` está añadido...~~ — cerrado
+en S1: token regenerado sin caducidad tras dos intentos fallidos
+(caducidad heredada de 1 día, luego repo `AperturasAjedrezReleases`
+vacío sin rama por defecto), workflow verificado en verde de punta a
+punta (build → PythonAnywhere → Release + `manifest.json`).
+
+~~2. Verificar en dispositivo real...~~ — cerrado en S1, confirmado
+por Miguel Ángel ("todo bien") tras la primera instalación manual
+(obligatoria por ser la primera vez, sin app previa que compruebe
+actualizaciones).
+
+~~3. Redactar variantes adicionales...~~ — pasa a ser el contenido
+íntegro del Hito 02, ver `APERTURASAJEDREZ_ANNEX_H02.md`.
+
+## CIERRE DEL HITO (S1)
+
+Hito 01 dado por completado en S1: mecanizado de entrenamiento
+verificado en dispositivo real (jugada → validación → feedback,
+3 fallos → revelación bloqueante, resalte de casillas, registro de
+progreso), navegación completa (menú → selector → tablero → ajustes),
+explicaciones de jugada, y sistema de actualizaciones end-to-end
+funcionando. El hito EN PROGRESO pasa a Hito 02 — ver
+`MASTER_DOCUMENT.md` §3 y `APERTURASAJEDREZ_ANNEX_H02.md`.
