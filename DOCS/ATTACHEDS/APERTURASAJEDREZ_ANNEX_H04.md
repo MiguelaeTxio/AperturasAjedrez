@@ -35,35 +35,83 @@ el cierre de H03 en S3:
   salvo que Miguel Ángel decida un criterio distinto para problemas
   (p. ej. no tiene sentido un contador de "fallos seguidos con
   diálogo bloqueante" en un problema suelto de mate en 2).
-- **Alcance exacto pendiente de definir con Miguel Ángel** (qué
-  finales, cuántos problemas, cómo se integran en el menú) — ver
-  `MASTER_DOCUMENT.md` §3, tal cual quedó acordado en el cierre de
-  H02. No se ha concertado ningún detalle adicional en la sesión de
-  apertura de este hito (S3): el PCH se limitó a mover el marcador de
-  `EN PROGRESO`, sin sesión de diseño todavía.
+
+## DISEÑO CERRADO (S4)
+
+Miguel Ángel delegó explícitamente el diseño pedagógico completo de
+este hito en Claude ("el experto en pedagogía ajedrecística eres tú"),
+sin sesión de cierre de alcance punto por punto. Decisiones tomadas
+con criterio ajedrecístico propio, mismo patrón ya usado para redactar
+las explicaciones de jugada en H01-H03:
+
+### Finales — alcance
+6 finales, contenido propio (no posiciones históricas citadas por
+nombre con pretensión de exactitud de casillas, para no arriesgar una
+atribución incorrecta), cubriendo las categorías fundamentales de
+técnica de conversión/defensa que todo jugador de club necesita, en
+progresión de dificultad y alternando el bando que entrena Miguel
+Ángel (para practicar tanto conversión como defensa):
+
+1. Peón pasado alejado -- regla del cuadrado (blancas). **CERRADO S4.**
+2. Rey y peón vs rey -- oposición y escolta del rey al peón (blancas).
+   **CERRADO S4.**
+3. Torre y peón vs torre -- técnica de "construir el puente" (blancas)
+   -- pendiente.
+4. Torre y peón vs torre -- defensa por la tercera fila (negras) --
+   pendiente.
+5. Final de alfiles de distinto color -- defender con inferioridad
+   material (negras) -- pendiente.
+6. Final de caballos -- triangulación y zugzwang (blancas) --
+   pendiente.
+
+Formato de explicación por jugada: **idéntico** al de las líneas
+(`idea`/`ventaja`/`debilidad` por jugada) -- se reutiliza tal cual, sin
+formato adaptado especial para finales.
+
+### Problemas — alcance (diseño cerrado, contenido pendiente)
+10 problemas de posición suelta + solución corta (1-3 jugadas),
+clasificados por tema: horquilla, clavada, ataque a la descubierta,
+desviación, atracción, doble ataque de torre, mate en 1, mate en 2,
+sobrecarga, promoción forzada. Verificación: secuencia completa de la
+solución (todas las jugadas, propias y de respuesta forzada) validada
+con `chess.js` real vía `verify.js`, no solo la primera jugada. Tras
+fallar: se reutiliza el mismo diálogo bloqueante de 3 fallos ("torpe
+como una oruga") ya existente -- decisión tomada para no introducir un
+mecanismo nuevo de UI cuando el ya existente cubre la necesidad sin
+cambios.
+
+### Integración en el menú (CERRADO S4, implementado)
+"Entrenar" pasa a abrir una pantalla intermedia de categoría
+(`CategorySelectorActivity`) con tres opciones: Líneas / Finales /
+Problemas. Líneas y Finales reutilizan `OpeningSelectorActivity` con
+un catálogo distinto según la categoría elegida (`RepertoireCatalog`
+vs `FinalesCatalog`, nuevo); Problemas queda como opción deshabilitada
+("Próximamente") hasta que se implemente su modo propio de
+verificación multi-jugada.
+
+### Arquitectura de motor (CERRADO S4, implementado)
+`game.js` (compartido, sin duplicar) ahora admite un campo opcional
+`startFen` por línea: si está presente, `new window.Chess(startFen)` y
+`board.position(startFen)` en vez de la posición inicial estándar. Las
+líneas de apertura no llevan `startFen` (usan la posición inicial por
+defecto, sin cambios). Los finales viven en `finales.js`
+(`FINALES_LINES`), array nuevo con la misma estructura de objeto que
+`REPERTOIRE_LINES`; `findLine()` en `game.js` busca en la concatenación
+de ambos arrays por `id`, sin necesidad de parámetro de categoría en
+la URL del WebView (los ids de finales llevan el prefijo `h04-final-`
+para evitar colisión).
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. **Sesión de diseño (obligatoria antes de escribir código)**, según
-   el patrón ya establecido en el proyecto ("diseño primero, código
-   después"): cerrar con Miguel Ángel, para ambos bloques:
-   - Finales: cuántos, cuáles (fase de peones, torres, finales de
-     piezas menores...), con qué bando entrena Miguel Ángel en cada
-     uno, profundidad de la explicación por jugada (mismo formato
-     idea/ventaja/debilidad que en las líneas, o uno adaptado a
-     finales).
-   - Problemas: cuántos, clasificación por tema, cómo se verifica que
-     la solución es correcta (chess.js validando la secuencia
-     completa de la solución, no solo la primera jugada), qué pasa
-     tras fallar (mismo diálogo bloqueante de 3 fallos que en líneas,
-     o mecánica propia de problemas).
-   - Integración en el menú: si "Entrenar" pasa a tener 3 opciones
-     (Líneas / Finales / Problemas) o si se abre una entrada nueva en
-     `MenuActivity`.
-2. Una vez cerrado el diseño, redactar el primer lote de contenido
-   (finales o problemas, el que Miguel Ángel priorice primero) con el
-   mismo rigor de verificación ya establecido en H01-H03: toda
-   secuencia SAN pasa por `node verify.js "..."` con chess.js real
-   antes de escribirse en el repertorio.
-3. Commit + build en verde tras cada lote cerrado, sin acumular
-   trabajo sin commitear — mismo criterio que H03.
+1. Redactar los 4 finales restantes (torres x2, alfiles, caballos),
+   con el mismo rigor de verificación: toda secuencia SAN pasa por
+   `node verify.js "..."` con chess.js real antes de escribirse en
+   `finales.js`. Commit tras cerrar cada lote, sin acumular trabajo
+   sin commitear.
+2. Redactar los 10 problemas de `PROBLEMS.md`/estructura de datos
+   nueva (a definir el nombre de fichero al llegar a este bloque) y
+   construir el modo de verificación multi-jugada en `BoardActivity`/
+   `game.js` (o una `Activity` nueva si el modo de líneas/finales no
+   encaja sin forzarlo).
+3. Habilitar la opción "Problemas" en `CategorySelectorActivity` una
+   vez tenga contenido y motor propio.

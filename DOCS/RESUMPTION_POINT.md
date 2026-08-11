@@ -6,19 +6,18 @@ sección de problemas (`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`)
 ## Próximos pasos concretos
 
 Ver "HOJA DE RUTA PARA LA SIGUIENTE SESIÓN" en el anexo del Hito 04 —
-no se duplica aquí. Resumen de una línea: H04 se abrió en S3 sin
-sesión de diseño todavía; el primer paso obligatorio de la siguiente
-sesión es cerrar con Miguel Ángel el alcance de finales y problemas
-(cuántos, cuáles, cómo se integran en el menú) antes de escribir
-ningún contenido nuevo.
+no se duplica aquí. Resumen de una línea: el diseño completo de H04
+(finales y problemas) se cerró en S4 con criterio propio de Claude a
+petición explícita de Miguel Ángel; quedan 4 finales y los 10
+problemas por redactar, en lotes verificados con `verify.js`.
 
 ## Decisiones/incidencias pendientes de confirmar con Miguel Ángel que no son hoja de ruta técnica
 
-Ninguna pendiente de momento. H03 se cerró en S3 sin prueba en
-dispositivo (directriz explícita de Miguel Ángel: las builds se
-commitean, no se prueban en el móvil hasta el cierre completo del
-hito). El alcance de H04 sigue sin definir en detalle -- ver
-`MASTER_DOCUMENT.md` §3 y `ANNEX_H04.md`, sección CONTEXTO TÉCNICO.
+Ninguna pendiente. H03 se cerró en S3 sin prueba en dispositivo
+(directriz explícita de Miguel Ángel: las builds se commitean, no se
+prueban en el móvil hasta el cierre completo del hito). El diseño de
+H04 quedó cerrado en S4 -- ver `ANNEX_H04.md`, sección "DISEÑO CERRADO
+(S4)".
 
 ## Nota de contexto
 
