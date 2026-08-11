@@ -6,25 +6,27 @@ aperturas de blancas (`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H03.md`)
 ## Próximos pasos concretos
 
 Ver "HOJA DE RUTA PARA LA SIGUIENTE SESIÓN" en el anexo del Hito 03 —
-no se duplica aquí. Resumen de una línea: cerrar con Miguel Ángel el
-alcance concreto de H03 (qué aperturas de blancas distintas de 1.e4 y
-del Gambito de Dama cubrir, y con qué profundidad) antes de redactar
-ninguna línea nueva.
+no se duplica aquí. Resumen de una línea: las 5 familias del alcance
+quedaron completas en S2 (una línea por familia como mínimo); la
+siguiente sesión decide con Miguel Ángel entre probar en dispositivo,
+ampliar profundidad de alguna familia, o dar H03 por completado y
+abrir el Hito 04 vía PCH.
 
 ## Decisiones/incidencias pendientes de confirmar con Miguel Ángel que no son hoja de ruta técnica
 
-Alcance exacto de Hito 03 (qué aperturas, en qué orden) — es lo único
-que bloquea empezar a redactar líneas. Nada más pendiente de momento;
-Hito 04 (finales de partida + problemas de ajedrez) ya está acordado
-en líneas generales mientras llega su turno, ver `MASTER_DOCUMENT.md`
-§3.
+Ninguna pendiente de momento. El alcance de H03 quedó cerrado en S2
+(ver anexo). Hito 04 (finales de partida + problemas de ajedrez) ya
+está acordado en líneas generales mientras llega su turno, ver
+`MASTER_DOCUMENT.md` §3.
 
 ## Nota de contexto
 
-Hito 01 y Hito 02 completados en S1: mecanizado de entrenamiento,
-navegación completa, explicaciones de jugada, sistema de
-actualizaciones (H01), y 17 líneas verificadas cubriendo a fondo las
-familias Gambito de Dama y Escandinava (H02), todo con build en
-verde de principio a fin en cada bloque. Ver el detalle completo en
-`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md` y
-`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H02.md`.
+Hito 01 y Hito 02 completados en S1 (17 líneas, Gambito de Dama +
+Escandinava). En S2 se cerró el alcance de Hito 03 y se redactaron las
+8 líneas de sus 5 familias (Londres, Inglesa+Catalán, Reti,
+Trompowsky, Larsen+Bird), todas verificadas con chess.js y con build
+en verde tras cada lote. Repertorio total: 25 líneas. Ver el detalle
+completo en `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`,
+`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H02.md` y
+`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H03.md`.
+
