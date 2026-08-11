@@ -2,6 +2,42 @@
 
 ## COMPLETADAS
 
+### COMPLETADAS EN S3
+
+- **Decisión de cierre de H03 sin prueba en dispositivo**: por
+  directriz explícita de Miguel Ángel (repetida en esta sesión), H03
+  se cierra sin pasar por prueba en móvil de las 9 líneas del hito;
+  las builds se commitean y verifican en verde vía GitHub Actions, la
+  validación en dispositivo real queda fuera del criterio de cierre.
+- **Criterio de profundidad y cobertura resuelto por Claude** (rol de
+  experto ajedrecístico, según instrucción explícita de Miguel Ángel
+  de que esa decisión corresponde al modelo): comparando la
+  profundidad media de las 8 líneas de S2 (~15,6 semijugadas) contra
+  la de H01/H02 (~12 semijugadas), se concluyó que no hace falta
+  ampliar profundidad en ninguna familia ya cubierta. Se detectó un
+  hueco real de **cobertura** (no de profundidad) en el bloque
+  Inglesa: faltaba la Inglesa Simétrica pura (1.c4 c5), la respuesta
+  más jugada en la práctica contra 1.c4 a todos los niveles, no
+  cubierta por las líneas ya existentes de Siciliana Inversa (...e5)
+  ni por el Catalán.
+- **Novena línea añadida**: `h03-inglesa-simetrica` — Inglesa,
+  respuesta simétrica pura con doble fianchetto (1.c4 c5 Nf3 Nf6 g3
+  g6 Bg2 Bg7 Nc3 Nc6 O-O O-O d4 cxd4 Nxd4 Nxd4 Qxd4 d6, 18
+  semijugadas), con `explain` idea/ventaja/debilidad por jugada,
+  mismo formato que el resto de H03. Añadida a `repertoire.js` y a su
+  entrada correspondiente en `RepertoireCatalog.kt`.
+- **Verificación**: secuencia SAN verificada con chess.js (`node
+  verify.js`), tanto de forma aislada como extraída directamente del
+  archivo tras la edición. Sincronía de ids comprobada entre
+  `repertoire.js` y `RepertoireCatalog.kt`: 26 líneas totales, sin
+  duplicados, coincidencia 1:1.
+- **Build en verde** en GitHub Actions tras el commit y push de la
+  novena línea, confirmado vía API REST con el token de sesión.
+- **H03 dado por completado** con Miguel Ángel (PCH) tras esta
+  decisión — repertorio total tras H03: **26 líneas** (17 de
+  H01/H02 + 9 de H03). Se abre el Hito 04 (ver
+  `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`).
+
 ### COMPLETADAS EN S2
 
 - **Alcance de H03 cerrado con Miguel Ángel**: 5 familias y orden de
@@ -75,21 +111,20 @@ H01/H02, sin límite fijo predefinido — se cubre lo necesario para
 que la línea tenga sentido práctico y una explicación completa por
 jugada.
 
-## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
+## HITO CERRADO — SIN HOJA DE RUTA PENDIENTE
 
-Las 5 familias del alcance de H03 quedaron completas en S2 con al
-menos una línea cada una. Opciones para la siguiente sesión, a
-decidir con Miguel Ángel:
+Los tres puntos que quedaron abiertos al cierre de S2 se resolvieron
+en S3:
 
-1. **Prueba en dispositivo real** de las 8 líneas nuevas de H03 —
-   pendiente desde S2, ningún bloque se probó en el móvil todavía.
-2. **Ampliar profundidad** de alguna familia ya cubierta con líneas
-   adicionales (por ejemplo, una segunda línea de Reti transponiendo
-   a Catalán, o una variante más agresiva de Trompowsky vía ...Ne4),
-   si Miguel Ángel considera que una sola línea por familia es
-   insuficiente tras probarlas.
-3. Si ambos puntos anteriores se cierran satisfactoriamente, **valorar
-   con Miguel Ángel si H03 se da por completado** y se abre el Hito 04
-   (finales de partida y problemas de ajedrez, ya acordado en líneas
-   generales — ver `MASTER_DOCUMENT.md` §3) vía PCH.
+1. **Prueba en dispositivo real** — descartada como criterio de
+   cierre por directriz explícita de Miguel Ángel; no forma parte del
+   proceso de validación de este hito.
+2. **Ampliar profundidad** — resuelto por Claude (rol de experto
+   ajedrecístico): las líneas ya superaban el estándar de H01/H02, no
+   hacía falta profundidad adicional; se detectó y corrigió en su
+   lugar un hueco de cobertura (Inglesa Simétrica pura), ya cerrado
+   con la novena línea.
+3. **Cierre de H03 y apertura de H04** — hecho vía PCH en S3. Ver
+   `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md` para la hoja de
+   ruta del nuevo hito activo.
 

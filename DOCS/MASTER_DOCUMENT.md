@@ -88,14 +88,16 @@ Todas las variantes del Gambito de Dama con blancas (Aceptado,
 Rehusado, Eslava...) y todas las variantes de la escandinava con
 negras contra 1.e4.
 
-### Hito 03 — Defensas de negras contra el resto de aperturas de blancas (EN PROGRESO)
+### Hito 03 — Defensas de negras contra el resto de aperturas de blancas (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H03.md`)
 Cobertura de las defensas más habituales contra cualquier primera
 jugada de blancas que no sea 1.e4, empezando por las más jugadas en
-la práctica. Alcance y orden a definir con Miguel Ángel al llegar
-a este hito.
+la práctica. 9 líneas finales cubriendo las 5 familias del alcance
+(Londres, Inglesa+Catalán, Reti, Trompowsky, flancos menores), todas
+por encima de la profundidad media de H01/H02.
 
-### Hito 04 — Entrenamiento de finales de partida y sección de problemas (PENDIENTE)
+### Hito 04 — Entrenamiento de finales de partida y sección de problemas (EN PROGRESO)
+(Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`)
 Acordado con Miguel Ángel al cierre de Hito 02, para después de
 Hito 03. Dos bloques nuevos de contenido, reutilizando la mecánica de
 entrenamiento existente donde encaje:
