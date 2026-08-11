@@ -11,17 +11,34 @@
     return params.get('line')
   }
 
+  // H04: los finales viven en un array nuevo (finales.js, cargado
+  // antes que este fichero) para no mezclar contenido de lineas y de
+  // finales en el mismo fichero. Se buscan por id en la concatenacion
+  // de ambos -- sin parametro de categoria en la URL, los ids de
+  // finales llevan el prefijo "h04-final-" para evitar colision (ver
+  // ANNEX_H04.md, "DISENO CERRADO (S4)").
+  function allLines () {
+    return REPERTOIRE_LINES.concat(
+      typeof FINALES_LINES !== 'undefined' ? FINALES_LINES : []
+    )
+  }
+
   function findLine (id) {
-    for (var i = 0; i < REPERTOIRE_LINES.length; i++) {
-      if (REPERTOIRE_LINES[i].id === id) return REPERTOIRE_LINES[i]
+    var lines = allLines()
+    for (var i = 0; i < lines.length; i++) {
+      if (lines[i].id === id) return lines[i]
     }
-    return REPERTOIRE_LINES[0]
+    return lines[0]
   }
 
   var line = findLine(selectedLineId())
   var userColor = line.userColor || 'w'
   var opponentColor = userColor === 'w' ? 'b' : 'w'
-  var game = new window.Chess()
+  // H04: si la linea trae "startFen" (finales), la partida arranca
+  // desde esa posicion en vez de la inicial estandar. Las lineas de
+  // apertura no llevan este campo -- comportamiento identico al de
+  // antes de H04.
+  var game = line.startFen ? new window.Chess(line.startFen) : new window.Chess()
   var board = null
   var moveIndex = 0 // indice de la proxima jugada esperada en line.moves
   var attemptsThisMove = 0
@@ -201,10 +218,14 @@
   }
 
   function restartLine () {
-    game.reset()
+    if (line.startFen) {
+      game.load(line.startFen)
+    } else {
+      game.reset()
+    }
     moveIndex = 0
     attemptsThisMove = 0
-    board.position('start')
+    board.position(line.startFen || 'start')
     beginLine()
   }
 
@@ -215,7 +236,7 @@
 
     board = window.Chessboard('board', {
       draggable: true,
-      position: 'start',
+      position: line.startFen || 'start',
       orientation: userColor === 'b' ? 'black' : 'white',
       pieceTheme: 'img/chesspieces/wikipedia/{piece}.png',
       onDragStart: onDragStart,

@@ -11,7 +11,7 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         findViewById<Button>(R.id.trainButton).setOnClickListener {
-            startActivity(Intent(this, OpeningSelectorActivity::class.java))
+            startActivity(Intent(this, CategorySelectorActivity::class.java))
         }
         findViewById<Button>(R.id.settingsButton).setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))

@@ -12,4 +12,8 @@
     <string name="settings_download_complete">Descarga completa.</string>
     <string name="settings_install_update">Instalar</string>
     <string name="settings_grant_install_permission">Concede el permiso y vuelve a pulsar Instalar.</string>
+    <string name="category_title">Elige categoría</string>
+    <string name="category_lines">Líneas</string>
+    <string name="category_endgames">Finales</string>
+    <string name="category_problems_soon">Problemas (próximamente)</string>
 </resources>
