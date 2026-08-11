@@ -17,8 +17,12 @@
   principales de negras contra 2.c4 dentro de la familia Gambito de
   Dama; Escandinava Moderna (2...Nf6) añade la segunda rama principal
   de la familia escandinava.
-- Las 9 líneas totales verificadas jugada a jugada con chess.js antes
-  de escribirlas.
+- Tercer lote: Defensa Ortodoxa clásica (...Nbd7, plan Bg5-Nf3),
+  Defensa Báltica (2...Bf5) y Defensa Simétrica (2...c5) completan la
+  familia Gambito de Dama; Escandinava con retirada moderna 3...Qd6
+  añade la tercera línea de la familia escandinava.
+- Las 13 líneas totales verificadas jugada a jugada con chess.js
+  antes de escribirlas.
 - Selector nativo (`RepertoireCatalog.kt`) actualizado con las 4
   entradas nuevas, mismos ids que `repertoire.js`.
 

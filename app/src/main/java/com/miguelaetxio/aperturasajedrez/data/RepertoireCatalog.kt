@@ -64,6 +64,26 @@ object RepertoireCatalog {
             id = "h02-escandinava-moderna",
             title = "Escandinava Moderna",
             subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Nf6"
+        ),
+        OpeningEntry(
+            id = "h02-ortodoxa-clasica",
+            title = "Defensa Ortodoxa -- linea clasica",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7"
+        ),
+        OpeningEntry(
+            id = "h02-defensa-baltica",
+            title = "Defensa Baltica",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 Bf5"
+        ),
+        OpeningEntry(
+            id = "h02-defensa-simetrica",
+            title = "Defensa Simetrica",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 c5"
+        ),
+        OpeningEntry(
+            id = "h02-escandinava-qd6",
+            title = "Escandinava -- retirada moderna 3...Qd6",
+            subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd6"
         )
     )
 }

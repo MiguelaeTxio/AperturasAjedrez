@@ -1085,6 +1085,490 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h02-ortodoxa-clasica',
+    name: 'Defensa Ortodoxa -- linea clasica',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: el plan mas tradicional y solido ' +
+      'de todos contra el Rehusado. Negras desarrolla el caballo de dama ' +
+      'por d7 (en vez de jugar la Variante de Cambio o transponer a la ' +
+      'Eslava), y blancas responde con el desarrollo clasico Bg5-Nf3, ' +
+      'reservando la torre para la columna c y el plan de minoria de ' +
+      'peones para mas adelante en el medio juego.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Gambito de Dama Rehusado: sostiene d5 sin capturar, abriendo la diagonal de su alfil de rey.',
+          ventaja: 'Posicion solida y flexible, la mas fiable estadisticamente para negras contra 1.d4.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones e6-d5.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza y refuerza el control sobre d5, dejando abierta la decision de si cambiar en d5 mas adelante.',
+          ventaja: 'Pieza activa que apoya un futuro Bg5 y mantiene la tension central.',
+          debilidad: 'Ninguna relevante en este orden de jugadas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg5',
+        explain: {
+          idea: 'Clava el caballo de f6 contra la dama, la jugada mas caracteristica de todo el plan clasico contra el Rehusado.',
+          ventaja: 'Pieza activa fuera de la cadena de peones antes de que quede encerrada.',
+          debilidad: 'Ninguna inmediata; jugada estandar de la Defensa Ortodoxa.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nbd7',
+        explain: {
+          idea: 'Defensa Ortodoxa clasica: desarrolla el caballo de dama por d7 en vez de romper la clavada de inmediato, preparando recapturar en f6 con la pieza si hace falta.',
+          ventaja: 'Desarrollo solido y flexible que mantiene varias opciones (...Be7, ...h6, ...c6) abiertas para mas adelante.',
+          debilidad: 'Deja la clavada sin resolver un turno mas, aunque no supone ningun riesgo inmediato.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Abre la diagonal del alfil de rey y refuerza d4, preparando el desarrollo del resto de piezas menores.',
+          ventaja: 'Jugada solida y flexible que deja varias opciones abiertas (Nf3, Bd3 o Be2, Rc1).',
+          debilidad: 'Encierra temporalmente al propio alfil de casillas claras de blancas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Be7',
+        explain: {
+          idea: 'Rompe la clavada preparando el enroque, ya con el caballo de dama desarrollado en d7 como apoyo.',
+          ventaja: 'Desarrollo solido y completo, listo para enrocar en la siguiente jugada.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.',
+          ventaja: 'Jugada solida que completa el desarrollo antes de decidir el plan de medio juego.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-defensa-baltica',
+    name: 'Defensa Baltica',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: negras saca el alfil de casillas ' +
+      'claras antes que nada, evitando por completo el problema ' +
+      'estructural tipico del Rehusado, a costa de ceder tiempo y de ' +
+      'exponer el alfil a ser atacado pronto. Blancas responde con un ' +
+      'plan de desarrollo natural y ganancia de tiempo con Qb3, ' +
+      'apuntando tanto al alfil como al flanco de dama de negras.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bf5',
+        explain: {
+          idea: 'Defensa Baltica: saca el alfil de casillas claras antes que nada, resolviendo de raiz el problema estructural del Rehusado (el alfil encerrado tras ...e6).',
+          ventaja: 'Pieza activa colocada fuera de la cadena de peones desde el principio, sin depender de ningun orden de jugadas posterior.',
+          debilidad: 'Pierde un tiempo de desarrollo central y expone el alfil a ser atacado pronto con Qb3 o cxd5, ganando tiempo blancas.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza y refuerza el control sobre d5 antes de decidir el plan concreto contra el alfil.',
+          ventaja: 'Pieza activa que mantiene la tension central sin comprometerse aun.',
+          debilidad: 'Ninguna relevante en este orden de jugadas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Completa el desarrollo del centro y abre la diagonal del alfil de rey, ya con el otro alfil colocado fuera con anterioridad.',
+          ventaja: 'Estructura solida con el problema del alfil de casillas claras ya resuelto de antemano.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla y prepara el enroque corto antes de decidir si atacar el alfil con Qb3.',
+          ventaja: 'Jugada solida y flexible que no compromete nada.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Qb3',
+        explain: {
+          idea: 'Ataca simultaneamente el alfil de f5 (indirectamente, presionando b7) y el peon b7, el plan mas incomodo para negras en la Defensa Baltica.',
+          ventaja: 'Doble amenaza que fuerza a negras a reaccionar con precision, ganando tiempo e iniciativa para blancas.',
+          debilidad: 'Saca la dama pronto, lo que puede dar a negras un tiempo de desarrollo si encuentra la forma de atacarla mas adelante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qc8',
+        explain: {
+          idea: 'Defiende b7 de forma indirecta y mantiene el alfil de f5 protegido, la respuesta mas solida a la amenaza de Qb3.',
+          ventaja: 'Resuelve ambas amenazas de golpe sin conceder ninguna concesion material.',
+          debilidad: 'La dama queda algo pasiva en c8, con menos actividad que si hubiera podido desarrollarse de forma mas natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg5',
+        explain: {
+          idea: 'Clava el caballo de f6 y aumenta la presion sobre el centro, aprovechando la iniciativa ganada con Qb3.',
+          ventaja: 'Pieza activa fuera de la cadena de peones que mantiene la iniciativa de blancas.',
+          debilidad: 'Ninguna inmediata.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c6',
+        explain: {
+          idea: 'Refuerza d5 y prepara ...Nbd7, consolidando la posicion tras las primeras jugadas mas incomodas.',
+          ventaja: 'Jugada solida que estabiliza el centro.',
+          debilidad: 'Jugada algo pasiva que no desarrolla ninguna pieza nueva, dejando a blancas con la iniciativa del planteamiento.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-defensa-simetrica',
+    name: 'Defensa Simetrica (2...c5)',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: negras contraataca de inmediato el ' +
+      'centro con c5 en vez de sostener o capturar en c4, buscando ' +
+      'cambios rapidos y una posicion abierta y dinamica. Blancas ' +
+      'responde cambiando en d5 y desarrollando con naturalidad, ' +
+      'quedando con una ligera ventaja de espacio y desarrollo gracias a ' +
+      'los tiempos que negras pierde recolocando la dama.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Defensa Simetrica: contraataca el centro de blancas en vez de sostener o capturar en c4, buscando cambios inmediatos y una posicion abierta.',
+          ventaja: 'Plan dinamico que evita las estructuras mas conocidas del Rehusado o la Eslava.',
+          debilidad: 'Tras los cambios centrales, la dama de negras puede acabar perdiendo tiempos, similar a lo que ocurre en la Escandinava.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'cxd5',
+        explain: {
+          idea: 'Cambia en el centro antes de que negras pueda definir la estructura a su gusto.',
+          ventaja: 'Fuerza a negras a recapturar, casi siempre con la dama, ganando un tiempo de desarrollo.',
+          debilidad: 'Ninguna; es la continuacion mas fuerte y natural.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qxd5',
+        explain: {
+          idea: 'Recaptura con la dama, la unica pieza disponible de inmediato.',
+          ventaja: 'Recupera el material igualado.',
+          debilidad: 'La dama queda en el centro, expuesta a perder otro tiempo con Nc3 -- el mismo problema estructural que la Escandinava.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla atacando la dama de negras, ganando un tiempo de desarrollo gratis.',
+          ventaja: 'Pieza activa con tiempo ganado, tipico de todas las lineas donde la dama rival sale pronto al centro.',
+          debilidad: 'Ninguna; es la jugada mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qd6',
+        explain: {
+          idea: 'Retira la dama a una casilla segura que mantiene la vista sobre el centro y el flanco de rey.',
+          ventaja: 'Casilla razonablemente activa y segura para la dama.',
+          debilidad: 'La dama sigue relativamente expuesta y puede volver a perder tiempos mas adelante.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla y prepara el enroque corto, completando con rapidez el desarrollo de piezas menores.',
+          ventaja: 'Jugada solida que mantiene la iniciativa ganada con los tiempos anteriores.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ocupa el centro con el segundo peon central, ganando mucho espacio mientras negras sigue sin completar el desarrollo.',
+          ventaja: 'Centro amplio y fuerte, la compensacion natural de blancas por los tiempos ganados con la dama rival.',
+          debilidad: 'Ninguna relevante; es la continuacion mas ambiciosa y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'cxd4',
+        explain: {
+          idea: 'Cambia el peon de flanco de dama que ya no puede sostener con comodidad, simplificando la estructura central.',
+          ventaja: 'Resuelve la tension en el flanco de dama antes de que blancas la aumente mas.',
+          debilidad: 'Cede aun mas espacio central a blancas, que recuperara el peon con ventaja de desarrollo.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-escandinava-qd6',
+    name: 'Escandinava -- retirada moderna (3...Qd6)',
+    userColor: 'b',
+    overview: 'Familia Escandinava: en vez de retirar la dama a a5, negras ' +
+      'la lleva a d6, una casilla que a primera vista parece rara (tapa ' +
+      'el propio alfil de rey) pero que evita la clavada de Bd2/Nc3 de la ' +
+      'linea con 3...Qa5 y mantiene la dama vigilando la casilla d4. Es ' +
+      'la eleccion mas popular a nivel de elite dentro de toda la familia ' +
+      'escandinava en los ultimos anios.',
+    moves: [
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal de la dama y del alfil de rey.',
+          ventaja: 'Jugada mas popular a todos los niveles, maxima actividad inmediata para las piezas.',
+          debilidad: 'Ninguna real a este nivel.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Escandinava: ataca el peon e4 de inmediato en vez de responder de forma simetrica o cerrada.',
+          ventaja: 'Fuerza a blancas a definir la estructura central en la jugada 2.',
+          debilidad: 'Tras el cambio de peones, la dama de negras tendra que salir pronto y perder algun tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'exd5',
+        explain: {
+          idea: 'Captura el peon ofrecido; casi siempre la respuesta principal.',
+          ventaja: 'Gana un peon de forma momentanea y obliga a negras a recapturar.',
+          debilidad: 'Ninguna; es la continuacion practicamente obligada.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qxd5',
+        explain: {
+          idea: 'Recaptura con la dama, la unica pieza que puede hacerlo de inmediato.',
+          ventaja: 'Recupera el material y desarrolla la dama a una casilla central.',
+          debilidad: 'La dama queda expuesta en el centro, blanco facil para Nc3 con ganancia de tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza atacando la dama de negras, ganando un tiempo de desarrollo gratis.',
+          ventaja: 'Pieza activa con tiempo ganado.',
+          debilidad: 'Ninguna; es la jugada mas natural y fuerte en la posicion.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qd6',
+        explain: {
+          idea: 'Retirada moderna: en vez de ir a a5 (donde puede sufrir una clavada con Bd2), la dama va a d6, vigilando d4 y quedando fuera del alcance de ataques de tiempo inmediatos.',
+          ventaja: 'Evita por completo las ideas de Nd5 y Bd2 con clavada que sufre la linea con 3...Qa5; la eleccion preferida al maximo nivel en los ultimos anios.',
+          debilidad: 'Tapa momentaneamente la diagonal del propio alfil de rey, aunque la dama se reubicara pronto sin perder mas tiempos.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro con el segundo peon central, ganando espacio mientras negras sigue sin completar el desarrollo.',
+          ventaja: 'Centro solido y mucho espacio, la compensacion natural de blancas por el tiempo perdido por negras con la dama.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Empieza el desarrollo de piezas menores, presionando e4 (ya vacio) y preparando el enroque.',
+          ventaja: 'Jugada natural que acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.',
+          ventaja: 'Jugada solida que completa el desarrollo rapido tipico de las lineas contra la Escandinava.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'a6',
+        explain: {
+          idea: 'Jugada tipica de las lineas modernas de la Escandinava: evita Nb5 atacando la dama en d6 y prepara ...b5 mas adelante.',
+          ventaja: 'Previene de forma profilactica la unica idea molesta de blancas contra la dama en d6.',
+          debilidad: 'Jugada algo lenta que no desarrolla ninguna pieza nueva.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, un plan solido y flexible muy popular en las lineas modernas contra la Escandinava.',
+          ventaja: 'El alfil en g2 presionara la larga diagonal y el flanco de dama de negras sin comprometerse con un desarrollo mas directo.',
+          debilidad: 'Cede algo de tiempo mientras negras completa su propio desarrollo.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'b5',
+        explain: {
+          idea: 'Gana espacio en el flanco de dama, tal y como preparaba ...a6, y prepara el desarrollo del alfil de dama por b7.',
+          ventaja: 'Plan activo tipico de las lineas modernas de la Escandinava con 3...Qd6, buscando contrajuego en el flanco de dama.',
+          debilidad: 'Puede debilitar ligeramente las casillas del flanco de dama si blancas encuentra a4 mas adelante, aunque es un riesgo asumido en toda la teoria principal.'
+        }
+      }
+    ]
   }
 ]
 
