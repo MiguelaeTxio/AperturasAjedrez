@@ -8,8 +8,11 @@ sección de problemas (`DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`)
 Ver "HOJA DE RUTA PARA LA SIGUIENTE SESIÓN" en el anexo del Hito 04 —
 no se duplica aquí. Resumen de una línea: el diseño completo de H04
 (finales y problemas) se cerró en S4 con criterio propio de Claude a
-petición explícita de Miguel Ángel; quedan 4 finales y los 10
-problemas por redactar, en lotes verificados con `verify.js`.
+petición explícita de Miguel Ángel; de los 6 finales, 4 ya están
+redactados y verificados con `chess.js` real (regla del cuadrado,
+oposición y escolta del rey, mate elemental con torre, mate elemental
+con dama). Quedan 2 finales (alfiles, caballos -- alcance a revisar,
+ver nota en `ANNEX_H04.md`) y los 10 problemas por redactar.
 
 ## Decisiones/incidencias pendientes de confirmar con Miguel Ángel que no son hoja de ruta técnica
 
