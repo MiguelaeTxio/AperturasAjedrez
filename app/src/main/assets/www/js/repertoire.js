@@ -2388,6 +2388,321 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h03-inglesa-inversa-siciliana',
+    name: 'Inglesa -- respuesta simetrica tipo Siciliana Inversa',
+    userColor: 'b',
+    overview: 'Familia Inglesa: negras responde a 1.c4 con ...e5, tratando ' +
+      'la posicion como una Siciliana con los colores invertidos (negras ' +
+      'ocupa el centro como blancas en la Siciliana normal). Es la ' +
+      'respuesta mas popular y solida contra la Inglesa, con planes muy ' +
+      'conocidos de desarrollo simetrico y lucha por el centro tras el ' +
+      'cambio en d5.',
+    moves: [
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'Apertura Inglesa: ataca d5 desde el flanco sin ocupar el centro con un peon central todavia.',
+          ventaja: 'Maxima flexibilidad; blancas puede transponer a estructuras de d4, a un fianchetto puro, o mantener la lucha en el flanco de dama.',
+          debilidad: 'No ocupa el centro de inmediato, dejando que negras responda con la misma libertad.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e5',
+        explain: {
+          idea: 'Respuesta simetrica que trata la posicion como una Siciliana con colores invertidos, ocupando el centro de inmediato.',
+          ventaja: 'La respuesta mas popular y solida contra la Inglesa, con mucha teoria y planes conocidos.',
+          debilidad: 'Ninguna relevante a este nivel; es la continuacion mas natural y fiable.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza y refuerza el control sobre d5, evitando que negras ocupe esa casilla sin oposicion.',
+          ventaja: 'Pieza activa que prepara g3 y el fianchetto tipico de la Inglesa.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y flexible.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la otra pieza menor del flanco de rey, presionando tambien el centro.',
+          ventaja: 'Pieza activa que prepara g3 y el enroque corto sin comprometerse todavia con d4.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla el ultimo caballo, reforzando el centro de negras y completando el desarrollo simetrico.',
+          ventaja: 'Pieza activa que mantiene la simetria y la solidez de la posicion.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, el plan mas caracteristico de la Apertura Inglesa.',
+          ventaja: 'Alfil muy activo sobre la diagonal larga una vez completado el fianchetto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas tipica del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Rompe la simetria ocupando el centro con el peon de dama, aprovechando que blancas todavia no ha fijado su estructura central.',
+          ventaja: 'Gana espacio en el centro y fuerza a blancas a definir la tension inmediatamente.',
+          debilidad: 'Si blancas cambia en d5, negras debera recapturar con una pieza, cediendo algo de tiempo si blancas encuentra despues Ng5 o similar.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'cxd5',
+        explain: {
+          idea: 'Cambia en el centro antes de que negras pueda sostener la tension a su gusto.',
+          ventaja: 'Fuerza a negras a recapturar con una pieza, ganando tiempo de desarrollo.',
+          debilidad: 'Ninguna; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nxd5',
+        explain: {
+          idea: 'Recaptura con el caballo, la pieza mas natural para hacerlo y la que mas actividad mantiene en el centro.',
+          ventaja: 'Pieza muy activa en el centro del tablero.',
+          debilidad: 'El caballo puede ser blanco de un futuro Bg2 combinado con Nxd5, aunque no es una amenaza inmediata.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg2',
+        explain: {
+          idea: 'Completa el fianchetto, presionando la diagonal larga hacia el flanco de dama de negras.',
+          ventaja: 'Pieza muy activa que apoya la lucha por el centro y prepara el enroque corto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nb6',
+        explain: {
+          idea: 'Retira el caballo de la presion de la diagonal larga a una casilla solida, evitando cambios prematuros.',
+          ventaja: 'Pieza segura que sigue controlando casillas centrales importantes.',
+          debilidad: 'Pierde un tiempo respecto a mantener el caballo en el centro, aunque es la eleccion mas solida.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui blancas puede pensar en d3 y Rb1-b4.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Be7',
+        explain: {
+          idea: 'Desarrolla el alfil de rey a una casilla solida, preparando el enroque corto de inmediato.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd3',
+        explain: {
+          idea: 'Abre la diagonal del alfil de dama y refuerza el centro antes de decidir el plan de flanco de dama.',
+          ventaja: 'Estructura solida y flexible que mantiene varias opciones de plan abiertas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo basico de negras ya esta completo.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h03-catalana',
+    name: 'Inglesa -- Catalan (transposicion via 1.d4 Nf6 2.c4 e6 3.g3 d5)',
+    userColor: 'b',
+    overview: 'Linea propia dentro del bloque Inglesa por su transposicion ' +
+      'natural: blancas combina d4 y c4 con el fianchetto de rey (g3), ' +
+      'una de las armas mas fuertes y modernas a nivel de elite contra ' +
+      'estructuras de dama por su presion constante sobre la diagonal ' +
+      'larga y el flanco de dama de negras. Negras acepta el peon en c4 ' +
+      'y contraataca despues con ...a6 y ...b5 para sostenerlo el mayor ' +
+      'tiempo posible.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con el plan concreto.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural sin definir todavia la estructura de peones central.',
+          ventaja: 'Maxima flexibilidad; negras puede optar por varias estructuras segun lo que juegue blancas.',
+          debilidad: 'Ninguna relevante a este nivel.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'Combina el peon de dama con el ataque en el flanco de dama, ampliando el control central.',
+          ventaja: 'Mayor presencia en el centro y preparacion directa del plan Catalan con g3.',
+          debilidad: 'Cede momentaneamente la exclusividad del centro, igual que en cualquier gambito de dama.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Prepara el desarrollo del alfil de rey y sostiene la posibilidad de jugar ...d5 con una estructura solida.',
+          ventaja: 'Posicion flexible que no compromete nada todavia.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones si se juega d5.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'El Catalan: prepara el fianchetto del alfil de rey en vez del desarrollo clasico con Nc3 o Nf3 primero.',
+          ventaja: 'Alfil muy activo sobre la diagonal larga, presionando d5 y el flanco de dama de negras a largo plazo -- una de las armas modernas mas fuertes a nivel de elite.',
+          debilidad: 'Ninguna inmediata; el plan es lento pero muy solido.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Ocupa el centro antes de que blancas complete el fianchetto, definiendo la estructura tipica del Catalan.',
+          ventaja: 'Estructura solida y conocida, la respuesta mas natural y fiable contra el Catalan.',
+          debilidad: 'El peon de d5 quedara bajo presion constante de el alfil de blancas en g2 durante toda la partida.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg2',
+        explain: {
+          idea: 'Completa el fianchetto, la pieza que define todo el plan Catalan.',
+          ventaja: 'Presion maxima sobre la diagonal larga a1-h8, apuntando hacia d5 y el flanco de dama de negras.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Be7',
+        explain: {
+          idea: 'Desarrolla el alfil de rey a una casilla solida, preparando el enroque corto de inmediato.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey, preparando el enroque corto.',
+          ventaja: 'Jugada solida y flexible que no compromete nada.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan del flanco de dama.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui negras puede pensar en ...dxc4 o ...c6.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo basico del sistema Catalan ya esta completo.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'dxc4',
+        explain: {
+          idea: 'Acepta el peon en c4 en vez de sostener la tension, el plan tipico de negras contra el Catalan (Catalan Aceptado).',
+          ventaja: 'Un peon extra de forma inmediata y sin complicaciones tacticas.',
+          debilidad: 'El peon c4 sera dificil de sostener a largo plazo frente a la presion del alfil de blancas en g2 y una futura Qc2.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Qc2',
+        explain: {
+          idea: 'Ataca indirectamente el peon c4 y prepara recuperarlo con Qxc4, el plan principal de blancas en el Catalan Aceptado.',
+          ventaja: 'Recupera el peon con comodidad y mantiene toda la presion tipica de la estructura Catalan.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'a6',
+        explain: {
+          idea: 'Prepara ...b5 para sostener el peon de mas el mayor tiempo posible, el plan mas combativo de negras en el Catalan Aceptado.',
+          ventaja: 'Intenta conservar el peon extra ganando espacio en el flanco de dama.',
+          debilidad: 'Cede tiempo de desarrollo mientras blancas completa el resto de piezas con ventaja de espacio en el centro.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Qxc4',
+        explain: {
+          idea: 'Recupera el peon antes de que negras complete ...b5, manteniendo la iniciativa.',
+          ventaja: 'Material igualado y dama activa en una casilla central.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'b5',
+        explain: {
+          idea: 'Gana espacio y tiempo atacando la dama de blancas, buscando contrajuego en el flanco de dama pese a no conservar el peon.',
+          ventaja: 'Iniciativa momentanea en el flanco de dama y expansion de espacio.',
+          debilidad: 'Debilita las casillas negras del flanco de dama (c6, c5), un factor a largo plazo que blancas puede explotar en el medio juego.'
+        }
+      }
+    ]
   }
 ]
 
