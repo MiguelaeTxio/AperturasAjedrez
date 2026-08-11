@@ -31,18 +31,18 @@ object FinalesCatalog {
         ),
         FinalEntry(
             id = "h04-final-mate-torre",
-            title = "Mate elemental con torre -- la técnica de la caja",
-            subtitle = "Con blancas -- técnica básica, rey y torre vs rey solo"
+            title = "Mate elemental con torre -- práctica libre",
+            subtitle = "Con blancas -- practica la técnica sin jugada única, rey y torre vs rey solo"
         ),
         FinalEntry(
             id = "h04-final-mate-dama",
-            title = "Mate elemental con dama -- acorralar sin ahogar",
-            subtitle = "Con blancas -- técnica básica, rey y dama vs rey solo"
+            title = "Mate elemental con dama -- práctica libre",
+            subtitle = "Con blancas -- practica la técnica sin jugada única, rey y dama vs rey solo"
         ),
         FinalEntry(
             id = "h04-final-mate-dos-alfiles",
-            title = "Mate con dos alfiles -- caminar en pareja hacia la esquina",
-            subtitle = "Con blancas -- técnica básica, rey y dos alfiles vs rey solo"
+            title = "Mate con dos alfiles -- práctica libre",
+            subtitle = "Con blancas -- practica la técnica sin jugada única, rey y dos alfiles vs rey solo"
         ),
         FinalEntry(
             id = "h04-final-caballo-escolta-peon",

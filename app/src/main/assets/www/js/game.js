@@ -111,6 +111,72 @@
     return moveIndex < line.moves.length ? line.moves[moveIndex] : null
   }
 
+  // H04 (correccion tecnica de mates de torre/dama/dos alfiles): estos
+  // finales no tienen una unica jugada correcta -- se puede acorralar
+  // al rey hacia cualquiera de los dos lados, y el motor de "linea
+  // fija" (jugada esperada exacta) estaba marcando como fallo jugadas
+  // perfectamente validas de la misma tecnica, y aceptando como
+  // "buena" precisamente la jugada mas lenta. La correccion no es
+  // rehacer la linea, es un modo de motor distinto: "practica libre
+  // de tecnica" (line.freeMode === true). En este modo no hay
+  // line.moves ni jugada esperada: el usuario mueve su bando con
+  // total libertad (cualquier jugada legal), el rey rival solitario
+  // se juega solo (una respuesta legal cualquiera, no hay "mejor
+  // defensa" que memorizar), y el motor solo interviene para impedir
+  // el unico error real de la tecnica -- una jugada que ahoga al rey
+  // rival. Nada mas se marca como fallo.
+  function isFreeMode () {
+    return !!line.freeMode
+  }
+
+  function checkGameEndAfterMove () {
+    // Llamar justo despues de cualquier jugada (propia o del rival)
+    // para ver si el bando al que le toca mover ahora esta en jaque
+    // mate o ahogado.
+    if (game.isCheckmate && game.isCheckmate()) return 'mate'
+    if (game.isStalemate && game.isStalemate()) return 'stalemate'
+    return null
+  }
+
+  function playOpponentFreeMove () {
+    var legal = game.moves()
+    if (legal.length === 0) return // no deberia ocurrir, ya se comprobo antes de llamar
+    var pick = legal[Math.floor(Math.random() * legal.length)]
+    var move = game.move(pick)
+    board.position(game.fen())
+    highlightMove(move.from, move.to)
+    setStatus('Tu turno.')
+  }
+
+  function onDropFreeMode (source, target) {
+    var move = game.move({ from: source, to: target, promotion: 'q' })
+    if (move === null) return 'snapback'
+
+    var result = checkGameEndAfterMove()
+
+    if (result === 'mate') {
+      board.position(game.fen())
+      highlightMove(move.from, move.to)
+      setStatus('¡Jaque mate! Tecnica completada.')
+      recordAttempt(true)
+      return
+    }
+
+    if (result === 'stalemate') {
+      // Unico error real de la tecnica: deshacer y avisar, sin
+      // revelar ninguna "jugada correcta" (no existe una unica).
+      game.undo()
+      recordAttempt(false)
+      setStatus('Esa jugada ahoga al rey (se queda sin jugadas legales y no esta en jaque). Prueba otra forma de acorralarlo.')
+      return 'snapback'
+    }
+
+    board.position(game.fen())
+    highlightMove(move.from, move.to)
+    setStatus('El rey negro mueve...')
+    window.setTimeout(playOpponentFreeMove, OPPONENT_PAUSE_MS)
+  }
+
   function setStatus (text) {
     elStatus.textContent = text
   }
@@ -165,6 +231,9 @@
 
   function onDragStart (source, piece) {
     if (game.isGameOver && game.isGameOver()) return false
+    if (isFreeMode()) {
+      return piece.charAt(0) === userColor
+    }
     if (moveIndex >= line.moves.length) return false
     var expected = currentExpected()
     if (!expected || expected.color !== userColor) return false
@@ -173,6 +242,9 @@
   }
 
   function onDrop (source, target) {
+    if (isFreeMode()) {
+      return onDropFreeMode(source, target)
+    }
     var expected = currentExpected()
     if (!expected || expected.color !== userColor) return 'snapback'
 
@@ -215,6 +287,12 @@
   function beginLine () {
     clearHighlights()
     elExplain.innerHTML = ''
+    if (isFreeMode()) {
+      // El bando del usuario siempre empieza en los finales de
+      // practica libre (tiene la ventaja material y la iniciativa).
+      setStatus('Tu turno.')
+      return
+    }
     var expected = currentExpected()
     if (expected && expected.color === opponentColor) {
       setStatus('El motor esta pensando...')

@@ -163,6 +163,39 @@ concatenación de los tres arrays por `id`, sin necesidad de parámetro
 de categoría en la URL del WebView (ids con prefijo `h04-final-` o
 `h04-problema-` para evitar colisión).
 
+### Corrección S4 (sesión posterior): modo "práctica libre de técnica"
+Miguel Ángel detectó un fallo de planteamiento en los finales de mate
+elemental (torre, dama, dos alfiles): la mecánica de "línea fija con
+jugada esperada" (heredada de las líneas de apertura, donde SÍ hay una
+única jugada correcta) es incorrecta para estas técnicas, porque se
+puede acorralar al rey rival hacia cualquiera de los dos lados del
+tablero -- no hay una única jugada buena. El motor estaba marcando
+como fallo jugadas perfectamente válidas de la misma técnica, y
+aceptando como "la buena" precisamente la más lenta.
+
+Corrección: nuevo campo `line.freeMode` en `game.js`. Cuando
+`freeMode === true`, el motor abandona por completo el patrón de
+"jugada esperada": el usuario mueve su bando con total libertad
+(cualquier jugada legal), el rey rival solitario se juega solo (una
+respuesta legal cualquiera entre las disponibles, sin "mejor defensa"
+que memorizar, ya que un rey solo no tiene forma de defenderse
+activamente), y el motor solo interviene para impedir el único error
+real de la técnica: una jugada que ahoga al rey rival (se detecta con
+`chess.isStalemate()` tras la jugada; si ocurre, se deshace y se avisa
+sin revelar ninguna "jugada correcta", porque no existe una única).
+Al llegar a jaque mate se registra acierto; cada ahogado bloqueado
+cuenta como fallo -- se reutiliza `AndroidBridge.recordAttempt` tal
+cual, sin cambios en Kotlin. No se reutiliza el diálogo "torpe como
+una oruga" (es específico de revelar una jugada esperada única, que
+aquí no existe).
+
+Los 3 finales de mate elemental (torre, dama, dos alfiles) pasan a
+`freeMode: true`, con arrays `moves` eliminados. Los otros 3 finales
+(regla del cuadrado, oposición y escolta del rey, caballo escoltando
+un peón) mantienen el formato de línea fija -- son carreras/técnicas
+de conversión con una progresión única razonable, sin la ambigüedad
+de "qué lado elegir" que sí tienen los mates con pieza mayor/menor.
+
 ## HITO 04 CERRADO EN CONTENIDO (S4)
 
 Los 6 finales y los 10 problemas quedan completos, verificados con
