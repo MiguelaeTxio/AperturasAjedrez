@@ -2547,6 +2547,180 @@ var REPERTOIRE_LINES = [
     ]
   },
   {
+    id: 'h03-inglesa-simetrica',
+    name: 'Inglesa -- respuesta simetrica pura con doble fianchetto (1.c4 c5)',
+    userColor: 'b',
+    overview: 'Familia Inglesa: negras responde a 1.c4 con ...c5, manteniendo ' +
+      'la simetria total en el flanco de dama en vez de ocupar el centro ' +
+      'como en la Siciliana Inversa. Es, en la practica, la respuesta ' +
+      'mas jugada contra la Inglesa a todos los niveles, y desemboca en ' +
+      'una estructura de doble fianchetto muy solida y bien conocida.',
+    moves: [
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'Apertura Inglesa: ataca d5 desde el flanco sin ocupar el centro con un peon central todavia.',
+          ventaja: 'Maxima flexibilidad; blancas puede transponer a estructuras de d4, a un fianchetto puro, o mantener la lucha en el flanco de dama.',
+          debilidad: 'No ocupa el centro de inmediato, dejando que negras responda con la misma libertad.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Respuesta simetrica pura, sin definir el centro todavia y manteniendo la maxima flexibilidad de estructura.',
+          ventaja: 'Es la respuesta mas jugada en la practica contra la Inglesa; evita entrar en la teoria mas afilada de la Siciliana Inversa.',
+          debilidad: 'Ninguna relevante a este nivel; es una continuacion solida y muy probada.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla una pieza y controla el centro sin comprometer todavia la estructura de peones.',
+          ventaja: 'Pieza activa que prepara g3 y mantiene abiertas varias transposiciones.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y flexible.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, manteniendo la simetria y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, el plan mas caracteristico de la Apertura Inglesa.',
+          ventaja: 'Alfil muy activo sobre la diagonal larga una vez completado el fianchetto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas tipica del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'g6',
+        explain: {
+          idea: 'Responde con el mismo plan de fianchetto, manteniendo la simetria estructural de la posicion.',
+          ventaja: 'Estructura muy solida donde ningun bando gana espacio real; facil de jugar de memoria.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural para mantener la simetria.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg2',
+        explain: {
+          idea: 'Completa el fianchetto, presionando la diagonal larga hacia el flanco de dama de negras.',
+          ventaja: 'Pieza muy activa que apoya la lucha por el centro y prepara el enroque corto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg7',
+        explain: {
+          idea: 'Completa el fianchetto simetrico, apuntando tambien a la diagonal larga.',
+          ventaja: 'Alfil muy activo que compensa exactamente la presion del alfil blanco.',
+          debilidad: 'Ninguna relevante; es la jugada mas natural para mantener la simetria.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de dama, reforzando el control de d5.',
+          ventaja: 'Pieza activa que completa el desarrollo antes de decidir el plan central.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla el ultimo caballo, manteniendo la simetria y reforzando el control de d4.',
+          ventaja: 'Pieza activa que mantiene la solidez y la simetria de la posicion.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui blancas puede pensar en d4 o en jugar por el flanco de dama.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo basico de negras ya esta completo.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Rompe la simetria ocupando el centro con el peon de dama, aprovechando el desarrollo ya completo.',
+          ventaja: 'Gana espacio en el centro y fuerza a negras a definir la tension inmediatamente.',
+          debilidad: 'Cede la casilla d4 a una pieza negra si el cambio se resuelve de forma favorable para negras.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'cxd4',
+        explain: {
+          idea: 'Cambia antes de que blancas pueda sostener la tension a su gusto, siguiendo el mismo criterio que blancas.',
+          ventaja: 'Simplifica la posicion sin ceder nada; el cambio es completamente natural en la estructura simetrica.',
+          debilidad: 'Ninguna; es la continuacion mas solida y natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nxd4',
+        explain: {
+          idea: 'Recaptura con el caballo, la pieza mas activa para ocupar el centro.',
+          ventaja: 'Pieza muy activa en el centro del tablero, lista para cambiarse por el caballo negro si conviene.',
+          debilidad: 'Ninguna relevante; es la recaptura mas natural.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nxd4',
+        explain: {
+          idea: 'Cambia el caballo activo blanco antes de que se convierta en una pieza molesta en el centro.',
+          ventaja: 'Simplifica la posicion y deja a negras con un desarrollo completo y solido.',
+          debilidad: 'Entrega la recaptura a la dama blanca, que queda temporalmente centralizada.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Qxd4',
+        explain: {
+          idea: 'Recaptura con la dama, centralizandola de forma temporal mientras completa el plan de desarrollo.',
+          ventaja: 'Dama activa que presiona la diagonal larga junto al alfil de g2.',
+          debilidad: 'La dama puede recibir un tiempo si negras encuentra despues ...Nc6 o una jugada similar con ganancia de tiempo.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd6',
+        explain: {
+          idea: 'Abre la diagonal del alfil de dama y consolida la estructura antes de decidir el plan de medio juego.',
+          ventaja: 'Estructura solida y flexible que mantiene varias opciones de plan abiertas, con el desarrollo ya completo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural para cerrar el desarrollo basico de la linea.'
+        }
+      }
+    ]
+  },
+  {
     id: 'h03-catalana',
     name: 'Inglesa -- Catalan (transposicion via 1.d4 Nf6 2.c4 e6 3.g3 d5)',
     userColor: 'b',

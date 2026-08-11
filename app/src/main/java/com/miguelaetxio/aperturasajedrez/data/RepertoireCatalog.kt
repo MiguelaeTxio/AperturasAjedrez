@@ -121,6 +121,11 @@ object RepertoireCatalog {
             subtitle = "Con negras -- 1.c4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.g3 d5"
         ),
         OpeningEntry(
+            id = "h03-inglesa-simetrica",
+            title = "Inglesa -- respuesta simetrica pura con doble fianchetto",
+            subtitle = "Con negras -- 1.c4 c5 2.Nf3 Nf6 3.g3 g6 4.Bg2 Bg7"
+        ),
+        OpeningEntry(
             id = "h03-catalana",
             title = "Catalan -- Aceptado con ...a6 y ...b5",
             subtitle = "Con negras -- 1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 Be7 5.Nf3 O-O 6.O-O dxc4"
