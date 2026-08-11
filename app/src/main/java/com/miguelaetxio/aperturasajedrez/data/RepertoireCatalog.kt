@@ -84,6 +84,16 @@ object RepertoireCatalog {
             id = "h02-escandinava-qd6",
             title = "Escandinava -- retirada moderna 3...Qd6",
             subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd6"
+        ),
+        OpeningEntry(
+            id = "h02-defensa-tarrasch",
+            title = "Defensa Tarrasch",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 e6 3.Nc3 c5"
+        ),
+        OpeningEntry(
+            id = "h02-defensa-marshall",
+            title = "Defensa Marshall",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 Nf6"
         )
     )
 }

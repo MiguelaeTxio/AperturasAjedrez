@@ -21,7 +21,14 @@
   Defensa Báltica (2...Bf5) y Defensa Simétrica (2...c5) completan la
   familia Gambito de Dama; Escandinava con retirada moderna 3...Qd6
   añade la tercera línea de la familia escandinava.
-- Las 13 líneas totales verificadas jugada a jugada con chess.js
+- Cuarto lote: Defensa Tarrasch (peón de dama aislado, sistema
+  Fianchetto) y Defensa Marshall (2...Nf6 inmediato) cierran los
+  huecos que quedaban en la familia Gambito de Dama. Con esto, la
+  familia cubre las respuestas de negras contra 2.c4 más relevantes a
+  nivel de club y de teoría (Rehusado + Cambio, Aceptado, Eslava +
+  Semi-Eslava/Meran, Ortodoxa clásica, Chigorin, Albin, Báltica,
+  Simétrica, Tarrasch, Marshall).
+- Las 15 líneas totales verificadas jugada a jugada con chess.js
   antes de escribirlas.
 - Selector nativo (`RepertoireCatalog.kt`) actualizado con las 4
   entradas nuevas, mismos ids que `repertoire.js`.

@@ -1569,6 +1569,249 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h02-defensa-tarrasch',
+    name: 'Defensa Tarrasch',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: negras acepta un peon de dama ' +
+      'aislado (IQP) a cambio de piezas muy activas y espacio central, ' +
+      'una de las estructuras mas estudiadas de todo el ajedrez clasico. ' +
+      'Blancas responde con el plan mas solido y menos comprometido: el ' +
+      'Sistema Fianchetto (g3-Bg2), presionando el peon aislado a ' +
+      'distancia sin tener que memorizar las lineas mas tacticas del ' +
+      'Tarrasch.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Sostiene d5 sin capturar, dejando abierta la opcion de transponer a varios sistemas segun la siguiente jugada.',
+          ventaja: 'Posicion solida y flexible.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado, un problema que el Tarrasch resuelve pronto abriendo el centro.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza y refuerza el control sobre d5 antes de que negras defina su plan concreto.',
+          ventaja: 'Pieza activa que mantiene la tension central.',
+          debilidad: 'Ninguna relevante en este orden de jugadas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Defensa Tarrasch: en vez de encerrar el alfil con mas peones, negras contraataca el centro de inmediato, aceptando quedarse con un peon aislado en d5 a cambio de piezas muy activas.',
+          ventaja: 'Piezas libres y activas desde el principio, una estructura con mucho contrajuego dinamico pese al peon debil.',
+          debilidad: 'El peon d5 quedara aislado tras los cambios en el centro, un objetivo a largo plazo para blancas durante toda la partida.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'cxd5',
+        explain: {
+          idea: 'Define la estructura antes de que negras pueda recapturar a su gusto, forzando el peon aislado.',
+          ventaja: 'Fija de inmediato la debilidad estructural que negras acepto al jugar ...c5.',
+          debilidad: 'Ninguna; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'exd5',
+        explain: {
+          idea: 'Recaptura con el peon, quedando con el peon aislado de dama tipico de toda la Defensa Tarrasch.',
+          ventaja: 'Piezas muy activas y espacio central pese al peon debil, la esencia de toda la apuesta del Tarrasch.',
+          debilidad: 'El peon d5 aislado sera un objetivo constante para blancas, especialmente en los finales.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla y controla d4 y e5, casillas clave para presionar el peon aislado mas adelante.',
+          ventaja: 'Pieza bien colocada dentro del plan de presionar el IQP a distancia.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla y refuerza el peon d5, sosteniendo la estructura central activa de negras.',
+          ventaja: 'Pieza activa que participa en la lucha central.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'Sistema Fianchetto contra el Tarrasch: prepara Bg2 para presionar el peon d5 aislado desde la larga diagonal, el plan mas solido y menos comprometido de todos contra esta defensa.',
+          ventaja: 'Presion constante y de largo alcance sobre el peon debil sin arriesgar nada ni entrar en las lineas mas tacticas y complicadas del Tarrasch.',
+          debilidad: 'Cede algo de tiempo mientras negras completa su desarrollo, aunque el plan compensa sobradamente a la larga gracias a la debilidad permanente del peon d5.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Completa el desarrollo de piezas menores y prepara el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-defensa-marshall',
+    name: 'Defensa Marshall (2...Nf6)',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: negras ignora por completo el peon ' +
+      'c4 y desarrolla de inmediato el caballo de rey, dejando que ' +
+      'blancas capture en d5 con ganancia de tiempo. Blancas responde ' +
+      'con el plan mas natural: recuperar el peon, ocupar el centro con ' +
+      'e4 y desarrollar con comodidad, quedando con una clara ventaja de ' +
+      'espacio frente a un planteamiento poco exigente de negras.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Defensa Marshall: ignora por completo la oferta de peon en c4, desarrollando de inmediato en vez de decidir el plan estructural.',
+          ventaja: 'Desarrollo rapido que evita tener que decidir de entrada entre el Rehusado, la Eslava o el Aceptado.',
+          debilidad: 'No hace nada por defender d5 ni disputar c4, permitiendo a blancas capturar en d5 con ganancia de tiempo y espacio.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'cxd5',
+        explain: {
+          idea: 'Captura el peon central antes de que negras pueda sostenerlo, la respuesta mas natural y fuerte contra este planteamiento.',
+          ventaja: 'Gana un peon momentaneamente y fuerza a negras a recapturar, perdiendo tiempo.',
+          debilidad: 'Ninguna; es la continuacion mas directa y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nxd5',
+        explain: {
+          idea: 'Recupera el peon con el caballo, la unica recaptura razonable ya desarrollada.',
+          ventaja: 'Recupera el material y coloca el caballo en una casilla central.',
+          debilidad: 'El caballo en d5 sera blanco de e4 en la siguiente jugada, obligandolo a retroceder y perdiendo otro tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla antes de ocupar el centro con e4, completando el desarrollo de piezas menores con naturalidad.',
+          ventaja: 'Jugada flexible que prepara el enroque corto sin ninguna prisa.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'g6',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, el plan mas habitual de negras dentro de la Defensa Marshall para compensar la falta de espacio central.',
+          ventaja: 'El alfil en g7 controlara la larga diagonal, compensando en parte la ventaja de espacio de blancas.',
+          debilidad: 'Debilita ligeramente las casillas oscuras alrededor del futuro rey.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ocupa el centro con el segundo peon central, atacando de paso al caballo de d5 y ganando otro tiempo mas.',
+          ventaja: 'Centro amplio y fuerte, la clara ventaja de espacio que caracteriza toda la Defensa Marshall a favor de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nb6',
+        explain: {
+          idea: 'Retira el caballo a una casilla razonable, presionando de reojo el peon c4 ya avanzado a e4... realmente vigilando d5 y c4 desde el flanco.',
+          ventaja: 'Pieza que sigue participando en la partida sin perder mas tiempo.',
+          debilidad: 'Ninguna relevante; es la retirada mas natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de dama, completando un desarrollo rapido y comodo con una clara ventaja de espacio.',
+          ventaja: 'Pieza activa que corona un desarrollo modelo tras los tiempos ganados en las primeras jugadas.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg7',
+        explain: {
+          idea: 'Completa el fianchetto, la ultima pieza menor de desarrollo natural antes del enroque.',
+          ventaja: 'Presion de largo alcance sobre el centro desde la larga diagonal, compensando en parte la falta de espacio.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural para completar el desarrollo.'
+        }
+      }
+    ]
   }
 ]
 
