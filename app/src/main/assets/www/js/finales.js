@@ -474,207 +474,190 @@ FINALES_LINES.push(
   },
   {
     id: 'h04-final-mate-dama',
-    name: 'Mate elemental con dama -- acorralar sin ahogar',
+    name: 'Mate elemental con dama -- a salto de caballo hasta el corredor final',
     userColor: 'w',
-    startFen: '8/8/8/4k3/8/8/8/K6Q w - - 0 1',
-    overview: 'La dama es la pieza mas poderosa para dar mate a un rey ' +
-      'solo, pero tambien la mas facil de convertir en ahogado por ' +
-      'descuido: si la dama se acerca demasiado sin apoyo del rey ' +
-      'propio, puede dejar al rey rival sin jugadas legales sin que ' +
-      'sea jaque. La tecnica segura: la dama va reduciendo el ' +
-      'espacio del rey rival manteniendose siempre a distancia de ' +
-      'caballo (nunca pegada a el sin necesidad), empujandolo hacia ' +
-      'el borde; despues el rey propio se acerca, y el mate final ' +
-      'llega siempre con jaque, nunca con una jugada tranquila que ' +
-      'pueda ahogar.',
+    startFen: '4k3/7K/3Q4/8/8/8/8/8 w - - 0 1',
+    overview: 'Tecnica para dar mate con rey y dama contra rey solo. La ' +
+      'dama sola va empujando al rey rival manteniendose siempre a ' +
+      '"salto de caballo" de el (nunca pegada, nunca en la misma ' +
+      'fila o columna): desde esa distancia, al rey solo le queda ' +
+      'retroceder. Cuando el rey rival llega a la ultima fila, hay ' +
+      'que tener mucho cuidado: seguir con la dama a salto de ' +
+      'caballo ahogaria (dejaria al rey sin jugadas y sin jaque). Por ' +
+      'eso, en el corredor final, la dama deja dos casillas libres en ' +
+      'vez de una sola, y es el rey propio quien se acerca para ' +
+      'completar el mate -- el rey rival, con solo dos movimientos ' +
+      'posibles, no puede evitarlo.',
     moves: [
       {
         color: 'w',
-        san: 'Qc6',
+        san: 'Kh6',
         explain: {
-          idea: 'La dama se coloca a distancia de caballo del rey negro, reduciendo su espacio sin quedar a su alcance.',
-          ventaja: 'Recorta de golpe buena parte del tablero: controla toda la columna c, la sexta fila y varias diagonales.',
-          debilidad: 'Ninguna: al no estar adyacente al rey rival, no hay ningun riesgo de perder la dama.'
+          idea: 'El rey blanco se acerca, dejando que la dama en d6 seleccione ella sola las casillas del rey negro.',
+          ventaja: 'La dama ya vigila d7, d8 y e7 (columna y diagonal): al rey negro en e8 solo le queda f7.',
+          debilidad: 'Ninguna: acercamiento sin ningun riesgo frente a un rey solo.'
         }
       },
       {
         color: 'b',
-        san: 'Kf5',
-        explain: {
-          idea: 'El rey negro busca la maxima libertad restante dentro del espacio que le deja la dama.',
-          ventaja: 'Se mantiene lo mas centralizado posible.',
-          debilidad: 'Cada vez tiene menos casillas disponibles: la dama puede seguir recortando el espacio a distancia de caballo.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Qd6',
-        explain: {
-          idea: 'Nueva reduccion del espacio, otra vez a distancia de caballo del rey negro.',
-          ventaja: 'El rey negro pierde otra franja de casillas sin que la dama corra ningun peligro.',
-          debilidad: 'Ninguna.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kg5',
-        explain: {
-          idea: 'El rey negro sigue buscando espacio, ahora desplazandose hacia el flanco de rey.',
-          ventaja: 'Se aleja de la dama todo lo posible dentro de sus opciones.',
-          debilidad: 'Se va acercando al borde del tablero, donde el mate es mas facil de ejecutar.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Qe6',
-        explain: {
-          idea: 'Tercera reduccion de espacio consecutiva, siempre a distancia de caballo, sin dar jaque innecesariamente.',
-          ventaja: 'El rey negro queda cada vez mas confinado hacia la columna h.',
-          debilidad: 'Ninguna.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kh5',
-        explain: {
-          idea: 'El rey negro llega a la columna del borde, sin mas espacio hacia ese lado.',
-          ventaja: 'Ninguna practica: es la ultima casilla disponible en esa direccion.',
-          debilidad: 'Queda pegado al borde, la zona donde el mate con dama y rey se ejecuta con mas facilidad.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Qf6',
-        explain: {
-          idea: 'La dama sigue recortando espacio a distancia de caballo, dejando al rey negro con una unica casilla legal.',
-          ventaja: 'El rey negro queda practicamente inmovilizado sin que la dama corra ningun riesgo.',
-          debilidad: 'Ninguna.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kg4',
+        san: 'Kf7',
         explain: {
           idea: 'Unica casilla legal disponible.',
           ventaja: 'Ninguna: jugada totalmente forzada.',
-          debilidad: 'El rey negro queda aislado en el centro del flanco de rey, sin ninguna pieza que lo ayude.'
+          debilidad: 'El rey negro sigue sin ningun recurso para librarse del acoso de la dama.'
         }
       },
       {
         color: 'w',
-        san: 'Kb2',
+        san: 'Qe5',
         explain: {
-          idea: 'Con el rey negro ya muy limitado por la dama, empieza el segundo tiempo de la tecnica: acercar el rey propio para apoyar el mate final.',
-          ventaja: 'La dama sola normalmente no puede dar mate sin ayuda del rey (salvo posiciones muy concretas de borde); hay que traerlo cuanto antes.',
-          debilidad: 'Ninguna: el rey negro no tiene ninguna pieza con la que aprovechar este tiempo.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kh3',
-        explain: {
-          idea: 'El rey negro se desplaza dentro del reducido espacio que le queda, buscando alejarse del rey blanco que se acerca.',
-          ventaja: 'Ninguna practica.',
-          debilidad: 'Se adentra aun mas en la zona de la esquina, donde el mate sera mas rapido.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Kc3',
-        explain: {
-          idea: 'El rey blanco continua su marcha de aproximacion.',
-          ventaja: 'Cada paso acerca el momento en que podra apoyar el jaque mate final.',
+          idea: 'La dama se recoloca a salto de caballo del rey negro, empujandolo de nuevo hacia atras.',
+          ventaja: 'Reduce otra vez el espacio disponible sin quedar nunca al alcance del rey rival.',
           debilidad: 'Ninguna.'
         }
       },
       {
         color: 'b',
-        san: 'Kh2',
+        san: 'Kg8',
         explain: {
-          idea: 'El rey negro se acerca a la esquina, la unica zona que le queda con algo de espacio.',
+          idea: 'El rey negro retrocede hacia la esquina, buscando de paso provocar un descuido que lleve al ahogado.',
           ventaja: 'Ninguna practica.',
-          debilidad: 'La esquina es precisamente donde resulta mas facil darle mate con dama y rey.'
+          debilidad: 'Sigue sin ninguna pieza propia que lo ayude: cada movimiento lo acerca mas a la zona de mate.'
         }
       },
       {
         color: 'w',
-        san: 'Kd2',
+        san: 'Kh5',
         explain: {
-          idea: 'El rey blanco sigue acercandose en diagonal.',
-          ventaja: 'Gana tiempo sin que el rey negro pueda hacer nada para evitarlo.',
+          idea: 'El rey blanco se retira en vez de seguir acercandose: la dama sola ya basta para acorralar al rey negro, y no hace falta arriesgar un ahogado por las prisas.',
+          ventaja: 'Mantiene la posicion completamente segura mientras se decide el mejor plan de acercamiento.',
           debilidad: 'Ninguna.'
         }
       },
       {
         color: 'b',
-        san: 'Kh1',
+        san: 'Kf7',
         explain: {
-          idea: 'El rey negro se refugia en la esquina, el ultimo rincon disponible.',
+          idea: 'El rey negro vuelve a f7, el unico sitio con algo de aire.',
           ventaja: 'Ninguna practica.',
-          debilidad: 'A partir de aqui hay que tener mucho cuidado: acercar el rey blanco de cualquier manera podria ahogar en vez de dar mate, si la dama ya cubre todas las casillas sin dar jaque.'
+          debilidad: 'Sigue completamente controlado por la dama.'
         }
       },
       {
         color: 'w',
-        san: 'Ke2',
+        san: 'Kh4',
         explain: {
-          idea: 'El rey blanco sigue acercandose, todavia sin invadir las casillas que necesita cubrir la dama para el mate final.',
-          ventaja: 'Se prepara para apoyar el jaque mate sin arriesgar un ahogado.',
-          debilidad: 'Ninguna, siempre que la siguiente jugada de la dama sea con jaque y no una jugada tranquila.'
-        }
-      },
-      {
-        color: 'b',
-        san: 'Kg1',
-        explain: {
-          idea: 'El rey negro se desplaza dentro de la esquina, buscando cualquier resquicio.',
-          ventaja: 'Ninguna practica.',
-          debilidad: 'Sigue sin ninguna pieza propia que pueda ayudarlo: el mate es cuestion de pocas jugadas mas.'
-        }
-      },
-      {
-        color: 'w',
-        san: 'Kf3',
-        explain: {
-          idea: 'El rey blanco se acerca por el lado correcto sin quedar adyacente al rey negro ni tapar las casillas que la dama necesitara para el mate.',
-          ventaja: 'Evita el error tipico de este final (por ejemplo, colocar el rey en f1 con la dama en f2 ahogaria a negras); aqui se mantiene la distancia justa.',
+          idea: 'El rey blanco pierde un movimiento en vez de avanzar: no hace falta acercarse mas todavia, basta con esperar mientras la dama mantiene el control.',
+          ventaja: 'No compromete nada y deja que sea el rey negro quien tenga que decidir por donde seguir retrocediendo.',
           debilidad: 'Ninguna.'
         }
       },
       {
         color: 'b',
-        san: 'Kh1',
+        san: 'Kg6',
         explain: {
-          idea: 'El rey negro vuelve a la esquina, sin ninguna alternativa real.',
-          ventaja: 'Ninguna practica.',
-          debilidad: 'Ninguna casilla le queda fuera de la esquina.'
+          idea: 'El rey negro intenta activarse buscando espacio en el centro del flanco de rey.',
+          ventaja: 'Se aleja un poco de la esquina donde el mate resultaria mas facil.',
+          debilidad: 'Sigue sin ninguna pieza que lo ayude: la dama puede retomar el acoso en cualquier momento.'
         }
       },
       {
         color: 'w',
-        san: 'Kg3',
+        san: 'Qf4',
         explain: {
-          idea: 'El rey blanco toma la ultima casilla de apoyo necesaria, controlando las casillas de escape junto a la esquina.',
-          ventaja: 'Deja al rey negro con una unica jugada legal posible.',
+          idea: 'La dama retoma el acoso a salto de caballo, empujando al rey negro de nuevo hacia el rincon.',
+          ventaja: 'Reduce otra vez sus opciones sin ningun riesgo para la dama.',
           debilidad: 'Ninguna.'
         }
       },
       {
         color: 'b',
-        san: 'Kg1',
+        san: 'Kh7',
         explain: {
-          idea: 'Unica casilla legal: el rey negro queda completamente acorralado en la esquina.',
+          idea: 'El rey negro retrocede hacia la columna h, quedandose sin apenas espacio.',
+          ventaja: 'Ninguna practica.',
+          debilidad: 'Esta a un paso de quedar confinado al corredor final de la columna h.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Qg5',
+        explain: {
+          idea: 'La dama se coloca a salto de caballo por ultima vez, dejando al rey negro confinado a un corredor de solo dos casillas (h7 y h8) para no arriesgar un ahogado.',
+          ventaja: 'A partir de aqui el rey negro ya no tiene mas remedio que oscilar entre h7 y h8: es el momento de acercar el propio rey para terminar la faena.',
+          debilidad: 'Ninguna: es exactamente el punto de cuidado de la tecnica -- ni una casilla mas de restriccion todavia, para no ahogar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kh8',
+        explain: {
+          idea: 'El rey negro retrocede al rincon, una de las dos unicas casillas que le quedan.',
+          ventaja: 'Ninguna practica.',
+          debilidad: 'Con solo dos movimientos posibles (h7 y h8), el mate es cuestion de acercar el rey blanco.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kg4',
+        explain: {
+          idea: 'El rey blanco empieza a acercarse para apoyar el mate final, mientras la dama mantiene el corredor de dos casillas.',
+          ventaja: 'Cada paso acerca el momento de dar mate sin ningun riesgo.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kh7',
+        explain: {
+          idea: 'El rey negro oscila de vuelta a h7, la unica alternativa dentro de su corredor.',
+          ventaja: 'Ninguna practica.',
+          debilidad: 'El corredor de dos casillas no le da ninguna posibilidad real de escapar.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kf5',
+        explain: {
+          idea: 'El rey blanco rodea por el centro para no interferir con su propia dama, camino de la casilla g6 donde apoyara el mate.',
+          ventaja: 'Avanza sin ningun riesgo, con el corredor de negras todavia bajo control.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kh8',
+        explain: {
+          idea: 'El rey negro vuelve a oscilar hacia el rincon.',
+          ventaja: 'Ninguna practica.',
+          debilidad: 'El rey blanco ya esta a un paso de completar el apoyo necesario para el mate.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Kg6',
+        explain: {
+          idea: 'El rey blanco ocupa la casilla de apoyo definitiva: cubre f7, g7 y h7 a la vez, sin quedar adyacente al rey negro.',
+          ventaja: 'Deja al rey negro en un autentico corredor sin salida: g8 es ya su unica jugada, porque la propia dama en g5 vigila esa columna en cuanto el rey blanco se aparte de en medio.',
+          debilidad: 'Ninguna.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Kg8',
+        explain: {
+          idea: 'Unica casilla legal disponible.',
           ventaja: 'Ninguna: jugada totalmente forzada.',
-          debilidad: 'A partir de aqui cualquier jaque de la dama por la primera fila, apoyado por el rey blanco, es mate.'
+          debilidad: 'A partir de aqui, un jaque de la dama por la octava fila, apoyado por el rey blanco en g6, es mate.'
         }
       },
       {
         color: 'w',
-        san: 'Qa1#',
+        san: 'Qd8#',
         explain: {
-          idea: 'La dama da jaque mate por la primera fila, con el rey blanco controlando las casillas f1/f2/g2 cercanas a la esquina.',
-          ventaja: 'Jaque mate: el rey negro no puede capturar la dama (esta lejos), no hay pieza que bloquee el jaque y no le queda ninguna casilla libre.',
-          debilidad: 'Ninguna: es el resultado final de la tecnica de acorralamiento sin ahogar.'
+          idea: 'La dama da jaque mate por la octava fila, con el rey blanco en g6 cubriendo f7, g7 y h7.',
+          ventaja: 'Jaque mate: el rey negro no puede capturar la dama (esta lejos), no hay pieza que bloquee el jaque, y no le queda ninguna casilla libre.',
+          debilidad: 'Ninguna: es el resultado final de la tecnica de salto de caballo, con el cuidado de dejar dos casillas en el corredor para no ahogar.'
         }
       }
     ]
