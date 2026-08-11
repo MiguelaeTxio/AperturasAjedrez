@@ -129,6 +129,21 @@ object RepertoireCatalog {
             id = "h03-reti-fianchetto-doble",
             title = "Reti -- estructura de fianchetto simetrico",
             subtitle = "Con negras -- 1.Nf3 d5 2.g3 Nf6 3.Bg2 e6 4.O-O Be7"
+        ),
+        OpeningEntry(
+            id = "h03-trompowsky",
+            title = "Trompowsky -- respuesta solida con ...e6",
+            subtitle = "Con negras -- 1.d4 Nf6 2.Bg5 e6 3.e4 h6 4.Bxf6 Qxf6"
+        ),
+        OpeningEntry(
+            id = "h03-larsen",
+            title = "Larsen (1.b3) -- respuesta central con ...e5",
+            subtitle = "Con negras -- 1.b3 e5 2.Bb2 Nc6 3.e3 Nf6 4.Bb5 Bd6"
+        ),
+        OpeningEntry(
+            id = "h03-bird",
+            title = "Bird (1.f4) -- respuesta con ...d5 y fianchetto de rey",
+            subtitle = "Con negras -- 1.f4 d5 2.Nf3 Nf6 3.e3 g6 4.Be2 Bg7"
         )
     )
 }

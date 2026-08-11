@@ -2861,6 +2861,470 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h03-trompowsky',
+    name: 'Trompowsky -- respuesta solida con ...e6',
+    userColor: 'b',
+    overview: 'Familia Ataque Trompowsky: blancas evita toda la teoria ' +
+      'principal de 1.d4 clavando el caballo de inmediato con Bg5, sin ' +
+      'depender de si negras juega ...d5, ...e6 o ...g6. Es una de las ' +
+      'aperturas modernas en mayor auge por su bajo requerimiento ' +
+      'teorico y su capacidad de sacar al rival de la teoria conocida ' +
+      'desde la segunda jugada. Negras responde con la opcion mas solida ' +
+      'y menos comprometida, dejando que blancas defina la clavada.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con el plan concreto.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural sin definir todavia la estructura de peones central.',
+          ventaja: 'Maxima flexibilidad; negras puede optar por varias estructuras segun lo que juegue blancas.',
+          debilidad: 'Permite la clavada inmediata del Trompowsky, aunque es la jugada mas natural y no supone un problema real.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg5',
+        explain: {
+          idea: 'Ataque Trompowsky: clava el caballo de inmediato, evitando toda la teoria principal de 1.d4 y sacando a negras de la preparacion conocida.',
+          ventaja: 'Bajo requerimiento teorico y gran capacidad de sorpresa; una de las aperturas modernas en mayor auge.',
+          debilidad: 'El alfil puede acabar siendo blanco de ...Ne4 con tiempo si negras busca la respuesta mas combativa.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Respuesta solida y menos comprometida: prepara el desarrollo del alfil de rey sin definir todavia si romper la clavada con ...h6.',
+          ventaja: 'Posicion flexible que evita las complicaciones tacticas de ...Ne4 y mantiene varias opciones abiertas.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones si se juega d5 mas adelante.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ocupa el centro con el segundo peon central, aprovechando que negras no ha atacado la clavada todavia.',
+          ventaja: 'Centro amplio y mucho espacio para las piezas de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas ambiciosa y natural del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'h6',
+        explain: {
+          idea: 'Pregunta al alfil, obligando a blancas a decidir entre cambiar en f6 o retirarse.',
+          ventaja: 'Gana tiempo y aclara la posicion del alfil de blancas.',
+          debilidad: 'Debilita ligeramente el flanco de rey, un precio menor y habitual en toda la teoria de esta linea.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bxf6',
+        explain: {
+          idea: 'Cambia el alfil por el caballo antes de retirarse, desarticulando la estructura de peones de negras.',
+          ventaja: 'Daña la estructura de peones de negras y evita perder tiempos con la retirada del alfil.',
+          debilidad: 'Cede el par de alfiles a cambio de la ventaja estructural, una concesion tipica y aceptada en esta linea.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qxf6',
+        explain: {
+          idea: 'Recaptura con la dama, la unica pieza que puede hacerlo de inmediato manteniendo la estructura de peones sana en el flanco de rey.',
+          ventaja: 'Dama activa en una casilla central, evitando doblar peones.',
+          debilidad: 'La dama puede perder tiempos si blancas encuentra Nc3 seguido de Nd5 mas adelante.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla una pieza reforzando el centro y preparando el enroque largo.',
+          ventaja: 'Pieza activa que apoya el amplio centro de peones ya conseguido.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd6',
+        explain: {
+          idea: 'Prepara el desarrollo del resto de piezas y sostiene la posicion sin ceder mas espacio.',
+          ventaja: 'Estructura solida que prepara ...Nd7 y ...g6 para completar el desarrollo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de rey, preparando el enroque largo.',
+          ventaja: 'Jugada solida y flexible que no compromete nada.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nd7',
+        explain: {
+          idea: 'Desarrolla el caballo preparando ...g6 y el fianchetto del alfil de rey.',
+          ventaja: 'Pieza flexible que apoya el plan de desarrollo completo de negras.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Qd2',
+        explain: {
+          idea: 'Prepara el enroque largo, conectando las torres y completando el desarrollo de piezas.',
+          ventaja: 'Desarrollo completo y listo para atacar en el flanco de rey tras el enroque largo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas tipica del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'g6',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, completando el desarrollo de piezas menores de negras.',
+          ventaja: 'Estructura solida que prepara ...Bg7 y el enroque corto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O-O',
+        explain: {
+          idea: 'Enroque largo, el plan tipico de blancas en el Trompowsky con estructura de enroques opuestos para buscar el ataque directo.',
+          ventaja: 'Rey a salvo y torres conectadas, listo para lanzar un ataque en el flanco de rey con h4-h5.',
+          debilidad: 'Enroques opuestos implican riesgo mutuo; negras tambien podra buscar contrajuego en el flanco de dama.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg7',
+        explain: {
+          idea: 'Completa el fianchetto, la pieza clave para el resto del desarrollo de negras.',
+          ventaja: 'Alfil activo sobre la diagonal larga, listo para completar la seguridad del rey con el enroque corto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h03-larsen',
+    name: 'Larsen (1.b3) -- respuesta central con ...e5',
+    userColor: 'b',
+    overview: 'Familia de aperturas de flanco menores: Larsen fianchetta ' +
+      'el alfil de dama sin ocupar el centro con peones, dejando que sea ' +
+      'el alfil quien presione la gran diagonal. Negras responde ' +
+      'ocupando el centro de inmediato con ...e5, la reaccion mas ' +
+      'directa y solida, y completa un desarrollo natural enfrentando el ' +
+      'plan de blancas con piezas activas.',
+    moves: [
+      {
+        color: 'w',
+        san: 'b3',
+        explain: {
+          idea: 'Apertura Larsen: prepara el fianchetto del alfil de dama sin ocupar el centro con ningun peon todavia.',
+          ventaja: 'Maxima flexibilidad de transposicion y un alfil muy activo sobre la diagonal larga una vez completado el fianchetto.',
+          debilidad: 'No disputa el centro de inmediato, dejando que negras ocupe el espacio central sin oposicion.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e5',
+        explain: {
+          idea: 'Ocupa el centro de inmediato, la reaccion mas directa y solida contra el fianchetto de blancas.',
+          ventaja: 'Espacio y control central inmediato, la respuesta mas popular y fiable contra Larsen.',
+          debilidad: 'Ninguna relevante a este nivel; es la continuacion mas natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bb2',
+        explain: {
+          idea: 'Completa el fianchetto, presionando la diagonal larga directamente sobre el peon de e5.',
+          ventaja: 'Pieza muy activa que presiona el centro de negras desde la distancia.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Defiende el peon de e5 y desarrolla una pieza al mismo tiempo.',
+          ventaja: 'Pieza activa que refuerza el centro sin perder tiempo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Abre la diagonal del alfil de rey y refuerza el control sobre d4, preparando un desarrollo solido.',
+          ventaja: 'Estructura flexible que prepara Bb5 o Be2 segun convenga.',
+          debilidad: 'Jugada algo pasiva que cede la iniciativa central a negras.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bb5',
+        explain: {
+          idea: 'Desarrolla el alfil de rey con jaque indirecto sobre la clavada del caballo de dama de negras.',
+          ventaja: 'Pieza activa que presiona la estructura de negras desde el principio.',
+          debilidad: 'El alfil puede perder tiempo si negras encuentra ...a6 mas adelante, obligando a definir su posicion.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bd6',
+        explain: {
+          idea: 'Desarrolla el alfil de rey a una casilla activa, apoyando el centro y preparando el enroque corto.',
+          ventaja: 'Pieza bien colocada que refuerza el control sobre e5 y prepara la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Ne2',
+        explain: {
+          idea: 'Desarrolla el caballo a una casilla flexible, dejando la diagonal del alfil de dama despejada.',
+          ventaja: 'No bloquea el alfil en b2 y mantiene varias opciones de plan abiertas.',
+          debilidad: 'Casilla algo pasiva para el caballo comparado con f3, aunque coherente con el plan de Larsen.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui negras puede pensar en ...Re8 y ...a6.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo basico del sistema Larsen ya esta completo.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Re8',
+        explain: {
+          idea: 'Refuerza el centro colocando la torre detras del peon de e5, preparando futuros avances centrales.',
+          ventaja: 'Pieza bien colocada que apoya la estructura central a largo plazo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Cuestiona el centro de negras, buscando abrir la posicion mientras el alfil de b2 ya esta activo.',
+          ventaja: 'Genera tension central inmediata, aprovechando la presion ya existente del alfil en la diagonal larga.',
+          debilidad: 'Cede el control exclusivo de d4 si negras cambia, aunque abre lineas favorables para el alfil de blancas.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'exd4',
+        explain: {
+          idea: 'Cambia el centro antes de que blancas pueda sostener la tension a su favor.',
+          ventaja: 'Simplifica la posicion central sin conceder ninguna debilidad estructural.',
+          debilidad: 'Ninguna; es la continuacion mas natural tras la tension central.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nxd4',
+        explain: {
+          idea: 'Recaptura con el caballo, la pieza mas activa para hacerlo dentro del plan de Larsen.',
+          ventaja: 'Pieza centralizada que presiona directamente sobre el caballo de negras en c6.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h03-bird',
+    name: 'Bird (1.f4) -- respuesta con ...d5 y fianchetto de rey',
+    userColor: 'b',
+    overview: 'Familia de aperturas de flanco menores: Bird ocupa espacio ' +
+      'en el flanco de rey con el peon f4, buscando transponer a ' +
+      'estructuras de Holandesa con los colores invertidos. Negras ' +
+      'responde ocupando el centro con ...d5, la reaccion mas solida y ' +
+      'popular, y completa un desarrollo flexible con fianchetto de rey ' +
+      'propio para neutralizar la presion de blancas en la diagonal ' +
+      'larga.',
+    moves: [
+      {
+        color: 'w',
+        san: 'f4',
+        explain: {
+          idea: 'Apertura Bird: gana espacio en el flanco de rey desde la primera jugada, buscando una estructura tipo Holandesa con colores invertidos.',
+          ventaja: 'Control sobre e5 y posibilidad de un ataque rapido en el flanco de rey si negras se descuida.',
+          debilidad: 'Debilita ligeramente la diagonal a7-g1 y la casilla e3, un factor que negras puede explotar con un desarrollo preciso.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Ocupa el centro de inmediato, la reaccion mas solida y popular contra el Bird.',
+          ventaja: 'Espacio y control central inmediato, dejando a blancas con la iniciativa limitada al flanco de rey.',
+          debilidad: 'Ninguna relevante a este nivel; es la continuacion mas natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla una pieza y refuerza el control sobre e5, preparando el resto del desarrollo.',
+          ventaja: 'Pieza activa que apoya el plan de flanco de rey ya iniciado con f4.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Refuerza el centro y abre la diagonal del alfil de rey antes de decidir su desarrollo.',
+          ventaja: 'Estructura solida que prepara Be2 y el enroque corto.',
+          debilidad: 'Jugada algo pasiva que no aprovecha al maximo el espacio ganado con f4.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'g6',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, neutralizando la presion de blancas en el flanco de rey con una estructura solida propia.',
+          ventaja: 'Alfil muy activo sobre la diagonal larga, apuntando hacia el centro y el flanco de dama de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Be2',
+        explain: {
+          idea: 'Desarrolla el alfil de rey a una casilla solida, preparando el enroque corto de inmediato.',
+          ventaja: 'Desarrollo completo y sin debilidades, listo para enrocar en la siguiente jugada.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg7',
+        explain: {
+          idea: 'Completa el fianchetto, la pieza clave para el resto del desarrollo de negras.',
+          ventaja: 'Alfil activo sobre la diagonal larga, listo para completar la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui blancas puede pensar en d3 y Ne5.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo basico de negras ya esta completo.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd3',
+        explain: {
+          idea: 'Abre la diagonal del alfil de dama y refuerza el centro antes de decidir el plan de flanco de dama.',
+          ventaja: 'Estructura solida y flexible que mantiene varias opciones de plan abiertas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Gana espacio en el flanco de dama y presiona el centro de blancas antes de que complete su plan.',
+          ventaja: 'Actividad en el flanco de dama sin descuidar la seguridad del rey.',
+          debilidad: 'Ninguna inmediata; es la continuacion mas activa y natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Ne5',
+        explain: {
+          idea: 'Centraliza el caballo en una casilla muy activa, apoyado por el peon de f4.',
+          ventaja: 'Pieza muy activa en el centro del tablero, dificil de desalojar sin conceder concesiones.',
+          debilidad: 'El caballo puede ser cambiado por el de negras en c6, perdiendo parte de su fuerza si eso ocurre.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla el ultimo caballo, ofreciendo el cambio del caballo centralizado de blancas.',
+          ventaja: 'Pieza activa que disputa directamente la casilla central mas fuerte de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nxc6',
+        explain: {
+          idea: 'Cambia el caballo antes de que negras gane mas tiempo o presion sobre el, simplificando la posicion.',
+          ventaja: 'Elimina cualquier presion futura de negras sobre la pieza centralizada.',
+          debilidad: 'Cede la pieza mas activa de blancas a cambio de la simplificacion, una concesion menor y muy jugada en la practica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'bxc6',
+        explain: {
+          idea: 'Recaptura con el peon, abriendo la columna b para la torre y reforzando el centro con la pareja de peones c.',
+          ventaja: 'Columna b semiabierta para la torre y un centro de peones reforzado.',
+          debilidad: 'Estructura de peones duplicados en la columna c, una concesion menor tipica de esta linea.'
+        }
+      }
+    ]
   }
 ]
 
