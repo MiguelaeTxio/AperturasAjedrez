@@ -124,6 +124,11 @@ object RepertoireCatalog {
             id = "h03-catalana",
             title = "Catalan -- Aceptado con ...a6 y ...b5",
             subtitle = "Con negras -- 1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 Be7 5.Nf3 O-O 6.O-O dxc4"
+        ),
+        OpeningEntry(
+            id = "h03-reti-fianchetto-doble",
+            title = "Reti -- estructura de fianchetto simetrico",
+            subtitle = "Con negras -- 1.Nf3 d5 2.g3 Nf6 3.Bg2 e6 4.O-O Be7"
         )
     )
 }

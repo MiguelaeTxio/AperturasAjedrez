@@ -2703,6 +2703,164 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h03-reti-fianchetto-doble',
+    name: 'Reti -- estructura de fianchetto simetrico',
+    userColor: 'b',
+    overview: 'Familia Reti: blancas empieza con el caballo antes que ' +
+      'ningun peon central, manteniendo la maxima flexibilidad para ' +
+      'transponer a Inglesa, Catalan o quedarse en una estructura Reti ' +
+      'pura tipo King s Indian Attack invertido. Negras responde con el ' +
+      'desarrollo mas solido y universal (d5, Nf6, e6, fianchetto de ' +
+      'rey si blancas lo hace tambien) sin comprometerse con ninguna ' +
+      'transposicion concreta.',
+    moves: [
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Apertura Reti: desarrolla una pieza antes que ningun peon central, manteniendo maxima flexibilidad de transposicion.',
+          ventaja: 'Puede transponer a Inglesa, Catalan, o quedarse en una estructura Reti pura segun la respuesta de negras.',
+          debilidad: 'No define ningun plan concreto todavia, cediendo a negras la misma libertad de eleccion.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Ocupa el centro de inmediato con el desarrollo mas solido y universal, sin comprometerse con ninguna transposicion concreta.',
+          ventaja: 'Maxima flexibilidad; negras puede mantener esta estructura sea cual sea el plan que elija blancas despues.',
+          debilidad: 'Ninguna relevante a este nivel.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, manteniendo la estructura Reti pura sin transponer a d4 ni c4.',
+          ventaja: 'Alfil muy activo sobre la diagonal larga una vez completado el fianchetto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas tipica del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg2',
+        explain: {
+          idea: 'Completa el fianchetto, presionando la diagonal larga hacia el centro y el flanco de dama de negras.',
+          ventaja: 'Pieza muy activa que apoya la lucha por el centro y prepara el enroque corto.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Prepara el desarrollo del alfil de rey y sostiene la posicion central sin ceder espacio.',
+          ventaja: 'Estructura solida y flexible que mantiene varias opciones de plan abiertas.',
+          debilidad: 'El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; a partir de aqui blancas puede pensar en d3 y e4.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar la seguridad basica.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Be7',
+        explain: {
+          idea: 'Desarrolla el alfil de rey a una casilla solida, preparando el enroque corto de inmediato.',
+          ventaja: 'Jugada solida que no compromete nada y acelera la seguridad del rey.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd3',
+        explain: {
+          idea: 'Abre la diagonal del alfil de dama y prepara el avance central e4, el plan tipico tipo King s Indian Attack.',
+          ventaja: 'Estructura solida y flexible que mantiene varias opciones de plan abiertas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del sistema.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'O-O',
+        explain: {
+          idea: 'Pone el rey a salvo y conecta las torres antes de decidir el plan de medio juego.',
+          ventaja: 'Seguridad del rey resuelta; el desarrollo basico de negras ya esta completo.',
+          debilidad: 'Ninguna; es la jugada mas natural para completar el desarrollo basico.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nbd2',
+        explain: {
+          idea: 'Completa el desarrollo de piezas menores, apoyando el avance central e4 que se prepara.',
+          ventaja: 'Desarrollo completo y solido, listo para el plan central de e4.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c5',
+        explain: {
+          idea: 'Gana espacio en el flanco de dama y presiona el centro de blancas antes de que complete su plan.',
+          ventaja: 'Actividad en el flanco de dama sin descuidar la seguridad del rey.',
+          debilidad: 'Ninguna inmediata; es la continuacion mas activa y natural.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ejecuta el plan central tipico del sistema tipo King s Indian Attack, ganando espacio en el centro.',
+          ventaja: 'Centro amplio y mayor espacio para las piezas de blancas.',
+          debilidad: 'Cede el control de d4 momentaneamente, un factor menor que blancas acepta a cambio del espacio ganado.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla el ultimo caballo, presionando el centro de blancas y completando el desarrollo de piezas menores.',
+          ventaja: 'Pieza activa que aumenta la presion sobre el centro de blancas.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Re1',
+        explain: {
+          idea: 'Coloca la torre en la columna central abierta por el avance de peones, apoyando futuras tensiones en e5 o e4.',
+          ventaja: 'Pieza bien colocada para apoyar el centro a largo plazo.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'b5',
+        explain: {
+          idea: 'Gana espacio en el flanco de dama, el plan tipico de negras en estas estructuras simetricas tipo King s Indian Attack invertido.',
+          ventaja: 'Espacio y actividad en el flanco de dama, complementando la presion ya iniciada con ...c5.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural del plan.'
+        }
+      }
+    ]
   }
 ]
 
