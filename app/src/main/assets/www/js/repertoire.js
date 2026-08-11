@@ -601,6 +601,490 @@ var REPERTOIRE_LINES = [
         }
       }
     ]
+  },
+  {
+    id: 'h02-contragambito-albin',
+    name: 'Contragambito Albin -- respuesta principal',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: en vez de sostener o capturar en ' +
+      'c4, negras contragambitea con e5, buscando complicaciones ' +
+      'tacticas inmediatas y un peon pasado avanzado en d4. Blancas ' +
+      'responde con el plan mas solido y menos comprometido: capturar ' +
+      'en e5 y fianchettar el alfil de rey para presionar el peon d4 ' +
+      'desde lejos, sin tener que calcular las lineas mas afiladas.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e5',
+        explain: {
+          idea: 'Contragambito Albin: en vez de defender o capturar en c4, negras contraataca de inmediato el centro con su propio gambito.',
+          ventaja: 'Jugada muy agresiva que busca sacar a blancas de la teoria mas conocida y crear complicaciones rapidas.',
+          debilidad: 'Objetivamente arriesgada: si blancas responde con precision (como en esta linea), negras queda con menos espacio y un peon avanzado que puede volverse debil en vez de fuerte.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'dxe5',
+        explain: {
+          idea: 'Acepta el gambito capturando el peon ofrecido; la respuesta mas natural y fuerte.',
+          ventaja: 'Gana un peon de forma momentanea sin ningun riesgo inmediato.',
+          debilidad: 'Ninguna; es la continuacion practicamente obligada.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd4',
+        explain: {
+          idea: 'Avanza el peon de dama en vez de recapturar, ganando espacio y clavando la idea de crear un peon pasado protegido mas adelante.',
+          ventaja: 'Peon muy avanzado que resta espacio a blancas en el centro.',
+          debilidad: 'El peon d4 queda sin apoyo inmediato y sera un objetivo constante durante toda la partida si blancas juega con precision.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla evitando complicaciones prematuras y prepara fianchettar el alfil de rey para presionar d4 a distancia.',
+          ventaja: 'Plan solido y sencillo de ejecutar, evita las lineas mas tacticas y complicadas del Albin.',
+          debilidad: 'Ninguna; es el plan mas fiable contra el Albin a nivel de club.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Desarrolla y refuerza el peon d4 avanzado, preparando recuperar el peon e5 con ...Bxe5 o similar mas adelante.',
+          ventaja: 'Pieza activa que sostiene la estructura de peones agresiva de negras.',
+          debilidad: 'Ninguna inmediata; jugada natural del plan de negras.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'g3',
+        explain: {
+          idea: 'Prepara fianchettar el alfil de rey a g2, la pieza clave del plan de blancas contra el Albin: presiona el peon d4 desde la larga diagonal sin necesidad de bloquearlo con piezas.',
+          ventaja: 'Plan estrategico claro y de bajo riesgo, tipico de todas las lineas solidas contra el Albin.',
+          debilidad: 'Cede algo de tiempo mientras negras completa su desarrollo, aunque el plan compensa sobradamente a la larga.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Be6',
+        explain: {
+          idea: 'Desarrolla el alfil de casillas claras, libre desde el principio en el Albin, y prepara el enroque largo en algunas lineas.',
+          ventaja: 'Pieza activa fuera de la cadena de peones.',
+          debilidad: 'No hace nada por resolver el problema de fondo del peon d4 avanzado, que sigue siendo un objetivo a largo plazo para blancas.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bg2',
+        explain: {
+          idea: 'Completa el fianchetto: el alfil presiona d4 y c6 desde la larga diagonal, la pieza clave de todo el plan contra el Albin.',
+          ventaja: 'Presion constante y de largo alcance sobre el peon avanzado de negras sin arriesgar nada.',
+          debilidad: 'Ninguna; es el objetivo de todo el plan desde la jugada 5.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qd7',
+        explain: {
+          idea: 'Prepara el enroque largo (O-O-O) y conecta las torres, un plan tipico de negras en el Albin para buscar contrajuego rapido en el flanco de rey.',
+          ventaja: 'Desarrollo activo que mantiene las opciones de ataque de negras.',
+          debilidad: 'El rey en el enroque largo puede quedar expuesto si blancas ataca el flanco de dama con a3-b4 mas adelante.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-defensa-chigorin',
+    name: 'Defensa Chigorin -- respuesta principal',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama: negras desarrolla el caballo de ' +
+      'dama antes que el peon, rompiendo las reglas clasicas de la ' +
+      'apertura a cambio de piezas rapidas y activas. Blancas responde ' +
+      'con el plan mas claro: cambiar en d5 y aceptar doblar los propios ' +
+      'peones a cambio del par de alfiles, una ventaja estructural a ' +
+      'largo plazo frente al planteamiento poco ortodoxo de negras.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nc6',
+        explain: {
+          idea: 'Defensa Chigorin: desarrolla el caballo de dama antes que el peon de rey, una idea poco ortodoxa que prioriza piezas activas sobre estructura solida.',
+          ventaja: 'Desarrollo rapido y planteamiento dificil de preparar para blancas si no conoce la teoria concreta.',
+          debilidad: 'Bloquea el propio peon c7, dificultando el plan clasico de sostener el centro con c6; objetivamente algo dudosa a nivel teorico.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla y protege el peon d4 antes de decidir como responder al planteamiento poco convencional de negras.',
+          ventaja: 'Jugada solida y flexible que no compromete nada.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg4',
+        explain: {
+          idea: 'Clava el caballo de f3 para dificultar que blancas defienda d4 con comodidad.',
+          ventaja: 'Pieza activa que presiona de inmediato el centro de blancas.',
+          debilidad: 'Deja que blancas rompa la clavada con h3 y luego gane el par de alfiles si negras captura en f3.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'cxd5',
+        explain: {
+          idea: 'Cambia en el centro antes de que negras pueda sostenerlo, aprovechando que Nc6 ya bloquea la recaptura mas natural con el peon c.',
+          ventaja: 'Gana un peon momentaneamente y fuerza a negras a recapturar con una pieza, perdiendo tiempo.',
+          debilidad: 'Ninguna; es la continuacion mas fuerte y directa contra el planteamiento de negras.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bxf3',
+        explain: {
+          idea: 'Antes de recapturar en d5, negras resuelve la clavada capturando el caballo, evitando que blancas gane un tiempo con h3 mas adelante.',
+          ventaja: 'Elimina una pieza defensora clave de blancas y desorganiza momentaneamente su estructura de peones de rey.',
+          debilidad: 'Cede el par de alfiles a cambio de nada material, una concesion estructural importante a largo plazo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'gxf3',
+        explain: {
+          idea: 'Recaptura con el peon, la unica opcion, doblando los propios peones de rey.',
+          ventaja: 'A cambio de los peones doblados, blancas se queda con el par de alfiles y una columna g semiabierta util para el ataque.',
+          debilidad: 'Estructura de peones de rey daniada, aunque el par de alfiles compensa sobradamente segun la teoria establecida.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Qxd5',
+        explain: {
+          idea: 'Recupera el peon con la dama, la recaptura mas natural ya que el caballo de c6 impide hacerlo con el peon c.',
+          ventaja: 'Recupera el material inmediatamente.',
+          debilidad: 'La dama queda en el centro, expuesta a perder otro tiempo si blancas encuentra Nc3 con ataque.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Prepara el desarrollo del alfil de rey y refuerza d4, sin prisa por atacar la dama de inmediato.',
+          ventaja: 'Jugada solida que consolida la ventaja estructural (par de alfiles) sin ningun riesgo.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e5',
+        explain: {
+          idea: 'Contraataca el centro de blancas antes de que consolide del todo su ventaja estructural, tipico plan activo de la Chigorin.',
+          ventaja: 'Jugada mas combativa que quedarse pasivo, cuestiona d4 de inmediato.',
+          debilidad: 'Puede abrir aun mas la posicion en un momento en el que blancas tiene el par de alfiles, generalmente favorable a la parte con los dos alfiles.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-semi-eslava-meran',
+    name: 'Semi-Eslava -- Variante Meran',
+    userColor: 'w',
+    overview: 'Familia Gambito de Dama / Eslava: negras combina ...c6 y ' +
+      '...e6 en el mismo sistema, la estructura mas solida y elastica ' +
+      'contra 1.d4 a nivel de elite. Blancas desarrolla con naturalidad ' +
+      'y dirige la partida hacia la Variante Meran, donde negras captura ' +
+      'en c4 y contragambitea de inmediato con ...b5, generando partidas ' +
+      'muy ricas de plan y con juego en ambos flancos.',
+    moves: [
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal del alfil de dama.',
+          ventaja: 'Controla e5 y c5, y prepara un desarrollo rapido sin comprometerse todavia con c4.',
+          debilidad: 'Ninguna real a este nivel; es la jugada mas solida y flexible para empezar.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Negras responde en el centro con la misma logica: ocupar y no ceder espacio.',
+          ventaja: 'Mantiene la simetria y no debilita ninguna casilla.',
+          debilidad: 'Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'El Gambito de Dama: blancas ofrecen el peon c4 para atacar el centro de negras desde el flanco.',
+          ventaja: 'Da a negras varias formas de responder, y en todas ellas blancas obtiene alguna ventaja de espacio o desarrollo.',
+          debilidad: 'Cede momentaneamente el control exclusivo del centro.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'c6',
+        explain: {
+          idea: 'Defensa Eslava: sostiene d5 sin encerrar el alfil de casillas claras, dejando abierta la opcion de transponer a la Semi-Eslava con ...e6.',
+          ventaja: 'Posicion muy solida y flexible, base de dos sistemas distintos (Eslava pura y Semi-Eslava) segun como continue negras.',
+          debilidad: 'Tapa momentaneamente la casilla natural de desarrollo del caballo de dama.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla una pieza y prepara el enroque corto sin comprometerse aun con el plan concreto.',
+          ventaja: 'Jugada flexible que sirve tanto contra la Eslava pura como contra la Semi-Eslava.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Desarrollo natural, presiona e4 y prepara el enroque.',
+          ventaja: 'Jugada solida que no compromete nada.',
+          debilidad: 'Ninguna relevante; es la respuesta mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de dama y refuerza el centro.',
+          ventaja: 'Pieza activa que apoya un futuro e4 o presiona d5 de nuevo.',
+          debilidad: 'Ninguna en esta linea concreta.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'e6',
+        explain: {
+          idea: 'Semi-Eslava: combina ...c6 ya jugado con ...e6, liberando la diagonal del alfil de rey aunque encerrando de nuevo el de casillas claras -- la eleccion consciente entre las dos estructuras.',
+          ventaja: 'Estructura elastica y muy solida, terreno de la teoria mas moderna y respetada contra 1.d4.',
+          debilidad: 'Vuelve a encerrar el alfil de casillas claras, el mismo problema estructural que en el Rehusado puro, aunque compensado por la solidez general del sistema.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'e3',
+        explain: {
+          idea: 'Completa el desarrollo del centro y prepara Bd3, el plan clasico de blancas en la Meran.',
+          ventaja: 'Jugada solida y flexible, deja las opciones de flanco de dama (a3, b4) abiertas para mas adelante.',
+          debilidad: 'Encierra temporalmente al propio alfil de dama.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nbd7',
+        explain: {
+          idea: 'Desarrolla el caballo de dama por d7, unica casilla disponible ya que c6 esta ocupado por el peon.',
+          ventaja: 'Pieza que apoya un futuro ...dxc4 y ...b5, el plan caracteristico de la Meran.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural en la posicion.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Bd3',
+        explain: {
+          idea: 'Desarrolla el alfil a su diagonal mas activa antes de que negras defina el centro con ...dxc4.',
+          ventaja: 'Pieza bien colocada, apuntando al flanco de rey de negras y lista para recapturar en c4 si hace falta.',
+          debilidad: 'Ninguna inmediata; jugada estandar del plan Meran.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'dxc4',
+        explain: {
+          idea: 'Variante Meran: negras captura el peon central justo antes de que blancas pueda evitarlo, preparando el contragambito ...b5 a continuacion.',
+          ventaja: 'Peon de mas momentaneo y la base del plan mas afilado y respetado de toda la Semi-Eslava.',
+          debilidad: 'Cede el centro por completo; si blancas recaptura con precision (Bxc4) seguido de e4, puede obtener una fuerte iniciativa central.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'h02-escandinava-moderna',
+    name: 'Escandinava Moderna (2...Nf6)',
+    userColor: 'b',
+    overview: 'Familia Escandinava: en vez de recapturar de inmediato con ' +
+      'la dama, negras desarrolla primero el caballo y recupera el peon ' +
+      'con la pieza en la siguiente jugada, evitando por completo los ' +
+      'tiempos de ataque contra la dama que caracterizan la linea ' +
+      'principal (2...Qxd5). Es la eleccion mas popular a nivel de elite ' +
+      'dentro de toda la familia escandinava por su solidez.',
+    moves: [
+      {
+        color: 'w',
+        san: 'e4',
+        explain: {
+          idea: 'Ocupa el centro y abre la diagonal de la dama y del alfil de rey.',
+          ventaja: 'Jugada mas popular a todos los niveles, maxima actividad inmediata para las piezas.',
+          debilidad: 'Ninguna real a este nivel.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'd5',
+        explain: {
+          idea: 'Escandinava: ataca el peon e4 de inmediato en vez de responder de forma simetrica o cerrada.',
+          ventaja: 'Fuerza a blancas a definir la estructura central en la jugada 2, sacando la partida del terreno mas teorico de otras defensas.',
+          debilidad: 'Tras el cambio de peones, alguna pieza de negras tendra que recuperar el peon con perdida relativa de tiempo.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'exd5',
+        explain: {
+          idea: 'Captura el peon ofrecido; casi siempre la respuesta principal.',
+          ventaja: 'Gana un peon de forma momentanea y obliga a negras a decidir como recuperarlo.',
+          debilidad: 'Ninguna; es la continuacion practicamente obligada.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nf6',
+        explain: {
+          idea: 'Escandinava Moderna: en vez de recapturar de inmediato con la dama, negras desarrolla primero y recupera el peon la jugada siguiente con el caballo.',
+          ventaja: 'Evita por completo los tiempos de ataque contra la dama que sufre la linea principal (2...Qxd5); desarrollo mas natural desde el principio.',
+          debilidad: 'El peon d5 queda momentaneamente en manos de blancas un turno mas, aunque negras lo recupera sin problemas la jugada siguiente.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'd4',
+        explain: {
+          idea: 'Sostiene el peon de mas con el peon de dama, ganando espacio central antes de que negras lo recupere.',
+          ventaja: 'Centro amplio y solido, la forma mas ambiciosa de defender el peon extra.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural y fuerte.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nxd5',
+        explain: {
+          idea: 'Recupera el peon con el caballo, ya desarrollado y sin haber perdido ningun tiempo con la dama.',
+          ventaja: 'Material igualado y pieza activa en el centro, con el desarrollo muy por delante respecto a la linea principal con 2...Qxd5.',
+          debilidad: 'El caballo en d5 puede ser blanco de c4 mas adelante, obligandolo a retroceder.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nf3',
+        explain: {
+          idea: 'Desarrolla y prepara el enroque corto, la continuacion mas natural y solida.',
+          ventaja: 'Jugada flexible que no compromete nada y completa el desarrollo con rapidez.',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'g6',
+        explain: {
+          idea: 'Prepara el fianchetto del alfil de rey, un plan solido y flexible tipico de las lineas modernas contra 1.e4.',
+          ventaja: 'El alfil en g7 controlara la larga diagonal y apoyara al caballo de d5 si blancas ataca con c4.',
+          debilidad: 'Debilita ligeramente las casillas oscuras alrededor del rey, aunque el fianchetto lo compensa de sobra.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'c4',
+        explain: {
+          idea: 'Ataca el caballo de d5 ganando espacio y tiempo, el plan mas ambicioso contra la Escandinava Moderna.',
+          ventaja: 'Gana espacio en el centro y obliga a negras a decidir la retirada del caballo.',
+          debilidad: 'Debilita ligeramente d4, aunque es un precio asumido en toda la teoria principal de esta linea.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Nb6',
+        explain: {
+          idea: 'Retira el caballo a una casilla activa, presionando c4 y manteniendo la vista sobre el centro.',
+          ventaja: 'Pieza bien colocada que sigue participando en la lucha por el centro.',
+          debilidad: 'Ninguna relevante; es la retirada mas natural y solida.'
+        }
+      },
+      {
+        color: 'w',
+        san: 'Nc3',
+        explain: {
+          idea: 'Desarrolla la ultima pieza menor del flanco de dama y refuerza el centro.',
+          ventaja: 'Pieza activa que completa el desarrollo antes de decidir el plan de medio juego (Be3, Be2, h3, etc).',
+          debilidad: 'Ninguna relevante.'
+        }
+      },
+      {
+        color: 'b',
+        san: 'Bg7',
+        explain: {
+          idea: 'Completa el fianchetto, la ultima pieza menor de desarrollo natural antes del enroque.',
+          ventaja: 'Presion de largo alcance sobre el centro y el flanco de dama de blancas desde la larga diagonal.',
+          debilidad: 'Ninguna relevante; es la continuacion mas natural para completar el desarrollo.'
+        }
+      }
+    ]
   }
 ]
 

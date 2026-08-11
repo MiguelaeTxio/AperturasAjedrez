@@ -44,6 +44,26 @@ object RepertoireCatalog {
             id = "h02-escandinava-principal",
             title = "Escandinava -- linea principal",
             subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Qxd5"
+        ),
+        OpeningEntry(
+            id = "h02-contragambito-albin",
+            title = "Contragambito Albin",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 e5"
+        ),
+        OpeningEntry(
+            id = "h02-defensa-chigorin",
+            title = "Defensa Chigorin",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 Nc6"
+        ),
+        OpeningEntry(
+            id = "h02-semi-eslava-meran",
+            title = "Semi-Eslava -- Variante Meran",
+            subtitle = "Con blancas -- 1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6"
+        ),
+        OpeningEntry(
+            id = "h02-escandinava-moderna",
+            title = "Escandinava Moderna",
+            subtitle = "Con negras contra 1.e4 -- 1.e4 d5 2.exd5 Nf6"
         )
     )
 }

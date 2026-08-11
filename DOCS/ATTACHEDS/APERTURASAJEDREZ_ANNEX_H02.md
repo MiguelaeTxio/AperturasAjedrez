@@ -11,8 +11,14 @@
   principal), Gambito de Dama Rehusado -- Variante de Cambio.
 - Primera línea de la escandinava de negras contra 1.e4 añadida
   (2...Qxd5 3.Nc3 Qa5, línea principal).
-- Las 5 líneas totales (1 de H01 + 4 nuevas) verificadas jugada a
-  jugada con chess.js antes de escribirlas.
+- Segundo lote (S1, sin pausa a verificar en dispositivo — ver nota
+  de ritmo de trabajo más abajo): Contragambito Albin, Defensa
+  Chigorin y Semi-Eslava (Variante Meran) completan las respuestas
+  principales de negras contra 2.c4 dentro de la familia Gambito de
+  Dama; Escandinava Moderna (2...Nf6) añade la segunda rama principal
+  de la familia escandinava.
+- Las 9 líneas totales verificadas jugada a jugada con chess.js antes
+  de escribirlas.
 - Selector nativo (`RepertoireCatalog.kt`) actualizado con las 4
   entradas nuevas, mismos ids que `repertoire.js`.
 
@@ -29,6 +35,14 @@ resalte de casillas, registro de aciertos/fallos por línea).
 Redacción de líneas y explicaciones a cargo de Claude, con criterio
 ajedrecístico general (acuerdo cerrado en H01, no se repite la
 pregunta por cada línea nueva).
+
+## RITMO DE TRABAJO (S1)
+
+Miguel Ángel corrigió el ritmo inicial: no hay que parar a instalar y
+probar cada bloque pequeño en el móvil. Se van encadenando commits y
+builds en verde de forma continua, clasificando las líneas por
+familias de apertura, y solo se avisa para probar en dispositivo real
+cuando Miguel Ángel lo pida explícitamente — no después de cada lote.
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
