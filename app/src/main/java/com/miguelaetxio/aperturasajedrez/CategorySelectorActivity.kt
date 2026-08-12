@@ -29,6 +29,9 @@ class CategorySelectorActivity : AppCompatActivity() {
         findViewById<Button>(R.id.categoryProblemsButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_PROBLEMS)
         }
+        findViewById<Button>(R.id.categoryTrampasButton).setOnClickListener {
+            openSelector(OpeningSelectorActivity.CATEGORY_TRAMPAS)
+        }
     }
 
     private fun openSelector(category: String) {

@@ -27,6 +27,8 @@
       typeof FINALES_LINES !== 'undefined' ? FINALES_LINES : []
     ).concat(
       typeof PROBLEMAS_LINES !== 'undefined' ? PROBLEMAS_LINES : []
+    ).concat(
+      typeof TRAMPAS_LINES !== 'undefined' ? TRAMPAS_LINES : []
     )
   }
 

@@ -16,4 +16,5 @@
     <string name="category_lines">Líneas</string>
     <string name="category_endgames">Finales</string>
     <string name="category_problems">Problemas</string>
+    <string name="category_trampas">Trampas</string>
 </resources>

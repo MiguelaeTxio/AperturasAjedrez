@@ -9,6 +9,7 @@ import com.miguelaetxio.aperturasajedrez.data.FinalesCatalog
 import com.miguelaetxio.aperturasajedrez.data.OpeningEntry
 import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
 import com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog
+import com.miguelaetxio.aperturasajedrez.data.TrampasCatalog
 
 /**
  * Selector generico de contenido de entrenamiento. Filtra el catalogo
@@ -37,6 +38,14 @@ class OpeningSelectorActivity : AppCompatActivity() {
                         subtitle = it.nivel.etiqueta + " · " + it.tema
                     )
                 }
+            CATEGORY_TRAMPAS -> TrampasCatalog.entries
+                .map {
+                    OpeningEntry(
+                        id = it.id,
+                        title = it.title,
+                        subtitle = it.tipo.etiqueta + " · " + it.subtitle
+                    )
+                }
             else -> RepertoireCatalog.entries
         }
 
@@ -54,5 +63,6 @@ class OpeningSelectorActivity : AppCompatActivity() {
         const val CATEGORY_LINES = "linea"
         const val CATEGORY_ENDGAMES = "final"
         const val CATEGORY_PROBLEMS = "problema"
+        const val CATEGORY_TRAMPAS = "trampa"
     }
 }
