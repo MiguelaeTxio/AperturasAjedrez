@@ -113,21 +113,45 @@ Formato de explicación por jugada: **idéntico** al de las líneas
 (`idea`/`ventaja`/`debilidad` por jugada) -- se reutiliza tal cual, sin
 formato adaptado especial para finales.
 
-### Problemas — alcance (CERRADO S4, implementado)
-10 problemas de posición suelta + solución corta (1-5 jugadas),
-clasificados por tema: horquilla, clavada, ataque a la descubierta,
-desviación, atracción, doble ataque de torre, mate en 1, mate en 2,
-sobrecarga, promoción forzada. Verificación: secuencia completa de la
-solución (todas las jugadas, propias y de respuesta forzada) validada
-con `chess.js` real vía `verify.js`, no solo la primera jugada —
-además, en los problemas con pieza defensora rival capaz de crear
-contrajuego real (desviación, atracción, sobrecarga, subpromoción), la
-secuencia se exploró de forma interactiva con el script de exploración
-en vez de simularse de memoria, igual que con los finales de torre y
-dama. Tras fallar: se reutiliza el mismo diálogo bloqueante de 3
-fallos ("torpe como una oruga") ya existente.
+### Problemas — alcance (CERRADO S4, implementado; REDISEÑADO en
+sesión posterior)
+Primera versión: 10 problemas de posición suelta + solución corta
+(1-5 jugadas), clasificados por tema. Verificación: secuencia
+completa de la solución validada con `chess.js` real vía `verify.js`
+(exploración interactiva cuando había pieza defensora rival con
+contrajuego real). Tras fallar: diálogo bloqueante de 3 fallos ("torpe
+como una oruga").
 
-**Hallazgo de esta sesión: los problemas no necesitaron ningún motor
+**Corrección S4 (sesión posterior): base real, con niveles.** Miguel
+Ángel señaló dos fallos de fondo en la primera versión: (1) contenido
+inventado por Claude desde cero, de nivel demasiado básico, sin
+ningún anclaje en fuentes reales; (2) sin niveles de dificultad, todo
+mezclado en un mismo bloque uniforme. Corrección aplicada:
+
+- Los problemas más representativos de cada nivel se anclan en
+  **patrones y partidas reales y documentadas**, verificadas
+  reproduciendo la apertura/partida completa desde cero con
+  `chess.js` (no solo copiando el FEN final de la fuente): el Mate de
+  Legal (patrón documentado desde 1750), el Mate de Anastasia (patrón
+  con nombre propio desde la novela de 1803), el Mate de Boden con la
+  partida real completa "Inmortal Peruana" (Canal-NN, Budapest 1934),
+  y el mate sofocado / "Legado de Philidor" (documentado desde el
+  manuscrito de Lucena de 1497, fijado en la literatura por Philidor
+  en 1749).
+- Los 10 problemas de la primera versión (tácticamente sólidos y
+  correctamente verificados — el fallo no era de corrección, era de
+  nivel y procedencia) se conservan pero se reclasifican por
+  dificultad real en vez de presentarse como un bloque uniforme.
+- Campo nuevo: `nivel` (1 Iniciación / 2 Intermedio / 3 Avanzado / 4
+  Experto), además del ya existente `tema`. Ambos son solo metadatos
+  para el selector nativo (`ProblemasCatalog.kt`, con `enum Nivel`) —
+  no afectan al motor JS.
+
+Total: **14 problemas** (3 · 4 · 4 · 3 por nivel). Los 4 anclados en
+partidas/patrones reales quedan citados con su fuente en el propio
+`overview` del problema, visible para Miguel Ángel en la app.
+
+**Hallazgo (se mantiene): los problemas no necesitaron ningún motor
 propio.** El diseño original (ver CONTEXTO TÉCNICO más arriba)
 anticipaba que los problemas "rompen el patrón" de líneas/finales y
 necesitarían una pantalla o `Activity` nueva. En la práctica, un
@@ -135,9 +159,7 @@ problema es exactamente una línea/final más: una posición inicial
 (`startFen`) más una secuencia fija de jugadas (`moves`, con el mismo
 formato `idea`/`ventaja`/`debilidad`) que el motor reproduce igual que
 cualquier línea de apertura o final, terminando cuando el array de
-jugadas se agota. La única diferencia real es un campo nuevo, `tema`,
-usado solo para clasificar y mostrar en el selector nativo — no afecta
-al motor JS en absoluto. Los 10 problemas viven en `problemas.js`
+jugadas se agota. Los 14 problemas viven en `problemas.js`
 (`PROBLEMAS_LINES`), con ids con prefijo `h04-problema-`; `game.js`
 busca en la concatenación de `REPERTOIRE_LINES` + `FINALES_LINES` +
 `PROBLEMAS_LINES`.

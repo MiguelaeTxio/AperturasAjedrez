@@ -28,9 +28,15 @@ class OpeningSelectorActivity : AppCompatActivity() {
             CATEGORY_ENDGAMES -> FinalesCatalog.entries.map {
                 OpeningEntry(id = it.id, title = it.title, subtitle = it.subtitle)
             }
-            CATEGORY_PROBLEMS -> ProblemasCatalog.entries.map {
-                OpeningEntry(id = it.id, title = it.title, subtitle = it.tema)
-            }
+            CATEGORY_PROBLEMS -> ProblemasCatalog.entries
+                .sortedBy { it.nivel.ordinal }
+                .map {
+                    OpeningEntry(
+                        id = it.id,
+                        title = it.title,
+                        subtitle = it.nivel.etiqueta + " · " + it.tema
+                    )
+                }
             else -> RepertoireCatalog.entries
         }
 
