@@ -6,13 +6,13 @@
 ## Próximos pasos concretos
 
 Ver "HOJA DE RUTA PARA LA SIGUIENTE SESIÓN" en el anexo del Hito 05 —
-no se duplica aquí. Resumen de una línea: investigación ya hecha (7
-trampas reales identificadas con fuente, en Gambito de Dama y
-Escandinava), diseño de arquitectura ya cerrado (reutiliza el motor
-de línea fija tal cual, sin modo nuevo, salvo un campo `tipo`
-ofensiva/defensiva para el selector). Queda pendiente verificar cada
-trampa con `chess.js` real desde el primer movimiento y construir el
-contenido + la cuarta categoría del menú.
+no se duplica aquí. Resumen de una línea: en S5 se verificaron y
+construyeron 6 trampas reales (arquitectura completa, cuarta
+categoría del menú, build verde confirmado), se descartó una séptima
+mal atribuida, y se investigó sin resultado aprovechable la
+ampliación con trampas de la Escandinava Moderna. Queda pendiente
+verificación en dispositivo real por Miguel Ángel y decidir si el
+Hito 05 se da por completado.
 
 ## Decisiones/incidencias pendientes de confirmar con Miguel Ángel que no son hoja de ruta técnica
 

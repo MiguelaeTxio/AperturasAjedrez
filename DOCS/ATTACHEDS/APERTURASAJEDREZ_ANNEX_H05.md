@@ -111,6 +111,50 @@ escribirse en el fichero de datos.
    antes de escribirlas, ya que el vídeo no da el FEN/PGN por
    escrito.
 
+## INCIDENCIA S5 -- verificación y descarte de la trampa 7
+
+Al verificar la trampa 7 con `chess.js` real, la fuente citada
+("Crush the Scandinavian Defense in 8 Moves", Chess-Teacher) resultó
+describir en realidad la **misma línea que la trampa 6** (Gambito
+Leonhardt, 2...Qxd5 3.Nc3 Qa5 4.b4), no una trampa distinta ligada a
+2...Nf6 -- el Bxf7+/Qh5+ de esa fuente ocurre tras 6.Bc4 c6??, dentro
+de la línea de dama, no dentro de la Escandinava Moderna con
+caballo. Descartada según el criterio de VERIFICACIÓN de este mismo
+anexo (no se fuerza contenido no verificado). Quedan 6 trampas reales
+escritas en `trampas.js`.
+
+## INVESTIGACIÓN ADICIONAL S5 -- punto 2 de la hoja de ruta (sin resultado utilizable)
+
+Se investigó el vídeo de GM Igor Smirnov ("Top 10 Scandinavian
+Defense Opening Traps for Black") y fuentes escritas relacionadas
+(chess-teacher.com/scandinavian-defense-traps, artículo espejo del
+vídeo). Conclusión: las 10 trampas del vídeo están ligadas a líneas
+de la Escandinava Moderna **distintas** de la que Miguel Ángel juega
+de verdad en `repertoire.js` (`h02-escandinava-moderna`: 1.e4 d5
+2.exd5 Nf6 3.d4 Nxd5 4.Nf3 g6 5.c4 Nb6 6.Nc3 Bg7, sistema de
+fianchetto tipo Grünfeld) -- la mayoría de las trampas de Smirnov
+parten en su lugar del Gambito Portugués (3...Bg4) o de líneas contra
+3.c4/3.Nc3 que Miguel Ángel no juega, y el vídeo no tiene PGN/FEN
+escrito para las que sí podrían coincidir, solo diagramas en vídeo.
+
+Búsqueda adicional de trampas documentadas y nombradas, ancladas
+específicamente al sistema de fianchetto real (3.d4 Nxd5 4.Nf3 g6
+5.c4 Nb6 6.Nc3 Bg7...): se encontró que Peter Svidler (citado en
+Chessable) desarrolla un ataque peligroso para blancas tras 7.c5 Nd5
+8.Bc4 c6 9.Qb3 O-O 10.O-O, pero ninguna fuente documenta una
+combinación táctica forzada y nombrada a partir de ahí (solo
+"posición peligrosa para negras" en términos generales) -- no cumple
+el nivel de verificación exigido (trampa con nombre/fuente concreta y
+secuencia forzada, no una valoración estratégica genérica).
+
+**Decisión: no se añade contenido nuevo por este concepto en S5.** No
+se ha encontrado ninguna trampa documentada, con nombre propio o
+fuente que dé una secuencia forzada verificable, anclada al sistema
+de fianchetto real de `h02-escandinava-moderna`. El punto 2 de la
+hoja de ruta queda investigado y cerrado sin resultado aprovechable;
+no se retoma salvo que Miguel Ángel aporte una fuente nueva o pida
+ampliar la búsqueda a otras líneas del repertorio.
+
 ## ARQUITECTURA DE MOTOR (decisión cerrada, sin diseño nuevo)
 
 Una trampa **es exactamente una línea más**: mismo objeto que
@@ -145,18 +189,42 @@ con `chess.js` real al construirla, se descarta o se ajusta antes de
 escribirse -- no se fuerza contenido no verificado, mismo criterio
 aplicado durante todo H04.
 
+## COMPLETADAS EN S5
+
+- Verificadas con `chess.js` real (reproduciendo cada apertura
+  completa desde el primer movimiento) 6 de las 7 trampas
+  identificadas en S4: Elefante, Rubinstein, Cambridge Springs,
+  Lasker/Albin, Eslava (Bf4+e4), Gambito Leonhardt.
+- Trampa 7 descartada por incidencia de fuente -- ver "INCIDENCIA S5"
+  más arriba.
+- Investigado el punto 8 (trampas de GM Igor Smirnov para la
+  Escandinava Moderna): sin resultado aprovechable, ver
+  "INVESTIGACIÓN ADICIONAL S5" más arriba.
+- Arquitectura completa construida y commiteada: `trampas.js`
+  (`TRAMPAS_LINES`, 6 trampas), inclusión en `allLines()` de
+  `game.js`, carga en `index.html`, `TrampasCatalog.kt` nuevo (enum
+  `Tipo`, 6 entradas), rama `CATEGORY_TRAMPAS` en
+  `OpeningSelectorActivity`, botón nuevo en
+  `CategorySelectorActivity`/`activity_category_selector.xml`, string
+  `category_trampas`.
+- Build verde confirmado en GitHub Actions tras el push (commit
+  `8ed4268`).
+
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Verificar con `chess.js` real las 7 trampas ya identificadas con
-   fuente (bloque blancas 1-5, bloque negras 6-7), reproduciendo cada
-   apertura completa desde el primer movimiento antes de escribirla
-   en `trampas.js`.
-2. Investigar y verificar 2-3 trampas adicionales de la Escandinava
-   Moderna (punto 8 de la investigación) si el tiempo de sesión lo
-   permite, o dejarlas para un lote posterior.
-3. Construir la arquitectura (cuarta categoría, `TrampasCatalog.kt`,
-   rama en `OpeningSelectorActivity`, `trampas.js` cargado en
-   `index.html`) -- reutilizando el motor tal cual, sin diseño nuevo.
-4. Commit por lotes verificados, build verde en GitHub Actions tras
-   cada lote, sin acumular trabajo sin commitear -- mismo criterio ya
-   establecido en H01-H04.
+1. Verificación en dispositivo real por parte de Miguel Ángel: la
+   nueva categoría "Trampas" en el menú, las 6 líneas jugables (2
+   ofensivas -- Rubinstein, Eslava; 4 defensivas -- Elefante,
+   Cambridge Springs, Lasker/Albin, Leonhardt), y que el motor de
+   línea fija se comporta igual que en líneas/finales/problemas
+   (resaltado de casillas, diálogo de 3 fallos, explicaciones por
+   jugada).
+2. Con H05 investigado y cerrado en su alcance actual (6 trampas
+   reales, sin contenido adicional verificable localizado para la
+   Escandinava Moderna), decidir con Miguel Ángel si el hito se da
+   por completado o si se amplía con una fuente nueva que él aporte.
+3. Si se da por completado, siguiente hito pendiente: repaso
+   espaciado (mencionado en `RESUMPTION_POINT.md` como idea que
+   Miguel Ángel antepuso con el Hito 05), sin anexo abierto todavía --
+   requiere sesión de diseño previa (PCH) antes de codificar, como
+   siempre.
