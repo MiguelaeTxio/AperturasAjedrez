@@ -116,17 +116,29 @@ entrenamiento existente donde encaje:
   de dificultad (1 a 4). Reutiliza el motor de línea fija tal cual,
   sin necesitar ningún modo nuevo.
 
-### Hito 05 — Trampas en las aperturas (EN PROGRESO)
+### Hito 05 — Trampas en las aperturas (PAUSADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H05.md`)
 Sección de trampas de apertura ligadas al repertorio ya existente
 (Gambito de Dama con blancas, Escandinava y demás defensas con
 negras) -- no trampas genéricas, solo las que aparecen dentro de las
 líneas que Miguel Ángel ya juega. Dos categorías: ofensivas (las que
-puede tender él) y defensivas (las que debe reconocer y evitar).
-Investigación inicial ya realizada y documentada en el anexo (7
-trampas con fuente real identificada); contenido y arquitectura
-(cuarta categoría del menú, reutilizando el motor de línea fija sin
-diseño nuevo) pendientes de construir en la siguiente sesión.
+puede tender él) y defensivas (las que debe reconocer y evitar). 6
+trampas verificadas con `chess.js` real, arquitectura completa
+construida (cuarta categoría del menú) y build verde confirmado.
+Pausado pendiente de verificación en dispositivo real por Miguel
+Ángel.
+
+### Hito 06 — Estructuras de peones y planes de medio juego (EN PROGRESO)
+(Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H06.md`)
+Sección de estructuras de peones y sus planes de medio juego
+asociados, ancladas al repertorio ya existente (IQP, Carlsbad/ataque
+de minoría, Meran, Catalana) -- no estructuras genéricas de cualquier
+apertura. Quinta categoría del menú, con texto explicativo +
+diagrama estático (reutilizando `overview`/`startFen` ya existentes)
+y demostración jugable del plan (reutilizando el motor de línea fija
+tal cual, sin diseño nuevo). Diseño cerrado con Miguel Ángel;
+contenido y arquitectura pendientes de construir en la siguiente
+sesión.
 
 ## 4. Directrices Técnicas Vinculantes
 
