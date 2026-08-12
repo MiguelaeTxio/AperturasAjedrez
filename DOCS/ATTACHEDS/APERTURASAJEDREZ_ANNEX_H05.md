@@ -1,5 +1,28 @@
 # Anexo — Hito 05: Trampas en las aperturas
 
+## COMPLETADAS EN S4
+
+Hito abierto vía PCH al cierre de H04, dentro de la misma sesión S4.
+Trabajo realizado en esta sesión, íntegramente de investigación y
+diseño (sin código ni contenido verificado todavía):
+
+- Revisión del repertorio real (`repertoire.js`) para anclar la
+  búsqueda de trampas a las líneas que Miguel Ángel juega de verdad,
+  en vez de trampas genéricas de cualquier apertura.
+- Investigación en fuentes reales (Wikipedia, Chess.com,
+  TheChessWorld, Chess-Teacher, Chessable, ChessDoctrine, House of
+  Staunton) de 7 trampas documentadas, ligadas al Gambito de Dama
+  (bloque blancas) y a la Escandinava (bloque negras) -- ver detalle
+  en "INVESTIGACIÓN REALIZADA" más abajo. Ninguna inventada.
+- Decisión de diseño cerrada: clasificación en dos categorías
+  (ofensivas/defensivas) y arquitectura de motor (una trampa es
+  exactamente una línea más, sin modo nuevo, solo un campo `tipo`
+  para el selector) -- ver "ARQUITECTURA DE MOTOR" más abajo.
+- Sin verificación con `chess.js` todavía: las 7 trampas están
+  identificadas y citadas por fuente, pero ninguna se ha reproducido
+  aún desde el primer movimiento con el motor real -- ese es el
+  primer paso de la hoja de ruta de la siguiente sesión.
+
 ## OBJETIVO
 
 Añadir una sección de **trampas de apertura** ligada directamente al
