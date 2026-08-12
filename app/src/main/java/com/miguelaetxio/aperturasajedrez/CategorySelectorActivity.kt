@@ -32,6 +32,9 @@ class CategorySelectorActivity : AppCompatActivity() {
         findViewById<Button>(R.id.categoryTrampasButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_TRAMPAS)
         }
+        findViewById<Button>(R.id.categoryEstructurasButton).setOnClickListener {
+            openSelector(OpeningSelectorActivity.CATEGORY_ESTRUCTURAS)
+        }
     }
 
     private fun openSelector(category: String) {

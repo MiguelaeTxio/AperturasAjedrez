@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.miguelaetxio.aperturasajedrez.data.EstructurasCatalog
 import com.miguelaetxio.aperturasajedrez.data.FinalesCatalog
 import com.miguelaetxio.aperturasajedrez.data.OpeningEntry
 import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
@@ -46,6 +47,14 @@ class OpeningSelectorActivity : AppCompatActivity() {
                         subtitle = it.tipo.etiqueta + " · " + it.subtitle
                     )
                 }
+            CATEGORY_ESTRUCTURAS -> EstructurasCatalog.entries
+                .map {
+                    OpeningEntry(
+                        id = it.id,
+                        title = it.title,
+                        subtitle = it.familia.etiqueta + " · " + it.subtitle
+                    )
+                }
             else -> RepertoireCatalog.entries
         }
 
@@ -64,5 +73,6 @@ class OpeningSelectorActivity : AppCompatActivity() {
         const val CATEGORY_ENDGAMES = "final"
         const val CATEGORY_PROBLEMS = "problema"
         const val CATEGORY_TRAMPAS = "trampa"
+        const val CATEGORY_ESTRUCTURAS = "estructura"
     }
 }

@@ -56,6 +56,17 @@
         android:layout_height="wrap_content"
         android:text="@string/category_trampas"
         app:layout_constraintTop_toBottomOf="@id/categoryProblemsButton"
+        app:layout_constraintBottom_toTopOf="@id/categoryEstructurasButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/categoryEstructurasButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/category_estructuras"
+        app:layout_constraintTop_toBottomOf="@id/categoryTrampasButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
