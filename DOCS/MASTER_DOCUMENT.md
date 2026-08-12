@@ -96,22 +96,37 @@ la práctica. 9 líneas finales cubriendo las 5 familias del alcance
 (Londres, Inglesa+Catalán, Reti, Trompowsky, flancos menores), todas
 por encima de la profundidad media de H01/H02.
 
-### Hito 04 — Entrenamiento de finales de partida y sección de problemas (EN PROGRESO)
+### Hito 04 — Entrenamiento de finales de partida y sección de problemas (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`)
 Acordado con Miguel Ángel al cierre de Hito 02, para después de
 Hito 03. Dos bloques nuevos de contenido, reutilizando la mecánica de
 entrenamiento existente donde encaje:
 - **Finales de partida**: cada final carga su propia posición inicial
   (FEN) en vez de partir siempre de la posición inicial de la
-  partida — el resto del motor (jugada esperada, el rival responde,
-  feedback) se reutiliza tal cual.
-- **Problemas de ajedrez**: mecánica distinta a la de líneas/finales
-  — posición suelta + solución corta (encontrar la jugada o
-  2-3 jugadas que ganan material o dan mate), sin la parte de "el
-  motor responde y sigues jugando la partida entera". Clasificados
-  por tema (clavada, horquilla, mate en 2, desviación...).
-Alcance exacto (qué finales, cuántos problemas, cómo se integran en
-el menú) a definir con Miguel Ángel al llegar a este hito.
+  partida. Los finales de mate elemental (torre, dama, dos alfiles)
+  usan un modo de motor nuevo, "práctica libre de técnica"
+  (`freeMode`, ver anexo): sin jugada única esperada, el usuario
+  mueve con libertad y el motor solo impide la jugada que ahoga al
+  rival. El resto de finales y las líneas de apertura siguen usando
+  el motor de línea fija original.
+- **Problemas de ajedrez**: posición suelta + solución corta,
+  anclados en patrones y partidas reales documentadas (mate de
+  Legal, de Anastasia, de Boden con partida real completa, mate
+  sofocado / Legado de Philidor), clasificados por tema y por nivel
+  de dificultad (1 a 4). Reutiliza el motor de línea fija tal cual,
+  sin necesitar ningún modo nuevo.
+
+### Hito 05 — Trampas en las aperturas (EN PROGRESO)
+(Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H05.md`)
+Sección de trampas de apertura ligadas al repertorio ya existente
+(Gambito de Dama con blancas, Escandinava y demás defensas con
+negras) -- no trampas genéricas, solo las que aparecen dentro de las
+líneas que Miguel Ángel ya juega. Dos categorías: ofensivas (las que
+puede tender él) y defensivas (las que debe reconocer y evitar).
+Investigación inicial ya realizada y documentada en el anexo (7
+trampas con fuente real identificada); contenido y arquitectura
+(cuarta categoría del menú, reutilizando el motor de línea fija sin
+diseño nuevo) pendientes de construir en la siguiente sesión.
 
 ## 4. Directrices Técnicas Vinculantes
 
