@@ -2,15 +2,12 @@ package com.miguelaetxio.aperturasajedrez
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.miguelaetxio.aperturasajedrez.data.EstructurasCatalog
 import com.miguelaetxio.aperturasajedrez.data.FinalesCatalog
-import com.miguelaetxio.aperturasajedrez.data.Nivel
 import com.miguelaetxio.aperturasajedrez.data.OpeningEntry
-import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
 import com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog
 import com.miguelaetxio.aperturasajedrez.data.TrampasCatalog
 
@@ -18,9 +15,19 @@ import com.miguelaetxio.aperturasajedrez.data.TrampasCatalog
  * Selector generico de contenido de entrenamiento. Filtra el catalogo
  * segun EXTRA_CATEGORY (H04) -- CATEGORY_LINES (por defecto, si no se
  * recibe el extra, para no romper flujos que aun lancen esta Activity
- * sin categoria), CATEGORY_ENDGAMES o CATEGORY_PROBLEMS. OpeningAdapter
- * es generico sobre OpeningEntry, asi que FinalEntry/ProblemEntry se
- * adaptan a esa forma antes de pasarlos -- ver mapeo mas abajo.
+ * sin categoria), CATEGORY_ENDGAMES, CATEGORY_TRAMPAS o
+ * CATEGORY_ESTRUCTURAS. OpeningAdapter es generico sobre OpeningEntry,
+ * asi que FinalEntry/TrampaEntry/EstructuraEntry se adaptan a esa
+ * forma antes de pasarlos -- ver mapeo mas abajo.
+ *
+ * S8: CATEGORY_PROBLEMS ya NO pasa por aqui -- Miguel Angel senalo
+ * explicitamente que no quiere elegir de una lista de problemas,
+ * quiere que se sirva el primero directamente y, al resolverlo, el
+ * siguiente. CategorySelectorActivity lanza BoardActivity
+ * directamente con la cola completa en EXTRA_LINE_QUEUE para esa
+ * categoria (ver startProblemSession() alli). La constante
+ * CATEGORY_PROBLEMS se mantiene por si en el futuro hace falta un
+ * selector suelto de depuracion, pero hoy nada la usa.
  */
 class OpeningSelectorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,15 +39,6 @@ class OpeningSelectorActivity : AppCompatActivity() {
             CATEGORY_ENDGAMES -> FinalesCatalog.entries.map {
                 OpeningEntry(id = it.id, title = it.title, subtitle = it.subtitle)
             }
-            CATEGORY_PROBLEMS -> ProblemasCatalog.entries
-                .sortedBy { it.nivel.ordinal }
-                .map {
-                    OpeningEntry(
-                        id = it.id,
-                        title = it.title,
-                        subtitle = it.nivel.etiqueta + " · " + it.tema
-                    )
-                }
             CATEGORY_TRAMPAS -> TrampasCatalog.entries
                 .map {
                     OpeningEntry(
@@ -66,29 +64,6 @@ class OpeningSelectorActivity : AppCompatActivity() {
             val intent = Intent(this, BoardActivity::class.java)
                 .putExtra(BoardActivity.EXTRA_LINE_ID, entry.id)
             startActivity(intent)
-        }
-
-        // S7: boton de sesion secuencial, solo para Problemas por
-        // ahora -- recorre en orden los problemas de Nivel.TORNEO
-        // (1700-2200) sin volver a esta lista entre uno y el
-        // siguiente. Ver loadLine()/onLineComplete() en game.js.
-        val sessionButton = findViewById<Button>(R.id.sessionModeButton)
-        if (category == CATEGORY_PROBLEMS) {
-            val torneoIds = ProblemasCatalog.entries
-                .filter { it.nivel == Nivel.TORNEO }
-                .map { it.id }
-            if (torneoIds.isNotEmpty()) {
-                sessionButton.text = getString(R.string.session_mode_problems)
-                sessionButton.visibility = android.view.View.VISIBLE
-                sessionButton.setOnClickListener {
-                    val intent = Intent(this, BoardActivity::class.java)
-                        .putStringArrayListExtra(
-                            BoardActivity.EXTRA_LINE_QUEUE,
-                            ArrayList(torneoIds)
-                        )
-                    startActivity(intent)
-                }
-            }
         }
     }
 

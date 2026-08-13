@@ -143,6 +143,18 @@ object ProblemasCatalog {
             title = "El Molino -- Torre vs Lasker",
             tema = "Jaque a la descubierta en cadena (partida real, Moscú 1925)",
             nivel = Nivel.TORNEO
+        ),
+        ProblemEntry(
+            id = "h04-problema-opera-morphy",
+            title = "La Partida de la Ópera -- Morphy vs Duque de Brunswick",
+            tema = "Sacrificio de dama + mate con torre (partida real, París 1858)",
+            nivel = Nivel.TORNEO
+        ),
+        ProblemEntry(
+            id = "h04-problema-perenne-anderssen",
+            title = "La Partida Perenne -- Anderssen vs Dufresne",
+            tema = "Sacrificio de dama + mate con dos alfiles (partida real, Berlín 1852)",
+            nivel = Nivel.TORNEO
         )
     )
 }

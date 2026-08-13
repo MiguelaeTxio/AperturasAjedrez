@@ -792,6 +792,53 @@ var PROBLEMAS_LINES = [
       { color: 'b', san: 'Kh7', explain: { idea: 'El rey se ve forzado a moverse a una casilla distinta esta vez, ya que g8 no para el jaque de la torre en g5.', ventaja: 'Ninguna real.', debilidad: 'Deja la dama de h5 completamente indefendida frente a la torre.' } },
       { color: 'w', san: 'Rxh5', explain: { idea: 'La torre captura la dama negra directamente, cerrando el molino con la pieza mas valiosa del tablero.', ventaja: 'Balance final del molino completo: blancas gana dama, alfil y dos peones a cambio de nada, con el rey negro reducido a mero espectador durante toda la combinacion.', debilidad: 'Ninguna: es el resultado final de la combinacion -- el ejemplo de libro de texto de por que un molino bien ejecutado es letal.' } }
     ]
+  },
+
+  {
+    id: 'h04-problema-opera-morphy',
+    name: 'La Partida de la Opera -- Morphy vs Duque de Brunswick y Conde Isouard, 1858',
+    tema: 'Sacrificio de dama + mate con torre (partida real, Paris 1858)',
+    nivel: 5,
+    userColor: 'w',
+    startFen: '4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16',
+    overview: 'Posicion real tras 15...Cxd7 de la celebre partida de ' +
+      'consulta jugada por Morphy en un palco de la Opera de Paris, ' +
+      '1858, contra el Duque de Brunswick y el Conde Isouard. Blancas ' +
+      'ha desarrollado todas sus piezas en 15 jugadas mientras negras ' +
+      'apenas ha movido peones y una dama que ya va por su tercera ' +
+      'casilla. El resultado: mate forzado en solo 2 jugadas mas, con ' +
+      'un sacrificio de dama que despeja la ultima casilla que faltaba.',
+    moves: [
+      { color: 'w', san: 'Qb8+', explain: { idea: 'Sacrificio de dama en b8, dando jaque -- el rey no puede moverse a ninguna casilla libre y solo el caballo de d7 puede interponerse capturando.', ventaja: 'Aunque entrega la dama, obliga a negras a tapar el jaque con la unica pieza que le queda cerca del rey, dejando la casilla d8 completamente vacia.', debilidad: 'Ninguna: es el sacrificio que hace posible el mate de la jugada siguiente.' } },
+      { color: 'b', san: 'Nxb8', explain: { idea: 'Unica jugada legal: el caballo debe capturar la dama para parar el jaque.', ventaja: 'Gana la dama, la pieza mas valiosa del tablero.', debilidad: 'El caballo abandona la vigilancia de la casilla d8, la unica pieza negra que la controlaba.' } },
+      { color: 'w', san: 'Rd8#', explain: { idea: 'La torre entra en d8 dando jaque mate, apoyada por el resto de piezas blancas que ya cubrian el resto de casillas de escape del rey.', ventaja: 'Jaque mate con una sola torre, tras haber sacrificado la dama -- el ejemplo de libro de texto de por que el desarrollo rapido de piezas pesa mas que el material cuando el rey rival se ha quedado atras.', debilidad: 'Ninguna: es el resultado final de la combinacion.' } }
+    ]
+  },
+
+  {
+    id: 'h04-problema-perenne-anderssen',
+    name: 'La Partida Perenne -- Anderssen vs Dufresne, 1852',
+    tema: 'Sacrificio de dama + mate con dos alfiles (partida real, Berlin 1852)',
+    nivel: 5,
+    userColor: 'w',
+    startFen: '1r2k1r1/pbppnp1p/1b3P2/8/Q7/B1PB1q2/P4PPP/3R2K1 w - - 0 21',
+    overview: 'Posicion real tras 20...Cxe7 de la Partida Perenne, ' +
+      'Anderssen-Dufresne, Berlin 1852 -- considerada junto con la ' +
+      'Inmortal una de las dos obras maestras de Anderssen. Negras ' +
+      'acaba de capturar una torre y tiene la dama activa en f3, ' +
+      'aparentemente con la iniciativa. Pero el rey negro sigue en el ' +
+      'centro sin enrocar, y blancas tiene mate forzado en 4 jugadas ' +
+      'con un nuevo sacrificio de dama seguido de una persecucion del ' +
+      'rey con los dos alfiles.',
+    moves: [
+      { color: 'w', san: 'Qxd7+', explain: { idea: 'Segundo sacrificio de dama de la partida: captura en d7 con jaque, arrastrando al rey negro fuera de su ultima casilla segura.', ventaja: 'Fuerza la respuesta del rey (es la unica jugada legal), llevandolo al centro exacto del tablero donde los dos alfiles blancos ya apuntan.', debilidad: 'Ninguna: es el sacrificio que desencadena toda la persecucion final.' } },
+      { color: 'b', san: 'Kxd7', explain: { idea: 'Unica jugada legal: el rey debe capturar la dama, no hay bloqueo ni otra pieza que pueda hacerlo.', ventaja: 'Gana la dama, la pieza mas valiosa del tablero.', debilidad: 'El rey queda completamente expuesto en el centro del tablero, justo en la diagonal de los dos alfiles blancos.' } },
+      { color: 'w', san: 'Bf5+', explain: { idea: 'Jaque de alfil, cortando la retirada del rey hacia las casillas del flanco de dama.', ventaja: 'El rey solo tiene una casilla razonable (e8); cualquier otra opcion pierde mas material de inmediato.', debilidad: 'Ninguna: sigue empujando al rey hacia la red de mate.' } },
+      { color: 'b', san: 'Ke8', explain: { idea: 'Unica casilla razonable para salir del jaque.', ventaja: 'Ninguna real: el rey solo retrocede una casilla.', debilidad: 'Sigue en la misma zona que el segundo alfil blanco necesita para completar la persecucion.' } },
+      { color: 'w', san: 'Bd7+', explain: { idea: 'El segundo alfil se suma con jaque, empujando al rey hacia la unica casilla que le queda.', ventaja: 'El rey se ve forzado a una casilla donde ya no tiene ninguna huida real en la jugada siguiente.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'Kf8', explain: { idea: 'Unica casilla razonable para salir del jaque.', ventaja: 'Ninguna real.', debilidad: 'Esa casilla exacta es la que necesita el alfil blanco para el mate final -- el propio caballo negro en e7 le tapa a su rey la salida por esa casilla.' } },
+      { color: 'w', san: 'Bxe7#', explain: { idea: 'El alfil captura el caballo de e7 dando jaque mate, junto con el resto de piezas blancas que ya cubrian el resto de casillas de escape del rey.', ventaja: 'Jaque mate: cierra la combinacion completa, con dos sacrificios de dama a lo largo de la partida resueltos con la coordinacion final de los dos alfiles.', debilidad: 'Ninguna: es el resultado final de la combinacion, la segunda obra maestra de Anderssen junto con la Inmortal.' } }
+    ]
   }
 ]
 
