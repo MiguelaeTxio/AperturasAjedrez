@@ -839,6 +839,33 @@ var PROBLEMAS_LINES = [
       { color: 'b', san: 'Kf8', explain: { idea: 'Unica casilla razonable para salir del jaque.', ventaja: 'Ninguna real.', debilidad: 'Esa casilla exacta es la que necesita el alfil blanco para el mate final -- el propio caballo negro en e7 le tapa a su rey la salida por esa casilla.' } },
       { color: 'w', san: 'Bxe7#', explain: { idea: 'El alfil captura el caballo de e7 dando jaque mate, junto con el resto de piezas blancas que ya cubrian el resto de casillas de escape del rey.', ventaja: 'Jaque mate: cierra la combinacion completa, con dos sacrificios de dama a lo largo de la partida resueltos con la coordinacion final de los dos alfiles.', debilidad: 'Ninguna: es el resultado final de la combinacion, la segunda obra maestra de Anderssen junto con la Inmortal.' } }
     ]
+  },
+
+  {
+    id: 'h04-problema-lluvia-oro-marshall',
+    name: 'La Lluvia de Oro -- Levitsky vs Marshall, Breslau 1912',
+    tema: 'Sacrificio de dama triple e irrechazable (partida real, Breslau 1912)',
+    nivel: 5,
+    userColor: 'b',
+    startFen: '5rk1/pp4pp/4p3/2R3Q1/3n4/2q4r/P1P2PPP/5RK1 b - - 1 23',
+    overview: 'Posicion real tras 23.Tc5 de Levitsky-Marshall, Breslau ' +
+      '1912 -- la jugada mas famosa de Frank Marshall, conocida como ' +
+      '"la lluvia de oro" porque el publico llovio monedas sobre el ' +
+      'tablero al verla. La torre blanca acaba de atacar la dama ' +
+      'negra en c3. La respuesta obvia seria mover la dama a un sitio ' +
+      'seguro -- pero hay una jugada que ofrece la dama de tres formas ' +
+      'distintas, y ninguna de las tres captura es aceptable para ' +
+      'blancas.',
+    moves: [
+      { color: 'b', san: 'Qg3', explain: { idea: 'Ofrece la dama a la torre de f1, al peon de f2 y a la propia dama blanca en g5 -- las tres formas de capturarla pierden para blancas.', ventaja: 'Si hxg3 entonces Ne2# (mate); si fxg3 entonces Ne2+ seguido de mate; y si blancas captura con la dama (Qxg3), el caballo entra con jaques en cadena y termina ganando la torre, dejando a negras con ventaja decisiva de material.', debilidad: 'Ninguna real: es la unica jugada que blancas puede aceptar sin perder de inmediato, y aun asi negras sale ganando material.' } },
+      { color: 'w', san: 'Qxg3', explain: { idea: 'De las tres capturas posibles, esta es la unica que evita el mate inmediato -- las otras dos (hxg3 y fxg3) permiten Ne2# a continuacion.', ventaja: 'Evita el mate inmediato y gana la dama negra.', debilidad: 'No evita la perdida de material que viene con los jaques encadenados del caballo -- solo cambia un mate rapido por una desventaja material decisiva.' } },
+      { color: 'b', san: 'Ne2+', explain: { idea: 'El caballo entra con jaque, iniciando la cadena que recupera material.', ventaja: 'Jaque forzado: el rey blanco solo tiene una casilla.', debilidad: 'Ninguna.' } },
+      { color: 'w', san: 'Kh1', explain: { idea: 'Unica casilla legal para salir del jaque.', ventaja: 'Ninguna real.', debilidad: 'Deja al caballo negro seguir la cadena de jaques sin ningun impedimento.' } },
+      { color: 'b', san: 'Nxg3+', explain: { idea: 'El caballo captura la dama blanca con jaque, recuperando la pieza que parecia perdida.', ventaja: 'Recupera la dama: el balance material pasa a ser claramente favorable para negras.', debilidad: 'Ninguna.' } },
+      { color: 'w', san: 'Kg1', explain: { idea: 'Unica casilla razonable para salir del jaque.', ventaja: 'Ninguna real.', debilidad: 'Deja al caballo negro con una ultima jugada disponible antes de que blancas pueda recapturarlo.' } },
+      { color: 'b', san: 'Nxf1', explain: { idea: 'El caballo remata capturando tambien la torre de f1 antes de retirarse.', ventaja: 'Balance final de toda la combinacion: negras entrega la dama pero recupera dama y torre, quedando con ventaja material decisiva y posicion ganadora.', debilidad: 'El caballo queda momentaneamente colgado en f1, pero el peon g2 lo captura de vuelta sin que eso cambie el balance ya asegurado.' } },
+      { color: 'w', san: 'gxh3', explain: { idea: 'Blancas recupera el caballo capturando tambien la torre que negras habia dejado en h3 varias jugadas atras, el unico consuelo material posible en una posicion ya perdida.', ventaja: 'Reduce ligeramente la sangria material.', debilidad: 'Ninguna que cambie el resultado: negras sigue con ventaja decisiva y partida totalmente ganada -- blancas termino resignando poco despues en la partida real.' } }
+    ]
   }
 ]
 

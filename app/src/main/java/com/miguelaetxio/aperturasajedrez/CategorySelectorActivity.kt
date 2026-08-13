@@ -51,9 +51,14 @@ class CategorySelectorActivity : AppCompatActivity() {
     }
 
     private fun startProblemSession() {
+        // S9: Miguel Angel senalo que empezar siempre por el mismo
+        // problema en el mismo orden lo vuelve memorizable en vez de
+        // servir para reconocer patrones de verdad. shuffled() baraja
+        // el orden en cada entrada a la sesion.
         val torneoIds = ProblemasCatalog.entries
             .filter { it.nivel == Nivel.TORNEO }
             .map { it.id }
+            .shuffled()
         val intent = Intent(this, BoardActivity::class.java)
             .putStringArrayListExtra(BoardActivity.EXTRA_LINE_QUEUE, ArrayList(torneoIds))
         startActivity(intent)

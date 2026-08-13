@@ -155,6 +155,12 @@ object ProblemasCatalog {
             title = "La Partida Perenne -- Anderssen vs Dufresne",
             tema = "Sacrificio de dama + mate con dos alfiles (partida real, Berlín 1852)",
             nivel = Nivel.TORNEO
+        ),
+        ProblemEntry(
+            id = "h04-problema-lluvia-oro-marshall",
+            title = "La Lluvia de Oro -- Levitsky vs Marshall",
+            tema = "Sacrificio de dama triple e irrechazable (partida real, Breslau 1912)",
+            nivel = Nivel.TORNEO
         )
     )
 }
