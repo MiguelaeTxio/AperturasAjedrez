@@ -37,6 +37,15 @@
 // exactamente con el id declarado en ProblemasCatalog.kt (selector
 // nativo del menu). Todos los ids llevan el prefijo "h04-problema-"
 // para evitar colision en el array combinado que construye game.js.
+//
+// S7: Miguel Angel senalo que los niveles 1-4 de abajo, pese al
+// redisexo anterior, se quedan muy por debajo de lo que necesita
+// (ELO 1700-2200). Se anade un bloque nuevo "NIVEL 5 -- TORNEO" al
+// final del fichero con 3 partidas reales completas y muy
+// documentadas (no patrones de mate en 1-2), y en ProblemasCatalog.kt
+// los niveles 1-4 se colapsan a una unica etiqueta honesta en el
+// selector en vez de la falsa progresion 1-4 anterior -- ver ese
+// fichero para el detalle exacto.
 var PROBLEMAS_LINES = [
 
   // ============================================================
@@ -686,5 +695,103 @@ var PROBLEMAS_LINES = [
         }
       }
     ]
+  },
+
+  // ============================================================
+  // NIVEL 5 -- TORNEO (1700-2200), anadido S7
+  // ============================================================
+  // Los niveles 1-4 de arriba se quedan cortos frente a lo que
+  // Miguel Angel necesita entrenar de verdad (senalado explicitamente
+  // en S7): combinaciones reales de varias jugadas, no patrones de
+  // mate en 1-2 de iniciacion. Los 3 problemas de este bloque son
+  // partidas reales completas, extremadamente documentadas,
+  // reproducidas desde la jugada 1 y verificadas con chess.js real
+  // (node) antes de escribirse aqui -- no solo el fragmento final,
+  // la partida entera desde el inicio hasta confirmar que el FEN de
+  // arranque del problema es exactamente el que resulta de esas
+  // jugadas reales. Los dos finales en jaque mate se verificaron
+  // ademas con isCheckmate(), no solo con la notacion "#" del SAN.
+  {
+    id: 'h04-problema-mate-reti-tartakower',
+    name: 'Reti vs Tartakower -- la miniatura mas famosa de la historia',
+    tema: 'Sacrificio de dama + mate con alfil (partida real, Viena 1910)',
+    nivel: 5,
+    userColor: 'w',
+    startFen: 'rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9',
+    overview: 'Posicion real tras 8...Cxe4 de la partida Reti-Tartakower, ' +
+      'Viena 1910 -- probablemente la miniatura mas reproducida de toda ' +
+      'la literatura ajedrecistica. Negras acaba de capturar un caballo, ' +
+      'aparentemente ganando la partida con comodidad: blancas no ' +
+      'parece tener compensacion visible por el peon sacrificado en la ' +
+      'apertura. Pero la dama negra, aunque domina el centro del ' +
+      'tablero, ha dejado la casilla d8 sin ninguna vigilancia real. ' +
+      'Mate forzado en 3 jugadas.',
+    moves: [
+      { color: 'w', san: 'Qd8+', explain: { idea: 'Sacrificio de dama a la casilla d8, forzando al rey a capturar porque es la unica pieza que puede hacerlo (nada mas cubre esa casilla ni puede interponerse).', ventaja: 'Aunque entrega la pieza mas valiosa del tablero, arrastra al rey negro al centro exacto donde el resto de piezas blancas lo necesitan.', debilidad: 'Ninguna: es el sacrificio que hace funcionar toda la combinacion final.' } },
+      { color: 'b', san: 'Kxd8', explain: { idea: 'Unica jugada legal: el rey debe capturar la dama, no hay bloqueo ni otra pieza que pueda hacerlo.', ventaja: 'Gana la dama, la pieza mas valiosa del tablero.', debilidad: 'El rey queda expuesto en el centro exacto de la octava fila, sin ninguna pieza propia cerca para protegerlo.' } },
+      { color: 'w', san: 'Bg5+', explain: { idea: 'Jaque de alfil por la diagonal, cortando por completo la retirada del rey hacia el flanco de dama.', ventaja: 'El rey solo tiene una casilla razonable para escapar del jaque (c7); cualquier otra opcion pierde mas material de forma inmediata.', debilidad: 'Ninguna: prepara exactamente el mate de la jugada siguiente.' } },
+      { color: 'b', san: 'Kc7', explain: { idea: 'Unica casilla razonable para salir del jaque sin perder mas material de inmediato.', ventaja: 'Ninguna real: el rey sigue completamente expuesto, ahora en la septima fila.', debilidad: 'Esa casilla exacta es la que el alfil blanco necesita para el mate final -- controla d8 sin que ninguna pieza negra pueda interponerse ni capturar.' } },
+      { color: 'w', san: 'Bd8#', explain: { idea: 'El alfil vuelve a d8 dando jaque mate, apoyado por el resto de piezas blancas que ya cubrian el resto de casillas de escape del rey.', ventaja: 'Jaque mate: el rey no tiene ninguna casilla libre, no hay pieza negra que pueda capturar el alfil ni interponerse.', debilidad: 'Ninguna: es el resultado final de la combinacion.' } }
+    ]
+  },
+
+  {
+    id: 'h04-problema-inmortal-anderssen',
+    name: 'La Partida Inmortal -- Anderssen vs Kieseritzky, 1851',
+    tema: 'Sacrificio de dama + mate puro con piezas menores (partida real, Londres 1851)',
+    nivel: 5,
+    userColor: 'w',
+    startFen: 'r1bk2nr/p2p1pNp/n2B4/1p1NP2P/6P1/3P1Q2/P1P1K3/q5b1 w - - 1 22',
+    overview: 'Posicion real tras 21...Kd8 de la Partida Inmortal, ' +
+      'Anderssen-Kieseritzky, Londres 1851 -- probablemente la partida ' +
+      'mas reproducida de toda la historia del ajedrez. Blancas ya ha ' +
+      'entregado un alfil y las dos torres a cambio de la iniciativa; ' +
+      'negras tiene dama, dos torres y un alfil de ventaja material. ' +
+      'Pero el rey negro esta completamente solo en el centro del ' +
+      'tablero, y a blancas le bastan dos jugadas mas con sus tres ' +
+      'piezas menores restantes (dos caballos y un alfil) para dar ' +
+      'mate puro -- cada pieza blanca cubre exactamente una casilla de ' +
+      'escape, sin ninguna casilla libre de sobra.',
+    moves: [
+      { color: 'w', san: 'Qf6+', explain: { idea: 'Sacrificio de dama en f6, dando jaque y obligando a negras a decidir con que pieza tapa el jaque -- solo el caballo de g8 puede hacerlo.', ventaja: 'Aunque entrega la dama, la unica respuesta posible bloquea la unica casilla de escape que le quedaba al rey negro.', debilidad: 'Ninguna: es el sacrificio que hace posible el mate de la jugada siguiente.' } },
+      { color: 'b', san: 'Nxf6', explain: { idea: 'Unica jugada legal: el caballo de g8 debe capturar la dama para parar el jaque, no hay otra pieza que pueda interponerse.', ventaja: 'Gana la dama, la pieza mas valiosa del tablero -- negras termina la combinacion con una ventaja material enorme.', debilidad: 'Esa captura exacta tapa la casilla f6, la unica salida que le quedaba al rey -- ahora esta completamente atrapado.' } },
+      { color: 'w', san: 'Be7#', explain: { idea: 'El alfil da jaque mate desde e7: junto con el caballo de d5 y el propio caballo negro (que le tapa la salida a su rey en f6), cada casilla de escape queda cubierta por exactamente una razon -- un mate puro de libro de texto.', ventaja: 'Jaque mate pese a una inferioridad material aplastante (dos caballos y un alfil contra dama, dos torres y un alfil de negras) -- la coordinacion de esas tres piezas menores basta.', debilidad: 'Ninguna: es el resultado final de la combinacion, la imagen mas reproducida de toda la historia del ajedrez.' } }
+    ]
+  },
+
+  {
+    id: 'h04-problema-molino-torre-lasker',
+    name: 'El Molino -- Torre vs Lasker, Moscu 1925',
+    tema: 'Jaque a la descubierta en cadena para ganar material (partida real, Moscu 1925)',
+    nivel: 5,
+    userColor: 'w',
+    startFen: 'r3rnk1/pb3pp1/3pp2p/1q4BQ/1P1P4/4N1R1/P4PPP/4R1K1 w - - 4 25',
+    overview: 'Posicion real tras 24...Db5 de la partida Torre-Lasker, ' +
+      'Moscu 1925, el ejemplo mas famoso de todo el ajedrez del ' +
+      '"molino": una cadena de jaques a la descubierta en la que la ' +
+      'pieza que se aparta para dar el jaque va comiendo material en ' +
+      'cada vuelta, sin que el bando defensor pueda hacer nada mas que ' +
+      'mover el rey de un lado a otro. Emanuel Lasker, ex campeon del ' +
+      'mundo, tiene la dama y una posicion solida en apariencia -- pero ' +
+      'el alfil de g5 y la torre de g3 estan a punto de desmontarle ' +
+      'todas las piezas del flanco de rey una por una.',
+    moves: [
+      { color: 'w', san: 'Bf6', explain: { idea: 'El alfil se aparta de la diagonal larga y ataca la dama negra, abriendo al mismo tiempo la descubierta de la torre de g3 contra el rey en g8 -- el primer giro del molino.', ventaja: 'Doble amenaza: la dama negra esta atacada, y el jaque a la descubierta que sigue empieza a comer material sin que negras pueda evitarlo.', debilidad: 'Ninguna real -- negras se ve obligada a mover la dama a una casilla que no soluciona el problema de fondo.' } },
+      { color: 'b', san: 'Qxh5', explain: { idea: 'Negras captura el peon de h5 con la dama, la unica forma de mantenerla algo activa fuera del ataque directo del alfil.', ventaja: 'Gana un peon y mantiene la dama en el tablero, en apariencia activa sobre la diagonal.', debilidad: 'No hace nada por defender al rey -- el jaque a la descubierta con la torre de g3 cae de inmediato, y ese es el verdadero problema.' } },
+      { color: 'w', san: 'Rxg7+', explain: { idea: 'Primer giro del molino: la torre se aparta con jaque (descubierta del alfil de f6 sobre el rey g8) y de paso captura un peon.', ventaja: 'Jaque a la descubierta -- el rey esta obligado a moverse, y la torre sigue viva en g7 amenazando comer mas material en la siguiente vuelta.', debilidad: 'Ninguna; es el mecanismo central de todo el molino.' } },
+      { color: 'b', san: 'Kh8', explain: { idea: 'Unica casilla razonable para salir del jaque sin perder la torre de f8 de inmediato.', ventaja: 'Ninguna real -- el rey solo se desplaza una casilla, sin escapar del patron.', debilidad: 'Deja a la torre blanca en g7 completamente libre para seguir comiendo peones con jaque en la siguiente vuelta.' } },
+      { color: 'w', san: 'Rxf7+', explain: { idea: 'Segunda vuelta del molino: la torre vuelve a apartarse con jaque a la descubierta, comiendo otro peon.', ventaja: 'Cada vuelta del molino suma material sin que negras pueda hacer nada mas que mover el rey.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'Kg8', explain: { idea: 'De vuelta a g8, la unica casilla razonable.', ventaja: 'Ninguna.', debilidad: 'El rey vuelve a la casilla de partida, y el molino sigue girando exactamente igual.' } },
+      { color: 'w', san: 'Rg7+', explain: { idea: 'La torre regresa a g7 con jaque a la descubierta otra vez, sin comer material esta vez -- solo reposiciona para la siguiente vuelta.', ventaja: 'Mantiene el patron de jaques con ganancia de material controlada; blancas decide el ritmo de la combinacion.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'Kh8', explain: { idea: 'Unica casilla razonable, identica a la jugada anterior de este tipo.', ventaja: 'Ninguna.', debilidad: 'El patron se repite exactamente igual.' } },
+      { color: 'w', san: 'Rxb7+', explain: { idea: 'Tercera vuelta del molino: la torre se aparta de nuevo con jaque a la descubierta, esta vez comiendo el alfil negro en b7.', ventaja: 'El material ganado ya es decisivo: dos peones y un alfil, con el molino todavia sin terminar.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'Kg8', explain: { idea: 'Unica casilla razonable, identica a las anteriores.', ventaja: 'Ninguna.', debilidad: 'Ninguna nueva; el patron continua.' } },
+      { color: 'w', san: 'Rg7+', explain: { idea: 'La torre vuelve a reposicionarse en g7 con jaque a la descubierta, preparando el ultimo giro sobre la dama negra.', ventaja: 'Mantiene la iniciativa total; negras no tiene ni una sola jugada intermedia disponible.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'Kh8', explain: { idea: 'Unica casilla razonable, identica a las anteriores.', ventaja: 'Ninguna.', debilidad: 'Ninguna nueva.' } },
+      { color: 'w', san: 'Rg5+', explain: { idea: 'Ultimo giro del molino: en vez de volver a g7, la torre se desplaza a g5 con jaque a la descubierta, alineandose para atacar directamente a la dama negra en la proxima jugada.', ventaja: 'Cambia el patron justo en el momento decisivo -- ya no busca mas material menor, sino la propia dama.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'Kh7', explain: { idea: 'El rey se ve forzado a moverse a una casilla distinta esta vez, ya que g8 no para el jaque de la torre en g5.', ventaja: 'Ninguna real.', debilidad: 'Deja la dama de h5 completamente indefendida frente a la torre.' } },
+      { color: 'w', san: 'Rxh5', explain: { idea: 'La torre captura la dama negra directamente, cerrando el molino con la pieza mas valiosa del tablero.', ventaja: 'Balance final del molino completo: blancas gana dama, alfil y dos peones a cambio de nada, con el rey negro reducido a mero espectador durante toda la combinacion.', debilidad: 'Ninguna: es el resultado final de la combinacion -- el ejemplo de libro de texto de por que un molino bien ejecutado es letal.' } }
+    ]
   }
 ]
+

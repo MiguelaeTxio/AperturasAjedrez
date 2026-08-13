@@ -11,6 +11,20 @@
     return params.get('line')
   }
 
+  // S7: modo sesion secuencial (Problemas 1700-2200 por ahora). Si la
+  // URL trae "queue" (ids separados por comas), el motor recorre esa
+  // lista de lineas una tras otra dentro del mismo WebView -- sin
+  // volver al selector nativo entre una y la siguiente -- en vez de
+  // cargar una unica linea via "line". Ver DOCS/ATTACHEDS/
+  // APERTURASAJEDREZ_ANNEX_H04.md, sesion S7.
+  function selectedQueueIds () {
+    var params = new URLSearchParams(window.location.search)
+    var raw = params.get('queue')
+    if (!raw) return null
+    var ids = raw.split(',').map(function (s) { return s.trim() }).filter(Boolean)
+    return ids.length > 0 ? ids : null
+  }
+
   // H04: los finales y los problemas viven en ficheros nuevos
   // (finales.js, problemas.js, cargados antes que este fichero) para
   // no mezclar contenido de lineas, finales y problemas en el mismo
@@ -42,7 +56,13 @@
     return lines[0]
   }
 
-  var line = findLine(selectedLineId())
+  var sessionQueue = selectedQueueIds()
+  var sessionIndex = 0
+  var sessionAciertos = 0
+  var sessionFallos = 0
+  var SESSION_ADVANCE_PAUSE_MS = 1400
+
+  var line = findLine(sessionQueue ? sessionQueue[0] : selectedLineId())
   var userColor = line.userColor || 'w'
   var opponentColor = userColor === 'w' ? 'b' : 'w'
   // H04: si la linea trae "startFen" (finales), la partida arranca
@@ -58,10 +78,19 @@
 
   var elStatus = document.getElementById('status')
   var elProgress = document.getElementById('progress')
+  var elSessionProgress = document.getElementById('sessionProgress')
   var elLineName = document.getElementById('lineName')
   var elOverview = document.getElementById('overview')
   var elRestart = document.getElementById('restartBtn')
   var elExplain = document.getElementById('explain')
+
+  function updateSessionProgressLabel () {
+    if (!sessionQueue) {
+      elSessionProgress.textContent = ''
+      return
+    }
+    elSessionProgress.textContent = 'Problema ' + (sessionIndex + 1) + ' de ' + sessionQueue.length
+  }
 
   function showExplanation (moveEntry) {
     if (!moveEntry || !moveEntry.explain) {
@@ -95,6 +124,9 @@
 
   function recordAttempt (correct) {
     if (correct) { aciertos++ } else { fallos++ }
+    if (sessionQueue) {
+      if (correct) { sessionAciertos++ } else { sessionFallos++ }
+    }
     refreshProgressLabel()
     if (window.AndroidBridge) {
       window.AndroidBridge.recordAttempt(line.id, correct)
@@ -186,8 +218,26 @@
   }
 
   function onLineComplete () {
-    setStatus('Linea completada.')
     board.position(game.fen())
+
+    if (!sessionQueue) {
+      setStatus('Linea completada.')
+      return
+    }
+
+    if (sessionIndex + 1 < sessionQueue.length) {
+      setStatus('¡Problema resuelto! Siguiente problema...')
+      window.setTimeout(function () {
+        sessionIndex++
+        loadLine(findLine(sessionQueue[sessionIndex]))
+      }, SESSION_ADVANCE_PAUSE_MS)
+      return
+    }
+
+    setStatus(
+      'Sesion completada: ' + sessionQueue.length + ' problemas -- ' +
+      sessionAciertos + ' aciertos, ' + sessionFallos + ' fallos en el conjunto.'
+    )
   }
 
   function advanceAfterMove (from, to) {
@@ -318,10 +368,32 @@
     beginLine()
   }
 
+  // S7: cambia la linea activa sin recargar la pagina (modo sesion).
+  // Reutiliza exactamente la misma logica de arranque que init(),
+  // solo que sobre una linea nueva en vez de la primera carga.
+  function loadLine (newLine) {
+    line = newLine
+    userColor = line.userColor || 'w'
+    opponentColor = userColor === 'w' ? 'b' : 'w'
+    game = line.startFen ? new window.Chess(line.startFen) : new window.Chess()
+    moveIndex = 0
+    attemptsThisMove = 0
+    clearHighlights()
+    elExplain.innerHTML = ''
+    elLineName.textContent = line.name
+    elOverview.textContent = line.overview || ''
+    loadInitialProgress()
+    board.orientation(userColor === 'b' ? 'black' : 'white')
+    board.position(line.startFen || 'start')
+    updateSessionProgressLabel()
+    beginLine()
+  }
+
   function init () {
     elLineName.textContent = line.name
     elOverview.textContent = line.overview || ''
     loadInitialProgress()
+    updateSessionProgressLabel()
 
     board = window.Chessboard('board', {
       draggable: true,

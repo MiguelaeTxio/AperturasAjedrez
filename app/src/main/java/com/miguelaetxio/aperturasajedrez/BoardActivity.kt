@@ -10,6 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
  * Pantalla del tablero interactivo. Recibe la linea a entrenar via
  * EXTRA_LINE_ID (elegida en OpeningSelectorActivity) y la pasa al
  * WebView como query param -- ver selectedLineId() en game.js.
+ *
+ * S7: alternativamente puede recibir EXTRA_LINE_QUEUE, una lista de
+ * ids (modo sesion secuencial) que se pasa como query param "queue"
+ * -- ver selectedQueueIds() en game.js. Si llega la cola, tiene
+ * prioridad sobre EXTRA_LINE_ID.
  */
 class BoardActivity : AppCompatActivity() {
 
@@ -18,6 +23,7 @@ class BoardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board)
 
+        val lineQueue = intent.getStringArrayListExtra(EXTRA_LINE_QUEUE)
         val lineId = intent.getStringExtra(EXTRA_LINE_ID)
             ?: com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog.entries.first().id
 
@@ -26,14 +32,18 @@ class BoardActivity : AppCompatActivity() {
         webView.settings.allowFileAccess = true
         webView.addJavascriptInterface(TrainingBridge(this, webView), "AndroidBridge")
 
-        val url = Uri.parse("file:///android_asset/www/index.html")
+        val urlBuilder = Uri.parse("file:///android_asset/www/index.html")
             .buildUpon()
-            .appendQueryParameter("line", lineId)
-            .build()
-        webView.loadUrl(url.toString())
+        if (lineQueue != null && lineQueue.isNotEmpty()) {
+            urlBuilder.appendQueryParameter("queue", lineQueue.joinToString(","))
+        } else {
+            urlBuilder.appendQueryParameter("line", lineId)
+        }
+        webView.loadUrl(urlBuilder.build().toString())
     }
 
     companion object {
         const val EXTRA_LINE_ID = "extra_line_id"
+        const val EXTRA_LINE_QUEUE = "extra_line_queue"
     }
 }

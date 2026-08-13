@@ -2,11 +2,13 @@ package com.miguelaetxio.aperturasajedrez
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.miguelaetxio.aperturasajedrez.data.EstructurasCatalog
 import com.miguelaetxio.aperturasajedrez.data.FinalesCatalog
+import com.miguelaetxio.aperturasajedrez.data.Nivel
 import com.miguelaetxio.aperturasajedrez.data.OpeningEntry
 import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
 import com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog
@@ -64,6 +66,29 @@ class OpeningSelectorActivity : AppCompatActivity() {
             val intent = Intent(this, BoardActivity::class.java)
                 .putExtra(BoardActivity.EXTRA_LINE_ID, entry.id)
             startActivity(intent)
+        }
+
+        // S7: boton de sesion secuencial, solo para Problemas por
+        // ahora -- recorre en orden los problemas de Nivel.TORNEO
+        // (1700-2200) sin volver a esta lista entre uno y el
+        // siguiente. Ver loadLine()/onLineComplete() en game.js.
+        val sessionButton = findViewById<Button>(R.id.sessionModeButton)
+        if (category == CATEGORY_PROBLEMS) {
+            val torneoIds = ProblemasCatalog.entries
+                .filter { it.nivel == Nivel.TORNEO }
+                .map { it.id }
+            if (torneoIds.isNotEmpty()) {
+                sessionButton.text = getString(R.string.session_mode_problems)
+                sessionButton.visibility = android.view.View.VISIBLE
+                sessionButton.setOnClickListener {
+                    val intent = Intent(this, BoardActivity::class.java)
+                        .putStringArrayListExtra(
+                            BoardActivity.EXTRA_LINE_QUEUE,
+                            ArrayList(torneoIds)
+                        )
+                    startActivity(intent)
+                }
+            }
         }
     }
 
