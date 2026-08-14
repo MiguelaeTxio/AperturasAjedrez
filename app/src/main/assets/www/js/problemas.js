@@ -866,6 +866,31 @@ var PROBLEMAS_LINES = [
       { color: 'b', san: 'Nxf1', explain: { idea: 'El caballo remata capturando tambien la torre de f1 antes de retirarse.', ventaja: 'Balance final de toda la combinacion: negras entrega la dama pero recupera dama y torre, quedando con ventaja material decisiva y posicion ganadora.', debilidad: 'El caballo queda momentaneamente colgado en f1, pero el peon g2 lo captura de vuelta sin que eso cambie el balance ya asegurado.' } },
       { color: 'w', san: 'gxh3', explain: { idea: 'Blancas recupera el caballo capturando tambien la torre que negras habia dejado en h3 varias jugadas atras, el unico consuelo material posible en una posicion ya perdida.', ventaja: 'Reduce ligeramente la sangria material.', debilidad: 'Ninguna que cambie el resultado: negras sigue con ventaja decisiva y partida totalmente ganada -- blancas termino resignando poco despues en la partida real.' } }
     ]
+  },
+
+  {
+    id: 'h04-problema-inmortal-rubinstein',
+    name: 'La Inmortal de Rubinstein -- Rotlewi vs Rubinstein, Lodz 1907',
+    tema: 'Doble sacrificio de torre y dama (partida real, Lodz 1907)',
+    nivel: 5,
+    userColor: 'b',
+    startFen: '2rr2k1/1b3ppp/pb2p3/1p2P3/1P2BPnq/P1N3P1/1B2Q2P/R4R1K b - - 0 22',
+    overview: 'Posicion real tras 22.g3 de Rotlewi-Rubinstein, Lodz ' +
+      '1907, bautizada por Hans Kmoch como "la Inmortal de Rubinstein" ' +
+      'y descrita por Kasparov como la creacion mas famosa de ' +
+      'Rubinstein. Blancas acaba de tapar el jaque de la dama negra en ' +
+      'h4 con g3, en apariencia resolviendo el ataque directo. Pero ' +
+      'negras tiene preparado un doble sacrificio de torre que blancas ' +
+      'no puede aceptar de ninguna forma sin perder.',
+    moves: [
+      { color: 'b', san: 'Rxc3', explain: { idea: 'Primer sacrificio: la torre captura el caballo, abriendo la columna c y quitandole a blancas una pieza defensiva clave junto al rey.', ventaja: 'Si blancas recaptura con el alfil (Bxc3), sigue Bxe4+ y el ataque continua igual de fuerte; blancas prefiere capturar la dama con gxh4 para intentar quedarse con la mayor pieza posible.', debilidad: 'Ninguna real: es el primer paso de una combinacion completamente calculada.' } },
+      { color: 'w', san: 'gxh4', explain: { idea: 'Blancas captura la dama negra, la respuesta mas natural ante el sacrificio de torre.', ventaja: 'Gana la dama, en apariencia la pieza mas valiosa del tablero.', debilidad: 'Deja completamente indefensa la casilla d2 y la diagonal del alfil de b7, la base de todo el segundo sacrificio que viene a continuacion.' } },
+      { color: 'b', san: 'Rd2', explain: { idea: 'Segundo sacrificio, el golpe decisivo: la torre entra en d2 amenazando mate y atacando la dama blanca al mismo tiempo, sin que blancas tenga ninguna defensa satisfactoria.', ventaja: 'Doble amenaza imposible de parar por completo: si la dama no captura, el mate llega de todas formas; si captura, el alfil de b7 entra con jaque y el ataque continua con la ultima torre negra libre.', debilidad: 'Ninguna: es la jugada que decide la partida, considerada uno de los golpes mas bellos de la historia del ajedrez.' } },
+      { color: 'w', san: 'Qxd2', explain: { idea: 'Unica forma de evitar el mate inmediato: la dama captura la torre.', ventaja: 'Evita el mate directo y gana una torre.', debilidad: 'Abre la diagonal para el alfil de b7, que entra con jaque en la jugada siguiente -- el ataque negro continua sin perder ni un tiempo.' } },
+      { color: 'b', san: 'Bxe4+', explain: { idea: 'El alfil entra con jaque por la diagonal que el sacrificio de torre acaba de despejar.', ventaja: 'Jaque forzado que arrastra a la dama blanca a defender, dejando a negras con la ultima pieza (la otra torre) lista para el golpe final.', debilidad: 'Ninguna.' } },
+      { color: 'w', san: 'Qg2', explain: { idea: 'Unica forma razonable de tapar el jaque sin perder mas material de inmediato.', ventaja: 'Detiene el jaque.', debilidad: 'Deja la casilla h3 completamente abierta para la ultima torre negra, que decide la partida en la jugada siguiente.' } },
+      { color: 'b', san: 'Rh3', explain: { idea: 'La torre entra en h3, amenazando mate en h2 de forma inevitable -- ninguna pieza blanca puede defender esa casilla sin perder aun mas material.', ventaja: 'Cierra la combinacion completa: negras entrego una torre y la dama, pero recupero un caballo, la propia torre entregada y dejo a blancas sin ninguna defensa razonable frente a la amenaza final. Blancas resignio en esta misma posicion en la partida real.', debilidad: 'Ninguna: es el resultado final de la combinacion.' } }
+    ]
   }
 ]
 

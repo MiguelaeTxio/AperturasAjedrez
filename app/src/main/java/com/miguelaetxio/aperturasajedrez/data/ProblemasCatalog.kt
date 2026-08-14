@@ -161,6 +161,12 @@ object ProblemasCatalog {
             title = "La Lluvia de Oro -- Levitsky vs Marshall",
             tema = "Sacrificio de dama triple e irrechazable (partida real, Breslau 1912)",
             nivel = Nivel.TORNEO
+        ),
+        ProblemEntry(
+            id = "h04-problema-inmortal-rubinstein",
+            title = "La Inmortal de Rubinstein -- Rotlewi vs Rubinstein",
+            tema = "Doble sacrificio de torre y dama (partida real, Lodz 1907)",
+            nivel = Nivel.TORNEO
         )
     )
 }
