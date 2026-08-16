@@ -708,8 +708,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2068
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 6 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-G5tx2",
+            title = "Serie de cambios en el centro que termina con el rey a salvo",
+            tema = "Jugada defensiva del rey tras una serie de cambios",
+            nivel = Nivel.LICHESS,
+            rating = 2001
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-YQYPh",
+            title = "Carrera de reyes en un final de peones",
+            tema = "Carrera de reyes por los peones sueltos",
+            nivel = Nivel.LICHESS,
+            rating = 1769
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-xDNK2",
+            title = "Cambios forzados en la última fila que terminan en tablas de material",
+            tema = "Serie de cambios forzados en el final de torres",
+            nivel = Nivel.LICHESS,
+            rating = 1921
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-kItw1",
+            title = "Un peón que avanza y se come la dama rival",
+            tema = "Peón avanzado que captura la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1869
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Pto26",
+            title = "Sacrificio de dama clásico que abre camino al mate de torre",
+            tema = "Sacrificio de dama + mate de torre",
+            nivel = Nivel.LICHESS,
+            rating = 1976
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-RZimt",
+            title = "La dama negra recoge dos peones con jaques antes de retirarse a salvo",
+            tema = "Dama activa que gana material con jaques",
+            nivel = Nivel.LICHESS,
+            rating = 1894
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-rdJIk",
+            title = "Torre activa que persigue al rey con jaques consecutivos",
+            tema = "Torre activa acosando al rey en el final",
+            nivel = Nivel.LICHESS,
+            rating = 1718
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-2v1QN",
+            title = "Jaque de caballo que ataca al rey y al alfil a la vez",
+            tema = "Horquilla de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1703
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-sjXiz",
+            title = "El rey se aproxima antes de rematar con jaque mate",
+            tema = "Aproximación del rey + mate de torre",
+            nivel = Nivel.LICHESS,
+            rating = 1986
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-YErlk",
+            title = "Cambio de torres seguido de una reagrupación activa",
+            tema = "Cambio de torres y reagrupación",
+            nivel = Nivel.LICHESS,
+            rating = 1991
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-5XjuM",
+            title = "El rey se come un alfil suelto antes del jaque de caballo",
+            tema = "Pieza colgada en el final de piezas menores",
+            nivel = Nivel.LICHESS,
+            rating = 2011
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ZeR1l",
+            title = "Mate en 2 con la dama sola tras un jaque forzado",
+            tema = "Mate en 2",
+            nivel = Nivel.LICHESS,
+            rating = 1932
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-LYJ39",
+            title = "Carrera de peones en dos flancos distintos",
+            tema = "Carrera de peones en flancos opuestos",
+            nivel = Nivel.LICHESS,
+            rating = 1736
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GciZt",
+            title = "El rey esquiva el jaque de dama en un final ajustado",
+            tema = "Jugada defensiva del rey ante jaque de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1879
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-iBzti",
+            title = "Sacrificio de caballo que gana la calidad",
+            tema = "Sacrificio de caballo que gana la calidad",
+            nivel = Nivel.LICHESS,
+            rating = 2082
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (192 restantes de las 267 del pool corto) y las 33 posiciones
+        // (177 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
