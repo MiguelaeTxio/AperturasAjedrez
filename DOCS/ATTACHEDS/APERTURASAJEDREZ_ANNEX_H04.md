@@ -407,12 +407,18 @@ el CSV filtrado por Miguel Ángel. `problemas.js` tiene ahora 288
 entradas totales (14 Iniciación + 7 Grandes Partidas + 267 Problemas
 de ajedrez), ids cruzados JS↔Kotlin coinciden exactamente (288/288).
 
-1. Última tarea pendiente de este hito: ampliar "Grandes Partidas"
-   (`Nivel.TORNEO`) con las 33 posiciones de solución larga (7/9/11
-   semijugadas) descartadas del pool corto por no encajar con el
-   patrón de "problema" -- mismo proceso de verificación en tres
-   capas, mismo criterio de "no inventar autoría" (partidas anónimas
-   de Lichess, con `GameUrl` como referencia, sin nombre de jugador).
+**Ampliación de Grandes Partidas (S6):** lote 1 de 3 CERRADO -- 11 de
+33 posiciones de solución larga (7/9/11 semijugadas) construidas y
+verificadas. `problemas.js` tiene ahora 299 entradas totales (14
+Iniciación + 18 Grandes Partidas + 267 Problemas de ajedrez), ids
+cruzados JS↔Kotlin coinciden exactamente (299/299).
+
+1. Continuar con los lotes siguientes de ampliación de Grandes
+   Partidas: quedan 22 posiciones de solución larga, en tandas de
+   10-12, a partir del JSON intermedio ya verificado
+   (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
+   repositorio, hay que regenerarlo o pedir el CSV de nuevo si se
+   pierde entre sesiones).
 2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
    como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
    criterio de verificación y de "no inventar autoría" (partidas

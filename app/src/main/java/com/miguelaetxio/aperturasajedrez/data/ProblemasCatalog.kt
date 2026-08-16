@@ -2065,9 +2065,86 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2078
         ),
-        // Nota S6: pool corto de "Problemas de ajedrez" COMPLETO (267/267).
-        // Queda pendiente ampliar Grandes Partidas con las 33 posiciones
-        // de solucion larga (7/9/11 semijugadas) -- ver ANNEX_H04.md,
-        // hoja de ruta.
+        // ---- Grandes Partidas -- ampliacion con solucion larga, lote 1 de 3 (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-xdLHg",
+            title = "Cambio de torres en el centro que abre paso a una carrera de peones",
+            tema = "Cambio de torres + carrera de peones en el final",
+            nivel = Nivel.TORNEO,
+            rating = 1951
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-i6ahx",
+            title = "Cambio de torres seguido de una cadena de jaques que termina ganando la dama",
+            tema = "Cambio de torres + cadena de jaques que gana la dama",
+            nivel = Nivel.TORNEO,
+            rating = 1823
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-noc3M",
+            title = "Cambio de torres en un final de peones muy ajustado",
+            tema = "Cambio de torres en el final de peones",
+            nivel = Nivel.TORNEO,
+            rating = 1888
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-qDD1y",
+            title = "Coronación cambiada que abre paso a una carrera de peones en el flanco de rey",
+            tema = "Coronación cambiada + carrera de peones",
+            nivel = Nivel.TORNEO,
+            rating = 2118
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-8jNFD",
+            title = "Jaque de dama que fuerza un cambio de damas y termina ganando una torre",
+            tema = "Jaque de dama + cambio de damas + ganancia de torre",
+            nivel = Nivel.TORNEO,
+            rating = 2187
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-xZnuP",
+            title = "Cambio de torres seguido de una cadena de jaques que gana material",
+            tema = "Cambio de torres + cadena de jaques",
+            nivel = Nivel.TORNEO,
+            rating = 1714
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-KSfJd",
+            title = "Cambio de torres que desemboca en un final de reyes muy técnico",
+            tema = "Cambio de torres + final de reyes",
+            nivel = Nivel.TORNEO,
+            rating = 2136
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Dra8h",
+            title = "Maniobra de rey, alfil y caballo que persigue al rey rival hasta acorralarlo",
+            tema = "Maniobra de piezas menores acorralando al rey",
+            nivel = Nivel.TORNEO,
+            rating = 2083
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-aFM9R",
+            title = "Serie de cambios en la última fila que termina con el caballo ganando la dama",
+            tema = "Serie de cambios en la última fila",
+            nivel = Nivel.TORNEO,
+            rating = 1889
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GT5p8",
+            title = "Ruptura de peones en el centro que abre paso a una carrera en el flanco de dama",
+            tema = "Ruptura central + carrera de peones",
+            nivel = Nivel.TORNEO,
+            rating = 2082
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-HItxq",
+            title = "Carrera de reyes en un final de peones puro",
+            tema = "Carrera de reyes en el final de peones",
+            nivel = Nivel.TORNEO,
+            rating = 1895
+        ),
+        // Nota S6: quedan pendientes 22 posiciones mas de solucion larga
+        // como ampliacion de Grandes Partidas -- ver ANNEX_H04.md, hoja
+        // de ruta.
     )
 }
