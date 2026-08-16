@@ -389,12 +389,12 @@ corrección. 51/51 entradas totales de `problemas.js` verificadas de
 nuevo tras la inserción, ids cruzados JS↔Kotlin coinciden
 exactamente.
 
-1. Continuar con los lotes siguientes de "Problemas de ajedrez": 102
-   entradas restantes de las 267 del pool corto (1/3/5 semijugadas),
-   en tandas de 15-20, a partir del JSON intermedio ya verificado
-   (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
-   repositorio, hay que regenerarlo o pedir el CSV de nuevo si se
-   pierde entre sesiones).
+1. Continuar con los lotes siguientes de "Problemas de ajedrez": solo
+   quedan 5 entradas del pool corto de 267 (1/3/5 semijugadas) --
+   suficiente para un último lote breve, a partir del JSON intermedio
+   ya verificado (`/home/claude/verify/verified_puzzles.json` -- no
+   forma parte del repositorio, hay que regenerarlo o pedir el CSV de
+   nuevo si se pierde entre sesiones).
 2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
    como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
    criterio de verificación y de "no inventar autoría" (partidas

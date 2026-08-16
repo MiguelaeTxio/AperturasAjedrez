@@ -1344,8 +1344,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2052
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 12 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-eGbBP",
+            title = "Cambio de torre por alfil con jaque que abre el ataque final",
+            tema = "Cambio de torre por alfil con jaque en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2076
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Yc6l7",
+            title = "Sacrificio de caballo que gana un peón clave junto al rey",
+            tema = "Sacrificio de caballo con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2043
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-bZhu9",
+            title = "El caballo se pasea capturando piezas hasta quedar atrapado",
+            tema = "Caballo que caza varias piezas antes de quedar atrapado",
+            nivel = Nivel.LICHESS,
+            rating = 1968
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-9yqzf",
+            title = "Cadena de jaques de torre que despeja el camino a la coronación",
+            tema = "Jaques en cadena que despejan la coronación",
+            nivel = Nivel.LICHESS,
+            rating = 2005
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-5cTjV",
+            title = "Cadena de jaques que despeja la primera fila para ganar la torre",
+            tema = "Despeje de la primera fila con jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 1763
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Oeluw",
+            title = "Sacrificio de alfil a la descubierta que gana la dama",
+            tema = "Sacrificio con jaque que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1851
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-EWgT1",
+            title = "Cambio de damas con jaque seguido de un doble jaque de caballo",
+            tema = "Cambio de damas + doble jaque de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1981
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-uY6il",
+            title = "Avance de peón que despeja la diagonal para un jaque de alfil",
+            tema = "Despeje de diagonal con avance de peón",
+            nivel = Nivel.LICHESS,
+            rating = 1893
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-bRi7N",
+            title = "Avance de peones que despeja el camino a la coronación",
+            tema = "Avance de peones + coronación inminente",
+            nivel = Nivel.LICHESS,
+            rating = 1715
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-lug4l",
+            title = "Cambio de damas que abre camino a ganar una torre",
+            tema = "Cambio de damas + jaque que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 2139
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GTxTS",
+            title = "Mate en 2 con el rey empujado por el peón",
+            tema = "Mate en 2 con jaque de peón",
+            nivel = Nivel.LICHESS,
+            rating = 1798
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-3f7SR",
+            title = "Cadena de jaques que desvía al alfil y termina ganando una torre",
+            tema = "Desviación con jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 1772
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-XHwPd",
+            title = "Jaque de alfil que abre paso a ganar la dama con la torre",
+            tema = "Jaque de alfil que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1758
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-oAGN3",
+            title = "Mate en 1 con la dama apoyada por el alfil",
+            tema = "Mate en 1",
+            nivel = Nivel.LICHESS,
+            rating = 1804
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-S5VMw",
+            title = "Jaque de caballo que abre paso a ganar la dama, con jaque final de vuelta",
+            tema = "Jaque de caballo que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1859
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (102 restantes de las 267 del pool corto) y las 33 posiciones
+        // (5 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
