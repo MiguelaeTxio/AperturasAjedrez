@@ -496,8 +496,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1865
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 4 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-ZvuQ7",
+            title = "Sacrificio de caballo que desvía a la torre y abre paso al mate",
+            tema = "Desviación con sacrificio + mate de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1810
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-x4tWa",
+            title = "Doble jaque de dama que termina ganando un alfil",
+            tema = "Jaques en cadena que ganan una pieza",
+            nivel = Nivel.LICHESS,
+            rating = 1817
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-gssgO",
+            title = "Jugada tranquila que gana una torre a cambio de un cambio favorable",
+            tema = "Jugada tranquila que provoca un error",
+            nivel = Nivel.LICHESS,
+            rating = 2075
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ACqPh",
+            title = "Infiltración de dama que gana un caballo con jaque",
+            tema = "Ataque al enroque con infiltración de dama",
+            nivel = Nivel.LICHESS,
+            rating = 2018
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Ng7ji",
+            title = "Mate de la charretera -- el rey sin escape entre sus propias piezas",
+            tema = "Mate de la charretera (epaulette mate)",
+            nivel = Nivel.LICHESS,
+            rating = 1838
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-3aH47",
+            title = "El rey abandona la defensa de su peón para perseguir a la torre",
+            tema = "Jugada defensiva del rey en un final de torres y peones",
+            nivel = Nivel.LICHESS,
+            rating = 1954
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-rJPsB",
+            title = "Torre activa que se infiltra y da jaque en un final de torres",
+            tema = "Torre activa en el final de torres",
+            nivel = Nivel.LICHESS,
+            rating = 1868
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-lqmjJ",
+            title = "Ganancia de un alfil tras ceder espacio en el flanco de dama",
+            tema = "Pieza colgada tras jugada de flanco",
+            nivel = Nivel.LICHESS,
+            rating = 1780
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-903v2",
+            title = "Mate en 2 con la dama sola tras un jaque de atracción",
+            tema = "Mate en 2",
+            nivel = Nivel.LICHESS,
+            rating = 1879
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-wAez3",
+            title = "Eliminar al defensor antes de ganar la pieza que protegía",
+            tema = "Eliminación del defensor",
+            nivel = Nivel.LICHESS,
+            rating = 1700
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-oL2HD",
+            title = "Peón a un paso de coronar que decide el final",
+            tema = "Peón pasado a un paso de coronar",
+            nivel = Nivel.LICHESS,
+            rating = 1829
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-dM6Aj",
+            title = "Jaque de alfil que atrae a la dama y permite ganarla con el caballo",
+            tema = "Atracción de la dama + horquilla de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1886
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ph8SQ",
+            title = "Mate en 2 con la dama infiltrada en la segunda fila",
+            tema = "Mate en 2",
+            nivel = Nivel.LICHESS,
+            rating = 1963
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-xYv8L",
+            title = "Jaque de dama seguido de una torre que se reagrupa a la defensa",
+            tema = "Jugada defensiva tras jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2142
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-bCQG7",
+            title = "Ruptura de peones en un final de alfiles de distinto color",
+            tema = "Ruptura de peones en final de alfiles",
+            nivel = Nivel.LICHESS,
+            rating = 1965
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (222 restantes de las 267 del pool corto) y las 33 posiciones
+        // (207 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
