@@ -389,12 +389,23 @@ corrección. 51/51 entradas totales de `problemas.js` verificadas de
 nuevo tras la inserción, ids cruzados JS↔Kotlin coinciden
 exactamente.
 
-1. Continuar con los lotes siguientes de "Problemas de ajedrez": solo
-   quedan 5 entradas del pool corto de 267 (1/3/5 semijugadas) --
-   suficiente para un último lote breve, a partir del JSON intermedio
-   ya verificado (`/home/claude/verify/verified_puzzles.json` -- no
-   forma parte del repositorio, hay que regenerarlo o pedir el CSV de
-   nuevo si se pierde entre sesiones).
+**Corrección de criterio (S6, lote 13):** los lotes 1-12 solo
+seleccionaban candidatas con un tema táctico real no genérico
+(fork/pin/skewer/etc.), descartando de facto las que solo tenían
+etiquetas de contexto de Lichess (`advantage`, `crushing`, `short`...)
+sin darles ninguna etiqueta descriptiva propia. Esto dejaba 87
+candidatas sin usar, no 5 como se creía. Corregido: a partir del lote
+13 se usan también esas candidatas, con un `tema` redactado a partir
+del contenido real de la secuencia (igual criterio que las
+correcciones de etiquetado ya aplicadas en lotes anteriores), no de
+la etiqueta de Lichess ausente.
+
+1. Continuar con los lotes siguientes de "Problemas de ajedrez": 72
+   entradas restantes de las 267 del pool corto (1/3/5 semijugadas),
+   en tandas de 15-20, a partir del JSON intermedio ya verificado
+   (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
+   repositorio, hay que regenerarlo o pedir el CSV de nuevo si se
+   pierde entre sesiones).
 2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
    como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
    criterio de verificación y de "no inventar autoría" (partidas
