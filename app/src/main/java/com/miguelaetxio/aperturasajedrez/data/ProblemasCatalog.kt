@@ -1,46 +1,56 @@
 package com.miguelaetxio.aperturasajedrez.data
 
 /**
- * Metadatos de cada problema tactico para el selector nativo
- * (OpeningSelectorActivity, categoria "problema"). El id debe
- * coincidir exactamente con el id declarado en
+ * Metadatos de cada problema tactico para el selector nativo. El id
+ * debe coincidir exactamente con el id declarado en
  * app/src/main/assets/www/js/problemas.js -- mismo patron que
  * RepertoireCatalog/FinalesCatalog, ver ANNEX_H04.md.
  *
  * Todos los ids de problemas llevan el prefijo "h04-problema-" para
  * evitar colision con lineas y finales al buscar en el array
- * combinado dentro de game.js. Campo "nivel" (ver [Nivel]) anadido en
- * el rediseno posterior a la primera version: la base se reconstruyo
- * con patrones y partidas reales documentadas (mate de Legal, mate de
- * Anastasia, mate de Boden -- partida completa real--, mate sofocado
- * / Legado de Philidor), organizados por dificultad real en vez de un
- * unico bloque uniforme.
+ * combinado dentro de game.js.
  *
- * S7: Miguel Angel senalo que, pese a ese rediseno, los 15 problemas
- * originales (los de abajo con etiqueta "ninos") se quedan muy por
- * debajo de lo que necesita entrenar (ELO 1700-2200), y que la falsa
- * progresion en 4 niveles no reflejaba una diferencia de dificultad
- * real relevante para el. Se colapsan esos 15 en una sola etiqueta
- * honesta -- decision suya, literal -- y se anade [Nivel.TORNEO] con
- * 3 partidas reales completas y muy documentadas (Reti-Tartakower
- * 1910, la Inmortal de Anderssen 1851, el Molino de Torre-Lasker
- * 1925), ver la cabecera de problemas.js.
+ * S7: la base original de 4 niveles (1-4) se quedaba muy por debajo
+ * del rango que necesita entrenar Miguel Angel (ELO 1700-2200) y la
+ * progresion no reflejaba una diferencia de dificultad real relevante
+ * para el. Se colapsaron esos problemas en una unica etiqueta honesta
+ * (NINOS) y se anadio TORNEO con partidas reales completas.
+ *
+ * S6 (segunda reapertura del hito via PCH): Miguel Angel senalo que
+ * la seccion de problemas no se parecia a un banco de problemas real
+ * (comparado con Chess.com/Lichess) -- posicion suelta, solucion
+ * corta, clasificada por tema tactico real y rating. Se investigo el
+ * patron real y se importaron problemas verificados desde la base
+ * publica de Lichess (database.lichess.org, CC0), anadiendo el nivel
+ * LICHESS. Las posiciones de solucion larga (7/9/11 semijugadas) que
+ * no encajan con el patron de "problema corto" se incorporaron a
+ * TORNEO en vez de descartarse (decision explicita de Miguel Angel:
+ * "ya que las tenemos no las vamos a tirar").
+ *
+ * Los tres niveles se sirven cada uno con su propio boton en
+ * CategorySelectorActivity, directo a BoardActivity con la cola
+ * barajada -- Miguel Angel senalo explicitamente en S8 que no quiere
+ * elegir de una lista de problemas, y en S9 que el orden se baraja en
+ * cada sesion para no memorizar por posicion. Ningun nivel usa
+ * OpeningSelectorActivity.
  */
 enum class Nivel(val etiqueta: String) {
-    NINOS("Problemas para niños hasta 10 años"),
-    TORNEO("Táctica real de torneo (1700-2200)")
+    NINOS("Iniciación -- problemas para niños hasta 10 años"),
+    TORNEO("Grandes Partidas -- táctica real de torneo (1700-2200)"),
+    LICHESS("Problemas de ajedrez -- banco táctico verificado (1700-2200)")
 }
 
 data class ProblemEntry(
     val id: String,
     val title: String,
     val tema: String,
-    val nivel: Nivel
+    val nivel: Nivel,
+    val rating: Int? = null
 )
 
 object ProblemasCatalog {
     val entries: List<ProblemEntry> = listOf(
-        // ---- Problemas para niños hasta 10 años (S7, ex Niveles 1-4) ----
+        // ---- Iniciación -- problemas para niños hasta 10 años (S7, ex Niveles 1-4) ----
         ProblemEntry(
             id = "h04-problema-mate-legal",
             title = "El Mate de Legal -- la clavada que no era tal",
@@ -125,7 +135,7 @@ object ProblemasCatalog {
             tema = "Promoción forzada",
             nivel = Nivel.NINOS
         ),
-        // ---- Táctica real de torneo, 1700-2200 (S7) ----
+        // ---- Grandes Partidas -- táctica real de torneo, 1700-2200 (S7) ----
         ProblemEntry(
             id = "h04-problema-mate-reti-tartakower",
             title = "Reti vs Tartakower -- la miniatura más famosa de la historia",
@@ -168,6 +178,10 @@ object ProblemasCatalog {
             tema = "Doble sacrificio de torre y dama (partida real, Lodz 1907)",
             nivel = Nivel.TORNEO
         )
+        // Nota S6: aqui se anadiran, en lotes verificados, las 33
+        // posiciones de Lichess de solucion larga (ampliacion de
+        // Grandes Partidas) y, con nivel = Nivel.LICHESS, las 267
+        // entradas nuevas del banco "Problemas de ajedrez" -- ver
+        // ANNEX_H04.md, hoja de ruta.
     )
 }
-

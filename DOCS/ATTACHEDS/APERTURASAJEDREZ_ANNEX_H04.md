@@ -304,22 +304,39 @@ Mismo hallazgo que el resto del hito: un problema de Lichess es
 exactamente una línea más (`startFen`, `userColor`, `overview`,
 `moves` con `idea`/`ventaja`/`debilidad` por jugada) -- no hace falta
 ningún modo de motor nuevo, ni para "Problemas de ajedrez" ni para las
-33 incorporaciones a "Grandes Partidas". Cambia únicamente la
-clasificación en el selector nativo:
+33 incorporaciones a "Grandes Partidas". Cambia la clasificación en el
+catálogo nativo y **la forma de servirlo**, corrigiendo una suposición
+inicial errónea de esta misma sesión:
 
-- `ProblemasCatalog.kt`: pasa de un único `enum Nivel` (NINOS/TORNEO)
-  a una estructura con tres categorías (Iniciación/Grandes
-  Partidas/Problemas de ajedrez) y, dentro de "Problemas de ajedrez",
-  los dos filtros nuevos (`tema` táctico y `rating`) -- mismo patrón
-  que `familia` en `EstructurasCatalog.kt` (diseño ya cerrado para
-  H06, ver ese anexo, pausado sin construir).
+**Hallazgo real (S6, tras leer el código antes de tocar nada):**
+"Problemas" no usa un selector de lista -- desde S8 Miguel Ángel
+señaló explícitamente que no quiere elegir de una lista de problemas,
+y `CategorySelectorActivity` lanza `BoardActivity` directo con la cola
+completa barajada (S9, `shuffled()`), sin pasar nunca por
+`OpeningSelectorActivity`. Además, el botón único "Problemas" solo
+filtraba `Nivel.TORNEO` -- los 15 problemas de `Nivel.NINOS` estaban
+en los datos pero huérfanos, sin ningún botón que los sirviera. La
+propuesta inicial de esta sesión (selector de lista con filtros de
+tema/rating elegibles) contradecía S8 y no se llegó a construir;
+corregida antes de escribir código definitivo.
+
+**Diseño corregido y ya implementado:**
+- `Nivel` pasa de dos a tres valores (`NINOS`/`TORNEO`/`LICHESS`),
+  cada uno con su propia etiqueta. `ProblemEntry` gana un campo
+  `rating: Int? = null` (metadato, no filtro elegible).
+- `CategorySelectorActivity` pasa de un botón "Problemas" a tres:
+  Iniciación (`Nivel.NINOS`), Grandes Partidas (`Nivel.TORNEO`),
+  Problemas de ajedrez (`Nivel.LICHESS`). `startProblemSession()` se
+  generaliza para aceptar el `Nivel` como parámetro -- mismo
+  mecanismo de cola barajada para los tres, sin selector de lista.
+  Resuelve de paso el bug real de los 15 de Iniciación huérfanos.
+- `activity_category_selector.xml`: tres botones nuevos encadenados
+  entre Finales y Trampas; `strings.xml` con las tres etiquetas.
 - `problemas.js`: se mantiene como único fichero (`PROBLEMAS_LINES`),
   las 267+33 entradas nuevas se añaden con prefijo de id
   `h04-problema-lichess-{PuzzleId}` para evitar colisión.
-- Sin cambios en `game.js`, `OpeningSelectorActivity.kt` ni
-  `CategorySelectorActivity.kt` -- la categoría "Problemas" ya existe
-  en el menú desde S4, la subdivisión en tres es interna al catálogo
-  y al selector, no una categoría nueva de primer nivel.
+- Sin cambios en `game.js` ni en `OpeningSelectorActivity.kt` (las
+  tres categorías de Problemas nunca pasan por ahí).
 
 ### Verificación (mismo rigor que el resto del hito)
 

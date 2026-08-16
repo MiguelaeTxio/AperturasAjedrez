@@ -13,14 +13,20 @@ import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
  * Estructuras reutilizan OpeningSelectorActivity con un catalogo
  * distinto segun la categoria (ver EXTRA_CATEGORY).
  *
- * S8: Problemas es distinto -- Miguel Angel senalo explicitamente que
- * no quiere elegir de una lista, quiere que al entrar se sirva
- * directamente el primer problema y, al resolverlo, el siguiente, sin
- * ningun paso intermedio. Por eso este boton NO pasa por
- * OpeningSelectorActivity: lanza BoardActivity directamente con la
- * cola completa de Nivel.TORNEO (1700-2200) en el orden del catalogo
- * -- ver loadLine()/onLineComplete() en game.js para el avance
- * automatico dentro de la sesion.
+ * S8/S9: los tres niveles de ProblemasCatalog (Iniciacion, Grandes
+ * Partidas, Problemas de ajedrez) son distintos -- Miguel Angel
+ * senalo explicitamente que no quiere elegir de una lista, quiere que
+ * al entrar se sirva directamente el primer problema y, al
+ * resolverlo, el siguiente, sin ningun paso intermedio, y que el
+ * orden se baraje en cada sesion para no memorizar por posicion. Por
+ * eso estos tres botones NO pasan por OpeningSelectorActivity: cada
+ * uno lanza BoardActivity directamente con la cola completa de su
+ * nivel, barajada -- ver loadLine()/onLineComplete() en game.js para
+ * el avance automatico dentro de la sesion.
+ *
+ * S6 (segunda reapertura de H04 via PCH): se anade el tercer boton
+ * (Problemas de ajedrez, Nivel.LICHESS) siguiendo el mismo patron
+ * exacto -- ver ANNEX_H04.md.
  */
 class CategorySelectorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +39,14 @@ class CategorySelectorActivity : AppCompatActivity() {
         findViewById<Button>(R.id.categoryEndgamesButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_ENDGAMES)
         }
-        findViewById<Button>(R.id.categoryProblemsButton).setOnClickListener {
-            startProblemSession()
+        findViewById<Button>(R.id.categoryIniciacionButton).setOnClickListener {
+            startProblemSession(Nivel.NINOS)
+        }
+        findViewById<Button>(R.id.categoryGrandesPartidasButton).setOnClickListener {
+            startProblemSession(Nivel.TORNEO)
+        }
+        findViewById<Button>(R.id.categoryProblemasAjedrezButton).setOnClickListener {
+            startProblemSession(Nivel.LICHESS)
         }
         findViewById<Button>(R.id.categoryTrampasButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_TRAMPAS)
@@ -50,17 +62,15 @@ class CategorySelectorActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun startProblemSession() {
-        // S9: Miguel Angel senalo que empezar siempre por el mismo
-        // problema en el mismo orden lo vuelve memorizable en vez de
-        // servir para reconocer patrones de verdad. shuffled() baraja
-        // el orden en cada entrada a la sesion.
-        val torneoIds = ProblemasCatalog.entries
-            .filter { it.nivel == Nivel.TORNEO }
+    private fun startProblemSession(nivel: Nivel) {
+        // S9: shuffled() baraja el orden en cada entrada a la sesion,
+        // para cualquiera de los tres niveles.
+        val ids = ProblemasCatalog.entries
+            .filter { it.nivel == nivel }
             .map { it.id }
             .shuffled()
         val intent = Intent(this, BoardActivity::class.java)
-            .putStringArrayListExtra(BoardActivity.EXTRA_LINE_QUEUE, ArrayList(torneoIds))
+            .putStringArrayListExtra(BoardActivity.EXTRA_LINE_QUEUE, ArrayList(ids))
         startActivity(intent)
     }
 }

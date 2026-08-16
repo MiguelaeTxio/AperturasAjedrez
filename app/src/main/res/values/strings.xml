@@ -15,7 +15,9 @@
     <string name="category_title">Elige categoría</string>
     <string name="category_lines">Líneas</string>
     <string name="category_endgames">Finales</string>
-    <string name="category_problems">Problemas</string>
+    <string name="category_iniciacion">Iniciación</string>
+    <string name="category_grandes_partidas">Grandes Partidas</string>
+    <string name="category_problemas_ajedrez">Problemas de ajedrez</string>
     <string name="category_trampas">Trampas</string>
     <string name="category_estructuras">Estructuras</string>
 </resources>
