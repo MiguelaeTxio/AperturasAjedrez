@@ -1556,8 +1556,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1785
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 14 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-BHqVE",
+            title = "Reposicionamiento de torre que gana un peón y consolida la posición",
+            tema = "Reposicionamiento de torre + ganancia de peón",
+            nivel = Nivel.LICHESS,
+            rating = 1967
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-dIl8U",
+            title = "Cambio de torre por dama que termina igualado con una nueva captura",
+            tema = "Cambio de torre por dama",
+            nivel = Nivel.LICHESS,
+            rating = 1887
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-2z8Y8",
+            title = "Sacrificio de torre que atrae al rey y persigue con jaques",
+            tema = "Atracción del rey con sacrificio de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2118
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-vmPpp",
+            title = "Cambio de caballos que abre camino a ganar un peón adicional",
+            tema = "Cambio de piezas + ganancia de peón",
+            nivel = Nivel.LICHESS,
+            rating = 2070
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Sb112",
+            title = "Cambio de damas forzado por un jaque y una torre bien colocada",
+            tema = "Cambio de damas forzado con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1756
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-1kn2J",
+            title = "Jaque de alfil que se reposiciona antes de ganar un peón con jaque",
+            tema = "Reposicionamiento de alfil con jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2189
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Dla90",
+            title = "Caballo que se infiltra y captura un peón suelto",
+            tema = "Infiltración de caballo que gana un peón",
+            nivel = Nivel.LICHESS,
+            rating = 2169
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-IR6vb",
+            title = "Doble jaque de caballo que termina ganando una torre",
+            tema = "Doble jaque de caballo que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 1865
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-NZFyG",
+            title = "Cadena de cambios que termina con un alfil ganando material",
+            tema = "Cadena de cambios en el centro",
+            nivel = Nivel.LICHESS,
+            rating = 2199
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Y2g5d",
+            title = "Cambio de torre por peón seguido de la captura de la segunda torre",
+            tema = "Cambio de torre + ganancia de la segunda torre",
+            nivel = Nivel.LICHESS,
+            rating = 1973
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-806QR",
+            title = "Cambio de damas que abre camino a la coronación",
+            tema = "Cambio de damas + avance de peón pasado",
+            nivel = Nivel.LICHESS,
+            rating = 1965
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-kFmlM",
+            title = "Reposicionamiento de alfil que abre camino a capturar un caballo",
+            tema = "Reposicionamiento + ganancia de pieza",
+            nivel = Nivel.LICHESS,
+            rating = 1812
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-2IHTI",
+            title = "Sacrificio de caballo que abre camino a ganar la calidad",
+            tema = "Sacrificio de caballo con jaque que gana la calidad",
+            nivel = Nivel.LICHESS,
+            rating = 1756
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-VlHj8",
+            title = "Cambio de caballo por alfil que termina con jaque de torre",
+            tema = "Cambio de piezas + jaque de torre",
+            nivel = Nivel.LICHESS,
+            rating = 1822
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-VEmNT",
+            title = "Avance de peón que fuerza una serie de cambios en el flanco de rey",
+            tema = "Avance de peón + cambio de piezas",
+            nivel = Nivel.LICHESS,
+            rating = 2059
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (72 restantes de las 267 del pool corto) y las 33 posiciones
+        // (57 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )

@@ -400,7 +400,7 @@ del contenido real de la secuencia (igual criterio que las
 correcciones de etiquetado ya aplicadas en lotes anteriores), no de
 la etiqueta de Lichess ausente.
 
-1. Continuar con los lotes siguientes de "Problemas de ajedrez": 72
+1. Continuar con los lotes siguientes de "Problemas de ajedrez": 57
    entradas restantes de las 267 del pool corto (1/3/5 semijugadas),
    en tandas de 15-20, a partir del JSON intermedio ya verificado
    (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
