@@ -122,6 +122,11 @@ Problemas, aunque correcta, no se parece a un banco de problemas real
 completo de la investigación y el diseño cerrado. Bloque de partidas
 reales (antes "Nivel.TORNEO") se conserva y se amplía; bloque de
 problemas se reconstruye desde la base pública de Lichess.
+**Reapertura cerrada en S6:** 267 problemas nuevos (banco táctico
+verificado) + 33 posiciones de solución larga ampliando Grandes
+Partidas, 321 entradas totales en el hito, todas verificadas con
+`chess.js` real. Pendiente solo la prueba en dispositivo real y la
+valoración de cierre definitivo con Miguel Ángel.
 
 ### Hito 05 — Trampas en las aperturas (PAUSADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H05.md`)

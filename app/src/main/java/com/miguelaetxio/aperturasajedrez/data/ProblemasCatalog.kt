@@ -2221,8 +2221,86 @@ object ProblemasCatalog {
             nivel = Nivel.TORNEO,
             rating = 2075
         ),
-        // Nota S6: quedan pendientes 11 posiciones mas de solucion larga
-        // como ampliacion de Grandes Partidas -- ver ANNEX_H04.md, hoja
-        // de ruta.
+        // ---- Grandes Partidas -- ampliacion con solucion larga, lote 3 de 3 (ULTIMO, S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-L3g4c",
+            title = "Cambio de damas que abre paso a un jaque de alfil y una cosecha de peones",
+            tema = "Cambio de damas + jaque de alfil + ganancia de peones",
+            nivel = Nivel.TORNEO,
+            rating = 1946
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-28twN",
+            title = "Larga cadena de jaques de dama y alfil que termina ganando la dama rival",
+            tema = "Jaques en cadena de dama y alfil",
+            nivel = Nivel.TORNEO,
+            rating = 2189
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-nR5Ei",
+            title = "Cambio de torres seguido de un jaque de torre y la captura de una torre suelta",
+            tema = "Cambio de torres + jaque + ganancia de torre",
+            nivel = Nivel.TORNEO,
+            rating = 2135
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-m7y7V",
+            title = "Sacrificio de torre y alfil que abre paso a ganar la dama",
+            tema = "Doble sacrificio con jaque que gana la dama",
+            nivel = Nivel.TORNEO,
+            rating = 2039
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-dUFqM",
+            title = "Jaque de caballo que abre paso a una serie de cambios de torres",
+            tema = "Jaque de caballo + serie de cambios de torres",
+            nivel = Nivel.TORNEO,
+            rating = 1758
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-r6AMc",
+            title = "Carrera de reyes en un final de peones con jaque incluido",
+            tema = "Carrera de reyes en el final de peones",
+            nivel = Nivel.TORNEO,
+            rating = 1960
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Yaywj",
+            title = "Cambio de caballos que desencadena una carrera de coronación",
+            tema = "Cambio de piezas + carrera de coronación",
+            nivel = Nivel.TORNEO,
+            rating = 1780
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-feoyD",
+            title = "Jaque de dama que abre paso a un cambio de damas y una serie de capturas",
+            tema = "Jaque de dama + cambio de damas + capturas en cadena",
+            nivel = Nivel.TORNEO,
+            rating = 2171
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-e72ce",
+            title = "El rey se pone a salvo antes de una carrera de coronación que termina cambiada",
+            tema = "Jugada de seguridad del rey + coronación cambiada",
+            nivel = Nivel.TORNEO,
+            rating = 2114
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-BG0nM",
+            title = "Sacrificio de peón que abre camino a una cadena de jaques que gana material",
+            tema = "Sacrificio de peón + jaques en cadena que ganan material",
+            nivel = Nivel.TORNEO,
+            rating = 2161
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-x8EWW",
+            title = "Avance de peón que desencadena una cadena de jaques de torre en el final",
+            tema = "Avance de peón + jaques en cadena de torre",
+            nivel = Nivel.TORNEO,
+            rating = 1860
+        ),
+        // Nota S6: HITO 04 COMPLETO -- Iniciacion (14) + Grandes Partidas
+        // (40 = 7 originales + 33 ampliacion) + Problemas de ajedrez (267)
+        // = 321 entradas totales. Ver ANNEX_H04.md para el cierre.
     )
 }

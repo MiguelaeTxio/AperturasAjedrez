@@ -413,19 +413,22 @@ verificadas. `problemas.js` tiene ahora 299 entradas totales (14
 Iniciación + 18 Grandes Partidas + 267 Problemas de ajedrez), ids
 cruzados JS↔Kotlin coinciden exactamente (299/299).
 
-**Ampliación de Grandes Partidas (S6):** lote 2 de 3 CERRADO -- 22 de
-33 posiciones de solución larga ya construidas y verificadas.
-`problemas.js` tiene ahora 310 entradas totales (14 Iniciación + 29
-Grandes Partidas + 267 Problemas de ajedrez), ids cruzados JS↔Kotlin
-coinciden exactamente (310/310).
+**HITO 04 COMPLETO (S6).** Ampliación de Grandes Partidas cerrada por
+completo: los 3 lotes (11+11+11) suman las 33 posiciones de solución
+larga. `problemas.js` tiene ahora **321 entradas totales** (14
+Iniciación + 40 Grandes Partidas [7 originales + 33 ampliación] + 267
+Problemas de ajedrez), ids cruzados JS↔Kotlin coinciden exactamente
+(321/321). Todas las secuencias verificadas con `chess.js` real de
+principio a fin, sin ninguna excepción.
 
-1. Continuar con el último lote de ampliación de Grandes Partidas:
-   quedan 11 posiciones de solución larga, a partir del JSON
-   intermedio ya verificado (`/home/claude/verify/verified_puzzles.json`
-   -- no forma parte del repositorio, hay que regenerarlo o pedir el
-   CSV de nuevo si se pierde entre sesiones). Con este último lote se
-   completan las 33 posiciones y se cierra por completo la
-   reconstrucción de la sección de Problemas.
+1. Prueba en dispositivo real de todo el hito (finales, Iniciación,
+   Grandes Partidas ampliadas, Problemas de ajedrez) -- Miguel Ángel
+   pedirá la instalación cuando quiera probarlo; no instalar por
+   iniciativa propia sin que lo pida.
+2. Con todo cerrado y verificado en el repositorio, valorar con
+   Miguel Ángel si el Hito 04 queda completo de nuevo (PCH de vuelta
+   hacia H06, que sigue pausado con su hoja de ruta intacta) o si se
+   amplía más el alcance.
 2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
    como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
    criterio de verificación y de "no inventar autoría" (partidas
