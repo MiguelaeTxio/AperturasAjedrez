@@ -920,8 +920,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2132
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 8 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-FBPu2",
+            title = "Cambio de peones y centralización del rey en el final",
+            tema = "Cambio de peones + rey activo",
+            nivel = Nivel.LICHESS,
+            rating = 2073
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-wb2lJ",
+            title = "Combinación de capturas múltiples en el punto débil d4",
+            tema = "Combinación de capturas en un punto débil",
+            nivel = Nivel.LICHESS,
+            rating = 1949
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-WiiPc",
+            title = "Cambio de damas que abre camino a ganar un peón central",
+            tema = "Cambio de damas con jaque + peón suelto",
+            nivel = Nivel.LICHESS,
+            rating = 1716
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-WDMx0",
+            title = "Sacrificio de torre que abre camino al mate de la segunda torre",
+            tema = "Mate en 2 con sacrificio de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2030
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-O8PLY",
+            title = "Cambio de peones seguido de la centralización del rey",
+            tema = "Cambio de peones + rey activo en el final",
+            nivel = Nivel.LICHESS,
+            rating = 2028
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-24RYS",
+            title = "Carrera de peones y reyes en el flanco de dama",
+            tema = "Carrera de peones y reyes",
+            nivel = Nivel.LICHESS,
+            rating = 2088
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-IEkwt",
+            title = "Dama ganada sin defensa que debe lidiar con un peligroso peón pasado",
+            tema = "Pieza colgada + defensa contra peón pasado",
+            nivel = Nivel.LICHESS,
+            rating = 1977
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-AEVDi",
+            title = "Sacrificio de peón que desvía al peón rival y abre camino al rey",
+            tema = "Desviación de peón en el final de reyes",
+            nivel = Nivel.LICHESS,
+            rating = 2164
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-wd2gW",
+            title = "Sacrificio de dama que fuerza el mate con dos torres",
+            tema = "Mate en 3 con sacrificio de dama",
+            nivel = Nivel.LICHESS,
+            rating = 2038
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-jVIaI",
+            title = "Doble captura de peones con jaque en un final de damas",
+            tema = "Ganancia de peones en el final de damas",
+            nivel = Nivel.LICHESS,
+            rating = 2040
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-FeHsm",
+            title = "Peón a un paso de coronar apoyado por el alfil",
+            tema = "Peón pasado a un paso de coronar con apoyo de pieza",
+            nivel = Nivel.LICHESS,
+            rating = 1750
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GAWsP",
+            title = "Sacrificio de dama clásico que abre camino al mate con alfil y torre",
+            tema = "Sacrificio de dama + mate con alfil y torre",
+            nivel = Nivel.LICHESS,
+            rating = 1882
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-szMi6",
+            title = "Trampa de dama envenenada que termina ganando material",
+            tema = "Trampa que gana material tras aceptar la dama envenenada",
+            nivel = Nivel.LICHESS,
+            rating = 1908
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-l38Yi",
+            title = "Serie de cambios en la columna f que termina con ventaja de negras",
+            tema = "Serie de cambios favorables en la columna f",
+            nivel = Nivel.LICHESS,
+            rating = 2019
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-JiQL9",
+            title = "Sacrificio de torre que desvía al rey y gana un peón adicional",
+            tema = "Desviación del rey con sacrificio de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2160
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (162 restantes de las 267 del pool corto) y las 33 posiciones
+        // (147 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
