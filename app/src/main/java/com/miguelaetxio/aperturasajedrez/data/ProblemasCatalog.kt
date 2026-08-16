@@ -1768,8 +1768,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1978
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 16 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-JdRhh",
+            title = "Reposicionamiento de dama que gana una torre suelta",
+            tema = "Reposicionamiento + ganancia de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2199
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-FzMX4",
+            title = "Cambio de piezas en el centro que termina con blancas ganando un caballo",
+            tema = "Cambio de piezas en el centro",
+            nivel = Nivel.LICHESS,
+            rating = 2052
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Z85FS",
+            title = "Cambio de torre por dama que termina con el alfil recuperando material",
+            tema = "Cambio de torre por dama",
+            nivel = Nivel.LICHESS,
+            rating = 2110
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-jkLht",
+            title = "Cambio de damas que termina con blancas ganando un caballo con jaque",
+            tema = "Cambio de damas + ganancia de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1748
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Mrn4f",
+            title = "Serie de cambios de torres que termina con la dama recuperando el balance",
+            tema = "Serie de cambios de torres",
+            nivel = Nivel.LICHESS,
+            rating = 1848
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GTV5f",
+            title = "Cambio de caballo por alfil que termina con la dama ganando otro alfil",
+            tema = "Cambio de piezas + ganancia de alfil",
+            nivel = Nivel.LICHESS,
+            rating = 1920
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-6xyB1",
+            title = "Reposicionamiento de dama que termina en jaque decisivo",
+            tema = "Reposicionamiento de dama + jaque decisivo",
+            nivel = Nivel.LICHESS,
+            rating = 1832
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-c925e",
+            title = "Cambio de peón por caballo que abre paso a un jaque de caballo",
+            tema = "Cambio de piezas + jaque de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1742
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-6A9wq",
+            title = "Jaque de dama que abre paso a ganar un caballo suelto",
+            tema = "Jaque de dama + ganancia de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1895
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-BGuoW",
+            title = "Reposicionamiento de dama que termina en un cambio favorable",
+            tema = "Reposicionamiento de dama + cambio favorable",
+            nivel = Nivel.LICHESS,
+            rating = 2102
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-S7Lg8",
+            title = "Sacrificio de torre que atrae a la dama a una casilla vulnerable",
+            tema = "Sacrificio de torre que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 2173
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Dew8R",
+            title = "Sacrificio de torre que abre paso a ganar la dama",
+            tema = "Sacrificio de torre con jaque que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1706
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-mYL6V",
+            title = "Cadena de jaques de dama que persigue al rey negro",
+            tema = "Jaques en cadena de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1812
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-U4Tl4",
+            title = "Cambio de alfiles que abre camino a ganar un segundo alfil",
+            tema = "Cambio de alfiles + ganancia de pieza",
+            nivel = Nivel.LICHESS,
+            rating = 2169
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-TKtKw",
+            title = "Reposicionamiento de dama que gana un peón con jaque",
+            tema = "Reposicionamiento de dama + jaque que gana un peón",
+            nivel = Nivel.LICHESS,
+            rating = 1952
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (42 restantes de las 267 del pool corto) y las 33 posiciones
+        // (27 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
