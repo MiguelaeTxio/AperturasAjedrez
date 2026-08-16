@@ -602,8 +602,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1965
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 5 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-nlP5G",
+            title = "Cambio de peones que deja el mejor final para negras",
+            tema = "Cambios de peones en el final",
+            nivel = Nivel.LICHESS,
+            rating = 2126
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-b7xPT",
+            title = "Jaque de caballo que abre paso a la captura de la dama",
+            tema = "Jaque de caballo que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 2141
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-BJ5Uu",
+            title = "Mate en 2 con las dos torres coordinadas",
+            tema = "Mate en 2 con dos torres",
+            nivel = Nivel.LICHESS,
+            rating = 1705
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ft0mf",
+            title = "Coronación que se cambia por la dama rival y remata ganando una torre",
+            tema = "Coronación con cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1972
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-F4Idw",
+            title = "Cambio de peones seguido de una carrera de reyes",
+            tema = "Carrera de reyes en el final de peones",
+            nivel = Nivel.LICHESS,
+            rating = 2096
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-aX79s",
+            title = "Cambio de damas tras una cadena de jaques",
+            tema = "Cambio de damas tras jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2189
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-RL0ts",
+            title = "Sacrificio de torre que atrae al rey al mate con la dama",
+            tema = "Atracción del rey con doble sacrificio de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2088
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-0YH84",
+            title = "Doble sacrificio de caballo y torre que gana material con jaques",
+            tema = "Atracción del rey con doble sacrificio",
+            nivel = Nivel.LICHESS,
+            rating = 1818
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-jXayg",
+            title = "Cambio de damas seguido de jaque de alfil y mate de torre",
+            tema = "Atracción del rey + mate con torre",
+            nivel = Nivel.LICHESS,
+            rating = 1931
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-rhFqG",
+            title = "Sacrificio de dama con jaque que remata ganando un caballo",
+            tema = "Sacrificio de dama con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1724
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GIPQG",
+            title = "Carrera de peones que el rey blanco gana por un tiempo",
+            tema = "Carrera de peones en el final de reyes",
+            nivel = Nivel.LICHESS,
+            rating = 1885
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-hDp7t",
+            title = "Cambio de piezas que termina con la dama y la torre ganadas",
+            tema = "Serie de cambios favorables en la columna d",
+            nivel = Nivel.LICHESS,
+            rating = 2088
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-BQZnp",
+            title = "Cambio de alfiles que despeja el camino a un jaque decisivo",
+            tema = "Despeje de diagonal + jaque decisivo",
+            nivel = Nivel.LICHESS,
+            rating = 1732
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-VTvGV",
+            title = "Cambio de damas seguido de doble jaque de caballo que gana la segunda dama",
+            tema = "Cambio de damas + horquilla de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1955
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-VQjo5",
+            title = "Doble sacrificio en el flanco de rey que termina en mate",
+            tema = "Atracción del rey con doble sacrificio + mate de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2068
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (207 restantes de las 267 del pool corto) y las 33 posiciones
+        // (192 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
