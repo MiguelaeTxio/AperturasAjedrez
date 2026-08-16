@@ -400,12 +400,19 @@ del contenido real de la secuencia (igual criterio que las
 correcciones de etiquetado ya aplicadas en lotes anteriores), no de
 la etiqueta de Lichess ausente.
 
-1. Continuar con el último lote de "Problemas de ajedrez": quedan 12
-   entradas del pool corto de 267 (1/3/5 semijugadas) -- suficiente
-   para un último lote breve, a partir del JSON intermedio ya
-   verificado (`/home/claude/verify/verified_puzzles.json` -- no
-   forma parte del repositorio, hay que regenerarlo o pedir el CSV de
-   nuevo si se pierde entre sesiones).
+**Pool corto de "Problemas de ajedrez" COMPLETO: 267/267.** Las 18
+tandas cerradas en S6 cubren la totalidad de las candidatas de
+solución corta (1/3/5 semijugadas) verificadas con `chess.js` desde
+el CSV filtrado por Miguel Ángel. `problemas.js` tiene ahora 288
+entradas totales (14 Iniciación + 7 Grandes Partidas + 267 Problemas
+de ajedrez), ids cruzados JS↔Kotlin coinciden exactamente (288/288).
+
+1. Última tarea pendiente de este hito: ampliar "Grandes Partidas"
+   (`Nivel.TORNEO`) con las 33 posiciones de solución larga (7/9/11
+   semijugadas) descartadas del pool corto por no encajar con el
+   patrón de "problema" -- mismo proceso de verificación en tres
+   capas, mismo criterio de "no inventar autoría" (partidas anónimas
+   de Lichess, con `GameUrl` como referencia, sin nombre de jugador).
 2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
    como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
    criterio de verificación y de "no inventar autoría" (partidas

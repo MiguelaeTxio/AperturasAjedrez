@@ -1980,9 +1980,94 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2163
         ),
-        // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (12 restantes de las 267 del pool corto) y las 33 posiciones
-        // de solucion larga como ampliacion de Grandes Partidas -- ver
-        // ANNEX_H04.md, hoja de ruta.
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 18 (ULTIMO del pool corto, S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-map3J",
+            title = "Reposicionamiento de alfil que abre paso a ganar un peón con jaque",
+            tema = "Reposicionamiento de alfil + jaque que gana un peón",
+            nivel = Nivel.LICHESS,
+            rating = 1844
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-02FTV",
+            title = "Cambio de alfiles que desencadena una serie de capturas en el flanco de rey",
+            tema = "Cambio de alfiles con serie de capturas",
+            nivel = Nivel.LICHESS,
+            rating = 2052
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-23etJ",
+            title = "El caballo se reposiciona y captura un peón suelto",
+            tema = "Reposicionamiento de caballo + ganancia de peón",
+            nivel = Nivel.LICHESS,
+            rating = 1858
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Kg3t1",
+            title = "Cambio de alfiles con jaque que abre camino a ganar la dama",
+            tema = "Cambio de alfiles con jaque + ganancia de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1996
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-lgCAj",
+            title = "Ganancia de peón seguida de un cambio de damas forzado",
+            tema = "Ganancia de peón + cambio de damas forzado",
+            nivel = Nivel.LICHESS,
+            rating = 1970
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-b5B6p",
+            title = "Jaque de caballo que abre paso a ganar la dama",
+            tema = "Jaque de caballo que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1725
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-SQEIw",
+            title = "Cambio de caballo por alfil que abre paso a ganar un segundo alfil",
+            tema = "Cambio de piezas + ganancia de alfil",
+            nivel = Nivel.LICHESS,
+            rating = 1801
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-5wEWm",
+            title = "Sacrificio de alfil con jaque que fuerza al rey a salir de su refugio",
+            tema = "Sacrificio de alfil con jaque en el enroque",
+            nivel = Nivel.LICHESS,
+            rating = 1859
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-v5RuY",
+            title = "Jaque de dama que abre paso a ganar un caballo suelto",
+            tema = "Jaque de dama + ganancia de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1878
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-1QENX",
+            title = "Mate en 2 con la torre empujando al rey a la esquina",
+            tema = "Mate en 2 con torre",
+            nivel = Nivel.LICHESS,
+            rating = 1995
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-dXPJ4",
+            title = "Sacrificio de caballo que abre paso a ganar una torre",
+            tema = "Sacrificio de caballo con jaque que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 1789
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-8msYb",
+            title = "Ruptura de peones en el flanco de rey que abre camino a ganar una torre",
+            tema = "Ruptura de peones que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 2078
+        ),
+        // Nota S6: pool corto de "Problemas de ajedrez" COMPLETO (267/267).
+        // Queda pendiente ampliar Grandes Partidas con las 33 posiciones
+        // de solucion larga (7/9/11 semijugadas) -- ver ANNEX_H04.md,
+        // hoja de ruta.
     )
 }
