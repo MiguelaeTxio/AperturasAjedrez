@@ -96,7 +96,7 @@ la práctica. 9 líneas finales cubriendo las 5 familias del alcance
 (Londres, Inglesa+Catalán, Reti, Trompowsky, flancos menores), todas
 por encima de la profundidad media de H01/H02.
 
-### Hito 04 — Entrenamiento de finales de partida y sección de problemas (COMPLETADO)
+### Hito 04 — Entrenamiento de finales de partida y sección de problemas (EN PROGRESO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`)
 Acordado con Miguel Ángel al cierre de Hito 02, para después de
 Hito 03. Dos bloques nuevos de contenido, reutilizando la mecánica de
@@ -116,6 +116,13 @@ entrenamiento existente donde encaje:
   de dificultad (1 a 4). Reutiliza el motor de línea fija tal cual,
   sin necesitar ningún modo nuevo.
 
+**Reapertura vía PCH (S6):** Miguel Ángel señaló que la sección de
+Problemas, aunque correcta, no se parece a un banco de problemas real
+(comparado con Chess.com/Lichess) -- ver anexo H04 para el detalle
+completo de la investigación y el diseño cerrado. Bloque de partidas
+reales (antes "Nivel.TORNEO") se conserva y se amplía; bloque de
+problemas se reconstruye desde la base pública de Lichess.
+
 ### Hito 05 — Trampas en las aperturas (PAUSADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H05.md`)
 Sección de trampas de apertura ligadas al repertorio ya existente
@@ -128,7 +135,7 @@ construida (cuarta categoría del menú) y build verde confirmado.
 Pausado pendiente de verificación en dispositivo real por Miguel
 Ángel.
 
-### Hito 06 — Estructuras de peones y planes de medio juego (EN PROGRESO)
+### Hito 06 — Estructuras de peones y planes de medio juego (PAUSADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H06.md`)
 Sección de estructuras de peones y sus planes de medio juego
 asociados, ancladas al repertorio ya existente (IQP, Carlsbad/ataque
@@ -137,8 +144,10 @@ apertura. Quinta categoría del menú, con texto explicativo +
 diagrama estático (reutilizando `overview`/`startFen` ya existentes)
 y demostración jugable del plan (reutilizando el motor de línea fija
 tal cual, sin diseño nuevo). Diseño cerrado con Miguel Ángel;
-contenido y arquitectura pendientes de construir en la siguiente
-sesión.
+contenido y arquitectura pendientes de construir. Pausado por PCH
+explícito de Miguel Ángel en S6, antes de empezar la construcción,
+para retomar H04 (ver anexo H04). Hoja de ruta intacta a la espera de
+reactivación.
 
 ## 4. Directrices Técnicas Vinculantes
 

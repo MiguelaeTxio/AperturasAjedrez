@@ -225,13 +225,127 @@ Los 6 finales y los 10 problemas quedan completos, verificados con
 solo la valoración con Miguel Ángel de si el hito se da por cerrado
 (PCH hacia el siguiente hito) o se amplía el alcance.
 
+## NOTA — S7 (posterior a S4, no recogida en su momento en este anexo)
+
+Miguel Ángel señaló que los 14 problemas de nivel 1-4 se quedan muy
+por debajo del rango que necesita entrenar (ELO 1700-2200), y que la
+progresión en 4 niveles no reflejaba una diferencia de dificultad
+real relevante para él. Se colapsaron esos problemas en una sola
+etiqueta honesta ("Nivel.NINOS", 15 tras sumar uno más) y se añadió
+un bloque nuevo "Nivel.TORNEO" con partidas reales completas y muy
+documentadas (Réti-Tartakower 1910, Partida Inmortal, Molino de
+Torre-Lasker, Ópera de Morphy, Partida Perenne de Anderssen-Dufresne,
+Lluvia de Oro de Levitsky-Marshall, Inmortal de Rubinstein — 7 en
+total). Este cambio vive en el código (`problemas.js`,
+`ProblemasCatalog.kt`) pero no había quedado registrado aquí — se
+deja constancia ahora, al reabrir el hito.
+
+## REAPERTURA VÍA PCH (S6) — INVESTIGACIÓN Y DISEÑO CERRADO
+
+Miguel Ángel señaló que la sección de problemas (nivel Iniciación),
+aunque táctica y verificada correctamente, no se parece a lo que se
+entiende por "problema de ajedrez" en las plataformas de referencia
+(Chess.com, Lichess): posición suelta con solución corta y forzada
+(1-5 jugadas), clasificada por **tema táctico real** (fork, pin,
+skewer, discoveredAttack, deflection, hangingPiece, sacrifice, mates
+con nombre, mateIn1-5...) y por **rating numérico**, no por una
+etiqueta narrativa única. Las partidas reales (antes "Nivel.TORNEO")
+sí encajan con el concepto de partida completa y no tienen este
+problema -- se conservan y se amplían.
+
+### Diseño cerrado con Miguel Ángel (S6)
+
+1. **Tres secciones diferenciadas** dentro de la categoría
+   "Problemas" del selector nativo:
+   - **Iniciación** -- los 15 problemas actuales de `Nivel.NINOS`, sin
+     tocar contenido.
+   - **Grandes Partidas** -- los 7 actuales de `Nivel.TORNEO`, más las
+     33 posiciones de Lichess descartadas del bloque nuevo por tener
+     solución larga (7/9/11 semijugadas -- ver más abajo), en vez de
+     descartarlas.
+   - **Problemas de ajedrez** (nueva) -- banco de problemas reales
+     importados de la base pública de Lichess.
+2. **Clasificación replicando Lichess**: tema táctico real (primera
+   etiqueta táctica no genérica de la columna `Themes`, ignorando las
+   etiquetas de contexto/dificultad que Lichess mezcla en el mismo
+   campo -- `middlegame`, `endgame`, `opening`, `short`, `long`,
+   `veryLong`, `advantage`, `crushing`, `master`, `masterVsMaster`, que
+   no son un tema táctico) y rating numérico como segundo eje,
+   filtrables de forma independiente.
+3. **Fuente y volumen**: base pública `database.lichess.org`
+   (`lichess_db_puzzle.csv.zst`, licencia CC0), filtrada por Miguel
+   Ángel en su Termux por rating 1700-2200 con muestreo aleatorio por
+   reservorio a 300 filas, subida como
+   `lichess_filtrado_1700_2200.csv`. Verificación técnica completa
+   con `chess.js` real (conversión UCI→SAN desde el `startFen`
+   correcto -- la posición tras la primera jugada de la columna
+   `Moves`, que es la que abre el problema, no el FEN original de
+   Lichess que es la posición previa a esa jugada): **300/300 filas
+   verificadas sin errores**. Distribución real: 3 filas de 1
+   semijugada, 140 de 3, 124 de 5, 20 de 7, 10 de 9, 3 de 11.
+   - Las **267 filas de 1/3/5 semijugadas** -- solución corta, el
+     patrón real de "problema" -- entran en la sección nueva
+     "Problemas de ajedrez", sin cap: se usan las 267, no una
+     selección reducida.
+   - Las **33 filas de 7/9/11 semijugadas** -- combinaciones más
+     largas, más cercanas al patrón de partida -- se incorporan a
+     "Grandes Partidas" en vez de descartarse (decisión explícita de
+     Miguel Ángel: "ya que las tenemos no las vamos a tirar").
+   - JSON intermedio con las 300 filas ya convertidas (`startFen`,
+     `userColor`, secuencia SAN por jugada, `isMate`, `Themes`,
+     `Rating`) generado en `/home/claude/verify/verified_puzzles.json`
+     durante la verificación de S6 -- punto de partida para escribir
+     el contenido pedagógico (`idea`/`ventaja`/`debilidad` por
+     jugada), no forma parte del repositorio.
+
+### Arquitectura (decisión técnica cerrada, sin diseño nuevo de motor)
+
+Mismo hallazgo que el resto del hito: un problema de Lichess es
+exactamente una línea más (`startFen`, `userColor`, `overview`,
+`moves` con `idea`/`ventaja`/`debilidad` por jugada) -- no hace falta
+ningún modo de motor nuevo, ni para "Problemas de ajedrez" ni para las
+33 incorporaciones a "Grandes Partidas". Cambia únicamente la
+clasificación en el selector nativo:
+
+- `ProblemasCatalog.kt`: pasa de un único `enum Nivel` (NINOS/TORNEO)
+  a una estructura con tres categorías (Iniciación/Grandes
+  Partidas/Problemas de ajedrez) y, dentro de "Problemas de ajedrez",
+  los dos filtros nuevos (`tema` táctico y `rating`) -- mismo patrón
+  que `familia` en `EstructurasCatalog.kt` (diseño ya cerrado para
+  H06, ver ese anexo, pausado sin construir).
+- `problemas.js`: se mantiene como único fichero (`PROBLEMAS_LINES`),
+  las 267+33 entradas nuevas se añaden con prefijo de id
+  `h04-problema-lichess-{PuzzleId}` para evitar colisión.
+- Sin cambios en `game.js`, `OpeningSelectorActivity.kt` ni
+  `CategorySelectorActivity.kt` -- la categoría "Problemas" ya existe
+  en el menú desde S4, la subdivisión en tres es interna al catálogo
+  y al selector, no una categoría nueva de primer nivel.
+
+### Verificación (mismo rigor que el resto del hito)
+
+Cada secuencia UCI→SAN ya verificada con `chess.js` real desde el
+`startFen` correcto (hecho en S6, ver JSON intermedio arriba). Queda
+pendiente redactar `idea`/`ventaja`/`debilidad` por jugada con
+criterio ajedrecístico general (mismo patrón que Iniciación/Grandes
+Partidas) y, cuando el `Themes` original cite un tema con nombre
+propio o una partida de jugador identificable (`GameUrl` con partida
+de titulado), no inventar atribución -- si no se puede verificar el
+nombre real de los jugadores, queda como partida anónima con el link
+de Lichess como referencia, sin inventar autoría.
+
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Prueba en dispositivo real de finales y problemas (Miguel Ángel
-   pedirá la instalación cuando quiera probarlo; no instalar por
-   iniciativa propia sin que lo pida — mismo criterio ya usado en
-   H01-H03).
-2. Con los 6 finales y los 10 problemas cerrados, valorar con Miguel
-   Ángel si el Hito 04 queda completo o si se amplía el alcance
-   (más finales, más problemas, u otro contenido) antes de cerrarlo
-   con PCH hacia el Hito 05.
+1. Redactar `idea`/`ventaja`/`debilidad` por jugada de las 267
+   entradas de "Problemas de ajedrez" y de las 33 de ampliación de
+   "Grandes Partidas", en lotes verificados (15-20 por lote), a partir
+   del JSON intermedio ya verificado -- commit por lote con build
+   verde en GitHub Actions, sin acumular lotes sin commitear.
+2. Restructurar `ProblemasCatalog.kt`: tres categorías
+   (Iniciación/Grandes Partidas/Problemas de ajedrez) y, dentro de
+   "Problemas de ajedrez", filtros de `tema` y `rating`.
+3. Prueba en dispositivo real de todo el hito (finales, problemas
+   original, partidas reales ampliadas, problemas de Lichess) --
+   Miguel Ángel pedirá la instalación cuando quiera probarlo.
+4. Con todo cerrado, valorar con Miguel Ángel si el Hito 04 queda
+   completo de nuevo (PCH de vuelta hacia H06, que queda pausado con
+   su hoja de ruta intacta) o si se amplía más el alcance.
