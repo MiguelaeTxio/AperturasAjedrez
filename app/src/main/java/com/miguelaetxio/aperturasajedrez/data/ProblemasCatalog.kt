@@ -2143,7 +2143,85 @@ object ProblemasCatalog {
             nivel = Nivel.TORNEO,
             rating = 1895
         ),
-        // Nota S6: quedan pendientes 22 posiciones mas de solucion larga
+        // ---- Grandes Partidas -- ampliacion con solucion larga, lote 2 de 3 (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-YzOTj",
+            title = "Cambio de torres que desemboca en una carrera de reyes",
+            tema = "Cambio de torres + carrera de reyes",
+            nivel = Nivel.TORNEO,
+            rating = 1924
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-y9ka6",
+            title = "Jaque de alfil que abre paso a ganar un caballo, seguido de un cambio de peones",
+            tema = "Jaque de alfil + ganancia de caballo + cambio de peones",
+            nivel = Nivel.TORNEO,
+            rating = 2048
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-93haP",
+            title = "Cadena de jaques de dama y torre que persigue al rey sin ningún respiro",
+            tema = "Jaques en cadena de dama y torre",
+            nivel = Nivel.TORNEO,
+            rating = 2177
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-6Mqhd",
+            title = "Cambio de caballos que desencadena una carrera de coronación",
+            tema = "Cambio de piezas + carrera de coronación",
+            nivel = Nivel.TORNEO,
+            rating = 2172
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-OkL4Y",
+            title = "Avance de peón que prepara un caballo activo que termina ganando una torre",
+            tema = "Avance de peón + caballo activo que gana material",
+            nivel = Nivel.TORNEO,
+            rating = 1877
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-4eWUa",
+            title = "Cambio de alfil por torre que desencadena una serie de reposicionamientos",
+            tema = "Cambio de alfil por torre + reposicionamientos",
+            nivel = Nivel.TORNEO,
+            rating = 2173
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-4jKJU",
+            title = "Cadena de maniobras de caballo y alfil que termina en jaque",
+            tema = "Maniobra de caballo y alfil en el final",
+            nivel = Nivel.TORNEO,
+            rating = 2009
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-czYrX",
+            title = "Cambio de alfiles que desencadena una carrera de peones hasta la coronación",
+            tema = "Cambio de alfiles + carrera de coronación",
+            nivel = Nivel.TORNEO,
+            rating = 1806
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-reGLA",
+            title = "Serie de cambios de piezas mayores en la primera fila",
+            tema = "Serie de cambios de piezas mayores",
+            nivel = Nivel.TORNEO,
+            rating = 1927
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-KYQvh",
+            title = "Avance de peón que abre camino a un cambio de torres y un jaque de dama",
+            tema = "Avance de peón + cambio de torres + jaque de dama",
+            nivel = Nivel.TORNEO,
+            rating = 2154
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Si7iV",
+            title = "Sacrificio de torre y caballo que desencadena una serie de cambios en el flanco de rey",
+            tema = "Doble sacrificio + serie de cambios",
+            nivel = Nivel.TORNEO,
+            rating = 2075
+        ),
+        // Nota S6: quedan pendientes 11 posiciones mas de solucion larga
         // como ampliacion de Grandes Partidas -- ver ANNEX_H04.md, hoja
         // de ruta.
     )
