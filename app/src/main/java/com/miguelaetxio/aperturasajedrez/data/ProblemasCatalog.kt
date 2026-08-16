@@ -390,8 +390,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2036
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 3 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-SoVfe",
+            title = "Ganar una pieza y enrocar a salvo en la misma combinación",
+            tema = "Enroque que pone al rey a salvo tras ganar material",
+            nivel = Nivel.LICHESS,
+            rating = 1956
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ajnHD",
+            title = "Rey centralizado que prepara ganar la calidad",
+            tema = "Rey activo + ganancia de calidad",
+            nivel = Nivel.LICHESS,
+            rating = 2171
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Jt6AB",
+            title = "Cambio de alfiles seguido de un jaque que gana el caballo",
+            tema = "Horquilla de dama con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1770
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-TzuOi",
+            title = "Jaque de dama que ataca al rey y al caballo a la vez",
+            tema = "Horquilla de dama (jaque + ataque doble en la misma fila)",
+            nivel = Nivel.LICHESS,
+            rating = 1905
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Ifth5",
+            title = "Doble jaque de dama y caballo que termina ganando la dama rival",
+            tema = "Horquilla de caballo con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2027
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Iedeo",
+            title = "Ruptura de peones que crea un pasado decisivo",
+            tema = "Ruptura de peones en el final",
+            nivel = Nivel.LICHESS,
+            rating = 1729
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-cYenw",
+            title = "Reposicionar la torre antes de ganar un peón con jaque",
+            tema = "Torre reposicionada que gana un peón con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2143
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-DexMu",
+            title = "Serie de cambios en la columna d que termina con la dama infiltrada",
+            tema = "Serie de cambios que abren la última fila",
+            nivel = Nivel.LICHESS,
+            rating = 1962
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-veHYi",
+            title = "El rey busca refugio del jaque de torre",
+            tema = "Jugada defensiva del rey en el final",
+            nivel = Nivel.LICHESS,
+            rating = 1964
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-kS3Wz",
+            title = "Rey que se come el peón rival antes de coronar el propio",
+            tema = "Peón pasado con apoyo del rey",
+            nivel = Nivel.LICHESS,
+            rating = 1960
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-IKzCR",
+            title = "Cadena de jaques que termina ganando una torre",
+            tema = "Jaques en cadena que ganan una torre",
+            nivel = Nivel.LICHESS,
+            rating = 2068
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-SGfi1",
+            title = "Rey que recupera material y avanza en el final de peones",
+            tema = "Rey activo en el final de peones",
+            nivel = Nivel.LICHESS,
+            rating = 2095
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Tcg5p",
+            title = "Mate en 2 con el caballo abriendo camino",
+            tema = "Mate en 2 con caballo y torre",
+            nivel = Nivel.LICHESS,
+            rating = 1707
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-kp2p6",
+            title = "El rey esquiva el jaque de caballo en un final de peones",
+            tema = "Jugada defensiva del rey ante jaque de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 2053
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-JZQf1",
+            title = "Cambio de torres seguido de un jaque que remata en la segunda fila",
+            tema = "Atracción del rey mediante cambio y jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1865
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (237 restantes de las 267 del pool corto) y las 33 posiciones
+        // (222 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
