@@ -442,6 +442,33 @@ tablero antes de cualquier cambio de posición, que fuerza a
 `chessboard.js` a limpiar su propio estado (`dropOffBoard` por
 defecto es `'snapback'`) sin tocar el fichero vendorizado.
 
+**Segundo bug real corregido (S6, tras prueba en dispositivo real):**
+Miguel Ángel reportó que soltar una pieza en su propia casilla de
+origen dejaba algo raro en vez de un snapback limpio ("esto no es
+como en una partida real, que ficha que se toca ficha que se mueve").
+La causa real es más amplia de lo que parecía: esta versión de
+`chess.js` **nunca devuelve `null`** en una jugada ilegal -- lanza una
+excepción (verificado real: `game.move({from:'e2', to:'e2'})` lanza
+"Invalid move", igual que cualquier otra jugada ilegal). El código
+comprobaba `if (move === null)`, que nunca se cumplía, así que
+**cualquier** jugada ilegal soltada por el usuario (no solo origen =
+destino) rompía el flujo sin control en vez de hacer un snapback
+limpio -- `chessboard.js` llama a `onDrop` con origen=destino como una
+jugada más, no lo trata como caso especial. Corregido con
+`safeMove()`, que centraliza la captura de esa excepción, usado en
+`onDrop` y `onDropFreeMode`.
+
+**Indicador "Juegan blancas/negras" (S6, petición explícita):** nuevo
+texto fuera del tablero (`#turnLabel`) que refleja siempre
+`game.turn()`. Debe "desaparecer al mover" -- `clearTurnLabel()` se
+llama al principio de cada función que inicia una jugada (propia vía
+`onDrop`/`onDropFreeMode`, o del motor vía `playOpponentMove`/
+`playOpponentFreeMove`/`revealExpectedMove`), y `updateTurnLabel()` se
+llama automáticamente dentro de `setStatus()` en cada punto donde la
+posición vuelve a quedar estable -- así se ve el turno limpio en el
+instante de mover, y se actualiza solo, sin repetir la llamada en
+cada punto de la lógica.
+
 **Sistema de navegación y favoritos (S6, tras uso real con el hito ya
 completo):** Miguel Ángel señaló que, con el volumen creciente del
 banco de Problemas de ajedrez (267 y subiendo), "aleatorio" no basta

@@ -33,6 +33,15 @@ html, body {
   max-width: 480px;
 }
 
+#turnLabel {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 8px;
+  min-height: 18px;
+  text-align: center;
+}
+
 #status {
   margin-top: 12px;
   font-size: 15px;

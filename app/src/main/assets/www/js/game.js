@@ -111,6 +111,7 @@
   var elSessionProgress = document.getElementById('sessionProgress')
   var elLineName = document.getElementById('lineName')
   var elOverview = document.getElementById('overview')
+  var elTurn = document.getElementById('turnLabel')
   var elRestart = document.getElementById('restartBtn')
   var elExplain = document.getElementById('explain')
   var elNavBar = document.getElementById('navBar')
@@ -334,6 +335,7 @@
   }
 
   function playOpponentFreeMove () {
+    clearTurnLabel()
     var legal = game.moves()
     if (legal.length === 0) return // no deberia ocurrir, ya se comprobo antes de llamar
     var pick = legal[Math.floor(Math.random() * legal.length)]
@@ -343,9 +345,33 @@
     setStatus('Tu turno.')
   }
 
+  // BUG real (incidencia de Miguel Angel: soltar una pieza en su
+  // propia casilla de origen dejaba algo raro en vez de un snapback
+  // limpio). Causa de fondo, mas amplia de lo que parecia: esta
+  // version de chess.js NUNCA devuelve null en una jugada ilegal --
+  // lanza una excepcion (verificado real: game.move({from:'e2',
+  // to:'e2'}) lanza "Invalid move", igual que cualquier otra jugada
+  // ilegal). El codigo comprobaba "if (move === null)", que nunca se
+  // cumplia, asi que CUALQUIER jugada ilegal (soltar en la misma
+  // casilla, soltar en una casilla inalcanzable, etc.) rompia el
+  // flujo sin control en vez de hacer un snapback limpio -- chessboard.js
+  // llama a onDrop con origen=destino como una jugada mas, no lo
+  // trata como caso especial. safeMove() centraliza la captura de esa
+  // excepcion para tratar "ilegal" siempre igual, sin repetir el
+  // try/catch en cada sitio que mueve una pieza soltada por el
+  // usuario.
+  function safeMove (moveSpec) {
+    try {
+      return game.move(moveSpec)
+    } catch (e) {
+      return null
+    }
+  }
+
   function onDropFreeMode (source, target) {
-    var move = game.move({ from: source, to: target, promotion: 'q' })
-    if (move === null) return 'snapback'
+    clearTurnLabel()
+    var move = safeMove({ from: source, to: target, promotion: 'q' })
+    if (move === null) { updateTurnLabel(); return 'snapback' }
 
     var result = checkGameEndAfterMove()
 
@@ -374,6 +400,23 @@
 
   function setStatus (text) {
     elStatus.textContent = text
+    updateTurnLabel()
+  }
+
+  // Indicador "Juegan blancas/negras" fuera del tablero (peticion de
+  // Miguel Angel). updateTurnLabel() refleja siempre el turno real de
+  // game.turn() -- se llama junto a setStatus() en cada punto donde
+  // la posicion queda estable esperando la proxima jugada. Pero debe
+  // "desaparecer al mover": clearTurnLabel() se llama al principio de
+  // cada funcion que inicia una jugada (propia o del motor), antes de
+  // que la jugada se resuelva, para que no quede visible el turno
+  // viejo mientras se procesa la nueva jugada.
+  function updateTurnLabel () {
+    elTurn.textContent = game.turn() === 'w' ? 'Juegan blancas' : 'Juegan negras'
+  }
+
+  function clearTurnLabel () {
+    elTurn.textContent = ''
   }
 
   function onLineComplete () {
@@ -430,6 +473,7 @@
   }
 
   function playOpponentMove () {
+    clearTurnLabel()
     var expected = currentExpected()
     if (!expected) return
     var move = game.move(expected.san)
@@ -442,6 +486,7 @@
   }
 
   function revealExpectedMove () {
+    clearTurnLabel()
     var expected = currentExpected()
     var move = game.move(expected.san)
     board.position(game.fen())
@@ -467,14 +512,15 @@
   }
 
   function onDrop (source, target) {
+    clearTurnLabel()
     if (isFreeMode()) {
       return onDropFreeMode(source, target)
     }
     var expected = currentExpected()
-    if (!expected || expected.color !== userColor) return 'snapback'
+    if (!expected || expected.color !== userColor) { updateTurnLabel(); return 'snapback' }
 
-    var move = game.move({ from: source, to: target, promotion: 'q' })
-    if (move === null) return 'snapback'
+    var move = safeMove({ from: source, to: target, promotion: 'q' })
+    if (move === null) { updateTurnLabel(); return 'snapback' }
 
     if (move.san === expected.san) {
       attemptsThisMove = 0
