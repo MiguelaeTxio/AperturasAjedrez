@@ -814,8 +814,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2082
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 7 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-9M0N7",
+            title = "Sacrificio de torre que atrae al rey al mate de dama",
+            tema = "Atracción del rey + mate de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1765
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-lUEYX",
+            title = "El caballo se infiltra y termina ganando la calidad",
+            tema = "Infiltración de caballo que gana la calidad",
+            nivel = Nivel.LICHESS,
+            rating = 2034
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-B9SIa",
+            title = "Cambio de piezas menores que abre camino a ganar varios peones",
+            tema = "Cambio favorable + peones sueltos",
+            nivel = Nivel.LICHESS,
+            rating = 2086
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-aQqU5",
+            title = "Mate en 1 con la dama infiltrada en el flanco de rey",
+            tema = "Mate en 1",
+            nivel = Nivel.LICHESS,
+            rating = 1738
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-RnX5s",
+            title = "Jaque que gana una torre a distancia por la misma diagonal",
+            tema = "Ataque a distancia (rayos X) que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 1813
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-gq1rw",
+            title = "Jaque intermedio antes de capturar un peón suelto",
+            tema = "Jaque intermedio (zwischenzug)",
+            nivel = Nivel.LICHESS,
+            rating = 2046
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-OURK5",
+            title = "Avance de peón que abre la puerta a ganar un alfil",
+            tema = "Ruptura de peón + jaque que gana una pieza",
+            nivel = Nivel.LICHESS,
+            rating = 1828
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-adRt1",
+            title = "Mate en 2 con el caballo abriendo la columna h",
+            tema = "Mate en 2 con sacrificio de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1875
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-E9R0e",
+            title = "Mate en 2 con la dama arrastrando al rey a la torre",
+            tema = "Mate en 2 con dama y torre",
+            nivel = Nivel.LICHESS,
+            rating = 1741
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-pH1TG",
+            title = "Cambio de damas en el ataque al enroque seguido de jaque de caballo",
+            tema = "Ataque al enroque con cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1791
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Hn337",
+            title = "Doble captura de peones seguida de una reagrupación defensiva",
+            tema = "Doble ganancia de peones + reagrupación",
+            nivel = Nivel.LICHESS,
+            rating = 2101
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-0xQzv",
+            title = "Triple sacrificio en f6 que termina ganando la dama",
+            tema = "Sacrificio de torre y alfil que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 2117
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-BFr5q",
+            title = "Captura de dama suelta seguida de un cambio de piezas menores",
+            tema = "Dama colgada + cambio de piezas",
+            nivel = Nivel.LICHESS,
+            rating = 1917
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-3xtvd",
+            title = "Cambio de caballos y damas que deja a blancas con la ventaja",
+            tema = "Cambio de piezas favorable",
+            nivel = Nivel.LICHESS,
+            rating = 1958
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-gmmjl",
+            title = "Sacrificio de calidad que reabre la lucha por el centro",
+            tema = "Sacrificio de calidad + recuperación con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2132
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (177 restantes de las 267 del pool corto) y las 33 posiciones
+        // (162 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
