@@ -3343,4 +3343,246 @@ var PROBLEMAS_LINES = [
       { color: 'w', san: 'axb3', explain: { idea: "El peón blanco recaptura la dama negra, cerrando el cambio con la torre ganada al principio como ventaja neta.", ventaja: "Ventaja material decisiva (una torre completa), cierra el fragmento con posición ganadora.", debilidad: "Ninguna real." } }
     ]
   },
+  // ============================================================
+  // PROBLEMAS DE AJEDREZ -- banco tactico Lichess, lote 11 (S6)
+  // ============================================================
+  {
+    id: 'h04-problema-lichess-tXLfG',
+    name: 'Jaque intermedio de caballo antes de capturar una pieza suelta',
+    tema: 'Jaque intermedio (zwischenzug)',
+    nivel: 6,
+    rating: 2184,
+    userColor: 'w',
+    startFen: 'r1b1qrk1/p1pp1pp1/1p6/2bNP2Q/2P1Pn1P/8/PPP3P1/R3KR2 w Q - 0 18',
+    overview: "Posición real de una partida jugada en Lichess (rating 2184). Blancas mete un jaque de caballo en vez de resolver otra cuestión pendiente, y tras la recaptura obligada, la torre remata capturando una pieza suelta.",
+    moves: [
+      { color: 'w', san: 'Nf6+', explain: { idea: "El caballo blanco entra en f6 dando jaque, ofreciéndose voluntariamente.", ventaja: "Jaque intermedio que gana un tiempo crucial.", debilidad: "Entrega el caballo -- solo se justifica por lo que viene después." } },
+      { color: 'b', san: 'gxf6', explain: { idea: "Única forma razonable de responder al jaque: capturar con el peón.", ventaja: "Recupera el caballo entregado.", debilidad: "Ninguna real adicional." } },
+      { color: 'w', san: 'Rxf4', explain: { idea: "La torre blanca captura el caballo negro de f4, que se había quedado sin ninguna defensa.", ventaja: "Gana una pieza completa gracias al tiempo ganado con el jaque intermedio.", debilidad: "Ninguna real, cierra la combinación con ventaja decisiva." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-GAQj8',
+    name: 'Reposicionamiento que despeja la torre para ganar la dama',
+    tema: 'Despeje de línea que gana la dama',
+    nivel: 6,
+    rating: 1960,
+    userColor: 'w',
+    startFen: '1r2rn2/p1p1b1kp/6p1/1p4P1/3Pq3/1QP1PN1R/PP3P2/2K4R w - - 1 25',
+    overview: "Posición real de una partida jugada en Lichess (rating 1960). Blancas reposiciona el caballo y la torre en silencio; cuando negras acepta el cambio de torres, el caballo remata capturando la dama.",
+    moves: [
+      { color: 'w', san: 'Ne5', explain: { idea: "El caballo blanco se traslada a e5, una casilla central muy fuerte.", ventaja: "Pieza muy activa, sin ninguna amenaza directa todavía.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'Qf5', explain: { idea: "La dama negra se reposiciona a f5, buscando mayor actividad.", ventaja: "Pieza activa.", debilidad: "Ninguna real inmediata." } },
+      { color: 'w', san: 'Rf3', explain: { idea: "La torre blanca se traslada a f3, ofreciéndose aparentemente al cambio.", ventaja: "Prepara la trampa final de la combinación.", debilidad: "Entrega la torre -- solo se justifica por lo que viene después." } },
+      { color: 'b', san: 'Qxf3', explain: { idea: "La dama negra captura la torre, cayendo en la trampa preparada.", ventaja: "Gana una torre, en apariencia una buena ganancia material.", debilidad: "La dama queda exactamente en la casilla que el caballo blanco necesita capturar." } },
+      { color: 'w', san: 'Nxf3', explain: { idea: "El caballo blanco captura la dama negra, que se había quedado sin ninguna defensa.", ventaja: "Gana la dama, cerrando la combinación con ventaja material decisiva pese a la torre entregada.", debilidad: "Ninguna, cierra la combinación." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-LgpbR',
+    name: 'Sacrificio de caballo que abre la puerta a la dama',
+    tema: 'Sacrificio de caballo con jaque',
+    nivel: 6,
+    rating: 2111,
+    userColor: 'w',
+    startFen: 'r4rk1/5pb1/3p3p/1p1Np1pP/p3P3/1qP3PB/1P3QPK/5R2 w - - 4 38',
+    overview: "Posición real de una partida jugada en Lichess (rating 2111). Blancas entrega el caballo con jaque, y tras la recaptura obligada del alfil, la dama remata capturando la pieza que queda suelta.",
+    moves: [
+      { color: 'w', san: 'Nf6+', explain: { idea: "El caballo blanco entra en f6 dando jaque, ofreciéndose voluntariamente.", ventaja: "Fuerza la recaptura, abriendo la posición para el remate de la dama.", debilidad: "Entrega el caballo -- solo se justifica por lo que viene después." } },
+      { color: 'b', san: 'Bxf6', explain: { idea: "Única forma razonable de responder al jaque: el alfil captura el caballo.", ventaja: "Recupera el caballo entregado.", debilidad: "El alfil queda en una casilla que la dama blanca puede capturar directamente." } },
+      { color: 'w', san: 'Qxf6', explain: { idea: "La dama blanca captura el alfil negro, que se había quedado sin ninguna defensa.", ventaja: "Recupera el material entregado con ventaja adicional, cerrando la combinación con posición decisiva.", debilidad: "Ninguna, cierra la combinación." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-R7Nri',
+    name: 'El rey esquiva una cadena de jaques antes de recuperar la torre',
+    tema: 'Jugada defensiva del rey ante jaques en cadena',
+    nivel: 6,
+    rating: 2200,
+    userColor: 'w',
+    startFen: '1r5k/3q1pR1/4p2B/p2p3p/1b1P3P/4QP2/r1PK4/6R1 w - - 4 35',
+    overview: "Posición real de una partida jugada en Lichess (rating 2200). El rey blanco se reposiciona con cuidado, resiste dos jaques de torre consecutivos, y termina recuperando la torre negra que había quedado suelta.",
+    moves: [
+      { color: 'w', san: 'Kd1', explain: { idea: "El rey blanco se traslada a d1, buscando mayor seguridad antes de que lleguen los jaques.", ventaja: "Rey mejor protegido para lo que viene.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'Ra1+', explain: { idea: "La torre negra entra en a1 dando jaque, el único intento razonable de contrajuego.", ventaja: "Jaque forzado, gana un tiempo.", debilidad: "Ninguna real para negras." } },
+      { color: 'w', san: 'Ke2', explain: { idea: "Única casilla razonable para salir del jaque.", ventaja: "Ninguna real.", debilidad: "Ninguna adicional." } },
+      { color: 'b', san: 'Re1+', explain: { idea: "La torre negra insiste con un segundo jaque desde e1.", ventaja: "Sigue buscando complicaciones.", debilidad: "Se ofrece a ser capturada." } },
+      { color: 'w', san: 'Rxe1', explain: { idea: "La torre blanca captura la torre negra, que se había quedado sin ninguna defensa suficiente.", ventaja: "Gana una torre completa, cerrando la secuencia con ventaja decisiva.", debilidad: "Ninguna, cierra la combinación." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-3fjRs',
+    name: 'Carrera de coronación entre dos peones pasados',
+    tema: 'Carrera de coronación con jugada precisa del rey',
+    nivel: 6,
+    rating: 2098,
+    userColor: 'w',
+    startFen: '8/2p5/2P5/6P1/3kp3/6K1/8/8 w - - 0 47',
+    overview: "Final de reyes y peones real de una partida jugada en Lichess (rating 2098). Ambos bandos empujan su propio peón hacia la coronación; blancas calcula con precisión para llegar a tiempo de detener el peón negro.",
+    moves: [
+      { color: 'w', san: 'g6', explain: { idea: "El peón blanco avanza a g6, iniciando su propia carrera hacia la coronación.", ventaja: "Peón muy rápido, cerca de convertirse en dama.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'e3', explain: { idea: "Negras avanza su propio peón a e3, iniciando la carrera en el otro extremo.", ventaja: "Peón también peligroso, cerca de coronar.", debilidad: "Ninguna real." } },
+      { color: 'w', san: 'g7', explain: { idea: "El peón blanco sigue avanzando a g7, a un solo paso de coronar.", ventaja: "Gana la carrera por un margen claro.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'e2', explain: { idea: "Negras avanza el peón a e2, también a un paso de coronar.", ventaja: "Mantiene su propia amenaza de coronación.", debilidad: "Ninguna real." } },
+      { color: 'w', san: 'Kf2', explain: { idea: "El rey blanco se acerca a f2, llegando justo a tiempo para detener al peón negro sin perder la propia carrera.", ventaja: "Controla ambas amenazas: su propio peón corona y el peón negro queda detenido.", debilidad: "Ninguna real -- decide la partida a favor de blancas." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-1eIts',
+    name: 'Sacrificio de caballo que abre paso a ganar un alfil',
+    tema: 'Sacrificio de caballo con jaque en el enroque',
+    nivel: 6,
+    rating: 1910,
+    userColor: 'w',
+    startFen: 'r4rk1/ppq2p2/2p3pp/3pnNbQ/8/2P1PPB1/PP6/R3K2R w KQ - 0 21',
+    overview: "Posición real de una partida jugada en Lichess (rating 1910). Blancas entrega el caballo con jaque, capturando un peón de la estructura del enroque, y la dama remata ganando un alfil suelto.",
+    moves: [
+      { color: 'w', san: 'Nxh6+', explain: { idea: "El caballo blanco captura el peón de h6 dando jaque, ofreciéndose voluntariamente.", ventaja: "Destruye la estructura de peones del enroque negro con jaque incluido.", debilidad: "Entrega el caballo -- solo se justifica por lo que viene después." } },
+      { color: 'b', san: 'Kg7', explain: { idea: "Única casilla razonable para salir del jaque.", ventaja: "Ninguna real.", debilidad: "No hace nada por defender el alfil de g5, que sigue expuesto." } },
+      { color: 'w', san: 'Qxg5', explain: { idea: "La dama blanca captura el alfil negro de g5, que se había quedado sin ninguna defensa.", ventaja: "Recupera el material entregado con ventaja adicional, cerrando la combinación con posición decisiva.", debilidad: "Ninguna, cierra la combinación." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-xIrkg',
+    name: 'Sacrificio de caballo que fuerza el cambio de damas favorable',
+    tema: 'Sacrificio de caballo + cambio de damas favorable',
+    nivel: 6,
+    rating: 1774,
+    userColor: 'w',
+    startFen: 'r2q1rk1/1p1b1p1n/p2p1P1B/2pNp2p/3nP1Pb/3P4/PPP3B1/R2Q1RK1 w - - 0 18',
+    overview: "Posición real de una partida jugada en Lichess (rating 1774). Blancas entrega el caballo con jaque forzando el cambio de damas, y el peón recaptura quedando en una posición muy avanzada.",
+    moves: [
+      { color: 'w', san: 'Ne7+', explain: { idea: "El caballo blanco entra en e7 dando jaque, ofreciéndose voluntariamente.", ventaja: "Fuerza el cambio de damas en condiciones muy favorables.", debilidad: "Entrega el caballo -- solo se justifica por lo que viene después." } },
+      { color: 'b', san: 'Qxe7', explain: { idea: "Única forma razonable de responder al jaque: la dama captura el caballo.", ventaja: "Recupera el caballo a cambio de la propia dama.", debilidad: "La dama negra queda en una casilla que el peón blanco puede capturar directamente." } },
+      { color: 'w', san: 'fxe7', explain: { idea: "El peón blanco captura la dama negra, que se había quedado sin ninguna defensa.", ventaja: "Gana la dama, quedando además con un peón muy avanzado cerca de la coronación.", debilidad: "Ninguna, cierra la combinación con ventaja decisiva." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-25aaW',
+    name: 'Reposicionamiento del alfil que resiste el jaque de dama',
+    tema: 'Jugada defensiva que resiste el jaque',
+    nivel: 6,
+    rating: 1741,
+    userColor: 'b',
+    startFen: 'r1bqkb1r/ppp2ppp/8/3pP3/3Qn3/3B4/PPP2PPP/RNB1K2R b KQkq - 1 7',
+    overview: "Posición real de una partida jugada en Lichess (rating 1741), en fase de apertura. Negras reposiciona el alfil con precisión, y tras el jaque de dama blanco, encuentra la mejor forma de defenderse sin ceder material.",
+    moves: [
+      { color: 'b', san: 'Bc5', explain: { idea: "El alfil negro se traslada a c5, desarrollando la pieza con actividad.", ventaja: "Pieza bien colocada, apuntando hacia el flanco de rey blanco.", debilidad: "Ninguna real." } },
+      { color: 'w', san: 'Qa4+', explain: { idea: "La dama blanca entra en a4 dando jaque, el único intento razonable de aprovechar la posición del rey negro.", ventaja: "Jaque forzado que gana un tiempo.", debilidad: "Ninguna real para blancas más allá del tiempo ganado." } },
+      { color: 'b', san: 'Bd7', explain: { idea: "El alfil negro se interpone en d7, la forma más sencilla y sólida de tapar el jaque.", ventaja: "Detiene el jaque sin ceder ningún material.", debilidad: "Ninguna real -- es la respuesta más precisa disponible." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-iEF39',
+    name: 'El rey negro captura los peones blancos que quedan sueltos',
+    tema: 'Cosecha de peones en el final de reyes',
+    nivel: 6,
+    rating: 2141,
+    userColor: 'b',
+    startFen: '8/7p/6p1/5pk1/8/2K2PPP/8/8 b - - 0 48',
+    overview: "Final de reyes y peones real de una partida jugada en Lichess (rating 2141). Negras avanza su propio peón, resiste un jaque, y termina capturando los peones blancos que quedan sin ninguna defensa.",
+    moves: [
+      { color: 'b', san: 'f4', explain: { idea: "Negras avanza el peón a f4, ganando espacio y creando amenazas propias.", ventaja: "Peón activo, cerca de crear complicaciones.", debilidad: "Ninguna real." } },
+      { color: 'w', san: 'h4+', explain: { idea: "Blancas avanza el peón a h4 dando jaque, el único intento razonable de contrajuego.", ventaja: "Jaque forzado, gana un tiempo.", debilidad: "No detiene realmente el plan negro de fondo." } },
+      { color: 'b', san: 'Kh5', explain: { idea: "Única casilla razonable para salir del jaque.", ventaja: "Ninguna real.", debilidad: "Ninguna adicional." } },
+      { color: 'w', san: 'gxf4', explain: { idea: "Blancas captura el peón de f4, la única forma de recuperar algo de material.", ventaja: "Recupera parte del material.", debilidad: "El peón blanco resultante queda sin ninguna defensa adicional." } },
+      { color: 'b', san: 'Kxh4', explain: { idea: "El rey negro captura el peón de h4, que se había quedado sin ninguna defensa.", ventaja: "Gana un peón adicional, quedando con ventaja clara en el final de reyes.", debilidad: "Ninguna real -- cierra el fragmento con posición favorable para negras." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-c7qe0',
+    name: 'Torre ganada sin defensa que debe resistir el contraataque de dama',
+    tema: 'Pieza colgada + resistencia ante el contraataque',
+    nivel: 6,
+    rating: 2053,
+    userColor: 'w',
+    startFen: '4q1k1/pp3pbp/6p1/3r4/8/P6P/1P3PP1/R1BQ2K1 w - - 0 21',
+    overview: "Posición real de una partida jugada en Lichess (rating 2053). Blancas captura una torre negra suelta, y tras dos jaques de dama negra buscando complicar la posición, encuentra la forma de mantener la ventaja material.",
+    moves: [
+      { color: 'w', san: 'Qxd5', explain: { idea: "La dama blanca captura la torre negra de d5, que se había quedado sin ninguna defensa.", ventaja: "Gana una torre completa.", debilidad: "Ninguna real inmediata." } },
+      { color: 'b', san: 'Qe1+', explain: { idea: "La dama negra entra en e1 dando jaque, el único intento razonable de contrajuego.", ventaja: "Jaque forzado, gana un tiempo.", debilidad: "No recupera nada del material ya perdido." } },
+      { color: 'w', san: 'Kh2', explain: { idea: "Única casilla razonable para salir del jaque.", ventaja: "Ninguna real.", debilidad: "Ninguna adicional." } },
+      { color: 'b', san: 'Be5+', explain: { idea: "La dama negra sigue con un segundo jaque de alfil desde e5.", ventaja: "Sigue buscando complicaciones antes de rendirse a la ventaja material blanca.", debilidad: "Ninguna real para negras." } },
+      { color: 'w', san: 'f4', explain: { idea: "Blancas tapa el jaque con el peón, manteniendo la ventaja de una torre completa sin ceder nada más.", ventaja: "Posición sólida y ganadora, con la ventaja material ya asegurada.", debilidad: "Ninguna real -- cierra el fragmento con posición decisiva para blancas." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-OBcx6',
+    name: 'Dama que persigue al caballo hasta ganarlo con jaque',
+    tema: 'Persecución de dama que gana una pieza',
+    nivel: 6,
+    rating: 2125,
+    userColor: 'w',
+    startFen: 'r3r1k1/p3p2p/5ppB/1p5P/n7/5NP1/1q3PK1/1Q2R3 w - - 3 39',
+    overview: "Posición real de una partida jugada en Lichess (rating 2125). La dama blanca se reposiciona, sigue al caballo negro con jaque, y termina capturándolo sin que negras pueda evitarlo.",
+    moves: [
+      { color: 'w', san: 'Qe4', explain: { idea: "La dama blanca se traslada a e4, amenazando indirectamente al caballo negro.", ventaja: "Pieza activa, comienza a acorralar al caballo.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'Nc5', explain: { idea: "El caballo negro se retira a c5, buscando una casilla más segura.", ventaja: "Aleja momentáneamente al caballo de la amenaza.", debilidad: "Sigue sin encontrar una casilla verdaderamente segura." } },
+      { color: 'w', san: 'Qd5+', explain: { idea: "La dama blanca entra en d5 dando jaque, siguiendo la persecución del caballo.", ventaja: "Jaque forzado que sigue acorralando al caballo.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'e6', explain: { idea: "Negras interpone el peón, el único intento razonable de tapar el jaque.", ventaja: "Detiene el jaque momentáneamente.", debilidad: "No hace nada por salvar al caballo, que sigue sin ninguna casilla segura." } },
+      { color: 'w', san: 'Qxc5', explain: { idea: "La dama blanca captura el caballo negro, que se había quedado sin ninguna defensa.", ventaja: "Gana una pieza completa, cerrando la persecución con ventaja decisiva.", debilidad: "Ninguna, cierra la combinación." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-nDRuP',
+    name: 'Sacrificio de alfil que abre camino al mate con dos torres',
+    tema: 'Mate en 3 con sacrificio de alfil',
+    nivel: 6,
+    rating: 1811,
+    userColor: 'w',
+    startFen: '6rk/7p/5p1B/1pp1pP2/3p4/1P1r4/6R1/R6K w - - 0 38',
+    overview: "Posición real de una partida jugada en Lichess (rating 1811). Blancas entrega el alfil con jaque, y tras una cadena de jaques de torre, remata capturando la torre negra con jaque mate.",
+    moves: [
+      { color: 'w', san: 'Bg7+', explain: { idea: "El alfil blanco entra en g7 dando jaque, ofreciéndose voluntariamente.", ventaja: "Fuerza la captura, abriendo la posición para el ataque de las torres.", debilidad: "Entrega el alfil -- solo se justifica porque lleva directamente al mate." } },
+      { color: 'b', san: 'Rxg7', explain: { idea: "Única forma razonable de responder al jaque: la torre captura el alfil.", ventaja: "Recupera el alfil entregado.", debilidad: "El rey negro queda completamente expuesto en la esquina." } },
+      { color: 'w', san: 'Ra8+', explain: { idea: "La torre blanca entra en a8 dando jaque.", ventaja: "Jaque forzado que sigue la combinación.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'Rg8', explain: { idea: "Única forma de tapar el jaque sin perder al rey de inmediato: interponer la propia torre.", ventaja: "Detiene el jaque momentáneamente.", debilidad: "La torre interpuesta queda exactamente en la casilla que blancas necesita capturar para dar mate." } },
+      { color: 'w', san: 'Rgxg8#', explain: { idea: "La torre blanca captura la torre negra dando jaque mate, apoyada por el resto de piezas blancas que ya cubrían las demás casillas de escape.", ventaja: "Jaque mate: fin inmediato de la partida.", debilidad: "Ninguna: es el resultado final de la combinación." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-nmpBr',
+    name: 'El caballo atrapa a la dama rival en una esquina',
+    tema: 'Pieza atrapada -- caballo que caza a la dama',
+    nivel: 6,
+    rating: 1980,
+    userColor: 'w',
+    startFen: 'r1b1k2r/pp3ppp/2n1p3/3n4/3P4/P1NB1N2/1q3PPP/R2QK2R w KQkq - 0 12',
+    overview: "Posición real de una partida jugada en Lichess (rating 1980), en fase de apertura. La dama negra se había aventurado demasiado dentro de la posición blanca; el caballo blanco la caza sin que tenga ninguna casilla de escape.",
+    moves: [
+      { color: 'w', san: 'Na4', explain: { idea: "El caballo blanco se traslada a a4, empezando a cerrar las casillas de escape de la dama negra.", ventaja: "Reduce las opciones de la dama negra, que se había aventurado demasiado.", debilidad: "Ninguna real." } },
+      { color: 'b', san: 'Nc3', explain: { idea: "Negras intenta defender la dama con el caballo, buscando la única cobertura posible.", ventaja: "Único intento razonable de salvar la dama.", debilidad: "No es suficiente: la dama sigue sin ninguna casilla de escape real." } },
+      { color: 'w', san: 'Nxb2', explain: { idea: "El caballo blanco captura la dama negra, que se había quedado completamente atrapada sin ninguna casilla de escape.", ventaja: "Gana la dama, la pieza más valiosa del tablero, sin ninguna compensación.", debilidad: "Ninguna, cierra la combinación con ventaja decisiva." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-nlHP3',
+    name: 'Reposicionamiento de alfil que gana una torre con jaque',
+    tema: 'Ataque a distancia que gana una torre',
+    nivel: 6,
+    rating: 1772,
+    userColor: 'b',
+    startFen: '8/1p6/p1bp1r1k/4p1pp/4P3/PqP2BPP/1P2Q1K1/5R2 b - - 6 30',
+    overview: "Posición real de una partida jugada en Lichess (rating 1772). Negras reposiciona el alfil hacia una diagonal clave, y cuando blancas ignora la amenaza, captura la torre con jaque.",
+    moves: [
+      { color: 'b', san: 'Bb5', explain: { idea: "El alfil negro se traslada a b5, apuntando hacia la diagonal donde está la torre blanca.", ventaja: "Amenaza real sobre la torre de f1.", debilidad: "Ninguna real." } },
+      { color: 'w', san: 'Qe3', explain: { idea: "La dama blanca se reposiciona a e3, sin ocuparse de la amenaza real sobre la torre.", ventaja: "Ninguna real para blancas.", debilidad: "Deja la torre de f1 sin ninguna defensa adicional." } },
+      { color: 'b', san: 'Bxf1+', explain: { idea: "El alfil negro captura la torre blanca de f1 dando jaque, que se había quedado sin ninguna defensa.", ventaja: "Gana una torre completa con jaque incluido.", debilidad: "Ninguna, cierra la combinación con ventaja decisiva." } }
+    ]
+  },
+  {
+    id: 'h04-problema-lichess-SfSDP',
+    name: 'Doble sacrificio en f2 que destruye la defensa del rey blanco',
+    tema: 'Ataque al enroque con doble sacrificio',
+    nivel: 6,
+    rating: 2052,
+    userColor: 'b',
+    startFen: '5rk1/ppN3pp/2b1p3/2bpP3/2pNn2q/2P5/PP2BPP1/R2Q1RK1 b - - 1 20',
+    overview: "Posición real de una partida jugada en Lichess (rating 2052). Negras entrega primero el caballo y luego, tras la recaptura, la dama entra con jaque capturando la torre que quedaba en f2.",
+    moves: [
+      { color: 'b', san: 'Nxf2', explain: { idea: "El caballo negro captura el peón de f2, ofreciéndose junto al rey blanco.", ventaja: "Empieza a destruir la estructura de peones que protege al rey blanco.", debilidad: "Entrega el caballo -- solo se justifica si lo que sigue compensa de sobra." } },
+      { color: 'w', san: 'Rxf2', explain: { idea: "Única forma razonable de recapturar sin perder más material de inmediato.", ventaja: "Recupera el caballo entregado.", debilidad: "La torre blanca queda en f2, una casilla que la dama negra puede atacar directamente." } },
+      { color: 'b', san: 'Qxf2+', explain: { idea: "La dama negra captura la torre de f2 dando jaque.", ventaja: "Gana una torre adicional y deja al rey blanco con la estructura de peones completamente destruida.", debilidad: "Ninguna real, cierra la combinación con ventaja decisiva para negras." } }
+    ]
+  },
 ]

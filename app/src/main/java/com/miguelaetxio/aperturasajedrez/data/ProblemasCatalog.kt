@@ -1238,8 +1238,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1860
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 11 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-tXLfG",
+            title = "Jaque intermedio de caballo antes de capturar una pieza suelta",
+            tema = "Jaque intermedio (zwischenzug)",
+            nivel = Nivel.LICHESS,
+            rating = 2184
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GAQj8",
+            title = "Reposicionamiento que despeja la torre para ganar la dama",
+            tema = "Despeje de línea que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1960
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-LgpbR",
+            title = "Sacrificio de caballo que abre la puerta a la dama",
+            tema = "Sacrificio de caballo con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2111
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-R7Nri",
+            title = "El rey esquiva una cadena de jaques antes de recuperar la torre",
+            tema = "Jugada defensiva del rey ante jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2200
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-3fjRs",
+            title = "Carrera de coronación entre dos peones pasados",
+            tema = "Carrera de coronación con jugada precisa del rey",
+            nivel = Nivel.LICHESS,
+            rating = 2098
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-1eIts",
+            title = "Sacrificio de caballo que abre paso a ganar un alfil",
+            tema = "Sacrificio de caballo con jaque en el enroque",
+            nivel = Nivel.LICHESS,
+            rating = 1910
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-xIrkg",
+            title = "Sacrificio de caballo que fuerza el cambio de damas favorable",
+            tema = "Sacrificio de caballo + cambio de damas favorable",
+            nivel = Nivel.LICHESS,
+            rating = 1774
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-25aaW",
+            title = "Reposicionamiento del alfil que resiste el jaque de dama",
+            tema = "Jugada defensiva que resiste el jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1741
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-iEF39",
+            title = "El rey negro captura los peones blancos que quedan sueltos",
+            tema = "Cosecha de peones en el final de reyes",
+            nivel = Nivel.LICHESS,
+            rating = 2141
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-c7qe0",
+            title = "Torre ganada sin defensa que debe resistir el contraataque de dama",
+            tema = "Pieza colgada + resistencia ante el contraataque",
+            nivel = Nivel.LICHESS,
+            rating = 2053
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-OBcx6",
+            title = "Dama que persigue al caballo hasta ganarlo con jaque",
+            tema = "Persecución de dama que gana una pieza",
+            nivel = Nivel.LICHESS,
+            rating = 2125
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-nDRuP",
+            title = "Sacrificio de alfil que abre camino al mate con dos torres",
+            tema = "Mate en 3 con sacrificio de alfil",
+            nivel = Nivel.LICHESS,
+            rating = 1811
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-nmpBr",
+            title = "El caballo atrapa a la dama rival en una esquina",
+            tema = "Pieza atrapada -- caballo que caza a la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1980
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-nlHP3",
+            title = "Reposicionamiento de alfil que gana una torre con jaque",
+            tema = "Ataque a distancia que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 1772
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-SfSDP",
+            title = "Doble sacrificio en f2 que destruye la defensa del rey blanco",
+            tema = "Ataque al enroque con doble sacrificio",
+            nivel = Nivel.LICHESS,
+            rating = 2052
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (117 restantes de las 267 del pool corto) y las 33 posiciones
+        // (102 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
