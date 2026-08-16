@@ -1132,8 +1132,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1801
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 10 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-g28Ui",
+            title = "Reposicionar el alfil antes de rematar con jaque y ganar una pieza",
+            tema = "Desviación del rey + ganancia de pieza",
+            nivel = Nivel.LICHESS,
+            rating = 1830
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-i7dNt",
+            title = "Jaque de caballo seguido de un sacrificio de peón que gana la dama",
+            tema = "Jaque de caballo + sacrificio que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1922
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-PcoES",
+            title = "Sacrificio de dama que abre camino a una coronación con jaque",
+            tema = "Sacrificio de dama + coronación con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2109
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-721LQ",
+            title = "Carrera de coronación en ambos flancos",
+            tema = "Carrera de coronación de peones",
+            nivel = Nivel.LICHESS,
+            rating = 1797
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-zzqp8",
+            title = "Cadena de jaques que desvía a la torre y gana material",
+            tema = "Desviación con jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2121
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-VwAow",
+            title = "Reagrupación de torre seguida de un cambio de damas forzado",
+            tema = "Reagrupación + cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1721
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-AjFfz",
+            title = "Peón que corona con jaque pese a la captura rival",
+            tema = "Coronación con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1784
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-UgIPv",
+            title = "El rey bloquea la coronación y captura la pieza subida",
+            tema = "Bloqueo de la coronación en el final de peones",
+            nivel = Nivel.LICHESS,
+            rating = 1760
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-gtIb6",
+            title = "Jugada tranquila que resiste el sacrificio de dama rival",
+            tema = "Jugada tranquila que aguanta el ataque",
+            nivel = Nivel.LICHESS,
+            rating = 2123
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GDIBC",
+            title = "Cambios forzados en la primera fila que dejan el rey expuesto",
+            tema = "Despeje de la primera fila con cambios forzados",
+            nivel = Nivel.LICHESS,
+            rating = 1835
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-HHDot",
+            title = "Cadena de jaques de dama que termina ganando una torre",
+            tema = "Ataque con la dama al rey expuesto",
+            nivel = Nivel.LICHESS,
+            rating = 1912
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-60LxU",
+            title = "Cambio de damas que atrae a la torre a una casilla vulnerable",
+            tema = "Atracción con cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1837
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-M4SsO",
+            title = "Doble sacrificio en el flanco de rey que termina ganando la dama",
+            tema = "Atracción del rey con doble sacrificio que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1823
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-LlQH1",
+            title = "La dama blanca resiste el contraataque y recupera la iniciativa",
+            tema = "Defensa precisa ante un contraataque de dama",
+            nivel = Nivel.LICHESS,
+            rating = 2017
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-q88ua",
+            title = "Torre suelta capturada seguida de un cambio de damas favorable",
+            tema = "Torre colgada + cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1860
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (132 restantes de las 267 del pool corto) y las 33 posiciones
+        // (117 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )

@@ -389,7 +389,7 @@ corrección. 51/51 entradas totales de `problemas.js` verificadas de
 nuevo tras la inserción, ids cruzados JS↔Kotlin coinciden
 exactamente.
 
-1. Continuar con los lotes siguientes de "Problemas de ajedrez": 132
+1. Continuar con los lotes siguientes de "Problemas de ajedrez": 117
    entradas restantes de las 267 del pool corto (1/3/5 semijugadas),
    en tandas de 15-20, a partir del JSON intermedio ya verificado
    (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
