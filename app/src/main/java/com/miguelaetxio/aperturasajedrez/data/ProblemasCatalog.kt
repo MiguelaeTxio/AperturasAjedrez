@@ -1662,8 +1662,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2059
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 15 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-i7DFU",
+            title = "Dama y caballo se coordinan para amenazar el flanco de rey",
+            tema = "Coordinación de dama y caballo en el ataque",
+            nivel = Nivel.LICHESS,
+            rating = 1717
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-rmXcu",
+            title = "Jaque de dama que abre paso a capturar un peón con jaque",
+            tema = "Jaque de dama que gana un peón central",
+            nivel = Nivel.LICHESS,
+            rating = 1982
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-fgo4X",
+            title = "Cambio de torre por dama que termina con el alfil ganando la calidad",
+            tema = "Cambio de torre por dama + ganancia de calidad",
+            nivel = Nivel.LICHESS,
+            rating = 1834
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ry5O8",
+            title = "Cambio de dama por caballo que termina en una serie de capturas en la última fila",
+            tema = "Serie de cambios en la última fila",
+            nivel = Nivel.LICHESS,
+            rating = 1785
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-awcmq",
+            title = "Cambio de caballos que abre camino a ganar un peón central",
+            tema = "Cambio de piezas + ganancia de peón central",
+            nivel = Nivel.LICHESS,
+            rating = 1802
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Rt8cU",
+            title = "Cadena de jaques de dama y alfil que arrastran al rey",
+            tema = "Jaques en cadena de dama y alfil",
+            nivel = Nivel.LICHESS,
+            rating = 1873
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-5rzFs",
+            title = "Ruptura central que desencadena una serie de cambios en la columna d",
+            tema = "Ruptura central con serie de cambios",
+            nivel = Nivel.LICHESS,
+            rating = 1925
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ANz2V",
+            title = "Sacrificio de alfil que abre paso a ganar un segundo alfil",
+            tema = "Sacrificio con jaque que gana una pieza",
+            nivel = Nivel.LICHESS,
+            rating = 1718
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Ed0Wy",
+            title = "Avance de peones que empuja al rey y crea un peón muy peligroso",
+            tema = "Avance de peones con jaque en el final",
+            nivel = Nivel.LICHESS,
+            rating = 1832
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-3WP0l",
+            title = "Reposicionamiento de dama que abre camino a ganar la dama rival",
+            tema = "Reposicionamiento + ganancia de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1767
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-CddQq",
+            title = "Cambio de torres seguido de un segundo jaque que gana la calidad",
+            tema = "Cambio de torres + jaque que gana la calidad",
+            nivel = Nivel.LICHESS,
+            rating = 1805
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-MioiT",
+            title = "Reposicionamiento de dama que fuerza ganar un caballo",
+            tema = "Reposicionamiento de dama + ganancia de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1843
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-d3BXx",
+            title = "Cambio de damas que abre camino a ganar un caballo",
+            tema = "Cambio de damas + ganancia de pieza",
+            nivel = Nivel.LICHESS,
+            rating = 2067
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-1VSzN",
+            title = "Cambio de damas con jaque que deja el mejor final de alfiles",
+            tema = "Cambio de damas con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 2011
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-WRQvm",
+            title = "Cambio de piezas en el flanco de rey que deja la dama muy activa",
+            tema = "Cambio de piezas + dama activa",
+            nivel = Nivel.LICHESS,
+            rating = 1978
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (57 restantes de las 267 del pool corto) y las 33 posiciones
+        // (42 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
