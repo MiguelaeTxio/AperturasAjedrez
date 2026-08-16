@@ -433,6 +433,55 @@ rehacerse. Se corrigió únicamente la redacción ambigua: las 300
 entradas con Lichess como fuente pasan de "(rating XXXX)" a
 "(dificultad XXXX)" en su `overview`.
 
+**Bug real corregido (S6, tras prueba en dispositivo real):** el botón
+"Reiniciar línea" no respondía si se pulsaba con una pieza "cogida"
+(arrastre en curso) -- `chessboard.js` no limpia su estado interno de
+arrastre cuando la posición se cambia por programa. Corregido con
+`cancelAnyDrag()` en `game.js`: un `mouseup` sintético muy fuera del
+tablero antes de cualquier cambio de posición, que fuerza a
+`chessboard.js` a limpiar su propio estado (`dropOffBoard` por
+defecto es `'snapback'`) sin tocar el fichero vendorizado.
+
+**Sistema de navegación y favoritos (S6, tras uso real con el hito ya
+completo):** Miguel Ángel señaló que, con el volumen creciente del
+banco de Problemas de ajedrez (267 y subiendo), "aleatorio" no basta
+-- pidió avance sin repetir (saltando los ya resueltos), navegación
+manual libre, marcapáginas persistente y favoritos. Diseño cerrado y
+confirmado, aplicado SOLO a Problemas de ajedrez (Iniciación y
+Grandes Partidas, por su volumen pequeño, mantienen el comportamiento
+anterior sin cambios):
+
+- **Orden fijo** (ya no se baraja) -- cada problema tiene un número
+  fijo 1..267 según su orden en el catálogo, necesario para poder "ir
+  al número X".
+- **Avance sin repetir**: el botón "siguiente" y el auto-avance tras
+  resolver un problema saltan automáticamente los ya resueltos
+  (`findNextUnsolvedIndex`, con vuelta de ronda). Si todos están
+  resueltos, se comporta como avance secuencial simple.
+- **Navegación manual libre** (anterior/primero/último/ir a un número
+  concreto) no aplica ese salto -- permite volver a ver cualquier
+  problema, resuelto o no.
+- **Marcapáginas persistente**: se recuerda el índice actual por
+  categoría (`TrainingBridge.getBookmark`/`setBookmark`), y se retoma
+  ahí la próxima vez que se entra a Problemas de ajedrez. Solo se
+  actualiza en modo normal, nunca mientras se navega dentro de la
+  vista de favoritos, para no romper el "retomar donde lo dejé".
+- **Favoritos**: botón de estrella que marca/desmarca el problema
+  actual (`TrainingBridge.toggleFavorite`/`isFavorite`), y un botón
+  "Favoritos" que alterna toda la sesión entre la cola completa y el
+  subconjunto de favoritos, reutilizando el mismo mecanismo de
+  navegación.
+- **Persistencia**: extendido `TrainingBridge.kt` (mismo
+  `SharedPreferences` que aciertos/fallos) con `resuelto` por
+  problema, `favorito` por problema, y `marcapaginas` por categoría.
+- **Arquitectura**: `CategorySelectorActivity` deja de barajar
+  Problemas de ajedrez y pasa `EXTRA_NAV_CATEGORY` ("problemas_ajedrez")
+  a `BoardActivity`, que lo reenvía como query param `navcat`.
+  `game.js` activa la barra de navegación (HTML nueva en
+  `index.html`/`styles.css`) solo cuando ese parámetro está presente
+  -- Iniciación y Grandes Partidas, sin el parámetro, siguen
+  exactamente igual que antes.
+
 1. Prueba en dispositivo real de todo el hito (finales, Iniciación,
    Grandes Partidas ampliadas, Problemas de ajedrez) -- Miguel Ángel
    pedirá la instalación cuando quiera probarlo; no instalar por

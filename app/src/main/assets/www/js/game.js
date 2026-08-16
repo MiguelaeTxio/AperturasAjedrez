@@ -25,6 +25,19 @@
     return ids.length > 0 ? ids : null
   }
 
+  // S6 (navegacion de Problemas de ajedrez, ver ANNEX_H04.md): si la
+  // URL trae "navcat", la cola de "queue" se trata como navegable --
+  // orden fijo (sin barajar, ya garantizado por
+  // CategorySelectorActivity.startProblemSession), con marcapaginas,
+  // favoritos y avance sin repetir persistidos en AndroidBridge bajo
+  // esta clave de categoria. Sin este parametro, el comportamiento es
+  // exactamente el de antes (cola servida en orden de llegada, sin
+  // barra de navegacion).
+  function selectedNavCategory () {
+    var params = new URLSearchParams(window.location.search)
+    return params.get('navcat')
+  }
+
   // H04: los finales y los problemas viven en ficheros nuevos
   // (finales.js, problemas.js, cargados antes que este fichero) para
   // no mezclar contenido de lineas, finales y problemas en el mismo
@@ -56,13 +69,30 @@
     return lines[0]
   }
 
+  var navCategory = selectedNavCategory()
   var sessionQueue = selectedQueueIds()
+  // Copia estable de la cola completa recibida -- sessionQueue puede
+  // sustituirse mas adelante por el subconjunto de favoritos
+  // (toggleFavoritesView), pero fullQueueIds siempre conserva el
+  // orden y el conjunto original para poder volver a el.
+  var fullQueueIds = sessionQueue ? sessionQueue.slice() : null
+  var favoritesOnly = false
   var sessionIndex = 0
+  if (navCategory && sessionQueue && window.AndroidBridge) {
+    try {
+      var savedBookmark = window.AndroidBridge.getBookmark(navCategory)
+      if (typeof savedBookmark === 'number' && savedBookmark >= 0 && savedBookmark < sessionQueue.length) {
+        sessionIndex = savedBookmark
+      }
+    } catch (e) {
+      sessionIndex = 0
+    }
+  }
   var sessionAciertos = 0
   var sessionFallos = 0
   var SESSION_ADVANCE_PAUSE_MS = 1400
 
-  var line = findLine(sessionQueue ? sessionQueue[0] : selectedLineId())
+  var line = findLine(sessionQueue ? sessionQueue[sessionIndex] : selectedLineId())
   var userColor = line.userColor || 'w'
   var opponentColor = userColor === 'w' ? 'b' : 'w'
   // H04: si la linea trae "startFen" (finales), la partida arranca
@@ -83,13 +113,142 @@
   var elOverview = document.getElementById('overview')
   var elRestart = document.getElementById('restartBtn')
   var elExplain = document.getElementById('explain')
+  var elNavBar = document.getElementById('navBar')
+  var elNavNumberInput = document.getElementById('navNumberInput')
+  var elNavTotal = document.getElementById('navTotal')
+  var elNavFirst = document.getElementById('navFirstBtn')
+  var elNavPrev = document.getElementById('navPrevBtn')
+  var elNavNext = document.getElementById('navNextBtn')
+  var elNavLast = document.getElementById('navLastBtn')
+  var elNavGo = document.getElementById('navGoBtn')
+  var elNavFav = document.getElementById('navFavBtn')
+  var elNavFavList = document.getElementById('navFavListBtn')
+
+  function isNavigable () {
+    return !!(navCategory && fullQueueIds)
+  }
 
   function updateSessionProgressLabel () {
-    if (!sessionQueue) {
+    if (!sessionQueue || isNavigable()) {
+      // En sesion navegable el propio navBar ya muestra la posicion
+      // (numero / total) -- evitar el texto duplicado.
       elSessionProgress.textContent = ''
       return
     }
     elSessionProgress.textContent = 'Problema ' + (sessionIndex + 1) + ' de ' + sessionQueue.length
+  }
+
+  function persistBookmark () {
+    // El marcapaginas solo tiene sentido sobre la cola completa (no
+    // sobre la vista filtrada de favoritos) -- si se guardara ahi, el
+    // "retomar donde lo dejaste" quedaria roto la proxima vez que se
+    // entre en modo normal.
+    if (!navCategory || favoritesOnly || !window.AndroidBridge) return
+    window.AndroidBridge.setBookmark(navCategory, sessionIndex)
+  }
+
+  function refreshNavBar () {
+    if (!isNavigable()) {
+      elNavBar.style.display = 'none'
+      return
+    }
+    elNavBar.style.display = 'flex'
+    elNavNumberInput.value = sessionIndex + 1
+    elNavNumberInput.max = sessionQueue.length
+    elNavTotal.textContent = '/ ' + sessionQueue.length + (favoritesOnly ? ' (favoritos)' : '')
+    elNavFavList.textContent = favoritesOnly ? 'Ver todos' : 'Favoritos'
+    var esFavorito = window.AndroidBridge && window.AndroidBridge.isFavorite(line.id)
+    elNavFav.textContent = esFavorito ? '★' : '☆'
+  }
+
+  // Salto directo a un indice concreto de la cola activa (sessionQueue
+  // -- completa o filtrada a favoritos segun favoritesOnly). Con
+  // vuelta de ronda en ambos extremos (indice -1 va al ultimo, indice
+  // == longitud vuelve al primero), igual que un carrusel.
+  function navigateToIndex (newIndex) {
+    if (!isNavigable()) return
+    var n = sessionQueue.length
+    if (n === 0) return
+    if (newIndex < 0) newIndex = n - 1
+    if (newIndex >= n) newIndex = 0
+    sessionIndex = newIndex
+    persistBookmark()
+    loadLine(findLine(sessionQueue[sessionIndex]))
+  }
+
+  // Busca, a partir de fromIndex (sin incluirlo), el primer problema
+  // de la cola activa que no este resuelto -- dando la vuelta si hace
+  // falta. Si todos estan resueltos, se comporta como un simple
+  // avance secuencial (fromIndex + 1, con vuelta), sin bloquear el
+  // avance sin repetir cuando ya no queda nada nuevo que ofrecer.
+  function findNextUnsolvedIndex (fromIndex) {
+    var n = sessionQueue.length
+    for (var step = 1; step <= n; step++) {
+      var idx = (fromIndex + step) % n
+      var resuelto = window.AndroidBridge && window.AndroidBridge.isSolved(sessionQueue[idx])
+      if (!resuelto) return idx
+    }
+    return (fromIndex + 1) % n
+  }
+
+  function goNext () {
+    navigateToIndex(findNextUnsolvedIndex(sessionIndex))
+  }
+
+  function goPrev () {
+    // La navegacion manual hacia atras no salta resueltos -- es
+    // exactamente para poder "volver a ver" lo ya hecho.
+    navigateToIndex(sessionIndex - 1)
+  }
+
+  function goFirst () {
+    navigateToIndex(0)
+  }
+
+  function goLast () {
+    navigateToIndex(sessionQueue.length - 1)
+  }
+
+  function goToNumber () {
+    var n = parseInt(elNavNumberInput.value, 10)
+    if (isNaN(n) || n < 1 || n > sessionQueue.length) {
+      setStatus('Numero fuera de rango (1-' + sessionQueue.length + ').')
+      return
+    }
+    navigateToIndex(n - 1)
+  }
+
+  function toggleFavorite () {
+    if (!window.AndroidBridge) return
+    window.AndroidBridge.toggleFavorite(line.id)
+    refreshNavBar()
+  }
+
+  // Alterna entre la cola completa y el subconjunto de favoritos,
+  // reutilizando exactamente el mismo mecanismo de navegacion
+  // (sessionQueue/sessionIndex) -- favoritesOnly es lo unico que
+  // distingue ambos modos, y controla ademas si se actualiza el
+  // marcapaginas (persistBookmark).
+  function toggleFavoritesView () {
+    if (!isNavigable()) return
+    if (!favoritesOnly) {
+      var favIds = fullQueueIds.filter(function (id) {
+        return window.AndroidBridge && window.AndroidBridge.isFavorite(id)
+      })
+      if (favIds.length === 0) {
+        setStatus('Todavia no tienes ningun problema marcado como favorito.')
+        return
+      }
+      sessionQueue = favIds
+      favoritesOnly = true
+      navigateToIndex(0)
+    } else {
+      var idActual = line.id
+      sessionQueue = fullQueueIds
+      favoritesOnly = false
+      var idx = sessionQueue.indexOf(idActual)
+      navigateToIndex(idx >= 0 ? idx : 0)
+    }
   }
 
   function showExplanation (moveEntry) {
@@ -220,8 +379,20 @@
   function onLineComplete () {
     board.position(game.fen())
 
+    if (window.AndroidBridge) {
+      window.AndroidBridge.markSolved(line.id)
+    }
+
     if (!sessionQueue) {
       setStatus('Linea completada.')
+      return
+    }
+
+    if (isNavigable()) {
+      setStatus('¡Problema resuelto! Buscando el siguiente sin resolver...')
+      window.setTimeout(function () {
+        navigateToIndex(findNextUnsolvedIndex(sessionIndex))
+      }, SESSION_ADVANCE_PAUSE_MS)
       return
     }
 
@@ -408,6 +579,7 @@
     board.orientation(userColor === 'b' ? 'black' : 'white')
     board.position(line.startFen || 'start')
     updateSessionProgressLabel()
+    refreshNavBar()
     beginLine()
   }
 
@@ -428,6 +600,18 @@
     })
 
     elRestart.addEventListener('click', restartLine)
+
+    if (isNavigable()) {
+      elNavFirst.addEventListener('click', goFirst)
+      elNavPrev.addEventListener('click', goPrev)
+      elNavNext.addEventListener('click', goNext)
+      elNavLast.addEventListener('click', goLast)
+      elNavGo.addEventListener('click', goToNumber)
+      elNavFav.addEventListener('click', toggleFavorite)
+      elNavFavList.addEventListener('click', toggleFavoritesView)
+    }
+    refreshNavBar()
+
     beginLine()
   }
 

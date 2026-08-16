@@ -83,6 +83,57 @@ html, body {
   background-color: #4a4a4a;
 }
 
+/* Barra de navegacion de Problemas de ajedrez (S6) -- oculta por
+   defecto, game.js la muestra (display: flex) solo cuando la sesion
+   viene marcada como navegable (query param "navcat"). */
+#navBar {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  width: 92vw;
+  max-width: 480px;
+}
+
+#navBar button {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+}
+
+#navBar button:active {
+  background-color: #4a4a4a;
+}
+
+#navFavBtn {
+  color: #ffd43b;
+  font-size: 18px;
+  padding: 6px 10px;
+}
+
+#navNumberInput {
+  width: 56px;
+  padding: 8px 6px;
+  font-size: 14px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+#navTotal {
+  font-size: 13px;
+  color: #cccccc;
+  margin-right: 2px;
+}
+
 /* Resalte de casilla de origen/destino de la ultima jugada (propia o
    del motor) -- decision cerrada S1, ver ANNEX_H01.md. */
 .highlight-square {

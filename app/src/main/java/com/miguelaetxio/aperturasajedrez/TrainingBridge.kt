@@ -18,6 +18,13 @@ import org.json.JSONObject
  * Registro de progreso: contador de aciertos/fallos acumulados por
  * linea, sin fecha ni racha (decision cerrada S1 -- ver
  * DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md).
+ *
+ * S6 (navegacion de Problemas de ajedrez, ver ANNEX_H04.md): se anade
+ * persistencia de "resuelto" por problema (para el avance sin repetir
+ * -- salta los ya resueltos), "favorito" por problema, y
+ * "marcapaginas" (indice recordado) por categoria navegable. Todo en
+ * el mismo SharedPreferences, mismo patron de clave que
+ * aciertos/fallos.
  */
 class TrainingBridge(
     private val context: Context,
@@ -45,6 +52,35 @@ class TrainingBridge(
     }
 
     @JavascriptInterface
+    fun markSolved(lineId: String) {
+        prefs.edit().putBoolean(resueltoKey(lineId), true).apply()
+    }
+
+    @JavascriptInterface
+    fun isSolved(lineId: String): Boolean =
+        prefs.getBoolean(resueltoKey(lineId), false)
+
+    @JavascriptInterface
+    fun toggleFavorite(lineId: String): Boolean {
+        val nuevoValor = !prefs.getBoolean(favoritoKey(lineId), false)
+        prefs.edit().putBoolean(favoritoKey(lineId), nuevoValor).apply()
+        return nuevoValor
+    }
+
+    @JavascriptInterface
+    fun isFavorite(lineId: String): Boolean =
+        prefs.getBoolean(favoritoKey(lineId), false)
+
+    @JavascriptInterface
+    fun getBookmark(category: String): Int =
+        prefs.getInt(marcapaginasKey(category), 0)
+
+    @JavascriptInterface
+    fun setBookmark(category: String, index: Int) {
+        prefs.edit().putInt(marcapaginasKey(category), index).apply()
+    }
+
+    @JavascriptInterface
     fun showTorpeDialog() {
         mainHandler.post {
             AlertDialog.Builder(context)
@@ -64,6 +100,9 @@ class TrainingBridge(
 
     private fun aciertosKey(lineId: String) = "${lineId}_aciertos"
     private fun fallosKey(lineId: String) = "${lineId}_fallos"
+    private fun resueltoKey(lineId: String) = "${lineId}_resuelto"
+    private fun favoritoKey(lineId: String) = "${lineId}_favorito"
+    private fun marcapaginasKey(category: String) = "${category}_marcapaginas"
 
     companion object {
         private const val PREFS_NAME = "training_progress"

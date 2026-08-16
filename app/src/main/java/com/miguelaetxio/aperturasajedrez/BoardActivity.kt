@@ -15,6 +15,14 @@ import androidx.appcompat.app.AppCompatActivity
  * ids (modo sesion secuencial) que se pasa como query param "queue"
  * -- ver selectedQueueIds() en game.js. Si llega la cola, tiene
  * prioridad sobre EXTRA_LINE_ID.
+ *
+ * S6 (navegacion de Problemas de ajedrez, ver ANNEX_H04.md): puede
+ * recibir ademas EXTRA_NAV_CATEGORY, una clave de categoria navegable
+ * (p.ej. "problemas_ajedrez") que se pasa como query param "navcat".
+ * Cuando llega, game.js activa la barra de navegacion (primero/
+ * anterior/siguiente/ultimo/ir al numero/favoritos) sobre la cola
+ * recibida en EXTRA_LINE_QUEUE, que en ese caso debe venir en orden
+ * fijo del catalogo, sin barajar.
  */
 class BoardActivity : AppCompatActivity() {
 
@@ -26,6 +34,7 @@ class BoardActivity : AppCompatActivity() {
         val lineQueue = intent.getStringArrayListExtra(EXTRA_LINE_QUEUE)
         val lineId = intent.getStringExtra(EXTRA_LINE_ID)
             ?: com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog.entries.first().id
+        val navCategory = intent.getStringExtra(EXTRA_NAV_CATEGORY)
 
         val webView = findViewById<WebView>(R.id.boardWebView)
         webView.settings.javaScriptEnabled = true
@@ -39,11 +48,15 @@ class BoardActivity : AppCompatActivity() {
         } else {
             urlBuilder.appendQueryParameter("line", lineId)
         }
+        if (navCategory != null) {
+            urlBuilder.appendQueryParameter("navcat", navCategory)
+        }
         webView.loadUrl(urlBuilder.build().toString())
     }
 
     companion object {
         const val EXTRA_LINE_ID = "extra_line_id"
         const val EXTRA_LINE_QUEUE = "extra_line_queue"
+        const val EXTRA_NAV_CATEGORY = "extra_nav_category"
     }
 }
