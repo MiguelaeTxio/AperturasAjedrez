@@ -421,6 +421,18 @@ Problemas de ajedrez), ids cruzados JS↔Kotlin coinciden exactamente
 (321/321). Todas las secuencias verificadas con `chess.js` real de
 principio a fin, sin ninguna excepción.
 
+**Corrección de ambigüedad (S6, tras prueba en dispositivo real):**
+Miguel Ángel señaló que el texto de cada `overview` ("...jugada en
+Lichess (rating XXXX)") podía leerse como si XXXX fuera el ELO de los
+jugadores de la partida original. Aclaración: el campo `Rating` del
+CSV de Lichess es la dificultad calculada del propio problema
+(sistema Glicko-2 basado en el acierto de quien lo resuelve), no la
+fuerza de los jugadores -- documentado en el propio foro de Lichess.
+El filtro 1700-2200 ya aplicado en Termux es correcto y no necesita
+rehacerse. Se corrigió únicamente la redacción ambigua: las 300
+entradas con Lichess como fuente pasan de "(rating XXXX)" a
+"(dificultad XXXX)" en su `overview`.
+
 1. Prueba en dispositivo real de todo el hito (finales, Iniciación,
    Grandes Partidas ampliadas, Problemas de ajedrez) -- Miguel Ángel
    pedirá la instalación cuando quiera probarlo; no instalar por
