@@ -177,11 +177,116 @@ object ProblemasCatalog {
             title = "La Inmortal de Rubinstein -- Rotlewi vs Rubinstein",
             tema = "Doble sacrificio de torre y dama (partida real, Lodz 1907)",
             nivel = Nivel.TORNEO
-        )
-        // Nota S6: aqui se anadiran, en lotes verificados, las 33
-        // posiciones de Lichess de solucion larga (ampliacion de
-        // Grandes Partidas) y, con nivel = Nivel.LICHESS, las 267
-        // entradas nuevas del banco "Problemas de ajedrez" -- ver
+        ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 1 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-ykesE",
+            title = "Jaque que aleja al rey y deja una pieza colgada",
+            tema = "Pieza colgada tras jaque forzado",
+            nivel = Nivel.LICHESS,
+            rating = 1748
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-NqiJs",
+            title = "Sacrificio de calidad para desnudar al rey blanco",
+            tema = "Ataque al rey con entrega de material",
+            nivel = Nivel.LICHESS,
+            rating = 2173
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-WlrCx",
+            title = "Cambio de torres seguido de jaque que gana la segunda torre",
+            tema = "Skewer -- ataque a distancia sobre dos piezas alineadas",
+            nivel = Nivel.LICHESS,
+            rating = 1901
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-8lgKs",
+            title = "Jaque a la descubierta que gana la dama",
+            tema = "Ataque a la descubierta",
+            nivel = Nivel.LICHESS,
+            rating = 1859
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-IEddA",
+            title = "Cadena de jaques que arrastra al rey lejos de su torre",
+            tema = "Desviación mediante jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2003
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GUI2f",
+            title = "Recuperar la pieza y entrar con jaque",
+            tema = "Pieza colgada + jaque de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1718
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-qLPPB",
+            title = "Sacrificio de caballo para abrir la columna del peón pasado",
+            tema = "Sacrificio para coronar",
+            nivel = Nivel.LICHESS,
+            rating = 1952
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-TzaYa",
+            title = "Mate en 1 con la torre ya infiltrada",
+            tema = "Mate en 1",
+            nivel = Nivel.LICHESS,
+            rating = 1749
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-XnmNN",
+            title = "Torre que se sacrifica para arrastrar al rey al mate",
+            tema = "Mate en 2 con atracción de torre",
+            nivel = Nivel.LICHESS,
+            rating = 1793
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-JGKE5",
+            title = "Jaque de alfil que abre la puerta al mate con torre",
+            tema = "Mate en 3 con ataque de alfil y torre",
+            nivel = Nivel.LICHESS,
+            rating = 1864
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-i223v",
+            title = "Atracción del rey con sacrificio de torre para rematar con la dama",
+            tema = "Atracción del rey + mate con dama",
+            nivel = Nivel.LICHESS,
+            rating = 1793
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-kPRMK",
+            title = "Doble sacrificio en f2 que abre el rey blanco",
+            tema = "Ataque al rey en el flanco de rey",
+            nivel = Nivel.LICHESS,
+            rating = 1771
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-JNTkc",
+            title = "Cadena de jaques de dama que termina ganando una torre",
+            tema = "Ataque con la dama al rey expuesto",
+            nivel = Nivel.LICHESS,
+            rating = 1950
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Pd5wv",
+            title = "Cambio de torres seguido de un alfil que se cuela hasta capturar la última",
+            tema = "Infiltración de alfil tras cambio de torres",
+            nivel = Nivel.LICHESS,
+            rating = 2070
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-4B1n1",
+            title = "Jaque intermedio de caballo antes de capturar la torre",
+            tema = "Jaque intermedio (zwischenzug)",
+            nivel = Nivel.LICHESS,
+            rating = 1864
+        ),
+        // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
+        // (252 restantes de las 267 del pool corto) y las 33 posiciones
+        // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
 }

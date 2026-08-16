@@ -231,7 +231,7 @@ Miguel Ángel señaló que los 14 problemas de nivel 1-4 se quedan muy
 por debajo del rango que necesita entrenar (ELO 1700-2200), y que la
 progresión en 4 niveles no reflejaba una diferencia de dificultad
 real relevante para él. Se colapsaron esos problemas en una sola
-etiqueta honesta ("Nivel.NINOS", 15 tras sumar uno más) y se añadió
+etiqueta honesta ("Nivel.NINOS") y se añadió
 un bloque nuevo "Nivel.TORNEO" con partidas reales completas y muy
 documentadas (Réti-Tartakower 1910, Partida Inmortal, Molino de
 Torre-Lasker, Ópera de Morphy, Partida Perenne de Anderssen-Dufresne,
@@ -239,6 +239,14 @@ Lluvia de Oro de Levitsky-Marshall, Inmortal de Rubinstein — 7 en
 total). Este cambio vive en el código (`problemas.js`,
 `ProblemasCatalog.kt`) pero no había quedado registrado aquí — se
 deja constancia ahora, al reabrir el hito.
+
+**Corrección de recuento (S6):** el comentario de cabecera de S7 en
+`problemas.js` decía "15 tras sumar uno más", pero el recuento real en
+`ProblemasCatalog.kt` (`nivel = Nivel.NINOS`) son **14** problemas de
+Iniciación, no 15 -- verificado con `grep -c` sobre el fichero real
+antes de escribir nada más. El comentario de S7 no se corrige aquí
+(no forma parte del alcance de esta sesión), pero este anexo usa el
+recuento real verificado, no el del comentario.
 
 ## REAPERTURA VÍA PCH (S6) — INVESTIGACIÓN Y DISEÑO CERRADO
 
@@ -257,7 +265,7 @@ problema -- se conservan y se amplían.
 
 1. **Tres secciones diferenciadas** dentro de la categoría
    "Problemas" del selector nativo:
-   - **Iniciación** -- los 15 problemas actuales de `Nivel.NINOS`, sin
+   - **Iniciación** -- los 14 problemas actuales de `Nivel.NINOS`, sin
      tocar contenido.
    - **Grandes Partidas** -- los 7 actuales de `Nivel.TORNEO`, más las
      33 posiciones de Lichess descartadas del bloque nuevo por tener
@@ -314,7 +322,7 @@ señaló explícitamente que no quiere elegir de una lista de problemas,
 y `CategorySelectorActivity` lanza `BoardActivity` directo con la cola
 completa barajada (S9, `shuffled()`), sin pasar nunca por
 `OpeningSelectorActivity`. Además, el botón único "Problemas" solo
-filtraba `Nivel.TORNEO` -- los 15 problemas de `Nivel.NINOS` estaban
+filtraba `Nivel.TORNEO` -- los 14 problemas de `Nivel.NINOS` estaban
 en los datos pero huérfanos, sin ningún botón que los sirviera. La
 propuesta inicial de esta sesión (selector de lista con filtros de
 tema/rating elegibles) contradecía S8 y no se llegó a construir;
@@ -329,7 +337,7 @@ corregida antes de escribir código definitivo.
   Problemas de ajedrez (`Nivel.LICHESS`). `startProblemSession()` se
   generaliza para aceptar el `Nivel` como parámetro -- mismo
   mecanismo de cola barajada para los tres, sin selector de lista.
-  Resuelve de paso el bug real de los 15 de Iniciación huérfanos.
+  Resuelve de paso el bug real de los 14 de Iniciación huérfanos.
 - `activity_category_selector.xml`: tres botones nuevos encadenados
   entre Finales y Trampas; `strings.xml` con las tres etiquetas.
 - `problemas.js`: se mantiene como único fichero (`PROBLEMAS_LINES`),
@@ -352,17 +360,33 @@ de Lichess como referencia, sin inventar autoría.
 
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-1. Redactar `idea`/`ventaja`/`debilidad` por jugada de las 267
-   entradas de "Problemas de ajedrez" y de las 33 de ampliación de
-   "Grandes Partidas", en lotes verificados (15-20 por lote), a partir
-   del JSON intermedio ya verificado -- commit por lote con build
-   verde en GitHub Actions, sin acumular lotes sin commitear.
-2. Restructurar `ProblemasCatalog.kt`: tres categorías
-   (Iniciación/Grandes Partidas/Problemas de ajedrez) y, dentro de
-   "Problemas de ajedrez", filtros de `tema` y `rating`.
-3. Prueba en dispositivo real de todo el hito (finales, problemas
-   original, partidas reales ampliadas, problemas de Lichess) --
-   Miguel Ángel pedirá la instalación cuando quiera probarlo.
+**Lote 1 de "Problemas de ajedrez" CERRADO en esta sesión (S6):** 15
+entradas (`h04-problema-lichess-*`) con `idea`/`ventaja`/`debilidad`
+por jugada, repartidas por tema táctico real (fork/pin/skewer/
+discoveredAttack/deflection/hangingPiece/sacrifice/mateIn1-3/
+attraction/kingsideAttack/exposedKing/quietMove/intermezzo).
+Verificación en tres capas: (1) `chess.js` real desde el `startFen`
+correcto al filtrar el CSV, (2) reconstrucción completa del bloque
+generado antes de insertarlo en `problemas.js`, (3) recorrido de las
+36 entradas totales del fichero (14 Iniciación + 7 Grandes Partidas +
+15 Lichess nuevas) tras la inserción. IDs cruzados JS↔Kotlin: 36/36
+coinciden exactamente. Build verde pendiente de confirmar tras el
+commit de este lote (ver historial de Actions).
+
+1. Continuar con los lotes siguientes de "Problemas de ajedrez": 252
+   entradas restantes de las 267 del pool corto (1/3/5 semijugadas),
+   en tandas de 15-20, a partir del JSON intermedio ya verificado
+   (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
+   repositorio, hay que regenerarlo o pedir el CSV de nuevo si se
+   pierde entre sesiones).
+2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
+   como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
+   criterio de verificación y de "no inventar autoría" (partidas
+   anónimas de Lichess, sin nombre de jugador, con `GameUrl` como
+   referencia).
+3. Prueba en dispositivo real de todo el hito (finales, Iniciación,
+   Grandes Partidas ampliadas, Problemas de ajedrez) -- Miguel Ángel
+   pedirá la instalación cuando quiera probarlo.
 4. Con todo cerrado, valorar con Miguel Ángel si el Hito 04 queda
    completo de nuevo (PCH de vuelta hacia H06, que queda pausado con
    su hoja de ruta intacta) o si se amplía más el alcance.
