@@ -1026,8 +1026,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 2160
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 9 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-A04Mc",
+            title = "Sacrificio de caballo que abre la puerta a ganar una torre",
+            tema = "Sacrificio de caballo con jaque",
+            nivel = Nivel.LICHESS,
+            rating = 1876
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-EDr62",
+            title = "El rey recoge peones sueltos en un final ajustado",
+            tema = "Cosecha de peones sueltos en el final de reyes",
+            nivel = Nivel.LICHESS,
+            rating = 1740
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-yubSe",
+            title = "Mate en 2 con la dama sola en el flanco de rey",
+            tema = "Mate en 2",
+            nivel = Nivel.LICHESS,
+            rating = 1704
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Zz8xS",
+            title = "Jaque intermedio antes de recuperar la torre",
+            tema = "Jaque intermedio (zwischenzug)",
+            nivel = Nivel.LICHESS,
+            rating = 2169
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-TFBg4",
+            title = "Mate en 2 con dama y caballo coordinados",
+            tema = "Mate en 2 con dama y caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1932
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-cdzwn",
+            title = "Jaque intermedio antes de ganar una torre suelta",
+            tema = "Jaque intermedio que gana una torre",
+            nivel = Nivel.LICHESS,
+            rating = 1852
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-rKzn4",
+            title = "Torre suelta capturada seguida de un cambio de damas favorable",
+            tema = "Torre colgada + cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1963
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-HGOxk",
+            title = "Maniobra de rey y alfil que prepara el remate en un final técnico",
+            tema = "Maniobra de rey y alfil en el final",
+            nivel = Nivel.LICHESS,
+            rating = 2169
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-WLl1n",
+            title = "Mate en la esquina tras un sacrificio de torre",
+            tema = "Mate en la esquina (corner mate)",
+            nivel = Nivel.LICHESS,
+            rating = 2011
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-6nHup",
+            title = "Peón a un paso de coronar pese al contrajuego rival",
+            tema = "Peón pasado a un paso de coronar",
+            nivel = Nivel.LICHESS,
+            rating = 2085
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-32jjf",
+            title = "Avance de peón con jaque que abre paso a ganar la dama",
+            tema = "Avance de peón con jaque que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1907
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-SZGuW",
+            title = "Cambio de piezas que abre camino a ganar un caballo",
+            tema = "Cambio de piezas + pieza colgada",
+            nivel = Nivel.LICHESS,
+            rating = 2090
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Pnu82",
+            title = "Caballo que se infiltra y termina ganando la dama",
+            tema = "Infiltración de caballo con jaque que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1840
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-bHUXN",
+            title = "Cambio de torres que abre camino a ganar un peón central",
+            tema = "Cambio de torres + ganancia de peón",
+            nivel = Nivel.LICHESS,
+            rating = 1923
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-AkhFM",
+            title = "Mate en 2 con la pareja de alfiles",
+            tema = "Mate en 2 con dos alfiles",
+            nivel = Nivel.LICHESS,
+            rating = 1801
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (147 restantes de las 267 del pool corto) y las 33 posiciones
+        // (132 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )
