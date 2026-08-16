@@ -105,6 +105,10 @@
   var attemptsThisMove = 0
   var aciertos = 0
   var fallos = 0
+  // Modo toque-toque (tocar pieza, tocar destino), independiente del
+  // arrastre -- ver seleccionSquare()/deselectSquare()/onDrop() mas
+  // abajo para el porque de este diseño.
+  var selectedSquare = null
 
   var elStatus = document.getElementById('status')
   var elProgress = document.getElementById('progress')
@@ -511,22 +515,25 @@
     return true
   }
 
-  function onDrop (source, target) {
-    clearTurnLabel()
-    if (isFreeMode()) {
-      return onDropFreeMode(source, target)
-    }
+  // Logica compartida de "el usuario intenta esta jugada" -- usada
+  // tanto por el arrastre real (onDrop, cuando source !== target)
+  // como por el segundo toque del modo toque-toque
+  // (handleDestinationTap). Devuelve true si era la jugada esperada
+  // (ya se ha lanzado advanceAfterMove), false en cualquier otro caso
+  // (jugada ilegal, o legal pero incorrecta -- ya deshecha si hacia
+  // falta, con su fallo ya registrado).
+  function processUserMove (source, target) {
     var expected = currentExpected()
-    if (!expected || expected.color !== userColor) { updateTurnLabel(); return 'snapback' }
+    if (!expected || expected.color !== userColor) return false
 
     var move = safeMove({ from: source, to: target, promotion: 'q' })
-    if (move === null) { updateTurnLabel(); return 'snapback' }
+    if (move === null) return false
 
     if (move.san === expected.san) {
       attemptsThisMove = 0
       recordAttempt(true)
       window.setTimeout(function () { advanceAfterMove(move.from, move.to) }, 0)
-      return
+      return true
     }
 
     // Jugada legal pero distinta de la esperada por el repertorio: se
@@ -544,11 +551,94 @@
         window.alert('torpe como una oruga')
         window.onTorpeDialogClosed()
       }
-      return
+      return false
     }
 
     setStatus('Fallo (' + attemptsThisMove + '/' + MAX_ATTEMPTS + '). Intentalo de nuevo.')
-    return 'snapback'
+    return false
+  }
+
+  // Resalte de la pieza "cogida" en modo toque-toque -- distinto del
+  // resalte de la ultima jugada (highlight-square), para poder ver
+  // ambos a la vez si hace falta.
+  function selectSquare (square) {
+    if (selectedSquare) {
+      $('#board .square-' + selectedSquare).removeClass('selected-square')
+    }
+    selectedSquare = square
+    $('#board .square-' + square).addClass('selected-square')
+  }
+
+  function deselectSquare () {
+    if (!selectedSquare) return
+    $('#board .square-' + selectedSquare).removeClass('selected-square')
+    selectedSquare = null
+  }
+
+  // Segundo toque del modo toque-toque: tocar la casilla destino.
+  // Solo hace falta para casillas que chessboard.js ignora por
+  // completo al no haber ninguna pieza propia que arrastrar desde
+  // ahi (vacias, o con pieza rival -- mousedownSquare en
+  // chessboard.js no empieza ningun arrastre en esos casos, asi que
+  // nunca llega a llamar a onDrop). Las casillas con pieza propia SI
+  // pasan por chessboard.js con normalidad -- las gestiona el propio
+  // onDrop() (toque simple = seleccionar/deseleccionar, ver mas
+  // abajo), sin necesidad de este segundo camino.
+  function handleDestinationTap (square) {
+    if (isFreeMode()) return // fuera de alcance por ahora, ver ANNEX_H04.md
+    if (!selectedSquare) return
+    var from = selectedSquare
+    deselectSquare()
+    var moved = processUserMove(from, square)
+    if (moved) {
+      board.position(game.fen())
+      highlightMove(from, square)
+    }
+    updateTurnLabel()
+  }
+
+  function onBoardSquarePress (evt) {
+    if (isFreeMode()) return
+    if (!selectedSquare) return // sin seleccion activa, nada que hacer aqui
+    var square = $(this).attr('data-square')
+    var piece = game.get(square)
+    if (piece && piece.color === userColor) return // pieza propia: la gestiona el flujo normal de chessboard.js
+    handleDestinationTap(square)
+  }
+
+  function onDrop (source, target) {
+    clearTurnLabel()
+    if (isFreeMode()) {
+      return onDropFreeMode(source, target)
+    }
+    var expected = currentExpected()
+    if (!expected || expected.color !== userColor) { updateTurnLabel(); return 'snapback' }
+
+    if (source === target) {
+      // BUG real corregido antes (chess.js lanza excepcion en vez de
+      // devolver null en esta jugada, ver safeMove()): un toque
+      // simple sin arrastre real llega aqui con origen=destino. No es
+      // una jugada -- es el primer toque del modo toque-toque:
+      // seleccionar la pieza (o deseleccionarla si ya estaba
+      // seleccionada esta misma casilla).
+      if (selectedSquare === source) {
+        deselectSquare()
+      } else {
+        selectSquare(source)
+      }
+      updateTurnLabel()
+      return 'snapback'
+    }
+
+    // Un arrastre real cancela cualquier seleccion de toque-toque
+    // pendiente, se complete la jugada o no.
+    deselectSquare()
+
+    var moved = processUserMove(source, target)
+    updateTurnLabel()
+    if (!moved) return 'snapback'
+    // Exito: no se devuelve 'snapback' -- se deja que chessboard.js
+    // anime la pieza hasta el destino el solo, igual que siempre.
   }
 
   function onSnapEnd () {
@@ -576,6 +666,7 @@
   }
 
   function beginLine () {
+    deselectSquare()
     clearHighlights()
     elExplain.innerHTML = ''
     if (isFreeMode()) {
@@ -646,6 +737,15 @@
     })
 
     elRestart.addEventListener('click', restartLine)
+
+    // Segundo toque del modo toque-toque -- delegado en #board porque
+    // los ids de las casillas los genera chessboard.js con un uuid
+    // por instancia (no se pueden enlazar por id de antemano). Se
+    // usa 'mousedown touchstart' (no 'click') para que dispare de
+    // inmediato al tocar, sin depender de que el click no quede
+    // interceptado por la pieza flotante de chessboard.js durante un
+    // arrastre real -- ver handleDestinationTap()/onBoardSquarePress().
+    $('#board').on('mousedown touchstart', '[data-square]', onBoardSquarePress)
 
     if (isNavigable()) {
       elNavFirst.addEventListener('click', goFirst)

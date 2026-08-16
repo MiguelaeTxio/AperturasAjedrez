@@ -469,6 +469,46 @@ posición vuelve a quedar estable -- así se ve el turno limpio en el
 instante de mover, y se actualiza solo, sin repetir la llamada en
 cada punto de la lógica.
 
+**Modo toque-toque restaurado como función real (S6):** Miguel Ángel
+reportó que dejó de poder tocar una pieza y tocar el destino, "hay
+que hacer drag and drop obligatorio". Diagnóstico real: el
+toque-toque **nunca fue una función intencional** de `chessboard.js`
+-- solo "funcionaba" antes como efecto colateral accidental del bug
+de la excepción sin capturar (arreglado en el turno anterior): al
+tocar una pieza sin arrastrarla, la excepción rota dejaba el estado
+interno de arrastre de `chessboard.js` sin limpiar (`isDragging`
+seguía en `true`), simulando por accidente que la pieza seguía
+"cogida" hasta el siguiente toque. Al corregir esa excepción
+correctamente (snapback limpio en vez de romperse), ese efecto
+secundario desapareció -- y con él, la única forma en que
+funcionaba tocar-tocar.
+
+Implementado como función real, en paralelo al arrastre (que sigue
+funcionando exactamente igual):
+- `processUserMove(source, target)`: lógica de intento de jugada
+  extraída de `onDrop` a una función compartida, reutilizada tanto
+  por el arrastre real como por el segundo toque.
+- Primer toque (tocar una pieza propia sin arrastrarla): en
+  `chessboard.js`, esto siempre llega a `onDrop` con origen=destino
+  (confirmado real, no asumido) -- se usa ese caso para
+  seleccionar/deseleccionar (`selectSquare`/`deselectSquare`,
+  resaltado azul distinto del resalte de última jugada).
+- Segundo toque (casilla destino): solo hace falta un manejador
+  propio para las casillas que `chessboard.js` ignora por completo al
+  no tener ninguna pieza propia que arrastrar desde ahí -- vacías, o
+  con pieza rival (verificado real: `mousedownSquare` de
+  `chessboard.js` no inicia nada en esos casos, así que nunca llega a
+  llamar a `onDrop`). Se resuelve con un listener propio delegado en
+  `#board` sobre `[data-square]` (`mousedownSquare`/`touchstartSquare`
+  de `chessboard.js` no cubren estas casillas, así que no hay
+  conflicto de orden). Las casillas con pieza propia (reselección) ya
+  las gestiona el propio flujo de `onDrop`, sin necesidad de este
+  segundo camino.
+- Alcance: solo el motor de línea fija (`onDrop`) -- los finales de
+  práctica libre (`freeMode`) siguen siendo solo de arrastre por
+  ahora, para no aumentar el riesgo de esta corrección; se puede
+  extender más adelante si se pide.
+
 **Sistema de navegación y favoritos (S6, tras uso real con el hito ya
 completo):** Miguel Ángel señaló que, con el volumen creciente del
 banco de Problemas de ajedrez (267 y subiendo), "aleatorio" no basta
