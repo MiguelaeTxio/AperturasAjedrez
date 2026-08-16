@@ -1874,8 +1874,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1952
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 17 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-uEujm",
+            title = "Cambio de piezas menores seguido de un reagrupamiento de torres",
+            tema = "Cambio de piezas + reagrupamiento de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2097
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-zAPDq",
+            title = "Jaque de torre seguido de un cambio de damas y una captura de torre",
+            tema = "Jaque + cambio de damas + ganancia de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2154
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-y73F9",
+            title = "Torre activa que persigue al rey con jaques encadenados",
+            tema = "Torre activa acosando al rey",
+            nivel = Nivel.LICHESS,
+            rating = 2130
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-fR9JR",
+            title = "Reposicionamiento de torre que termina en un cambio de damas",
+            tema = "Reposicionamiento de torre + cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1746
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-6XASQ",
+            title = "Cambio de dama por torre que termina con la dama ganando una segunda torre",
+            tema = "Cambio de dama por torre + ganancia de torre",
+            nivel = Nivel.LICHESS,
+            rating = 2016
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-GvuPZ",
+            title = "Cambio de torres en la columna central que termina con la dama recapturando",
+            tema = "Cambio de torres en la columna central",
+            nivel = Nivel.LICHESS,
+            rating = 1701
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-t8jr0",
+            title = "Reposicionamiento de dama que gana un peón con jaque",
+            tema = "Reposicionamiento de dama + jaque que gana un peón",
+            nivel = Nivel.LICHESS,
+            rating = 1926
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-mysfs",
+            title = "Reagrupamiento de torres que abre paso a ganar la dama",
+            tema = "Reagrupamiento de torres + ganancia de dama",
+            nivel = Nivel.LICHESS,
+            rating = 2096
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-FX7bS",
+            title = "Cadena de cambios en g2 que termina con el rey recapturando",
+            tema = "Serie de cambios en la misma casilla",
+            nivel = Nivel.LICHESS,
+            rating = 1889
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Tzofq",
+            title = "Cambio de dama por torre seguido de un cambio de piezas menores",
+            tema = "Cambio de dama por torre + cambio de piezas",
+            nivel = Nivel.LICHESS,
+            rating = 2076
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-LwFgK",
+            title = "Cambio de damas que abre paso a un jaque de alfil",
+            tema = "Cambio de damas + jaque de alfil",
+            nivel = Nivel.LICHESS,
+            rating = 1957
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-jSXfq",
+            title = "Avance de peón que abre camino a ganar un caballo",
+            tema = "Avance de peón + ganancia de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1706
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-dq9kQ",
+            title = "Sacrificio de peón que abre camino a un cambio de damas",
+            tema = "Ganancia de peón + cambio de damas",
+            nivel = Nivel.LICHESS,
+            rating = 1854
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-9JRmF",
+            title = "El rey se pone a salvo antes de que la dama gane un alfil suelto",
+            tema = "Jugada de seguridad del rey + ganancia de alfil",
+            nivel = Nivel.LICHESS,
+            rating = 1985
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-baT1T",
+            title = "Cambio de torre por peón que desencadena una serie de jaques y cambios",
+            tema = "Serie de jaques y cambios en el flanco de rey",
+            nivel = Nivel.LICHESS,
+            rating = 2163
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (27 restantes de las 267 del pool corto) y las 33 posiciones
+        // (12 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )

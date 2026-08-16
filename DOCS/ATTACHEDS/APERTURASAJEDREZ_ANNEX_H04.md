@@ -400,12 +400,12 @@ del contenido real de la secuencia (igual criterio que las
 correcciones de etiquetado ya aplicadas en lotes anteriores), no de
 la etiqueta de Lichess ausente.
 
-1. Continuar con los lotes siguientes de "Problemas de ajedrez": 27
-   entradas restantes de las 267 del pool corto (1/3/5 semijugadas) --
-   suficiente para dos últimos lotes cortos, a partir del JSON
-   intermedio ya verificado (`/home/claude/verify/verified_puzzles.json`
-   -- no forma parte del repositorio, hay que regenerarlo o pedir el
-   CSV de nuevo si se pierde entre sesiones).
+1. Continuar con el último lote de "Problemas de ajedrez": quedan 12
+   entradas del pool corto de 267 (1/3/5 semijugadas) -- suficiente
+   para un último lote breve, a partir del JSON intermedio ya
+   verificado (`/home/claude/verify/verified_puzzles.json` -- no
+   forma parte del repositorio, hay que regenerarlo o pedir el CSV de
+   nuevo si se pierde entre sesiones).
 2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
    como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
    criterio de verificación y de "no inventar autoría" (partidas
