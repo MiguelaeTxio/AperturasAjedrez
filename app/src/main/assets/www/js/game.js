@@ -338,6 +338,26 @@
     board.position(game.fen())
   }
 
+  // BUG real (incidencia de Miguel Angel): reiniciar/cambiar de linea
+  // mientras hay una pieza "cogida" (arrastre en curso) dejaba el
+  // estado interno de chessboard.js sin limpiar -- la variable interna
+  // isDragging seguia en true y la imagen flotante de la pieza
+  // quedaba huerfana en pantalla, mientras board.position() ya habia
+  // cambiado la posicion por debajo. Al soltar, chessboard.js
+  // procesaba el drop contra un tablero que ya no era el que empezo a
+  // arrastrarse. chessboard.js no expone ningun metodo publico para
+  // cancelar un arrastre en curso (es una libreria de terceros, no se
+  // modifica), asi que se dispara un mouseup sintetico muy fuera del
+  // tablero: si hay un arrastre activo, el propio chessboard.js lo
+  // interpreta como "soltar fuera del tablero" (dropOffBoard por
+  // defecto es 'snapback') y limpia su estado solo. Si no hay ningun
+  // arrastre en curso, el evento no hace nada (chessboard.js
+  // comprueba isDragging internamente y sale de inmediato).
+  function cancelAnyDrag () {
+    var evt = window.jQuery.Event('mouseup', { pageX: -9999, pageY: -9999 })
+    window.jQuery(window).trigger(evt)
+  }
+
   function beginLine () {
     clearHighlights()
     elExplain.innerHTML = ''
@@ -357,6 +377,7 @@
   }
 
   function restartLine () {
+    cancelAnyDrag()
     if (line.startFen) {
       game.load(line.startFen)
     } else {
@@ -372,6 +393,7 @@
   // Reutiliza exactamente la misma logica de arranque que init(),
   // solo que sobre una linea nueva en vez de la primera carga.
   function loadLine (newLine) {
+    cancelAnyDrag()
     line = newLine
     userColor = line.userColor || 'w'
     opponentColor = userColor === 'w' ? 'b' : 'w'
