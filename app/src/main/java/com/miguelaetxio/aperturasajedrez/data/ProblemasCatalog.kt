@@ -284,8 +284,114 @@ object ProblemasCatalog {
             nivel = Nivel.LICHESS,
             rating = 1864
         ),
+        // ---- Problemas de ajedrez -- banco tactico Lichess, lote 2 de varios (S6) ----
+        ProblemEntry(
+            id = "h04-problema-lichess-e0rv2",
+            title = "Clavada absoluta que condena a la dama",
+            tema = "Clavada absoluta",
+            nivel = Nivel.LICHESS,
+            rating = 2001
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-VesSW",
+            title = "Pareja de peones pasados que corren hacia la coronación",
+            tema = "Peón pasado avanzado",
+            nivel = Nivel.LICHESS,
+            rating = 2100
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-sLTOx",
+            title = "Mate en 2 con la dama sola",
+            tema = "Mate en 2",
+            nivel = Nivel.LICHESS,
+            rating = 2039
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-DYSlo",
+            title = "Sacrificio de torre y horquilla de caballo con jaque",
+            tema = "Atracción del rey + horquilla de caballo",
+            nivel = Nivel.LICHESS,
+            rating = 1980
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-bFldI",
+            title = "Sacrificio de dama que destruye la defensa del rey blanco",
+            tema = "Ataque al enroque con sacrificio de dama",
+            nivel = Nivel.LICHESS,
+            rating = 1959
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Cm6Pq",
+            title = "El Molino -- jaque a la descubierta en cadena",
+            tema = "Molino -- jaque a la descubierta en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 1933
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-Mv7Qi",
+            title = "Dos torres colgadas, una tras otra",
+            tema = "Piezas colgadas",
+            nivel = Nivel.LICHESS,
+            rating = 1927
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-tuguo",
+            title = "Cambio de torres y jugada tranquila que decide la partida",
+            tema = "Despeje de columna + jugada tranquila decisiva",
+            nivel = Nivel.LICHESS,
+            rating = 2175
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-OVhPV",
+            title = "Cadena de capturas con jaque que arrasa el centro",
+            tema = "Desviación mediante jaques",
+            nivel = Nivel.LICHESS,
+            rating = 1784
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-l8hsK",
+            title = "Pareja de peones pasados conectados que deciden el final",
+            tema = "Peones pasados conectados",
+            nivel = Nivel.LICHESS,
+            rating = 2003
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-e9sBZ",
+            title = "Maniobra de dama que deja un caballo colgado",
+            tema = "Pieza colgada tras maniobra de dama",
+            nivel = Nivel.LICHESS,
+            rating = 2125
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-AjQQJ",
+            title = "Torre activa que acosa al rey blanco sin tregua",
+            tema = "Torre activa acosando al rey",
+            nivel = Nivel.LICHESS,
+            rating = 1991
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-2Iwcz",
+            title = "Cambios forzados que dejan un caballo colgado",
+            tema = "Cambios que dejan una pieza colgada",
+            nivel = Nivel.LICHESS,
+            rating = 1702
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-OGNVL",
+            title = "Jaque a la descubierta desesperado que pierde la dama",
+            tema = "Jaque a la descubierta que gana la dama",
+            nivel = Nivel.LICHESS,
+            rating = 1883
+        ),
+        ProblemEntry(
+            id = "h04-problema-lichess-ahJ7v",
+            title = "Dos peones limpios ganados a cambio de nada",
+            tema = "Peones sueltos con jaques en cadena",
+            nivel = Nivel.LICHESS,
+            rating = 2036
+        ),
         // Nota S6: quedan pendientes mas lotes de "Problemas de ajedrez"
-        // (252 restantes de las 267 del pool corto) y las 33 posiciones
+        // (237 restantes de las 267 del pool corto) y las 33 posiciones
         // de solucion larga como ampliacion de Grandes Partidas -- ver
         // ANNEX_H04.md, hoja de ruta.
     )

@@ -373,7 +373,23 @@ generado antes de insertarlo en `problemas.js`, (3) recorrido de las
 coinciden exactamente. Build verde pendiente de confirmar tras el
 commit de este lote (ver historial de Actions).
 
-1. Continuar con los lotes siguientes de "Problemas de ajedrez": 252
+**Lote 2 de "Problemas de ajedrez" CERRADO en esta sesión (S6):** 15
+entradas más (`h04-problema-lichess-*`), 30 en total tras los lotes 1
+y 2. Mismo criterio de verificación en tres capas y mismo criterio de
+etiquetado honesto: cuando la etiqueta primaria de Lichess (`Themes`)
+no se correspondía con el motivo táctico realmente visible en la
+secuencia de jugadas mostrada (p. ej. una etiqueta "fork" o "skewer"
+de Lichess que en realidad correspondía a otra fase de la partida no
+incluida en la solución corta), el campo `tema` se redactó para
+describir con precisión lo que de verdad ocurre en las jugadas, en
+vez de repetir la etiqueta de origen sin comprobar que encajaba -- ver
+`fork`→"Clavada absoluta" (`e0rv2`) y `skewer`→"Peones sueltos con
+jaques en cadena" (`ahJ7v`) como ejemplos concretos de esta
+corrección. 51/51 entradas totales de `problemas.js` verificadas de
+nuevo tras la inserción, ids cruzados JS↔Kotlin coinciden
+exactamente.
+
+1. Continuar con los lotes siguientes de "Problemas de ajedrez": 237
    entradas restantes de las 267 del pool corto (1/3/5 semijugadas),
    en tandas de 15-20, a partir del JSON intermedio ya verificado
    (`/home/claude/verify/verified_puzzles.json` -- no forma parte del
