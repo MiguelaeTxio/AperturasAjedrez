@@ -146,6 +146,7 @@
   var treeRootNode = null
   var treeCursor = null // null = todavia no se ha jugado ninguna jugada
   var treeTargetPath = null // array de nodos raiz->hoja, solo en modo dirigido
+  var treeActiveColorId = null // colorId de la ultima variante/trampa reconocida en esta rama
   if (isTreeMode) {
     var rootSan = openingRootParam()
     treeRootNode = REPERTOIRE_TREE.filter(function (r) { return r.san === rootSan })[0] || null
@@ -231,14 +232,16 @@
     return treePickWeighted(candidates)
   }
 
+  function treeColorIdToHex (colorId) {
+    return colorId === 'trap' ? TREE_TRAP_COLOR : TREE_PALETTE[colorId % TREE_PALETTE.length]
+  }
+
   function treeShowVariantBadge (node) {
     if (!elVariantBadge) return
     if (node && node.variantName) {
       elVariantBadge.textContent = node.variantName
       elVariantBadge.style.display = ''
-      elVariantBadge.style.background = node.variantColorId === 'trap'
-        ? TREE_TRAP_COLOR
-        : TREE_PALETTE[node.variantColorId % TREE_PALETTE.length]
+      elVariantBadge.style.background = treeColorIdToHex(node.variantColorId)
     } else {
       elVariantBadge.style.display = 'none'
     }
@@ -247,12 +250,20 @@
   function treeAdvanceTo (node, move, statusOverride) {
     treeCursor = node
     line.id = node.id
-    if (node.variantName) line.name = node.variantName
+    if (node.variantName) {
+      line.name = node.variantName
+      treeActiveColorId = node.variantColorId
+    }
     if (node.leafOf && node.leafOf.overview) line.overview = node.leafOf.overview
     treeShowVariantBadge(node)
     loadInitialProgress()
     showExplanation(node)
-    highlightMove(move.from, move.to)
+    // Resalte de casillas con el color de la variante/trampa activa
+    // (diseno cerrado, punto 4: "en el selector, en el tablero y en
+    // cualquier resumen del arbol") -- mientras el tronco todavia es
+    // comun a varias variantes (treeActiveColorId todavia null), se
+    // usa el resalte neutro de siempre.
+    highlightMove(move.from, move.to, treeActiveColorId !== null ? treeColorIdToHex(treeActiveColorId) : null)
 
     var candidates = treeCandidates(node)
     if (candidates.length === 0) {
@@ -374,6 +385,7 @@
     cancelAnyDrag()
     game.reset()
     treeCursor = null
+    treeActiveColorId = null
     attemptsThisMove = 0
     line.id = 'opening-root'
     board.position('start')
@@ -428,6 +440,21 @@
     }
     window.__debugStatusText = function () {
       return elStatus.textContent
+    }
+    window.__debugColorForNode = function (nodeId) {
+      // Busca el nodo por id en el arbol activo y devuelve el hex que
+      // le correspondería en el resalte del tablero (o null si no
+      // tiene variantColorId propio).
+      function find (node) {
+        if (node.id === nodeId) return node
+        if (!node.children) return null
+        for (var i = 0; i < node.children.length; i++) {
+          var r = find(node.children[i]); if (r) return r
+        }
+        return null
+      }
+      var n = find(treeRootNode)
+      return n && n.variantColorId !== undefined ? treeColorIdToHex(n.variantColorId) : null
     }
   }
 
@@ -621,13 +648,24 @@
   }
 
   function clearHighlights () {
-    $('#board .square-55d63').removeClass('highlight-square')
+    $('#board .square-55d63').removeClass('highlight-square').css('box-shadow', '')
   }
 
-  function highlightMove (from, to) {
+  // colorOverride (opcional, solo lo usa el modo arbol): color exacto
+  // de la variante/trampa activa, aplicado como box-shadow inline sin
+  // tocar la clase CSS de siempre -- fuera del modo arbol nunca se
+  // pasa este parametro, asi que el resalte amarillo (decision cerrada
+  // S1) queda exactamente igual que siempre.
+  function highlightMove (from, to, colorOverride) {
     clearHighlights()
-    $('#board .square-' + from).addClass('highlight-square')
-    $('#board .square-' + to).addClass('highlight-square')
+    var $from = $('#board .square-' + from)
+    var $to = $('#board .square-' + to)
+    $from.addClass('highlight-square')
+    $to.addClass('highlight-square')
+    if (colorOverride) {
+      $from.css('box-shadow', 'inset 0 0 3px 4px ' + colorOverride)
+      $to.css('box-shadow', 'inset 0 0 3px 4px ' + colorOverride)
+    }
   }
 
   function currentExpected () {

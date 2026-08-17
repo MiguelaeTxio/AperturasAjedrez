@@ -29,11 +29,16 @@ function makeSandbox (queryString, androidStore) {
     _domReady: null
   };
 
+  const highlightState = { lastColor: null };
   function jq (sel) {
     return {
       on () { return this }, off () { return this },
       addClass () { return this }, removeClass () { return this },
-      attr () { return null }, trigger () { return this }
+      attr () { return null }, trigger () { return this },
+      css (prop, val) {
+        if (prop === 'box-shadow') highlightState.lastColor = val || null;
+        return this;
+      }
     };
   }
   jq.Event = function (type, props) { return Object.assign({ type: type }, props); };
@@ -89,7 +94,7 @@ function makeSandbox (queryString, androidStore) {
   };
   sandbox.window.window = sandbox.window;
   vm.createContext(sandbox);
-  return { sandbox, board, elements, AndroidBridge };
+  return { sandbox, board, elements, AndroidBridge, highlightState };
 }
 
 function loadScriptInto (sandbox, absPath) {
@@ -98,14 +103,14 @@ function loadScriptInto (sandbox, absPath) {
 }
 
 function newSession (queryString, androidStore) {
-  const { sandbox, board, elements, AndroidBridge } = makeSandbox(queryString, androidStore);
+  const { sandbox, board, elements, AndroidBridge, highlightState } = makeSandbox(queryString, androidStore);
   loadScriptInto(sandbox, path.join(ASSETS, 'chess.js'));
   loadScriptInto(sandbox, path.join(ASSETS, 'repertoire.js'));
   loadScriptInto(sandbox, path.join(ASSETS, 'repertoire_tree.js'));
   // finales/problemas/estructuras/trampas no son necesarios para el modo arbol
   loadScriptInto(sandbox, path.join(ASSETS, 'game.js'));
   sandbox.document._domReady(); // dispara init()
-  return { sandbox, board, elements, AndroidBridge };
+  return { sandbox, board, elements, AndroidBridge, highlightState };
 }
 
 // -----------------------------------------------------------------
@@ -135,7 +140,7 @@ function test1 () {
   if (!discoveredPath) throw new Error('No se encontro la hoja h01 en el arbol -- FALLO');
   const leafId = discoveredPath[discoveredPath.length - 1].id;
 
-  const { sandbox } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(leafId), store);
+  const { sandbox, highlightState } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(leafId), store);
   const w = sandbox.window;
   const targetPath = findLeafPath(sandbox.REPERTOIRE_TREE.filter(r => r.san === 'd4')[0], 'h01-gambito-dama-rehusado', []);
 
@@ -166,7 +171,17 @@ function test1 () {
   if (w.__debugLineName().indexOf('Gambito de Dama Rehusado') === -1) {
     throw new Error('La variante final no es la esperada -- FALLO. Fue: ' + w.__debugLineName());
   }
-  console.log('OK -- sesion completa jugada correctamente, variante reconocida.');
+  // Punto 4 del diseno cerrado: el color de la variante debe verse
+  // tambien en el tablero (highlightMove), no solo en la insignia. El
+  // color se fija en el nodo donde la variante queda identificada por
+  // primera vez y persiste desde ahi -- la hoja final no tiene por
+  // que llevar variantColorId propio, así que se comprueba que el
+  // resalte del tablero acabo con un color real de la paleta.
+  console.log('Color realmente aplicado al resalte del tablero al terminar:', highlightState.lastColor);
+  if (!highlightState.lastColor || !/^inset .+ #[0-9a-f]{6}$/.test(highlightState.lastColor)) {
+    throw new Error('El resalte del tablero no termino con un color real de variante -- FALLO. Aplicado: ' + highlightState.lastColor);
+  }
+  console.log('OK -- sesion completa jugada correctamente, variante reconocida, color aplicado en el tablero.');
 }
 
 test1();
@@ -201,7 +216,7 @@ function test2 () {
   if (!discPath) throw new Error('No se encontro la hoja h02-ortodoxa-clasica -- FALLO');
   const leafId = discPath[discPath.length - 1].id;
 
-  const { sandbox, AndroidBridge } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(leafId), store);
+  const { sandbox, AndroidBridge, highlightState } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(leafId), store);
   const w = sandbox.window;
 
   const whiteMoves = ['d4', 'c4', 'Nc3', 'Bg5']; // las negras (d5,e6,Nf6,Nbd7) las juega el rival, dirigidas por target
@@ -254,6 +269,14 @@ function test2 () {
     throw new Error('La jugada revelada no es de libro -- FALLO. Nodo: ' + JSON.stringify(revealedNode));
   }
   console.log('Revelada correctamente la jugada de libro:', revealedNode.san, '(kind=' + revealedNode.kind + ')');
+
+  // El resalte del tablero tras la revelacion debe llevar un color
+  // real de variante (no quedarse en el resalte neutro de antes de
+  // reconocer nada).
+  console.log('Color aplicado al resalte tras la revelacion:', highlightState.lastColor);
+  if (!highlightState.lastColor || !/^inset .+ #[0-9a-f]{6}$/.test(highlightState.lastColor)) {
+    throw new Error('El resalte tras revelar no lleva un color real de variante -- FALLO.');
+  }
   console.log('OK -- la Trampa del Elefante se detecta, se deshace, se registra y se revela correctamente.');
 }
 
