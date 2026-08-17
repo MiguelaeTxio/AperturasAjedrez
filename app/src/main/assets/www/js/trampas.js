@@ -1,36 +1,42 @@
-// Trampas de apertura -- Hito 05. Mismo formato de objeto que
-// REPERTOIRE_LINES/FINALES_LINES/PROBLEMAS_LINES ("userColor" es el
-// bando que entrena Miguel Angel, "moves" es la secuencia fija que
-// reproduce el motor ya existente sin cambios). No hace falta ningun
-// modo de motor nuevo -- ver "ARQUITECTURA DE MOTOR" en
-// DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H05.md.
+// Trampas de apertura. Formato de objeto ("userColor" es el bando que
+// entrena Miguel Angel, "moves" es la secuencia completa) igual al de
+// REPERTOIRE_LINES/FINALES_LINES/PROBLEMAS_LINES.
 //
-// Campo nuevo respecto a lineas/finales/problemas: "tipo" ('ofensiva'
-// o 'defensiva'), solo para mostrar/clasificar en el selector nativo
-// (TrampasCatalog.kt) -- no afecta al motor JS.
+// S7 (reapertura H01, PCH): este fichero ya NO se carga en tiempo de
+// ejecucion de la app (retirado de index.html, categoria "Trampas"
+// del menu eliminada) -- sigue existiendo aqui exclusivamente como
+// FUENTE de datos para scripts/build_repertoire_tree.js, que fusiona
+// cada trampa como rama dentro del arbol de variantes de aperturas
+// (REPERTOIRE_TREE) en su punto real de divergencia respecto al
+// libro (marcador "ERROR"/"ERROR decisivo" en explain.idea -- ver ese
+// script para el criterio exacto). Cualquier trampa nueva se anade
+// aqui y se regenera el arbol con "node scripts/build_repertoire_tree.js".
+//
+// Campo "tipo" ('ofensiva' -- la tiende Miguel Angel; 'defensiva' --
+// debe reconocerla y evitarla) se traslada al nodo del arbol
+// (trap.tipo) durante la migracion.
 //
 // Cada trampa esta ligada al repertorio real ya presente en
-// repertoire.js (Gambito de Dama con blancas, Escandinava con
-// negras) -- ninguna trampa generica de otra apertura. Toda secuencia
-// SAN fue verificada con chess.js real (node + window.Chess, mismo
-// rigor que problemas.js) reproduciendo la apertura completa desde el
-// primer movimiento, contrastada contra fuentes reales (Wikipedia,
-// TheChessWorld, Chess-Teacher, gambiter.com) -- ninguna inventada.
+// repertoire.js -- ninguna trampa generica de otra apertura. Toda
+// secuencia SAN fue verificada con chess.js real reproduciendo la
+// apertura completa desde el primer movimiento, contrastada contra
+// fuentes reales -- ninguna inventada.
 //
 // INCIDENCIA S5: la investigacion de S4 identifico 7 trampas con
-// fuente, pero al verificar la numero 7 ("Bxf7+ tras 6...c6/...a6 en
-// la Escandinava Moderna 2...Nf6") se comprobo que la fuente citada
-// (Chess-Teacher, "Crush the Scandinavian Defense in 8 Moves") describe
-// en realidad la MISMA trampa que la numero 6 (Gambito Leonhardt,
-// linea 2...Qxd5 3.Nc3 Qa5 4.b4), no una trampa distinta ligada a
-// 2...Nf6. Se descarta por no poder verificarse tal como estaba
-// descrita -- ver ANNEX_H05.md para el detalle completo. Quedan 6
-// trampas reales en este fichero.
+// fuente para el bloque original, pero al verificar la numero 7
+// ("Bxf7+ tras 6...c6/...a6 en la Escandinava Moderna 2...Nf6") se
+// comprobo que la fuente citada describe en realidad la MISMA trampa
+// que la numero 6 (Gambito Leonhardt) -- descartada por no poder
+// verificarse tal como estaba descrita. Quedaron 6 trampas reales.
 //
-// IMPORTANTE: el campo "id" de cada trampa debe coincidir exactamente
-// con el id declarado en TrampasCatalog.kt (selector nativo del
-// menu). Todos los ids llevan el prefijo "h05-trampa-" para evitar
-// colision en el array combinado que construye game.js.
+// S7 (sesion en curso, verificacion en dispositivo real): Miguel
+// Angel senalo que juega habitualmente 3.e3 (en vez de 3.Nf3) tras el
+// Gambito de Dama Aceptado para tender una trampa real sobre la torre
+// a8 -- no estaba documentada. Anadida como septima trampa
+// (h05-trampa-qga-e3-torre), fuente: Wikipedia ("Queen's Gambit
+// Accepted", documentada desde 1604, Alessandro Salvio),
+// contrastada con TheChessWorld y Chess-Teacher, verificada con
+// chess.js real. Quedan 7 trampas reales en este fichero.
 var TRAMPAS_LINES = [
 
   // ============================================================
@@ -207,6 +213,42 @@ var TRAMPAS_LINES = [
       { color: 'w', san: 'e4', explain: { idea: 'Blancas ejecuta el golpe central: el peon avanza atacando el peon de d5, aprovechando que el caballo de f6 quedara clavado contra la dama negra tras las capturas que siguen.', ventaja: 'Rompe el centro negro con ventaja clara, ya que la recaptura obligada deja al caballo de f6 clavado y a la posicion negra bajo fuerte presion.', debilidad: 'Ninguna -- el golpe esta completamente justificado tacticamente.' } },
       { color: 'b', san: 'dxe4', explain: { idea: 'Negras se ve obligada a capturar, ya que dejar que blancas capture primero en d5 seria todavia peor para su estructura.', ventaja: 'Gana un peon en apariencia.', debilidad: 'Abre la posicion justo cuando el caballo de f6 va a quedar clavado tras la recaptura de blancas.' } },
       { color: 'w', san: 'Nxe4', explain: { idea: 'Blancas recaptura con el caballo, que ahora clava al caballo negro de f6 contra la dama en d8 y amenaza con entrar en la posicion negra con fuerza decisiva.', ventaja: 'Blancas recupera el peon y queda con una posicion claramente superior: el caballo f6 esta clavado y la posicion negra corre serio peligro de derrumbarse en las jugadas siguientes.', debilidad: 'Ninguna -- es el remate de la combinacion.' } }
+    ]
+  },
+
+  {
+    id: 'h05-trampa-qga-e3-torre',
+    name: 'Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)',
+    tipo: 'ofensiva',
+    userColor: 'w',
+    overview: 'Gambito de Dama Aceptado. En vez de la linea principal ' +
+      '3.Nf3 (Sistema Alekhine), blancas juega 3.e3, jugada modesta ' +
+      'jugada entre otros por Anatoly Karpov, que tienta a negras a ' +
+      'sostener el peon de mas con ...b5 y ...c6. Si negras cae en la ' +
+      'tentacion, 6.Qf3! entra en la diagonal a8-h1 y amenaza ' +
+      'directamente la torre de a8: si negras encuentra la unica ' +
+      'defensa (...Nc6) evita perder la torre, pero blancas gana ' +
+      'igualmente una pieza menor (7.Qxc6+) y queda con clara ' +
+      'ventaja material -- negras nunca sale indemne. Se entrena aqui ' +
+      'el lado de blancas para tender la trampa. Documentada desde ' +
+      '1604 (Alessandro Salvio); fuente moderna: Wikipedia ("Queen\'s ' +
+      'Gambit Accepted"), contrastada con TheChessWorld y ' +
+      'Chess-Teacher.',
+    moves: [
+      { color: 'w', san: 'd4', explain: { idea: 'Apertura de dama.', ventaja: 'Control central.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'd5', explain: { idea: 'Respuesta simetrica.', ventaja: 'Disputa el centro.', debilidad: 'Ninguna.' } },
+      { color: 'w', san: 'c4', explain: { idea: 'Gambito de Dama.', ventaja: 'Presion sobre d5.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'dxc4', explain: { idea: 'Gambito de Dama Aceptado: negras se queda con el peon de mas y suelta el centro.', ventaja: 'Un peon extra de forma inmediata y sin complicaciones tacticas.', debilidad: 'Cede el centro y el tiempo de desarrollo; el peon c4 no se puede sostener a largo plazo y blancas lo recuperara con ventaja de espacio.' } },
+      { color: 'w', san: 'e3', explain: { idea: 'Blancas prepara recuperar el peon c4 con el alfil de f1, en vez del Sistema Alekhine (3.Nf3) mas conocido.', ventaja: 'Jugada modesta y solida, jugada entre otros por Anatoly Karpov, que de paso tiende la trampa clasica si negras intenta sostener el peon de mas.', debilidad: 'Ninguna real a este nivel.' } },
+      { color: 'b', san: 'b5', explain: { idea: 'ERROR: negras intenta sostener el peon de mas defendiendolo con el peon b -- el error tipico de esta trampa, documentada desde 1604 (Alessandro Salvio).', ventaja: 'Parece defender el peon c4 de forma natural.', debilidad: 'Debilita irremediablemente el flanco de dama y abre la diagonal a8-h1, origen de todos los problemas que siguen.' } },
+      { color: 'w', san: 'a4', explain: { idea: 'Blancas ataca de inmediato el peon b5 recien avanzado.', ventaja: 'Fuerza a negras a decidir entre ceder mas terreno o comprometerse todavia mas.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'c6', explain: { idea: 'ERROR: negras defiende el peon b5 con el peon c, continuando el mismo plan equivocado.', ventaja: 'Parece sostener la cadena de peones del flanco de dama.', debilidad: 'Es precisamente la jugada que permite a blancas abrir la diagonal a8-h1 con axb5 y lanzar la combinacion.' } },
+      { color: 'w', san: 'axb5', explain: { idea: 'Blancas abre la diagonal a8-h1 capturando en b5.', ventaja: 'Prepara el golpe tactico Qf3.', debilidad: 'Ninguna.' } },
+      { color: 'b', san: 'cxb5', explain: { idea: 'ERROR decisivo: negras recaptura con el peon c, sin ver que esto deja la diagonal a8-h1 totalmente abierta hacia su propia torre.', ventaja: 'Recupera el peon, parece mantener el material equilibrado.', debilidad: 'La torre de a8 queda expuesta al golpe tactico Qf3 -- cae en la trampa.' } },
+      { color: 'w', san: 'Qf3', explain: { idea: 'Blancas ejecuta el golpe: la dama entra en la diagonal a8-h1 amenazando directamente la torre de a8.', ventaja: 'Amenaza ganar la torre sin compensacion si negras no encuentra la defensa exacta.', debilidad: 'Ninguna -- el golpe esta completamente justificado tacticamente.' } },
+      { color: 'b', san: 'Nc6', explain: { idea: 'Unica defensa razonable: el caballo bloquea la diagonal e interpone entre la dama y la torre.', ventaja: 'Evita la perdida directa de la torre.', debilidad: 'El caballo queda atacado por la dama sin ninguna pieza que lo defienda -- negras salva la torre a cambio de perder igualmente una pieza menor.' } },
+      { color: 'w', san: 'Qxc6+', explain: { idea: 'Blancas captura el caballo con jaque, la pieza que interpuso negras para salvar la torre.', ventaja: 'Gana una pieza menor limpia, con jaque de propina.', debilidad: 'Ninguna -- incluso jugando la mejor defensa disponible, negras no puede evitar quedar con clara desventaja material.' } },
+      { color: 'b', san: 'Bd7', explain: { idea: 'Negras bloquea el jaque con el alfil, la unica forma de interponerse, atacando de paso a la dama para obligarla a retirarse.', ventaja: 'Obliga a la dama blanca a moverse de nuevo, ganando un tiempo relativo.', debilidad: 'No compensa la pieza perdida -- negras queda con clara desventaja material pese a haber jugado la defensa mas precisa disponible.' } }
     ]
   },
 

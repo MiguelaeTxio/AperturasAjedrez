@@ -53,6 +53,7 @@ object OpeningFamilyCatalog {
                 OpeningVariantEntry(nodeId = "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5__e4__Nxc3", title = "Semi-Tarrasch", isTrap = false, trapTipo = null),
                 OpeningVariantEntry(nodeId = "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6__g3__Nf6", title = "Defensa Tarrasch", isTrap = false, trapTipo = null),
                 OpeningVariantEntry(nodeId = "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5__O-O__a6", title = "Gambito de Dama Aceptado -- Sistema Alekhine", isTrap = false, trapTipo = null),
+                OpeningVariantEntry(nodeId = "trap__h05-trampa-qga-e3-torre__13", title = "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)", isTrap = true, trapTipo = "ofensiva"),
                 OpeningVariantEntry(nodeId = "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5__e3__e6", title = "Defensa Eslava -- linea principal", isTrap = false, trapTipo = null),
                 OpeningVariantEntry(nodeId = "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7__Bd3__dxc4", title = "Semi-Eslava -- Variante Meran", isTrap = false, trapTipo = null),
                 OpeningVariantEntry(nodeId = "trap__h05-trampa-eslava-bf4-e4__14", title = "Trampa del alfil en la Eslava (Bf4 + e4)", isTrap = true, trapTipo = "ofensiva"),

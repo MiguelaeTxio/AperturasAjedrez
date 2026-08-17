@@ -1,5 +1,5 @@
-// build_tree.js -- Migracion de REPERTOIRE_LINES (26 lineas planas) +
-// TRAMPAS_LINES (6 trampas) a un bosque de arboles de variantes.
+// build_tree.js -- Migracion de REPERTOIRE_LINES (lineas planas) +
+// TRAMPAS_LINES (trampas) a un bosque de arboles de variantes.
 //
 // Principio de diseno (cerrado con Miguel Angel, H01 reapertura S7):
 // - El arbol se construye por FUSION DE PREFIJOS puramente derivada de
@@ -17,7 +17,7 @@
 //   (de libro y de trampa) se reproduce con chess.js real desde la
 //   jugada 1 y se compara letra a letra contra la secuencia original
 //   de la linea/trampa de la que procede. Si alguna de las 32
-//   secuencias (26 lineas + 6 trampas) no coincide exactamente, el
+//   secuencias (lineas + trampas) no coincide exactamente, el
 //   script aborta sin escribir el fichero de salida.
 
 'use strict';
@@ -516,7 +516,7 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('OK -- las 32 secuencias (26 lineas + 6 trampas) verificadas letra a letra y legales con chess.js real.');
+console.log(`OK -- las ${leafPaths.length} secuencias (${REPERTOIRE_LINES.length} lineas + ${TRAMPAS_LINES.length} trampas) verificadas letra a letra y legales con chess.js real.`);
 
 // ---------------------------------------------------------------
 // 8) Comprobacion de cobertura: todo lineId/trapId original debe

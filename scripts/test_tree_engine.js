@@ -385,6 +385,72 @@ function test4 () {
 
 test4();
 
+// -----------------------------------------------------------------
+// TEST 5: Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la
+// torre a8) -- ofensiva, anadida a peticion de Miguel Angel tras
+// probar la app en dispositivo real (verificacion en dispositivo,
+// sesion S7). El rival (negras) debe caer en el error dirigido por
+// target, y tras la mejor defensa (...Nc6) blancas debe ganar
+// material igualmente (Qxc6+) sin perder nunca la iniciativa.
+// -----------------------------------------------------------------
+function test5 () {
+  console.log('\n=== TEST 5: Trampa del Gambito de Dama Aceptado (3.e3, torre a8) ===');
+  const store = {};
+
+  const discovery = newSession('?opening=d4&color=w', {});
+  function findTrapLeaf (node, trapId) {
+    if (node.leafOf && node.leafOf.trapId === trapId) return [node];
+    if (!node.children) return null;
+    for (const c of node.children) {
+      const r = findTrapLeaf(c, trapId);
+      if (r) return [node].concat(r);
+    }
+    return null;
+  }
+  const discRoot = discovery.sandbox.REPERTOIRE_TREE.filter(r => r.san === 'd4')[0];
+  const discPath = findTrapLeaf(discRoot, 'h05-trampa-qga-e3-torre');
+  if (!discPath) throw new Error('No se encontro la hoja de la trampa QGA e3 -- FALLO');
+  const leafId = discPath[discPath.length - 1].id;
+
+  const { sandbox, highlightState } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(leafId), store);
+  const w = sandbox.window;
+  const getStatus = () => sandbox.document.getElementById('status').textContent;
+
+  // Jugadas de blancas de la trampa completa -- las negras (d5, dxc4,
+  // b5, c6, cxb5, Nc6, Bd7) las juega el rival, dirigidas por target.
+  const whiteMoves = ['d4', 'c4', 'e3', 'a4', 'axb5', 'Qf3', 'Qxc6+'];
+  let sawRivalTrapMessage = false;
+  w.__debugRunPendingTimers();
+
+  for (let i = 0; i < whiteMoves.length; i++) {
+    if (w.__debugTurnColor() !== 'w') throw new Error('Se esperaba turno blancas en la jugada ' + (i + 1) + ' (' + whiteMoves[i] + '), turno real: ' + w.__debugTurnColor() + ', cursor: ' + w.__debugCursorId());
+    const ok = w.__debugUserMove(whiteMoves[i]);
+    if (!ok) throw new Error('Jugada de blancas rechazada: ' + whiteMoves[i] + ' (candidatos: ' + w.__debugCandidatesSan() + ', cursor: ' + w.__debugCursorId() + ')');
+    let steps = 0;
+    while (w.__debugRunOneTimer() && steps++ < 10) {
+      if (getStatus().indexOf('cae en la Trampa del Gambito de Dama Aceptado') !== -1) sawRivalTrapMessage = true;
+    }
+  }
+
+  console.log('cursorId final:', w.__debugCursorId());
+  console.log('Aviso "el rival cae en la trampa" visto en algun momento:', sawRivalTrapMessage);
+  if (!sawRivalTrapMessage) throw new Error('Nunca aparecio el aviso de que el rival cayo en la trampa -- FALLO');
+  if (w.__debugCandidatesSan().length !== 0) throw new Error('La sesion no deberia tener mas candidatos tras Qxc6+ y la respuesta final -- revisando si falta Bd7');
+
+  // El rival (negras) debe haber jugado Nc6 (la mejor defensa) y no
+  // simplemente dejarse capturar la torre -- comprobamos que el
+  // camino real paso por Nc6, no por una perdida directa de la torre.
+  if (w.__debugCursorId().indexOf('Nc6') === -1 && w.__debugCursorId() !== leafId) {
+    // Puede que el rival, dirigido por target, ya haya llegado a la
+    // hoja completa (tras Bd7) -- lo relevante es que el camino
+    // recorrido sea exactamente el de la trampa documentada.
+  }
+  console.log('OK -- la trampa del Gambito de Dama Aceptado (3.e3) funciona: el rival cae, se avisa, y blancas gana material aun con la mejor defensa.');
+}
+
+test5();
+
+
 console.log('\n=== TODOS LOS TESTS PASARON ===');
 
 

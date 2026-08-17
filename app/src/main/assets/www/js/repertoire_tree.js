@@ -1260,6 +1260,226 @@ var REPERTOIRE_TREE = [
                         ]
                       }
                     ]
+                  },
+                  {
+                    "id": "trap__h05-trampa-qga-e3-torre__4",
+                    "san": "e3",
+                    "color": "w",
+                    "explain": {
+                      "idea": "Blancas prepara recuperar el peon c4 con el alfil de f1, en vez del Sistema Alekhine (3.Nf3) mas conocido.",
+                      "ventaja": "Jugada modesta y solida, jugada entre otros por Anatoly Karpov, que de paso tiende la trampa clasica si negras intenta sostener el peon de mas.",
+                      "debilidad": "Ninguna real a este nivel."
+                    },
+                    "kind": "trap",
+                    "userColors": [
+                      "w"
+                    ],
+                    "trap": {
+                      "id": "h05-trampa-qga-e3-torre",
+                      "tipo": "ofensiva",
+                      "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                    },
+                    "variantName": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)",
+                    "variantColorId": "trap",
+                    "children": [
+                      {
+                        "id": "trap__h05-trampa-qga-e3-torre__5",
+                        "san": "b5",
+                        "color": "b",
+                        "explain": {
+                          "idea": "ERROR: negras intenta sostener el peon de mas defendiendolo con el peon b -- el error tipico de esta trampa, documentada desde 1604 (Alessandro Salvio).",
+                          "ventaja": "Parece defender el peon c4 de forma natural.",
+                          "debilidad": "Debilita irremediablemente el flanco de dama y abre la diagonal a8-h1, origen de todos los problemas que siguen."
+                        },
+                        "kind": "trap",
+                        "userColors": [
+                          "w"
+                        ],
+                        "trap": {
+                          "id": "h05-trampa-qga-e3-torre",
+                          "tipo": "ofensiva",
+                          "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                        },
+                        "isError": true,
+                        "children": [
+                          {
+                            "id": "trap__h05-trampa-qga-e3-torre__6",
+                            "san": "a4",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Blancas ataca de inmediato el peon b5 recien avanzado.",
+                              "ventaja": "Fuerza a negras a decidir entre ceder mas terreno o comprometerse todavia mas.",
+                              "debilidad": "Ninguna."
+                            },
+                            "kind": "trap",
+                            "userColors": [
+                              "w"
+                            ],
+                            "trap": {
+                              "id": "h05-trampa-qga-e3-torre",
+                              "tipo": "ofensiva",
+                              "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                            },
+                            "children": [
+                              {
+                                "id": "trap__h05-trampa-qga-e3-torre__7",
+                                "san": "c6",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "ERROR: negras defiende el peon b5 con el peon c, continuando el mismo plan equivocado.",
+                                  "ventaja": "Parece sostener la cadena de peones del flanco de dama.",
+                                  "debilidad": "Es precisamente la jugada que permite a blancas abrir la diagonal a8-h1 con axb5 y lanzar la combinacion."
+                                },
+                                "kind": "trap",
+                                "userColors": [
+                                  "w"
+                                ],
+                                "trap": {
+                                  "id": "h05-trampa-qga-e3-torre",
+                                  "tipo": "ofensiva",
+                                  "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                },
+                                "isError": true,
+                                "children": [
+                                  {
+                                    "id": "trap__h05-trampa-qga-e3-torre__8",
+                                    "san": "axb5",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Blancas abre la diagonal a8-h1 capturando en b5.",
+                                      "ventaja": "Prepara el golpe tactico Qf3.",
+                                      "debilidad": "Ninguna."
+                                    },
+                                    "kind": "trap",
+                                    "userColors": [
+                                      "w"
+                                    ],
+                                    "trap": {
+                                      "id": "h05-trampa-qga-e3-torre",
+                                      "tipo": "ofensiva",
+                                      "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                    },
+                                    "children": [
+                                      {
+                                        "id": "trap__h05-trampa-qga-e3-torre__9",
+                                        "san": "cxb5",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "ERROR decisivo: negras recaptura con el peon c, sin ver que esto deja la diagonal a8-h1 totalmente abierta hacia su propia torre.",
+                                          "ventaja": "Recupera el peon, parece mantener el material equilibrado.",
+                                          "debilidad": "La torre de a8 queda expuesta al golpe tactico Qf3 -- cae en la trampa."
+                                        },
+                                        "kind": "trap",
+                                        "userColors": [
+                                          "w"
+                                        ],
+                                        "trap": {
+                                          "id": "h05-trampa-qga-e3-torre",
+                                          "tipo": "ofensiva",
+                                          "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                        },
+                                        "isError": true,
+                                        "children": [
+                                          {
+                                            "id": "trap__h05-trampa-qga-e3-torre__10",
+                                            "san": "Qf3",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Blancas ejecuta el golpe: la dama entra en la diagonal a8-h1 amenazando directamente la torre de a8.",
+                                              "ventaja": "Amenaza ganar la torre sin compensacion si negras no encuentra la defensa exacta.",
+                                              "debilidad": "Ninguna -- el golpe esta completamente justificado tacticamente."
+                                            },
+                                            "kind": "trap",
+                                            "userColors": [
+                                              "w"
+                                            ],
+                                            "trap": {
+                                              "id": "h05-trampa-qga-e3-torre",
+                                              "tipo": "ofensiva",
+                                              "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                            },
+                                            "children": [
+                                              {
+                                                "id": "trap__h05-trampa-qga-e3-torre__11",
+                                                "san": "Nc6",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Unica defensa razonable: el caballo bloquea la diagonal e interpone entre la dama y la torre.",
+                                                  "ventaja": "Evita la perdida directa de la torre.",
+                                                  "debilidad": "El caballo queda atacado por la dama sin ninguna pieza que lo defienda -- negras salva la torre a cambio de perder igualmente una pieza menor."
+                                                },
+                                                "kind": "trap",
+                                                "userColors": [
+                                                  "w"
+                                                ],
+                                                "trap": {
+                                                  "id": "h05-trampa-qga-e3-torre",
+                                                  "tipo": "ofensiva",
+                                                  "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "id": "trap__h05-trampa-qga-e3-torre__12",
+                                                    "san": "Qxc6+",
+                                                    "color": "w",
+                                                    "explain": {
+                                                      "idea": "Blancas captura el caballo con jaque, la pieza que interpuso negras para salvar la torre.",
+                                                      "ventaja": "Gana una pieza menor limpia, con jaque de propina.",
+                                                      "debilidad": "Ninguna -- incluso jugando la mejor defensa disponible, negras no puede evitar quedar con clara desventaja material."
+                                                    },
+                                                    "kind": "trap",
+                                                    "userColors": [
+                                                      "w"
+                                                    ],
+                                                    "trap": {
+                                                      "id": "h05-trampa-qga-e3-torre",
+                                                      "tipo": "ofensiva",
+                                                      "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "id": "trap__h05-trampa-qga-e3-torre__13",
+                                                        "san": "Bd7",
+                                                        "color": "b",
+                                                        "explain": {
+                                                          "idea": "Negras bloquea el jaque con el alfil, la unica forma de interponerse, atacando de paso a la dama para obligarla a retirarse.",
+                                                          "ventaja": "Obliga a la dama blanca a moverse de nuevo, ganando un tiempo relativo.",
+                                                          "debilidad": "No compensa la pieza perdida -- negras queda con clara desventaja material pese a haber jugado la defensa mas precisa disponible."
+                                                        },
+                                                        "kind": "trap",
+                                                        "userColors": [
+                                                          "w"
+                                                        ],
+                                                        "trap": {
+                                                          "id": "h05-trampa-qga-e3-torre",
+                                                          "tipo": "ofensiva",
+                                                          "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)"
+                                                        },
+                                                        "leafOf": {
+                                                          "trapId": "h05-trampa-qga-e3-torre",
+                                                          "name": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)",
+                                                          "userColor": "w",
+                                                          "overview": "Gambito de Dama Aceptado. En vez de la linea principal 3.Nf3 (Sistema Alekhine), blancas juega 3.e3, jugada modesta jugada entre otros por Anatoly Karpov, que tienta a negras a sostener el peon de mas con ...b5 y ...c6. Si negras cae en la tentacion, 6.Qf3! entra en la diagonal a8-h1 y amenaza directamente la torre de a8: si negras encuentra la unica defensa (...Nc6) evita perder la torre, pero blancas gana igualmente una pieza menor (7.Qxc6+) y queda con clara ventaja material -- negras nunca sale indemne. Se entrena aqui el lado de blancas para tender la trampa. Documentada desde 1604 (Alessandro Salvio); fuente moderna: Wikipedia (\"Queen's Gambit Accepted\"), contrastada con TheChessWorld y Chess-Teacher.",
+                                                          "tipo": "ofensiva"
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -6275,6 +6495,12 @@ var REPERTOIRE_FAMILIES = [
         "title": "Gambito de Dama Aceptado -- Sistema Alekhine",
         "isTrap": false,
         "trapTipo": null
+      },
+      {
+        "nodeId": "trap__h05-trampa-qga-e3-torre__13",
+        "title": "Trampa del Gambito de Dama Aceptado (3.e3, amenaza sobre la torre a8)",
+        "isTrap": true,
+        "trapTipo": "ofensiva"
       },
       {
         "nodeId": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5__e3__e6",
