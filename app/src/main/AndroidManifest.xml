@@ -27,6 +27,14 @@
             android:exported="false" />
 
         <activity
+            android:name=".OpeningFamilySelectorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OpeningVariantSelectorActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".BoardActivity"
             android:exported="false" />
 

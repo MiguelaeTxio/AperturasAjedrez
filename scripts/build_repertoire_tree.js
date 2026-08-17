@@ -617,6 +617,88 @@ const seenIds = new Map();
 console.log(`OK -- ${seenIds.size} ids de nodo, todos unicos.`);
 
 // ---------------------------------------------------------------
+// 9.8) Familias entrenables (raiz + color de usuario), derivadas del
+//    propio arbol -- nunca escritas a mano en el selector nativo, para
+//    que una futura ampliacion de contenido no pueda dejar el
+//    selector desactualizado en silencio. Solo el TITULO de cada
+//    familia es curado a mano (no se puede derivar de forma fiable),
+//    y se verifica que la tabla de titulos cubre EXACTAMENTE las
+//    familias reales -- ni de mas ni de menos.
+// ---------------------------------------------------------------
+const FAMILY_TITLES = {
+  'd4|w': 'Gambito de Dama',
+  'd4|b': 'Defensas contra el Sistema Londres, Trompowsky y Catalana',
+  'e4|b': 'Defensa Escandinava',
+  'c4|b': 'Defensa contra la Apertura Inglesa',
+  'Nf3|b': 'Defensa contra la Apertura Reti',
+  'b3|b': 'Defensa contra el Sistema Larsen',
+  'f4|b': 'Defensa contra la Apertura Bird'
+};
+
+function collectLeavesForColor (node, color, out) {
+  out = out || [];
+  if (node.leafOf && node.kind === 'book' && node.leafOf.userColor === color) out.push(node.leafOf.name);
+  (node.children || []).forEach(c => collectLeavesForColor(c, color, out));
+  return out;
+}
+
+const realFamilyKeys = new Set();
+const families = [];
+forestOut.forEach(root => {
+  root.userColors.forEach(color => {
+    const key = root.san + '|' + color;
+    realFamilyKeys.add(key);
+    families.push({
+      id: 'family__' + root.san + '__' + color,
+      rootSan: root.san,
+      userColor: color,
+      title: FAMILY_TITLES[key],
+      leafCount: collectLeavesForColor(root, color).length
+    });
+  });
+});
+
+const missingTitles = families.filter(f => !f.title);
+if (missingTitles.length) {
+  console.error('*** FALTA TITULO DE FAMILIA (edita FAMILY_TITLES) ***');
+  missingTitles.forEach(f => console.error('  ' + f.rootSan + '|' + f.userColor));
+  process.exit(1);
+}
+const staleTitles = Object.keys(FAMILY_TITLES).filter(k => !realFamilyKeys.has(k));
+if (staleTitles.length) {
+  console.error('*** TITULOS DE FAMILIA OBSOLETOS EN FAMILY_TITLES (ya no existen en el arbol) ***');
+  staleTitles.forEach(k => console.error('  ' + k));
+  process.exit(1);
+}
+console.log(`OK -- ${families.length} familias entrenables, todas con titulo (ninguna huerfana, ninguna obsoleta).`);
+
+// ---------------------------------------------------------------
+// 9.9) Variantes practicables por familia (para el modo dirigido del
+//    selector nativo): toda hoja de libro (variante nombrada) y toda
+//    hoja de trampa (secuencia completa documentada), agrupadas por
+//    familia real. Mismo criterio: derivado del arbol, nunca a mano.
+// ---------------------------------------------------------------
+function collectVariantsForFamily (node, color, out) {
+  out = out || [];
+  if (node.leafOf && node.leafOf.userColor === color) {
+    out.push({
+      nodeId: node.id,
+      title: node.leafOf.name,
+      isTrap: node.kind === 'trap',
+      trapTipo: node.kind === 'trap' ? node.leafOf.tipo : null
+    });
+  }
+  (node.children || []).forEach(c => collectVariantsForFamily(c, color, out));
+  return out;
+}
+
+families.forEach(f => {
+  const root = forestOut.find(r => r.san === f.rootSan);
+  f.variants = collectVariantsForFamily(root, f.userColor);
+});
+
+
+// ---------------------------------------------------------------
 // 10) Escribir como fichero JS de runtime (mismo patron que
 //    repertoire.js/trampas.js: "var NOMBRE = [...]" cargado por
 //    index.html vía <script>), no JSON -- así el resultado queda
@@ -651,9 +733,74 @@ const header =
   '//                        userColor, lineId o trapId/tipo), solo en las hojas\n' +
   '//   children          -- array de nodos hijos (ausente si es hoja sin mas)\n' +
   '\n' +
-  'var REPERTOIRE_TREE = ' + JSON.stringify(forestOut, null, 2) + ';\n';
+  'var REPERTOIRE_TREE = ' + JSON.stringify(forestOut, null, 2) + ';\n\n' +
+  '// Familias entrenables (raiz + color de usuario) -- derivadas del\n' +
+  '// arbol de arriba, con titulo curado a mano en el propio script.\n' +
+  '// Consumidas por el selector nativo (OpeningFamilyCatalog.kt via\n' +
+  '// el mismo espacio de ids, o directamente si algun dia se lee desde\n' +
+  '// JS). Ver EstructurasCatalog.kt-style cross-check si aplica.\n' +
+  'var REPERTOIRE_FAMILIES = ' + JSON.stringify(families, null, 2) + ';\n';
 
 fs.writeFileSync(OUTPUT_PATH, header);
 
 console.log(`\nEscrito ${OUTPUT_PATH}`);
 console.log(`${forestOut.length} arboles raiz (una por cada primera jugada distinta). Raices: ${forestOut.map(r => r.san).join(', ')}`);
+
+// ---------------------------------------------------------------
+// 11) Generar tambien el catalogo Kotlin del selector nativo, desde
+//    el mismo array "families" -- una sola fuente de verdad, nunca
+//    dos catalogos mantenidos por separado que puedan divergir.
+// ---------------------------------------------------------------
+function kt (s) {
+  return String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
+
+const KOTLIN_OUTPUT_PATH = path.join(__dirname, '..', 'app', 'src', 'main', 'java', 'com', 'miguelaetxio', 'aperturasajedrez', 'data', 'OpeningFamilyCatalog.kt');
+
+let kotlinSrc = '';
+kotlinSrc += 'package com.miguelaetxio.aperturasajedrez.data\n\n';
+kotlinSrc += '// GENERADO AUTOMATICAMENTE por scripts/build_repertoire_tree.js -- NO EDITAR A MANO.\n';
+kotlinSrc += '// Cualquier cambio se pierde en la siguiente ejecucion del script. Para\n';
+kotlinSrc += '// cambiar el titulo de una familia, edita FAMILY_TITLES en el script y\n';
+kotlinSrc += '// vuelve a ejecutar "node scripts/build_repertoire_tree.js".\n';
+kotlinSrc += '//\n';
+kotlinSrc += '// Catalogo de familias de apertura entrenables (raiz + color de\n';
+kotlinSrc += '// usuario) para el selector nativo del modo arbol (H01, S7). Cada\n';
+kotlinSrc += '// familia lleva ademas la lista de variantes/trampas practicables por\n';
+kotlinSrc += '// separado en modo dirigido (nodeId real del arbol JS).\n\n';
+kotlinSrc += 'data class OpeningVariantEntry(\n';
+kotlinSrc += '    val nodeId: String,\n';
+kotlinSrc += '    val title: String,\n';
+kotlinSrc += '    val isTrap: Boolean,\n';
+kotlinSrc += '    val trapTipo: String?\n';
+kotlinSrc += ')\n\n';
+kotlinSrc += 'data class OpeningFamilyEntry(\n';
+kotlinSrc += '    val id: String,\n';
+kotlinSrc += '    val rootSan: String,\n';
+kotlinSrc += '    val userColor: String,\n';
+kotlinSrc += '    val title: String,\n';
+kotlinSrc += '    val variants: List<OpeningVariantEntry>\n';
+kotlinSrc += ')\n\n';
+kotlinSrc += 'object OpeningFamilyCatalog {\n';
+kotlinSrc += '    val entries: List<OpeningFamilyEntry> = listOf(\n';
+families.forEach((f, fi) => {
+  kotlinSrc += '        OpeningFamilyEntry(\n';
+  kotlinSrc += `            id = "${kt(f.id)}",\n`;
+  kotlinSrc += `            rootSan = "${kt(f.rootSan)}",\n`;
+  kotlinSrc += `            userColor = "${kt(f.userColor)}",\n`;
+  kotlinSrc += `            title = "${kt(f.title)}",\n`;
+  kotlinSrc += '            variants = listOf(\n';
+  f.variants.forEach((v, vi) => {
+    kotlinSrc += '                OpeningVariantEntry(' +
+      `nodeId = "${kt(v.nodeId)}", title = "${kt(v.title)}", isTrap = ${v.isTrap}, ` +
+      `trapTipo = ${v.trapTipo ? '"' + kt(v.trapTipo) + '"' : 'null'})` +
+      (vi < f.variants.length - 1 ? ',\n' : '\n');
+  });
+  kotlinSrc += '            )\n';
+  kotlinSrc += '        )' + (fi < families.length - 1 ? ',\n' : '\n');
+});
+kotlinSrc += '    )\n';
+kotlinSrc += '}\n';
+
+fs.writeFileSync(KOTLIN_OUTPUT_PATH, kotlinSrc);
+console.log(`Escrito ${KOTLIN_OUTPUT_PATH} (${families.length} familias, ${families.reduce((s, f) => s + f.variants.length, 0)} variantes/trampas en total).`);

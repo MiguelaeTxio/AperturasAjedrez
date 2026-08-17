@@ -7,14 +7,19 @@ import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 
 /**
- * Pantalla del tablero interactivo. Recibe la linea a entrenar via
- * EXTRA_LINE_ID (elegida en OpeningSelectorActivity) y la pasa al
- * WebView como query param -- ver selectedLineId() en game.js.
+ * Pantalla del tablero interactivo. Dos caminos posibles:
  *
- * S7: alternativamente puede recibir EXTRA_LINE_QUEUE, una lista de
- * ids (modo sesion secuencial) que se pasa como query param "queue"
- * -- ver selectedQueueIds() en game.js. Si llega la cola, tiene
- * prioridad sobre EXTRA_LINE_ID.
+ * - Modo arbol de aperturas (S7, H01): recibe EXTRA_OPENING_ROOT
+ *   (primera jugada de la familia, p.ej. "d4") + EXTRA_OPENING_COLOR
+ *   ("w"/"b", que lado entrena Miguel Angel) y, opcionalmente,
+ *   EXTRA_OPENING_TARGET (id de nodo real del arbol -- modo dirigido a
+ *   una variante o trampa concreta). Se pasan tal cual como query
+ *   params "opening"/"color"/"target" -- ver isTreeMode en game.js.
+ *   Tiene prioridad sobre los dos caminos siguientes si esta presente.
+ *
+ * - Modo linea/cola (finales, problemas, estructuras): EXTRA_LINE_ID o
+ *   EXTRA_LINE_QUEUE, como siempre -- ver selectedLineId()/
+ *   selectedQueueIds() en game.js.
  *
  * S6 (navegacion de Problemas de ajedrez, ver ANNEX_H04.md): puede
  * recibir ademas EXTRA_NAV_CATEGORY, una clave de categoria navegable
@@ -31,9 +36,11 @@ class BoardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_board)
 
+        val openingRoot = intent.getStringExtra(EXTRA_OPENING_ROOT)
+        val openingColor = intent.getStringExtra(EXTRA_OPENING_COLOR)
+        val openingTarget = intent.getStringExtra(EXTRA_OPENING_TARGET)
         val lineQueue = intent.getStringArrayListExtra(EXTRA_LINE_QUEUE)
         val lineId = intent.getStringExtra(EXTRA_LINE_ID)
-            ?: com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog.entries.first().id
         val navCategory = intent.getStringExtra(EXTRA_NAV_CATEGORY)
 
         val webView = findViewById<WebView>(R.id.boardWebView)
@@ -43,10 +50,24 @@ class BoardActivity : AppCompatActivity() {
 
         val urlBuilder = Uri.parse("file:///android_asset/www/index.html")
             .buildUpon()
-        if (lineQueue != null && lineQueue.isNotEmpty()) {
+        if (openingRoot != null) {
+            urlBuilder.appendQueryParameter("opening", openingRoot)
+            urlBuilder.appendQueryParameter("color", openingColor ?: "w")
+            if (openingTarget != null) {
+                urlBuilder.appendQueryParameter("target", openingTarget)
+            }
+        } else if (lineQueue != null && lineQueue.isNotEmpty()) {
             urlBuilder.appendQueryParameter("queue", lineQueue.joinToString(","))
         } else {
-            urlBuilder.appendQueryParameter("line", lineId)
+            // Fallback defensivo: no deberia ocurrir en un flujo real
+            // (todo selector pasa "opening", "queue" o "line"), pero si
+            // llegara una Intent malformada, evita un WebView en blanco
+            // cargando la primera estructura del catalogo en vez de
+            // fallar en silencio de forma menos visible.
+            urlBuilder.appendQueryParameter(
+                "line",
+                lineId ?: com.miguelaetxio.aperturasajedrez.data.EstructurasCatalog.entries.first().id
+            )
         }
         if (navCategory != null) {
             urlBuilder.appendQueryParameter("navcat", navCategory)
@@ -55,6 +76,9 @@ class BoardActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val EXTRA_OPENING_ROOT = "extra_opening_root"
+        const val EXTRA_OPENING_COLOR = "extra_opening_color"
+        const val EXTRA_OPENING_TARGET = "extra_opening_target"
         const val EXTRA_LINE_ID = "extra_line_id"
         const val EXTRA_LINE_QUEUE = "extra_line_queue"
         const val EXTRA_NAV_CATEGORY = "extra_nav_category"

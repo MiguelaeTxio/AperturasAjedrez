@@ -5,15 +5,16 @@ package com.miguelaetxio.aperturasajedrez.data
  * (OpeningSelectorActivity, categoria "estructura"). El id debe
  * coincidir exactamente con el id declarado en
  * app/src/main/assets/www/js/estructuras.js -- mismo patron que
- * RepertoireCatalog/FinalesCatalog/ProblemasCatalog/TrampasCatalog,
+ * FinalesCatalog/ProblemasCatalog (RepertoireCatalog y TrampasCatalog
+ * se retiraron en S7, ver ANNEX_H01.md -- el repertorio y las trampas
+ * ahora viven en el arbol de variantes, OpeningFamilyCatalog),
  * ver ANNEX_H06.md.
  *
  * Todos los ids de estructuras llevan el prefijo "h06-estructura-"
- * para evitar colision con lineas, finales, problemas y trampas al
- * buscar en el array combinado dentro de game.js. Campo nuevo
- * respecto al resto de catalogos: "familia" (ver [Familia]), solo
- * para clasificar/mostrar en el selector nativo -- no afecta al
- * motor JS, mismo patron que "tipo" en TrampasCatalog.kt.
+ * para evitar colision con lineas, finales y problemas al buscar en
+ * el array combinado dentro de game.js. Campo nuevo respecto al resto
+ * de catalogos: "familia" (ver [Familia]), solo para clasificar/
+ * mostrar en el selector nativo -- no afecta al motor JS.
  *
  * CORRECCION S6: el IQP quedo anclado unicamente en
  * h02-defensa-tarrasch tras verificar que las otras dos lineas

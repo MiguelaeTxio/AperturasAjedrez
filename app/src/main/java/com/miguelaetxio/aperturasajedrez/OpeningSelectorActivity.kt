@@ -8,17 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.miguelaetxio.aperturasajedrez.data.EstructurasCatalog
 import com.miguelaetxio.aperturasajedrez.data.FinalesCatalog
 import com.miguelaetxio.aperturasajedrez.data.OpeningEntry
-import com.miguelaetxio.aperturasajedrez.data.RepertoireCatalog
-import com.miguelaetxio.aperturasajedrez.data.TrampasCatalog
 
 /**
  * Selector generico de contenido de entrenamiento. Filtra el catalogo
- * segun EXTRA_CATEGORY (H04) -- CATEGORY_LINES (por defecto, si no se
- * recibe el extra, para no romper flujos que aun lancen esta Activity
- * sin categoria), CATEGORY_ENDGAMES, CATEGORY_TRAMPAS o
+ * segun EXTRA_CATEGORY (H04) -- CATEGORY_ENDGAMES o
  * CATEGORY_ESTRUCTURAS. OpeningAdapter es generico sobre OpeningEntry,
- * asi que FinalEntry/TrampaEntry/EstructuraEntry se adaptan a esa
- * forma antes de pasarlos -- ver mapeo mas abajo.
+ * asi que FinalEntry/EstructuraEntry se adaptan a esa forma antes de
+ * pasarlos -- ver mapeo mas abajo.
+ *
+ * S7 (reapertura H01, PCH): CATEGORY_LINES y CATEGORY_TRAMPAS se
+ * retiran. Las lineas de apertura pasan a vivir en el arbol de
+ * variantes nuevo (REPERTOIRE_TREE) con su propio selector de dos
+ * pasos -- ver OpeningFamilySelectorActivity/
+ * OpeningVariantSelectorActivity. Las trampas quedaron integradas
+ * como ramas de ese mismo arbol -- ya no existe una categoria
+ * separada para ellas.
  *
  * S8: CATEGORY_PROBLEMS ya NO pasa por aqui -- Miguel Angel senalo
  * explicitamente que no quiere elegir de una lista de problemas,
@@ -34,19 +38,8 @@ class OpeningSelectorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_opening_selector)
 
-        val category = intent.getStringExtra(EXTRA_CATEGORY) ?: CATEGORY_LINES
+        val category = intent.getStringExtra(EXTRA_CATEGORY) ?: CATEGORY_ENDGAMES
         val entries: List<OpeningEntry> = when (category) {
-            CATEGORY_ENDGAMES -> FinalesCatalog.entries.map {
-                OpeningEntry(id = it.id, title = it.title, subtitle = it.subtitle)
-            }
-            CATEGORY_TRAMPAS -> TrampasCatalog.entries
-                .map {
-                    OpeningEntry(
-                        id = it.id,
-                        title = it.title,
-                        subtitle = it.tipo.etiqueta + " · " + it.subtitle
-                    )
-                }
             CATEGORY_ESTRUCTURAS -> EstructurasCatalog.entries
                 .map {
                     OpeningEntry(
@@ -55,7 +48,9 @@ class OpeningSelectorActivity : AppCompatActivity() {
                         subtitle = it.familia.etiqueta + " · " + it.subtitle
                     )
                 }
-            else -> RepertoireCatalog.entries
+            else -> FinalesCatalog.entries.map {
+                OpeningEntry(id = it.id, title = it.title, subtitle = it.subtitle)
+            }
         }
 
         val list = findViewById<RecyclerView>(R.id.openingList)
@@ -69,10 +64,8 @@ class OpeningSelectorActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_CATEGORY = "extra_category"
-        const val CATEGORY_LINES = "linea"
         const val CATEGORY_ENDGAMES = "final"
         const val CATEGORY_PROBLEMS = "problema"
-        const val CATEGORY_TRAMPAS = "trampa"
         const val CATEGORY_ESTRUCTURAS = "estructura"
     }
 }

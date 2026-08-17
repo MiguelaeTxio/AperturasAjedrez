@@ -9,9 +9,18 @@ import com.miguelaetxio.aperturasajedrez.data.ProblemasCatalog
 
 /**
  * Pantalla intermedia de "Entrenar" (H04): elegir categoria antes de
- * abrir el selector de contenido. Lineas, Finales, Trampas y
- * Estructuras reutilizan OpeningSelectorActivity con un catalogo
- * distinto segun la categoria (ver EXTRA_CATEGORY).
+ * abrir el selector de contenido. Finales y Estructuras reutilizan
+ * OpeningSelectorActivity con un catalogo distinto segun la categoria
+ * (ver EXTRA_CATEGORY). Aperturas (antes "Lineas") abre desde S7 el
+ * selector nuevo de familias del arbol de variantes (H01, reapertura
+ * S7) -- ver OpeningFamilySelectorActivity.
+ *
+ * S7 (reapertura H01, PCH): la categoria "Trampas" se retira por
+ * completo -- las 6 trampas quedaron integradas como ramas del propio
+ * arbol de aperturas (ver DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md,
+ * "REAPERTURA VIA PCH (S6)" en H05), asi que ya no tiene sentido una
+ * pantalla separada para ellas -- se practican dentro de su familia,
+ * en modo dirigido, desde OpeningVariantSelectorActivity.
  *
  * S8/S9: los tres niveles de ProblemasCatalog (Iniciacion, Grandes
  * Partidas, Problemas de ajedrez) son distintos -- Miguel Angel
@@ -47,7 +56,7 @@ class CategorySelectorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_category_selector)
 
         findViewById<Button>(R.id.categoryLinesButton).setOnClickListener {
-            openSelector(OpeningSelectorActivity.CATEGORY_LINES)
+            startActivity(Intent(this, OpeningFamilySelectorActivity::class.java))
         }
         findViewById<Button>(R.id.categoryEndgamesButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_ENDGAMES)
@@ -60,9 +69,6 @@ class CategorySelectorActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.categoryProblemasAjedrezButton).setOnClickListener {
             startProblemSession(Nivel.LICHESS)
-        }
-        findViewById<Button>(R.id.categoryTrampasButton).setOnClickListener {
-            openSelector(OpeningSelectorActivity.CATEGORY_TRAMPAS)
         }
         findViewById<Button>(R.id.categoryEstructurasButton).setOnClickListener {
             openSelector(OpeningSelectorActivity.CATEGORY_ESTRUCTURAS)

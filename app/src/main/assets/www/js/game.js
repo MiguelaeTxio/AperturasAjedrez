@@ -71,13 +71,19 @@
   // mecanica de "secuencia fija de jugadas, oponente auto-jugado,
   // dialogo de 3 fallos" ya cubre por completo un problema de
   // posicion suelta + solucion corta.
+  //
+  // S7 (reapertura H01, PCH): TRAMPAS_LINES ya no se concatena aqui --
+  // trampas.js dejo de cargarse en index.html, las 6 trampas quedaron
+  // integradas como ramas del arbol de aperturas (REPERTOIRE_TREE,
+  // ver isTreeMode mas abajo). REPERTOIRE_LINES (repertoire.js) sigue
+  // cargado y en la concatenacion por compatibilidad -- ningun
+  // selector nativo busca ya un id de linea suelta por ese camino,
+  // pero retirarlo no aporta nada y anadiria riesgo sin necesidad.
   function allLines () {
     return REPERTOIRE_LINES.concat(
       typeof FINALES_LINES !== 'undefined' ? FINALES_LINES : []
     ).concat(
       typeof PROBLEMAS_LINES !== 'undefined' ? PROBLEMAS_LINES : []
-    ).concat(
-      typeof TRAMPAS_LINES !== 'undefined' ? TRAMPAS_LINES : []
     ).concat(
       typeof ESTRUCTURAS_LINES !== 'undefined' ? ESTRUCTURAS_LINES : []
     )

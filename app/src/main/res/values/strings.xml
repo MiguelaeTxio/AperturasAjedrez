@@ -13,11 +13,12 @@
     <string name="settings_install_update">Instalar</string>
     <string name="settings_grant_install_permission">Concede el permiso y vuelve a pulsar Instalar.</string>
     <string name="category_title">Elige categoría</string>
-    <string name="category_lines">Líneas</string>
+    <string name="category_lines">Aperturas</string>
     <string name="category_endgames">Finales</string>
     <string name="category_iniciacion">Iniciación</string>
     <string name="category_grandes_partidas">Grandes Partidas</string>
     <string name="category_problemas_ajedrez">Problemas de ajedrez</string>
-    <string name="category_trampas">Trampas</string>
     <string name="category_estructuras">Estructuras</string>
+    <string name="opening_family_full_tour">Recorrido completo (recomendado)</string>
+    <string name="opening_family_full_tour_subtitle">El motor elige las ramas menos practicadas -- cobertura real de toda la familia</string>
 </resources>
