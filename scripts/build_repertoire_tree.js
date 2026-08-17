@@ -347,6 +347,14 @@ annotateVariantNames(forestRoot, 0);
 // ---------------------------------------------------------------
 const TRAP_COLOR_ID = 'trap'; // constante fuera de la paleta normal, nunca colisiona con stableColorId (numerico)
 
+function isErrorMove (mv) {
+  // Marcador real ya presente en trampas.js (verificado: las 6
+  // trampas lo usan de forma consistente) -- la jugada que realmente
+  // pierde la partida, a diferencia de las jugadas de preparacion que
+  // la rodean y que son indistinguibles de libro.
+  return !!(mv.explain && typeof mv.explain.idea === 'string' && mv.explain.idea.indexOf('ERROR') === 0);
+}
+
 function mergeTrap (trapLine) {
   let cursor = forestRoot;
   let divergedAt = -1;
@@ -359,7 +367,13 @@ function mergeTrap (trapLine) {
     const effectiveExplain = override ? override.explain : mv.explain;
 
     if (divergedAt === -1) {
-      // Todavia dentro del arbol de libro: intentar seguir coincidiendo.
+      // Todavia dentro del arbol de libro: mientras la jugada
+      // coincida con una jugada de libro ya existente Y no sea la
+      // jugada marcada como ERROR, se reutiliza el nodo de libro tal
+      // cual (con su propio texto canonico) -- NO se bifurca solo
+      // porque el estilo narrativo de trampas.js sea distinto. Solo
+      // diverge de verdad donde no hay jugada de libro que coincida,
+      // o donde la jugada es el error real de la trampa.
       const bookChild = findChild(cursor, mv.san, mv.color);
       const trapChild = cursor.children.find(c => c.san === mv.san && c.color === mv.color && c.kind === 'trap' && c.trap.id === trapLine.id);
 
@@ -368,18 +382,15 @@ function mergeTrap (trapLine) {
         continue;
       }
 
-      if (bookChild && explainsEqual(bookChild.explain, effectiveExplain)) {
-        // Coincide exactamente con la jugada de libro ya existente
-        // (misma jugada, misma explicacion) -- sigue siendo tronco
-        // comun, no es divergencia todavia.
+      if (bookChild && !isErrorMove(mv)) {
         cursor = bookChild;
         continue;
       }
 
-      // Diverge aqui: puede que exista el nodo de libro con OTRA
-      // jugada en el mismo punto (bifurcacion real), o que sea la
-      // primera jugada distinta lisa y llanamente. En ambos casos
-      // este es el punto de divergencia de la trampa.
+      // Diverge aqui: o no hay jugada de libro que coincida, o es el
+      // error real de la trampa (aunque coincida con una jugada de
+      // libro existente en san+color -- no deberia pasar en la
+      // practica, pero si pasara, el error manda).
       divergedAt = idx;
     }
 
@@ -390,6 +401,13 @@ function mergeTrap (trapLine) {
     node.color = mv.color;
     node.explain = effectiveExplain;
     node.kind = 'trap';
+    node.isError = isErrorMove(mv);
+    // Id explicita y unica por trampa+jugada -- evita colision con un
+    // nodo de libro que por casualidad comparta el mismo san en el
+    // mismo padre (ya ocurrio en la migracion real: "Nbd7" es a la vez
+    // jugada de libro en h01 y jugada de divergencia de la Trampa del
+    // Elefante bajo el mismo nodo padre).
+    node.idOverride = 'trap__' + trapLine.id + '__' + idx;
     node.trap = { id: trapLine.id, tipo: trapLine.tipo, name: trapLine.name };
     node.variantName = idx === divergedAt ? trapLine.name : undefined;
     if (node.variantName) node.variantColorId = TRAP_COLOR_ID;
@@ -461,7 +479,14 @@ leafPaths.forEach(({ leafOf, path }) => {
     }
 
     const override = findOverride(pathSoFar);
-    if (override) {
+    if (node.kind === 'book') {
+      // Tramo de libro reutilizado por la trampa (jugada de
+      // preparacion, no el error): el texto correcto es el canonico
+      // del arbol de libro (con o sin override), NUNCA el texto
+      // propio que tenia trampas.js para esa jugada -- eso es
+      // precisamente la correccion aplicada. Solo se exige que la
+      // jugada en si sea identica y legal.
+    } else if (override) {
       if (!explainsEqual(node.explain, override.explain)) {
         failures.push(`${originalId}: jugada ${i + 1} (${node.san}) -- el nodo NO lleva el texto canonico esperado del override.`);
         break;
@@ -519,27 +544,54 @@ console.log(`OK -- cobertura exacta: ${expectedIds.size} ids originales, ${found
 // 9) Serializar el bosque (quitando campos internos de construccion:
 //    _seq, lineIds como Set) a JSON para inspeccion + a JS final.
 // ---------------------------------------------------------------
-function serialize (node) {
+function serialize (node, pathSans) {
   const out = {};
   if (node.san !== null) {
+    const myPath = pathSans.concat([node.san]);
+    out.id = node.idOverride || myPath.join('__');
     out.san = node.san;
     out.color = node.color;
     out.explain = node.explain;
     out.kind = node.kind;
-    if (node.kind === 'trap') out.trap = node.trap;
+    if (node.kind === 'trap') {
+      out.trap = node.trap;
+      if (node.isError) out.isError = true;
+    }
     if (node.variantName) {
       out.variantName = node.variantName;
       out.variantColorId = node.variantColorId;
     }
     if (node.leafOf) out.leafOf = node.leafOf;
+    if (node.children.length) {
+      out.children = node.children.map(c => serialize(c, myPath));
+    }
+    return out;
   }
+  // Nodo raiz virtual (no se serializa como jugada, solo sus hijos).
   if (node.children.length) {
-    out.children = node.children.map(serialize);
+    out.children = node.children.map(c => serialize(c, pathSans));
   }
   return out;
 }
 
-const forestOut = forestRoot.children.map(serialize);
+const forestOut = forestRoot.children.map(c => serialize(c, []));
+
+// ---------------------------------------------------------------
+// 9.5) Verificar que los ids de nodo (ruta de sans) son unicos en
+//    todo el bosque -- nunca asumir la unicidad sin comprobarla.
+// ---------------------------------------------------------------
+const seenIds = new Map();
+(function checkIdsUnique (nodes) {
+  nodes.forEach(n => {
+    if (seenIds.has(n.id)) {
+      console.error(`*** ID DE NODO DUPLICADO: "${n.id}" ***`);
+      process.exit(1);
+    }
+    seenIds.set(n.id, true);
+    if (n.children) checkIdsUnique(n.children);
+  });
+})(forestOut);
+console.log(`OK -- ${seenIds.size} ids de nodo, todos unicos.`);
 
 // ---------------------------------------------------------------
 // 10) Escribir como fichero JS de runtime (mismo patron que

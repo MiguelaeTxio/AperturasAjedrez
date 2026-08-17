@@ -23,6 +23,7 @@
 
 var REPERTOIRE_TREE = [
   {
+    "id": "d4",
     "san": "d4",
     "color": "w",
     "explain": {
@@ -33,6 +34,7 @@ var REPERTOIRE_TREE = [
     "kind": "book",
     "children": [
       {
+        "id": "d4__d5",
         "san": "d5",
         "color": "b",
         "explain": {
@@ -43,6 +45,7 @@ var REPERTOIRE_TREE = [
         "kind": "book",
         "children": [
           {
+            "id": "d4__d5__c4",
             "san": "c4",
             "color": "w",
             "explain": {
@@ -53,6 +56,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "d4__d5__c4__e6",
                 "san": "e6",
                 "color": "b",
                 "explain": {
@@ -63,6 +67,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "d4__d5__c4__e6__Nc3",
                     "san": "Nc3",
                     "color": "w",
                     "explain": {
@@ -73,6 +78,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__d5__c4__e6__Nc3__Nf6",
                         "san": "Nf6",
                         "color": "b",
                         "explain": {
@@ -83,6 +89,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5",
                             "san": "Bg5",
                             "color": "w",
                             "explain": {
@@ -93,6 +100,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Be7",
                                 "san": "Be7",
                                 "color": "b",
                                 "explain": {
@@ -105,6 +113,7 @@ var REPERTOIRE_TREE = [
                                 "variantColorId": 11,
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Be7__e3",
                                     "san": "e3",
                                     "color": "w",
                                     "explain": {
@@ -115,6 +124,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Be7__e3__O-O",
                                         "san": "O-O",
                                         "color": "b",
                                         "explain": {
@@ -135,6 +145,7 @@ var REPERTOIRE_TREE = [
                                 ]
                               },
                               {
+                                "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7",
                                 "san": "Nbd7",
                                 "color": "b",
                                 "explain": {
@@ -147,6 +158,7 @@ var REPERTOIRE_TREE = [
                                 "variantColorId": 7,
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3",
                                     "san": "e3",
                                     "color": "w",
                                     "explain": {
@@ -157,6 +169,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3__Be7",
                                         "san": "Be7",
                                         "color": "b",
                                         "explain": {
@@ -167,6 +180,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3__Be7__Nf3",
                                             "san": "Nf3",
                                             "color": "w",
                                             "explain": {
@@ -177,6 +191,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3__Be7__Nf3__O-O",
                                                 "san": "O-O",
                                                 "color": "b",
                                                 "explain": {
@@ -197,27 +212,9 @@ var REPERTOIRE_TREE = [
                                         ]
                                       }
                                     ]
-                                  }
-                                ]
-                              },
-                              {
-                                "san": "Nbd7",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Negras desarrolla el segundo caballo, tendiendo la Trampa del Elefante: si blancas ahora captura en d5, la recaptura Nxd5! ignora la clavada porque el caballo f6 no era realmente el unico defensor.",
-                                  "ventaja": "Desarrollo natural que ademas tiende la trampa.",
-                                  "debilidad": "Ninguna -- jugada solida en si misma, con o sin trampa."
-                                },
-                                "kind": "trap",
-                                "trap": {
-                                  "id": "h05-trampa-elefante",
-                                  "tipo": "defensiva",
-                                  "name": "Trampa del Elefante (Elephant Trap)"
-                                },
-                                "variantName": "Trampa del Elefante (Elephant Trap)",
-                                "variantColorId": "trap",
-                                "children": [
+                                  },
                                   {
+                                    "id": "trap__h05-trampa-elefante__8",
                                     "san": "cxd5",
                                     "color": "w",
                                     "explain": {
@@ -231,8 +228,12 @@ var REPERTOIRE_TREE = [
                                       "tipo": "defensiva",
                                       "name": "Trampa del Elefante (Elephant Trap)"
                                     },
+                                    "isError": true,
+                                    "variantName": "Trampa del Elefante (Elephant Trap)",
+                                    "variantColorId": "trap",
                                     "children": [
                                       {
+                                        "id": "trap__h05-trampa-elefante__9",
                                         "san": "exd5",
                                         "color": "b",
                                         "explain": {
@@ -248,6 +249,7 @@ var REPERTOIRE_TREE = [
                                         },
                                         "children": [
                                           {
+                                            "id": "trap__h05-trampa-elefante__10",
                                             "san": "Nxd5",
                                             "color": "w",
                                             "explain": {
@@ -261,8 +263,10 @@ var REPERTOIRE_TREE = [
                                               "tipo": "defensiva",
                                               "name": "Trampa del Elefante (Elephant Trap)"
                                             },
+                                            "isError": true,
                                             "children": [
                                               {
+                                                "id": "trap__h05-trampa-elefante__11",
                                                 "san": "Nxd5",
                                                 "color": "b",
                                                 "explain": {
@@ -278,6 +282,7 @@ var REPERTOIRE_TREE = [
                                                 },
                                                 "children": [
                                                   {
+                                                    "id": "trap__h05-trampa-elefante__12",
                                                     "san": "Bxd8",
                                                     "color": "w",
                                                     "explain": {
@@ -293,6 +298,7 @@ var REPERTOIRE_TREE = [
                                                     },
                                                     "children": [
                                                       {
+                                                        "id": "trap__h05-trampa-elefante__13",
                                                         "san": "Bb4+",
                                                         "color": "b",
                                                         "explain": {
@@ -308,6 +314,7 @@ var REPERTOIRE_TREE = [
                                                         },
                                                         "children": [
                                                           {
+                                                            "id": "trap__h05-trampa-elefante__14",
                                                             "san": "Qd2",
                                                             "color": "w",
                                                             "explain": {
@@ -323,6 +330,7 @@ var REPERTOIRE_TREE = [
                                                             },
                                                             "children": [
                                                               {
+                                                                "id": "trap__h05-trampa-elefante__15",
                                                                 "san": "Bxd2+",
                                                                 "color": "b",
                                                                 "explain": {
@@ -338,6 +346,7 @@ var REPERTOIRE_TREE = [
                                                                 },
                                                                 "children": [
                                                                   {
+                                                                    "id": "trap__h05-trampa-elefante__16",
                                                                     "san": "Kxd2",
                                                                     "color": "w",
                                                                     "explain": {
@@ -353,6 +362,7 @@ var REPERTOIRE_TREE = [
                                                                     },
                                                                     "children": [
                                                                       {
+                                                                        "id": "trap__h05-trampa-elefante__17",
                                                                         "san": "Kxd8",
                                                                         "color": "b",
                                                                         "explain": {
@@ -391,27 +401,9 @@ var REPERTOIRE_TREE = [
                                         ]
                                       }
                                     ]
-                                  }
-                                ]
-                              },
-                              {
-                                "san": "Nbd7",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Negras desarrolla el segundo caballo.",
-                                  "ventaja": "Desarrollo natural.",
-                                  "debilidad": "Ninguna."
-                                },
-                                "kind": "trap",
-                                "trap": {
-                                  "id": "h05-trampa-cambridge-springs",
-                                  "tipo": "defensiva",
-                                  "name": "Trampa de la Cambridge Springs"
-                                },
-                                "variantName": "Trampa de la Cambridge Springs",
-                                "variantColorId": "trap",
-                                "children": [
+                                  },
                                   {
+                                    "id": "trap__h05-trampa-cambridge-springs__8",
                                     "san": "Nf3",
                                     "color": "w",
                                     "explain": {
@@ -425,8 +417,11 @@ var REPERTOIRE_TREE = [
                                       "tipo": "defensiva",
                                       "name": "Trampa de la Cambridge Springs"
                                     },
+                                    "variantName": "Trampa de la Cambridge Springs",
+                                    "variantColorId": "trap",
                                     "children": [
                                       {
+                                        "id": "trap__h05-trampa-cambridge-springs__9",
                                         "san": "c6",
                                         "color": "b",
                                         "explain": {
@@ -442,6 +437,7 @@ var REPERTOIRE_TREE = [
                                         },
                                         "children": [
                                           {
+                                            "id": "trap__h05-trampa-cambridge-springs__10",
                                             "san": "e3",
                                             "color": "w",
                                             "explain": {
@@ -457,6 +453,7 @@ var REPERTOIRE_TREE = [
                                             },
                                             "children": [
                                               {
+                                                "id": "trap__h05-trampa-cambridge-springs__11",
                                                 "san": "Qa5",
                                                 "color": "b",
                                                 "explain": {
@@ -472,6 +469,7 @@ var REPERTOIRE_TREE = [
                                                 },
                                                 "children": [
                                                   {
+                                                    "id": "trap__h05-trampa-cambridge-springs__12",
                                                     "san": "Nd2",
                                                     "color": "w",
                                                     "explain": {
@@ -487,6 +485,7 @@ var REPERTOIRE_TREE = [
                                                     },
                                                     "children": [
                                                       {
+                                                        "id": "trap__h05-trampa-cambridge-springs__13",
                                                         "san": "Bb4",
                                                         "color": "b",
                                                         "explain": {
@@ -502,6 +501,7 @@ var REPERTOIRE_TREE = [
                                                         },
                                                         "children": [
                                                           {
+                                                            "id": "trap__h05-trampa-cambridge-springs__14",
                                                             "san": "Qc2",
                                                             "color": "w",
                                                             "explain": {
@@ -517,6 +517,7 @@ var REPERTOIRE_TREE = [
                                                             },
                                                             "children": [
                                                               {
+                                                                "id": "trap__h05-trampa-cambridge-springs__15",
                                                                 "san": "O-O",
                                                                 "color": "b",
                                                                 "explain": {
@@ -532,6 +533,7 @@ var REPERTOIRE_TREE = [
                                                                 },
                                                                 "children": [
                                                                   {
+                                                                    "id": "trap__h05-trampa-cambridge-springs__16",
                                                                     "san": "Bd3",
                                                                     "color": "w",
                                                                     "explain": {
@@ -545,8 +547,10 @@ var REPERTOIRE_TREE = [
                                                                       "tipo": "defensiva",
                                                                       "name": "Trampa de la Cambridge Springs"
                                                                     },
+                                                                    "isError": true,
                                                                     "children": [
                                                                       {
+                                                                        "id": "trap__h05-trampa-cambridge-springs__17",
                                                                         "san": "dxc4",
                                                                         "color": "b",
                                                                         "explain": {
@@ -562,6 +566,7 @@ var REPERTOIRE_TREE = [
                                                                         },
                                                                         "children": [
                                                                           {
+                                                                            "id": "trap__h05-trampa-cambridge-springs__18",
                                                                             "san": "Bxf6",
                                                                             "color": "w",
                                                                             "explain": {
@@ -577,6 +582,7 @@ var REPERTOIRE_TREE = [
                                                                             },
                                                                             "children": [
                                                                               {
+                                                                                "id": "trap__h05-trampa-cambridge-springs__19",
                                                                                 "san": "cxd3",
                                                                                 "color": "b",
                                                                                 "explain": {
@@ -592,6 +598,7 @@ var REPERTOIRE_TREE = [
                                                                                 },
                                                                                 "children": [
                                                                                   {
+                                                                                    "id": "trap__h05-trampa-cambridge-springs__20",
                                                                                     "san": "Qxd3",
                                                                                     "color": "w",
                                                                                     "explain": {
@@ -607,6 +614,7 @@ var REPERTOIRE_TREE = [
                                                                                     },
                                                                                     "children": [
                                                                                       {
+                                                                                        "id": "trap__h05-trampa-cambridge-springs__21",
                                                                                         "san": "Nxf6",
                                                                                         "color": "b",
                                                                                         "explain": {
@@ -659,6 +667,7 @@ var REPERTOIRE_TREE = [
                             ]
                           },
                           {
+                            "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5",
                             "san": "cxd5",
                             "color": "w",
                             "explain": {
@@ -671,6 +680,7 @@ var REPERTOIRE_TREE = [
                             "variantColorId": 4,
                             "children": [
                               {
+                                "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5",
                                 "san": "exd5",
                                 "color": "b",
                                 "explain": {
@@ -681,6 +691,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5",
                                     "san": "Bg5",
                                     "color": "w",
                                     "explain": {
@@ -691,6 +702,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5__Be7",
                                         "san": "Be7",
                                         "color": "b",
                                         "explain": {
@@ -701,6 +713,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5__Be7__e3",
                                             "san": "e3",
                                             "color": "w",
                                             "explain": {
@@ -711,6 +724,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5__Be7__e3__O-O",
                                                 "san": "O-O",
                                                 "color": "b",
                                                 "explain": {
@@ -737,6 +751,7 @@ var REPERTOIRE_TREE = [
                             ]
                           },
                           {
+                            "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3",
                             "san": "Nf3",
                             "color": "w",
                             "explain": {
@@ -749,6 +764,7 @@ var REPERTOIRE_TREE = [
                             "variantColorId": 11,
                             "children": [
                               {
+                                "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5",
                                 "san": "c5",
                                 "color": "b",
                                 "explain": {
@@ -759,6 +775,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5",
                                     "san": "cxd5",
                                     "color": "w",
                                     "explain": {
@@ -769,6 +786,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5",
                                         "san": "Nxd5",
                                         "color": "b",
                                         "explain": {
@@ -779,6 +797,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5__e4",
                                             "san": "e4",
                                             "color": "w",
                                             "explain": {
@@ -789,6 +808,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5__e4__Nxc3",
                                                 "san": "Nxc3",
                                                 "color": "b",
                                                 "explain": {
@@ -817,6 +837,7 @@ var REPERTOIRE_TREE = [
                         ]
                       },
                       {
+                        "id": "d4__d5__c4__e6__Nc3__c5",
                         "san": "c5",
                         "color": "b",
                         "explain": {
@@ -829,6 +850,7 @@ var REPERTOIRE_TREE = [
                         "variantColorId": 4,
                         "children": [
                           {
+                            "id": "d4__d5__c4__e6__Nc3__c5__cxd5",
                             "san": "cxd5",
                             "color": "w",
                             "explain": {
@@ -839,6 +861,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5",
                                 "san": "exd5",
                                 "color": "b",
                                 "explain": {
@@ -849,6 +872,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3",
                                     "san": "Nf3",
                                     "color": "w",
                                     "explain": {
@@ -859,6 +883,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6",
                                         "san": "Nc6",
                                         "color": "b",
                                         "explain": {
@@ -869,6 +894,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6__g3",
                                             "san": "g3",
                                             "color": "w",
                                             "explain": {
@@ -879,6 +905,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6__g3__Nf6",
                                                 "san": "Nf6",
                                                 "color": "b",
                                                 "explain": {
@@ -911,6 +938,7 @@ var REPERTOIRE_TREE = [
                 ]
               },
               {
+                "id": "d4__d5__c4__dxc4",
                 "san": "dxc4",
                 "color": "b",
                 "explain": {
@@ -923,6 +951,7 @@ var REPERTOIRE_TREE = [
                 "variantColorId": 11,
                 "children": [
                   {
+                    "id": "d4__d5__c4__dxc4__Nf3",
                     "san": "Nf3",
                     "color": "w",
                     "explain": {
@@ -933,6 +962,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__d5__c4__dxc4__Nf3__Nf6",
                         "san": "Nf6",
                         "color": "b",
                         "explain": {
@@ -943,6 +973,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3",
                             "san": "e3",
                             "color": "w",
                             "explain": {
@@ -953,6 +984,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6",
                                 "san": "e6",
                                 "color": "b",
                                 "explain": {
@@ -963,6 +995,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4",
                                     "san": "Bxc4",
                                     "color": "w",
                                     "explain": {
@@ -973,6 +1006,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5",
                                         "san": "c5",
                                         "color": "b",
                                         "explain": {
@@ -983,6 +1017,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5__O-O",
                                             "san": "O-O",
                                             "color": "w",
                                             "explain": {
@@ -993,6 +1028,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5__O-O__a6",
                                                 "san": "a6",
                                                 "color": "b",
                                                 "explain": {
@@ -1025,6 +1061,7 @@ var REPERTOIRE_TREE = [
                 ]
               },
               {
+                "id": "d4__d5__c4__c6",
                 "san": "c6",
                 "color": "b",
                 "explain": {
@@ -1035,6 +1072,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "d4__d5__c4__c6__Nf3",
                     "san": "Nf3",
                     "color": "w",
                     "explain": {
@@ -1045,6 +1083,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__d5__c4__c6__Nf3__Nf6",
                         "san": "Nf6",
                         "color": "b",
                         "explain": {
@@ -1055,6 +1094,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3",
                             "san": "Nc3",
                             "color": "w",
                             "explain": {
@@ -1065,6 +1105,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4",
                                 "san": "dxc4",
                                 "color": "b",
                                 "explain": {
@@ -1077,6 +1118,7 @@ var REPERTOIRE_TREE = [
                                 "variantColorId": 5,
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4",
                                     "san": "a4",
                                     "color": "w",
                                     "explain": {
@@ -1087,6 +1129,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5",
                                         "san": "Bf5",
                                         "color": "b",
                                         "explain": {
@@ -1097,6 +1140,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5__e3",
                                             "san": "e3",
                                             "color": "w",
                                             "explain": {
@@ -1107,6 +1151,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5__e3__e6",
                                                 "san": "e6",
                                                 "color": "b",
                                                 "explain": {
@@ -1131,6 +1176,7 @@ var REPERTOIRE_TREE = [
                                 ]
                               },
                               {
+                                "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6",
                                 "san": "e6",
                                 "color": "b",
                                 "explain": {
@@ -1143,6 +1189,7 @@ var REPERTOIRE_TREE = [
                                 "variantColorId": 8,
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3",
                                     "san": "e3",
                                     "color": "w",
                                     "explain": {
@@ -1153,6 +1200,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7",
                                         "san": "Nbd7",
                                         "color": "b",
                                         "explain": {
@@ -1163,6 +1211,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7__Bd3",
                                             "san": "Bd3",
                                             "color": "w",
                                             "explain": {
@@ -1173,6 +1222,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7__Bd3__dxc4",
                                                 "san": "dxc4",
                                                 "color": "b",
                                                 "explain": {
@@ -1197,27 +1247,9 @@ var REPERTOIRE_TREE = [
                                 ]
                               }
                             ]
-                          }
-                        ]
-                      },
-                      {
-                        "san": "Nf6",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Desarrollo natural simetrico.",
-                          "ventaja": "Control central.",
-                          "debilidad": "Ninguna."
-                        },
-                        "kind": "trap",
-                        "trap": {
-                          "id": "h05-trampa-eslava-bf4-e4",
-                          "tipo": "ofensiva",
-                          "name": "Trampa del alfil en la Eslava (Bf4 + e4)"
-                        },
-                        "variantName": "Trampa del alfil en la Eslava (Bf4 + e4)",
-                        "variantColorId": "trap",
-                        "children": [
+                          },
                           {
+                            "id": "trap__h05-trampa-eslava-bf4-e4__6",
                             "san": "cxd5",
                             "color": "w",
                             "explain": {
@@ -1231,8 +1263,11 @@ var REPERTOIRE_TREE = [
                               "tipo": "ofensiva",
                               "name": "Trampa del alfil en la Eslava (Bf4 + e4)"
                             },
+                            "variantName": "Trampa del alfil en la Eslava (Bf4 + e4)",
+                            "variantColorId": "trap",
                             "children": [
                               {
+                                "id": "trap__h05-trampa-eslava-bf4-e4__7",
                                 "san": "cxd5",
                                 "color": "b",
                                 "explain": {
@@ -1248,6 +1283,7 @@ var REPERTOIRE_TREE = [
                                 },
                                 "children": [
                                   {
+                                    "id": "trap__h05-trampa-eslava-bf4-e4__8",
                                     "san": "Nc3",
                                     "color": "w",
                                     "explain": {
@@ -1263,6 +1299,7 @@ var REPERTOIRE_TREE = [
                                     },
                                     "children": [
                                       {
+                                        "id": "trap__h05-trampa-eslava-bf4-e4__9",
                                         "san": "Nc6",
                                         "color": "b",
                                         "explain": {
@@ -1278,6 +1315,7 @@ var REPERTOIRE_TREE = [
                                         },
                                         "children": [
                                           {
+                                            "id": "trap__h05-trampa-eslava-bf4-e4__10",
                                             "san": "Bf4",
                                             "color": "w",
                                             "explain": {
@@ -1293,6 +1331,7 @@ var REPERTOIRE_TREE = [
                                             },
                                             "children": [
                                               {
+                                                "id": "trap__h05-trampa-eslava-bf4-e4__11",
                                                 "san": "e6",
                                                 "color": "b",
                                                 "explain": {
@@ -1306,8 +1345,10 @@ var REPERTOIRE_TREE = [
                                                   "tipo": "ofensiva",
                                                   "name": "Trampa del alfil en la Eslava (Bf4 + e4)"
                                                 },
+                                                "isError": true,
                                                 "children": [
                                                   {
+                                                    "id": "trap__h05-trampa-eslava-bf4-e4__12",
                                                     "san": "e4",
                                                     "color": "w",
                                                     "explain": {
@@ -1323,6 +1364,7 @@ var REPERTOIRE_TREE = [
                                                     },
                                                     "children": [
                                                       {
+                                                        "id": "trap__h05-trampa-eslava-bf4-e4__13",
                                                         "san": "dxe4",
                                                         "color": "b",
                                                         "explain": {
@@ -1338,6 +1380,7 @@ var REPERTOIRE_TREE = [
                                                         },
                                                         "children": [
                                                           {
+                                                            "id": "trap__h05-trampa-eslava-bf4-e4__14",
                                                             "san": "Nxe4",
                                                             "color": "w",
                                                             "explain": {
@@ -1382,6 +1425,7 @@ var REPERTOIRE_TREE = [
                 ]
               },
               {
+                "id": "d4__d5__c4__e5",
                 "san": "e5",
                 "color": "b",
                 "explain": {
@@ -1394,6 +1438,7 @@ var REPERTOIRE_TREE = [
                 "variantColorId": 10,
                 "children": [
                   {
+                    "id": "d4__d5__c4__e5__dxe5",
                     "san": "dxe5",
                     "color": "w",
                     "explain": {
@@ -1404,6 +1449,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__d5__c4__e5__dxe5__d4",
                         "san": "d4",
                         "color": "b",
                         "explain": {
@@ -1414,6 +1460,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__d5__c4__e5__dxe5__d4__Nf3",
                             "san": "Nf3",
                             "color": "w",
                             "explain": {
@@ -1424,6 +1471,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6",
                                 "san": "Nc6",
                                 "color": "b",
                                 "explain": {
@@ -1434,6 +1482,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3",
                                     "san": "g3",
                                     "color": "w",
                                     "explain": {
@@ -1444,6 +1493,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3__Be6",
                                         "san": "Be6",
                                         "color": "b",
                                         "explain": {
@@ -1454,6 +1504,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3__Be6__Bg2",
                                             "san": "Bg2",
                                             "color": "w",
                                             "explain": {
@@ -1464,6 +1515,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3__Be6__Bg2__Qd7",
                                                 "san": "Qd7",
                                                 "color": "b",
                                                 "explain": {
@@ -1488,517 +1540,9 @@ var REPERTOIRE_TREE = [
                                 ]
                               }
                             ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "san": "Nc6",
-                "color": "b",
-                "explain": {
-                  "idea": "Defensa Chigorin: desarrolla el caballo de dama antes que el peon de rey, una idea poco ortodoxa que prioriza piezas activas sobre estructura solida.",
-                  "ventaja": "Desarrollo rapido y planteamiento dificil de preparar para blancas si no conoce la teoria concreta.",
-                  "debilidad": "Bloquea el propio peon c7, dificultando el plan clasico de sostener el centro con c6; objetivamente algo dudosa a nivel teorico."
-                },
-                "kind": "book",
-                "variantName": "Defensa Chigorin -- respuesta principal",
-                "variantColorId": 7,
-                "children": [
-                  {
-                    "san": "Nf3",
-                    "color": "w",
-                    "explain": {
-                      "idea": "Desarrolla y protege el peon d4 antes de decidir como responder al planteamiento poco convencional de negras.",
-                      "ventaja": "Jugada solida y flexible que no compromete nada.",
-                      "debilidad": "Ninguna relevante."
-                    },
-                    "kind": "book",
-                    "children": [
-                      {
-                        "san": "Bg4",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Clava el caballo de f3 para dificultar que blancas defienda d4 con comodidad.",
-                          "ventaja": "Pieza activa que presiona de inmediato el centro de blancas.",
-                          "debilidad": "Deja que blancas rompa la clavada con h3 y luego gane el par de alfiles si negras captura en f3."
-                        },
-                        "kind": "book",
-                        "children": [
+                          },
                           {
-                            "san": "cxd5",
-                            "color": "w",
-                            "explain": {
-                              "idea": "Cambia en el centro antes de que negras pueda sostenerlo, aprovechando que Nc6 ya bloquea la recaptura mas natural con el peon c.",
-                              "ventaja": "Gana un peon momentaneamente y fuerza a negras a recapturar con una pieza, perdiendo tiempo.",
-                              "debilidad": "Ninguna; es la continuacion mas fuerte y directa contra el planteamiento de negras."
-                            },
-                            "kind": "book",
-                            "children": [
-                              {
-                                "san": "Bxf3",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Antes de recapturar en d5, negras resuelve la clavada capturando el caballo, evitando que blancas gane un tiempo con h3 mas adelante.",
-                                  "ventaja": "Elimina una pieza defensora clave de blancas y desorganiza momentaneamente su estructura de peones de rey.",
-                                  "debilidad": "Cede el par de alfiles a cambio de nada material, una concesion estructural importante a largo plazo."
-                                },
-                                "kind": "book",
-                                "children": [
-                                  {
-                                    "san": "gxf3",
-                                    "color": "w",
-                                    "explain": {
-                                      "idea": "Recaptura con el peon, la unica opcion, doblando los propios peones de rey.",
-                                      "ventaja": "A cambio de los peones doblados, blancas se queda con el par de alfiles y una columna g semiabierta util para el ataque.",
-                                      "debilidad": "Estructura de peones de rey daniada, aunque el par de alfiles compensa sobradamente segun la teoria establecida."
-                                    },
-                                    "kind": "book",
-                                    "children": [
-                                      {
-                                        "san": "Qxd5",
-                                        "color": "b",
-                                        "explain": {
-                                          "idea": "Recupera el peon con la dama, la recaptura mas natural ya que el caballo de c6 impide hacerlo con el peon c.",
-                                          "ventaja": "Recupera el material inmediatamente.",
-                                          "debilidad": "La dama queda en el centro, expuesta a perder otro tiempo si blancas encuentra Nc3 con ataque."
-                                        },
-                                        "kind": "book",
-                                        "children": [
-                                          {
-                                            "san": "e3",
-                                            "color": "w",
-                                            "explain": {
-                                              "idea": "Prepara el desarrollo del alfil de rey y refuerza d4, sin prisa por atacar la dama de inmediato.",
-                                              "ventaja": "Jugada solida que consolida la ventaja estructural (par de alfiles) sin ningun riesgo.",
-                                              "debilidad": "Ninguna relevante."
-                                            },
-                                            "kind": "book",
-                                            "children": [
-                                              {
-                                                "san": "e5",
-                                                "color": "b",
-                                                "explain": {
-                                                  "idea": "Contraataca el centro de blancas antes de que consolide del todo su ventaja estructural, tipico plan activo de la Chigorin.",
-                                                  "ventaja": "Jugada mas combativa que quedarse pasivo, cuestiona d4 de inmediato.",
-                                                  "debilidad": "Puede abrir aun mas la posicion en un momento en el que blancas tiene el par de alfiles, generalmente favorable a la parte con los dos alfiles."
-                                                },
-                                                "kind": "book",
-                                                "leafOf": {
-                                                  "lineId": "h02-defensa-chigorin",
-                                                  "name": "Defensa Chigorin -- respuesta principal",
-                                                  "userColor": "w",
-                                                  "overview": "Familia Gambito de Dama: negras desarrolla el caballo de dama antes que el peon, rompiendo las reglas clasicas de la apertura a cambio de piezas rapidas y activas. Blancas responde con el plan mas claro: cambiar en d5 y aceptar doblar los propios peones a cambio del par de alfiles, una ventaja estructural a largo plazo frente al planteamiento poco ortodoxo de negras."
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "san": "Bf5",
-                "color": "b",
-                "explain": {
-                  "idea": "Defensa Baltica: saca el alfil de casillas claras antes que nada, resolviendo de raiz el problema estructural del Rehusado (el alfil encerrado tras ...e6).",
-                  "ventaja": "Pieza activa colocada fuera de la cadena de peones desde el principio, sin depender de ningun orden de jugadas posterior.",
-                  "debilidad": "Pierde un tiempo de desarrollo central y expone el alfil a ser atacado pronto con Qb3 o cxd5, ganando tiempo blancas."
-                },
-                "kind": "book",
-                "variantName": "Defensa Baltica",
-                "variantColorId": 8,
-                "children": [
-                  {
-                    "san": "Nc3",
-                    "color": "w",
-                    "explain": {
-                      "idea": "Desarrolla una pieza y refuerza el control sobre d5 antes de decidir el plan concreto contra el alfil.",
-                      "ventaja": "Pieza activa que mantiene la tension central sin comprometerse aun.",
-                      "debilidad": "Ninguna relevante en este orden de jugadas."
-                    },
-                    "kind": "book",
-                    "children": [
-                      {
-                        "san": "e6",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Completa el desarrollo del centro y abre la diagonal del alfil de rey, ya con el otro alfil colocado fuera con anterioridad.",
-                          "ventaja": "Estructura solida con el problema del alfil de casillas claras ya resuelto de antemano.",
-                          "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
-                        },
-                        "kind": "book",
-                        "children": [
-                          {
-                            "san": "Nf3",
-                            "color": "w",
-                            "explain": {
-                              "idea": "Desarrolla y prepara el enroque corto antes de decidir si atacar el alfil con Qb3.",
-                              "ventaja": "Jugada solida y flexible que no compromete nada.",
-                              "debilidad": "Ninguna relevante."
-                            },
-                            "kind": "book",
-                            "children": [
-                              {
-                                "san": "Nf6",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.",
-                                  "ventaja": "Jugada solida que no compromete nada.",
-                                  "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
-                                },
-                                "kind": "book",
-                                "children": [
-                                  {
-                                    "san": "Qb3",
-                                    "color": "w",
-                                    "explain": {
-                                      "idea": "Ataca simultaneamente el alfil de f5 (indirectamente, presionando b7) y el peon b7, el plan mas incomodo para negras en la Defensa Baltica.",
-                                      "ventaja": "Doble amenaza que fuerza a negras a reaccionar con precision, ganando tiempo e iniciativa para blancas.",
-                                      "debilidad": "Saca la dama pronto, lo que puede dar a negras un tiempo de desarrollo si encuentra la forma de atacarla mas adelante."
-                                    },
-                                    "kind": "book",
-                                    "children": [
-                                      {
-                                        "san": "Qc8",
-                                        "color": "b",
-                                        "explain": {
-                                          "idea": "Defiende b7 de forma indirecta y mantiene el alfil de f5 protegido, la respuesta mas solida a la amenaza de Qb3.",
-                                          "ventaja": "Resuelve ambas amenazas de golpe sin conceder ninguna concesion material.",
-                                          "debilidad": "La dama queda algo pasiva en c8, con menos actividad que si hubiera podido desarrollarse de forma mas natural."
-                                        },
-                                        "kind": "book",
-                                        "children": [
-                                          {
-                                            "san": "Bg5",
-                                            "color": "w",
-                                            "explain": {
-                                              "idea": "Clava el caballo de f6 y aumenta la presion sobre el centro, aprovechando la iniciativa ganada con Qb3.",
-                                              "ventaja": "Pieza activa fuera de la cadena de peones que mantiene la iniciativa de blancas.",
-                                              "debilidad": "Ninguna inmediata."
-                                            },
-                                            "kind": "book",
-                                            "children": [
-                                              {
-                                                "san": "c6",
-                                                "color": "b",
-                                                "explain": {
-                                                  "idea": "Refuerza d5 y prepara ...Nbd7, consolidando la posicion tras las primeras jugadas mas incomodas.",
-                                                  "ventaja": "Jugada solida que estabiliza el centro.",
-                                                  "debilidad": "Jugada algo pasiva que no desarrolla ninguna pieza nueva, dejando a blancas con la iniciativa del planteamiento."
-                                                },
-                                                "kind": "book",
-                                                "leafOf": {
-                                                  "lineId": "h02-defensa-baltica",
-                                                  "name": "Defensa Baltica",
-                                                  "userColor": "w",
-                                                  "overview": "Familia Gambito de Dama: negras saca el alfil de casillas claras antes que nada, evitando por completo el problema estructural tipico del Rehusado, a costa de ceder tiempo y de exponer el alfil a ser atacado pronto. Blancas responde con un plan de desarrollo natural y ganancia de tiempo con Qb3, apuntando tanto al alfil como al flanco de dama de negras."
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "san": "c5",
-                "color": "b",
-                "explain": {
-                  "idea": "Defensa Simetrica: contraataca el centro de blancas en vez de sostener o capturar en c4, buscando cambios inmediatos y una posicion abierta.",
-                  "ventaja": "Plan dinamico que evita las estructuras mas conocidas del Rehusado o la Eslava.",
-                  "debilidad": "Tras los cambios centrales, la dama de negras puede acabar perdiendo tiempos, similar a lo que ocurre en la Escandinava."
-                },
-                "kind": "book",
-                "variantName": "Defensa Simetrica (2...c5)",
-                "variantColorId": 0,
-                "children": [
-                  {
-                    "san": "cxd5",
-                    "color": "w",
-                    "explain": {
-                      "idea": "Cambia en el centro antes de que negras pueda definir la estructura a su gusto.",
-                      "ventaja": "Fuerza a negras a recapturar, casi siempre con la dama, ganando un tiempo de desarrollo.",
-                      "debilidad": "Ninguna; es la continuacion mas fuerte y natural."
-                    },
-                    "kind": "book",
-                    "children": [
-                      {
-                        "san": "Qxd5",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Recaptura con la dama, la unica pieza disponible de inmediato.",
-                          "ventaja": "Recupera el material igualado.",
-                          "debilidad": "La dama queda en el centro, expuesta a perder otro tiempo con Nc3 -- el mismo problema estructural que la Escandinava."
-                        },
-                        "kind": "book",
-                        "children": [
-                          {
-                            "san": "Nc3",
-                            "color": "w",
-                            "explain": {
-                              "idea": "Desarrolla atacando la dama de negras, ganando un tiempo de desarrollo gratis.",
-                              "ventaja": "Pieza activa con tiempo ganado, tipico de todas las lineas donde la dama rival sale pronto al centro.",
-                              "debilidad": "Ninguna; es la jugada mas natural y fuerte."
-                            },
-                            "kind": "book",
-                            "children": [
-                              {
-                                "san": "Qd6",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Retira la dama a una casilla segura que mantiene la vista sobre el centro y el flanco de rey.",
-                                  "ventaja": "Casilla razonablemente activa y segura para la dama.",
-                                  "debilidad": "La dama sigue relativamente expuesta y puede volver a perder tiempos mas adelante."
-                                },
-                                "kind": "book",
-                                "children": [
-                                  {
-                                    "san": "Nf3",
-                                    "color": "w",
-                                    "explain": {
-                                      "idea": "Desarrolla y prepara el enroque corto, completando con rapidez el desarrollo de piezas menores.",
-                                      "ventaja": "Jugada solida que mantiene la iniciativa ganada con los tiempos anteriores.",
-                                      "debilidad": "Ninguna relevante."
-                                    },
-                                    "kind": "book",
-                                    "children": [
-                                      {
-                                        "san": "Nf6",
-                                        "color": "b",
-                                        "explain": {
-                                          "idea": "Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.",
-                                          "ventaja": "Jugada solida que no compromete nada.",
-                                          "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
-                                        },
-                                        "kind": "book",
-                                        "children": [
-                                          {
-                                            "san": "e4",
-                                            "color": "w",
-                                            "explain": {
-                                              "idea": "Ocupa el centro con el segundo peon central, ganando mucho espacio mientras negras sigue sin completar el desarrollo.",
-                                              "ventaja": "Centro amplio y fuerte, la compensacion natural de blancas por los tiempos ganados con la dama rival.",
-                                              "debilidad": "Ninguna relevante; es la continuacion mas ambiciosa y fuerte."
-                                            },
-                                            "kind": "book",
-                                            "children": [
-                                              {
-                                                "san": "cxd4",
-                                                "color": "b",
-                                                "explain": {
-                                                  "idea": "Cambia el peon de flanco de dama que ya no puede sostener con comodidad, simplificando la estructura central.",
-                                                  "ventaja": "Resuelve la tension en el flanco de dama antes de que blancas la aumente mas.",
-                                                  "debilidad": "Cede aun mas espacio central a blancas, que recuperara el peon con ventaja de desarrollo."
-                                                },
-                                                "kind": "book",
-                                                "leafOf": {
-                                                  "lineId": "h02-defensa-simetrica",
-                                                  "name": "Defensa Simetrica (2...c5)",
-                                                  "userColor": "w",
-                                                  "overview": "Familia Gambito de Dama: negras contraataca de inmediato el centro con c5 en vez de sostener o capturar en c4, buscando cambios rapidos y una posicion abierta y dinamica. Blancas responde cambiando en d5 y desarrollando con naturalidad, quedando con una ligera ventaja de espacio y desarrollo gracias a los tiempos que negras pierde recolocando la dama."
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "san": "Nf6",
-                "color": "b",
-                "explain": {
-                  "idea": "Defensa Marshall: ignora por completo la oferta de peon en c4, desarrollando de inmediato en vez de decidir el plan estructural.",
-                  "ventaja": "Desarrollo rapido que evita tener que decidir de entrada entre el Rehusado, la Eslava o el Aceptado.",
-                  "debilidad": "No hace nada por defender d5 ni disputar c4, permitiendo a blancas capturar en d5 con ganancia de tiempo y espacio."
-                },
-                "kind": "book",
-                "variantName": "Defensa Marshall (2...Nf6)",
-                "variantColorId": 9,
-                "children": [
-                  {
-                    "san": "cxd5",
-                    "color": "w",
-                    "explain": {
-                      "idea": "Captura el peon central antes de que negras pueda sostenerlo, la respuesta mas natural y fuerte contra este planteamiento.",
-                      "ventaja": "Gana un peon momentaneamente y fuerza a negras a recapturar, perdiendo tiempo.",
-                      "debilidad": "Ninguna; es la continuacion mas directa y fuerte."
-                    },
-                    "kind": "book",
-                    "children": [
-                      {
-                        "san": "Nxd5",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Recupera el peon con el caballo, la unica recaptura razonable ya desarrollada.",
-                          "ventaja": "Recupera el material y coloca el caballo en una casilla central.",
-                          "debilidad": "El caballo en d5 sera blanco de e4 en la siguiente jugada, obligandolo a retroceder y perdiendo otro tiempo."
-                        },
-                        "kind": "book",
-                        "children": [
-                          {
-                            "san": "Nf3",
-                            "color": "w",
-                            "explain": {
-                              "idea": "Desarrolla antes de ocupar el centro con e4, completando el desarrollo de piezas menores con naturalidad.",
-                              "ventaja": "Jugada flexible que prepara el enroque corto sin ninguna prisa.",
-                              "debilidad": "Ninguna relevante."
-                            },
-                            "kind": "book",
-                            "children": [
-                              {
-                                "san": "g6",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Prepara el fianchetto del alfil de rey, el plan mas habitual de negras dentro de la Defensa Marshall para compensar la falta de espacio central.",
-                                  "ventaja": "El alfil en g7 controlara la larga diagonal, compensando en parte la ventaja de espacio de blancas.",
-                                  "debilidad": "Debilita ligeramente las casillas oscuras alrededor del futuro rey."
-                                },
-                                "kind": "book",
-                                "children": [
-                                  {
-                                    "san": "e4",
-                                    "color": "w",
-                                    "explain": {
-                                      "idea": "Ocupa el centro con el segundo peon central, atacando de paso al caballo de d5 y ganando otro tiempo mas.",
-                                      "ventaja": "Centro amplio y fuerte, la clara ventaja de espacio que caracteriza toda la Defensa Marshall a favor de blancas.",
-                                      "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
-                                    },
-                                    "kind": "book",
-                                    "children": [
-                                      {
-                                        "san": "Nb6",
-                                        "color": "b",
-                                        "explain": {
-                                          "idea": "Retira el caballo a una casilla razonable, presionando de reojo el peon c4 ya avanzado a e4... realmente vigilando d5 y c4 desde el flanco.",
-                                          "ventaja": "Pieza que sigue participando en la partida sin perder mas tiempo.",
-                                          "debilidad": "Ninguna relevante; es la retirada mas natural."
-                                        },
-                                        "kind": "book",
-                                        "children": [
-                                          {
-                                            "san": "Nc3",
-                                            "color": "w",
-                                            "explain": {
-                                              "idea": "Desarrolla la ultima pieza menor del flanco de dama, completando un desarrollo rapido y comodo con una clara ventaja de espacio.",
-                                              "ventaja": "Pieza activa que corona un desarrollo modelo tras los tiempos ganados en las primeras jugadas.",
-                                              "debilidad": "Ninguna relevante."
-                                            },
-                                            "kind": "book",
-                                            "children": [
-                                              {
-                                                "san": "Bg7",
-                                                "color": "b",
-                                                "explain": {
-                                                  "idea": "Completa el fianchetto, la ultima pieza menor de desarrollo natural antes del enroque.",
-                                                  "ventaja": "Presion de largo alcance sobre el centro desde la larga diagonal, compensando en parte la falta de espacio.",
-                                                  "debilidad": "Ninguna relevante; es la continuacion mas natural para completar el desarrollo."
-                                                },
-                                                "kind": "book",
-                                                "leafOf": {
-                                                  "lineId": "h02-defensa-marshall",
-                                                  "name": "Defensa Marshall (2...Nf6)",
-                                                  "userColor": "w",
-                                                  "overview": "Familia Gambito de Dama: negras ignora por completo el peon c4 y desarrolla de inmediato el caballo de rey, dejando que blancas capture en d5 con ganancia de tiempo. Blancas responde con el plan mas natural: recuperar el peon, ocupar el centro con e4 y desarrollar con comodidad, quedando con una clara ventaja de espacio frente a un planteamiento poco exigente de negras."
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "san": "e5",
-                "color": "b",
-                "explain": {
-                  "idea": "Negras responde con el Contragambito Albin, ofreciendo un peon a cambio de una cuna central en d4.",
-                  "ventaja": "Juego dinamico y contragolpe inmediato en el centro.",
-                  "debilidad": "Cede un peon a cambio de la iniciativa."
-                },
-                "kind": "trap",
-                "trap": {
-                  "id": "h05-trampa-lasker-albin",
-                  "tipo": "defensiva",
-                  "name": "Trampa Lasker en el Contragambito Albin"
-                },
-                "variantName": "Trampa Lasker en el Contragambito Albin",
-                "variantColorId": "trap",
-                "children": [
-                  {
-                    "san": "dxe5",
-                    "color": "w",
-                    "explain": {
-                      "idea": "Blancas acepta el gambito capturando el peon de e5.",
-                      "ventaja": "Gana un peon.",
-                      "debilidad": "Ninguna inmediata; el verdadero peligro llega en la jugada siguiente si blancas no juega con precision."
-                    },
-                    "kind": "trap",
-                    "trap": {
-                      "id": "h05-trampa-lasker-albin",
-                      "tipo": "defensiva",
-                      "name": "Trampa Lasker en el Contragambito Albin"
-                    },
-                    "children": [
-                      {
-                        "san": "d4",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Negras avanza el peon de dama, clavando la cuna caracteristica del Contragambito Albin, que resta la casilla c3 al caballo de blancas y cramponea el flanco de dama.",
-                          "ventaja": "El peon de d4 es mas fuerte de lo que parece: cramponea la posicion blanca.",
-                          "debilidad": "Ninguna en esta posicion; blancas debe jugar 4.Nf3 (mejor y mas segura) para no caer en la Trampa Lasker."
-                        },
-                        "kind": "trap",
-                        "trap": {
-                          "id": "h05-trampa-lasker-albin",
-                          "tipo": "defensiva",
-                          "name": "Trampa Lasker en el Contragambito Albin"
-                        },
-                        "children": [
-                          {
+                            "id": "trap__h05-trampa-lasker-albin__6",
                             "san": "e3",
                             "color": "w",
                             "explain": {
@@ -2012,8 +1556,12 @@ var REPERTOIRE_TREE = [
                               "tipo": "defensiva",
                               "name": "Trampa Lasker en el Contragambito Albin"
                             },
+                            "isError": true,
+                            "variantName": "Trampa Lasker en el Contragambito Albin",
+                            "variantColorId": "trap",
                             "children": [
                               {
+                                "id": "trap__h05-trampa-lasker-albin__7",
                                 "san": "Bb4+",
                                 "color": "b",
                                 "explain": {
@@ -2029,6 +1577,7 @@ var REPERTOIRE_TREE = [
                                 },
                                 "children": [
                                   {
+                                    "id": "trap__h05-trampa-lasker-albin__8",
                                     "san": "Bd2",
                                     "color": "w",
                                     "explain": {
@@ -2044,6 +1593,7 @@ var REPERTOIRE_TREE = [
                                     },
                                     "children": [
                                       {
+                                        "id": "trap__h05-trampa-lasker-albin__9",
                                         "san": "dxe3",
                                         "color": "b",
                                         "explain": {
@@ -2059,6 +1609,7 @@ var REPERTOIRE_TREE = [
                                         },
                                         "children": [
                                           {
+                                            "id": "trap__h05-trampa-lasker-albin__10",
                                             "san": "Bxb4",
                                             "color": "w",
                                             "explain": {
@@ -2072,8 +1623,10 @@ var REPERTOIRE_TREE = [
                                               "tipo": "defensiva",
                                               "name": "Trampa Lasker en el Contragambito Albin"
                                             },
+                                            "isError": true,
                                             "children": [
                                               {
+                                                "id": "trap__h05-trampa-lasker-albin__11",
                                                 "san": "exf2+",
                                                 "color": "b",
                                                 "explain": {
@@ -2089,6 +1642,7 @@ var REPERTOIRE_TREE = [
                                                 },
                                                 "children": [
                                                   {
+                                                    "id": "trap__h05-trampa-lasker-albin__12",
                                                     "san": "Ke2",
                                                     "color": "w",
                                                     "explain": {
@@ -2104,6 +1658,7 @@ var REPERTOIRE_TREE = [
                                                     },
                                                     "children": [
                                                       {
+                                                        "id": "trap__h05-trampa-lasker-albin__13",
                                                         "san": "fxg1=N+",
                                                         "color": "b",
                                                         "explain": {
@@ -2144,10 +1699,503 @@ var REPERTOIRE_TREE = [
                     ]
                   }
                 ]
+              },
+              {
+                "id": "d4__d5__c4__Nc6",
+                "san": "Nc6",
+                "color": "b",
+                "explain": {
+                  "idea": "Defensa Chigorin: desarrolla el caballo de dama antes que el peon de rey, una idea poco ortodoxa que prioriza piezas activas sobre estructura solida.",
+                  "ventaja": "Desarrollo rapido y planteamiento dificil de preparar para blancas si no conoce la teoria concreta.",
+                  "debilidad": "Bloquea el propio peon c7, dificultando el plan clasico de sostener el centro con c6; objetivamente algo dudosa a nivel teorico."
+                },
+                "kind": "book",
+                "variantName": "Defensa Chigorin -- respuesta principal",
+                "variantColorId": 7,
+                "children": [
+                  {
+                    "id": "d4__d5__c4__Nc6__Nf3",
+                    "san": "Nf3",
+                    "color": "w",
+                    "explain": {
+                      "idea": "Desarrolla y protege el peon d4 antes de decidir como responder al planteamiento poco convencional de negras.",
+                      "ventaja": "Jugada solida y flexible que no compromete nada.",
+                      "debilidad": "Ninguna relevante."
+                    },
+                    "kind": "book",
+                    "children": [
+                      {
+                        "id": "d4__d5__c4__Nc6__Nf3__Bg4",
+                        "san": "Bg4",
+                        "color": "b",
+                        "explain": {
+                          "idea": "Clava el caballo de f3 para dificultar que blancas defienda d4 con comodidad.",
+                          "ventaja": "Pieza activa que presiona de inmediato el centro de blancas.",
+                          "debilidad": "Deja que blancas rompa la clavada con h3 y luego gane el par de alfiles si negras captura en f3."
+                        },
+                        "kind": "book",
+                        "children": [
+                          {
+                            "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5",
+                            "san": "cxd5",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Cambia en el centro antes de que negras pueda sostenerlo, aprovechando que Nc6 ya bloquea la recaptura mas natural con el peon c.",
+                              "ventaja": "Gana un peon momentaneamente y fuerza a negras a recapturar con una pieza, perdiendo tiempo.",
+                              "debilidad": "Ninguna; es la continuacion mas fuerte y directa contra el planteamiento de negras."
+                            },
+                            "kind": "book",
+                            "children": [
+                              {
+                                "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3",
+                                "san": "Bxf3",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "Antes de recapturar en d5, negras resuelve la clavada capturando el caballo, evitando que blancas gane un tiempo con h3 mas adelante.",
+                                  "ventaja": "Elimina una pieza defensora clave de blancas y desorganiza momentaneamente su estructura de peones de rey.",
+                                  "debilidad": "Cede el par de alfiles a cambio de nada material, una concesion estructural importante a largo plazo."
+                                },
+                                "kind": "book",
+                                "children": [
+                                  {
+                                    "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3",
+                                    "san": "gxf3",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Recaptura con el peon, la unica opcion, doblando los propios peones de rey.",
+                                      "ventaja": "A cambio de los peones doblados, blancas se queda con el par de alfiles y una columna g semiabierta util para el ataque.",
+                                      "debilidad": "Estructura de peones de rey daniada, aunque el par de alfiles compensa sobradamente segun la teoria establecida."
+                                    },
+                                    "kind": "book",
+                                    "children": [
+                                      {
+                                        "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3__Qxd5",
+                                        "san": "Qxd5",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "Recupera el peon con la dama, la recaptura mas natural ya que el caballo de c6 impide hacerlo con el peon c.",
+                                          "ventaja": "Recupera el material inmediatamente.",
+                                          "debilidad": "La dama queda en el centro, expuesta a perder otro tiempo si blancas encuentra Nc3 con ataque."
+                                        },
+                                        "kind": "book",
+                                        "children": [
+                                          {
+                                            "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3__Qxd5__e3",
+                                            "san": "e3",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Prepara el desarrollo del alfil de rey y refuerza d4, sin prisa por atacar la dama de inmediato.",
+                                              "ventaja": "Jugada solida que consolida la ventaja estructural (par de alfiles) sin ningun riesgo.",
+                                              "debilidad": "Ninguna relevante."
+                                            },
+                                            "kind": "book",
+                                            "children": [
+                                              {
+                                                "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3__Qxd5__e3__e5",
+                                                "san": "e5",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Contraataca el centro de blancas antes de que consolide del todo su ventaja estructural, tipico plan activo de la Chigorin.",
+                                                  "ventaja": "Jugada mas combativa que quedarse pasivo, cuestiona d4 de inmediato.",
+                                                  "debilidad": "Puede abrir aun mas la posicion en un momento en el que blancas tiene el par de alfiles, generalmente favorable a la parte con los dos alfiles."
+                                                },
+                                                "kind": "book",
+                                                "leafOf": {
+                                                  "lineId": "h02-defensa-chigorin",
+                                                  "name": "Defensa Chigorin -- respuesta principal",
+                                                  "userColor": "w",
+                                                  "overview": "Familia Gambito de Dama: negras desarrolla el caballo de dama antes que el peon, rompiendo las reglas clasicas de la apertura a cambio de piezas rapidas y activas. Blancas responde con el plan mas claro: cambiar en d5 y aceptar doblar los propios peones a cambio del par de alfiles, una ventaja estructural a largo plazo frente al planteamiento poco ortodoxo de negras."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d4__d5__c4__Bf5",
+                "san": "Bf5",
+                "color": "b",
+                "explain": {
+                  "idea": "Defensa Baltica: saca el alfil de casillas claras antes que nada, resolviendo de raiz el problema estructural del Rehusado (el alfil encerrado tras ...e6).",
+                  "ventaja": "Pieza activa colocada fuera de la cadena de peones desde el principio, sin depender de ningun orden de jugadas posterior.",
+                  "debilidad": "Pierde un tiempo de desarrollo central y expone el alfil a ser atacado pronto con Qb3 o cxd5, ganando tiempo blancas."
+                },
+                "kind": "book",
+                "variantName": "Defensa Baltica",
+                "variantColorId": 8,
+                "children": [
+                  {
+                    "id": "d4__d5__c4__Bf5__Nc3",
+                    "san": "Nc3",
+                    "color": "w",
+                    "explain": {
+                      "idea": "Desarrolla una pieza y refuerza el control sobre d5 antes de decidir el plan concreto contra el alfil.",
+                      "ventaja": "Pieza activa que mantiene la tension central sin comprometerse aun.",
+                      "debilidad": "Ninguna relevante en este orden de jugadas."
+                    },
+                    "kind": "book",
+                    "children": [
+                      {
+                        "id": "d4__d5__c4__Bf5__Nc3__e6",
+                        "san": "e6",
+                        "color": "b",
+                        "explain": {
+                          "idea": "Completa el desarrollo del centro y abre la diagonal del alfil de rey, ya con el otro alfil colocado fuera con anterioridad.",
+                          "ventaja": "Estructura solida con el problema del alfil de casillas claras ya resuelto de antemano.",
+                          "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
+                        },
+                        "kind": "book",
+                        "children": [
+                          {
+                            "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3",
+                            "san": "Nf3",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Desarrolla y prepara el enroque corto antes de decidir si atacar el alfil con Qb3.",
+                              "ventaja": "Jugada solida y flexible que no compromete nada.",
+                              "debilidad": "Ninguna relevante."
+                            },
+                            "kind": "book",
+                            "children": [
+                              {
+                                "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6",
+                                "san": "Nf6",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.",
+                                  "ventaja": "Jugada solida que no compromete nada.",
+                                  "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
+                                },
+                                "kind": "book",
+                                "children": [
+                                  {
+                                    "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3",
+                                    "san": "Qb3",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Ataca simultaneamente el alfil de f5 (indirectamente, presionando b7) y el peon b7, el plan mas incomodo para negras en la Defensa Baltica.",
+                                      "ventaja": "Doble amenaza que fuerza a negras a reaccionar con precision, ganando tiempo e iniciativa para blancas.",
+                                      "debilidad": "Saca la dama pronto, lo que puede dar a negras un tiempo de desarrollo si encuentra la forma de atacarla mas adelante."
+                                    },
+                                    "kind": "book",
+                                    "children": [
+                                      {
+                                        "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3__Qc8",
+                                        "san": "Qc8",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "Defiende b7 de forma indirecta y mantiene el alfil de f5 protegido, la respuesta mas solida a la amenaza de Qb3.",
+                                          "ventaja": "Resuelve ambas amenazas de golpe sin conceder ninguna concesion material.",
+                                          "debilidad": "La dama queda algo pasiva en c8, con menos actividad que si hubiera podido desarrollarse de forma mas natural."
+                                        },
+                                        "kind": "book",
+                                        "children": [
+                                          {
+                                            "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3__Qc8__Bg5",
+                                            "san": "Bg5",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Clava el caballo de f6 y aumenta la presion sobre el centro, aprovechando la iniciativa ganada con Qb3.",
+                                              "ventaja": "Pieza activa fuera de la cadena de peones que mantiene la iniciativa de blancas.",
+                                              "debilidad": "Ninguna inmediata."
+                                            },
+                                            "kind": "book",
+                                            "children": [
+                                              {
+                                                "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3__Qc8__Bg5__c6",
+                                                "san": "c6",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Refuerza d5 y prepara ...Nbd7, consolidando la posicion tras las primeras jugadas mas incomodas.",
+                                                  "ventaja": "Jugada solida que estabiliza el centro.",
+                                                  "debilidad": "Jugada algo pasiva que no desarrolla ninguna pieza nueva, dejando a blancas con la iniciativa del planteamiento."
+                                                },
+                                                "kind": "book",
+                                                "leafOf": {
+                                                  "lineId": "h02-defensa-baltica",
+                                                  "name": "Defensa Baltica",
+                                                  "userColor": "w",
+                                                  "overview": "Familia Gambito de Dama: negras saca el alfil de casillas claras antes que nada, evitando por completo el problema estructural tipico del Rehusado, a costa de ceder tiempo y de exponer el alfil a ser atacado pronto. Blancas responde con un plan de desarrollo natural y ganancia de tiempo con Qb3, apuntando tanto al alfil como al flanco de dama de negras."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d4__d5__c4__c5",
+                "san": "c5",
+                "color": "b",
+                "explain": {
+                  "idea": "Defensa Simetrica: contraataca el centro de blancas en vez de sostener o capturar en c4, buscando cambios inmediatos y una posicion abierta.",
+                  "ventaja": "Plan dinamico que evita las estructuras mas conocidas del Rehusado o la Eslava.",
+                  "debilidad": "Tras los cambios centrales, la dama de negras puede acabar perdiendo tiempos, similar a lo que ocurre en la Escandinava."
+                },
+                "kind": "book",
+                "variantName": "Defensa Simetrica (2...c5)",
+                "variantColorId": 0,
+                "children": [
+                  {
+                    "id": "d4__d5__c4__c5__cxd5",
+                    "san": "cxd5",
+                    "color": "w",
+                    "explain": {
+                      "idea": "Cambia en el centro antes de que negras pueda definir la estructura a su gusto.",
+                      "ventaja": "Fuerza a negras a recapturar, casi siempre con la dama, ganando un tiempo de desarrollo.",
+                      "debilidad": "Ninguna; es la continuacion mas fuerte y natural."
+                    },
+                    "kind": "book",
+                    "children": [
+                      {
+                        "id": "d4__d5__c4__c5__cxd5__Qxd5",
+                        "san": "Qxd5",
+                        "color": "b",
+                        "explain": {
+                          "idea": "Recaptura con la dama, la unica pieza disponible de inmediato.",
+                          "ventaja": "Recupera el material igualado.",
+                          "debilidad": "La dama queda en el centro, expuesta a perder otro tiempo con Nc3 -- el mismo problema estructural que la Escandinava."
+                        },
+                        "kind": "book",
+                        "children": [
+                          {
+                            "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3",
+                            "san": "Nc3",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Desarrolla atacando la dama de negras, ganando un tiempo de desarrollo gratis.",
+                              "ventaja": "Pieza activa con tiempo ganado, tipico de todas las lineas donde la dama rival sale pronto al centro.",
+                              "debilidad": "Ninguna; es la jugada mas natural y fuerte."
+                            },
+                            "kind": "book",
+                            "children": [
+                              {
+                                "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6",
+                                "san": "Qd6",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "Retira la dama a una casilla segura que mantiene la vista sobre el centro y el flanco de rey.",
+                                  "ventaja": "Casilla razonablemente activa y segura para la dama.",
+                                  "debilidad": "La dama sigue relativamente expuesta y puede volver a perder tiempos mas adelante."
+                                },
+                                "kind": "book",
+                                "children": [
+                                  {
+                                    "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3",
+                                    "san": "Nf3",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Desarrolla y prepara el enroque corto, completando con rapidez el desarrollo de piezas menores.",
+                                      "ventaja": "Jugada solida que mantiene la iniciativa ganada con los tiempos anteriores.",
+                                      "debilidad": "Ninguna relevante."
+                                    },
+                                    "kind": "book",
+                                    "children": [
+                                      {
+                                        "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3__Nf6",
+                                        "san": "Nf6",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "Desarrolla la pieza mas natural, presionando e4 y preparando el enroque corto.",
+                                          "ventaja": "Jugada solida que no compromete nada.",
+                                          "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
+                                        },
+                                        "kind": "book",
+                                        "children": [
+                                          {
+                                            "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3__Nf6__e4",
+                                            "san": "e4",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Ocupa el centro con el segundo peon central, ganando mucho espacio mientras negras sigue sin completar el desarrollo.",
+                                              "ventaja": "Centro amplio y fuerte, la compensacion natural de blancas por los tiempos ganados con la dama rival.",
+                                              "debilidad": "Ninguna relevante; es la continuacion mas ambiciosa y fuerte."
+                                            },
+                                            "kind": "book",
+                                            "children": [
+                                              {
+                                                "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3__Nf6__e4__cxd4",
+                                                "san": "cxd4",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Cambia el peon de flanco de dama que ya no puede sostener con comodidad, simplificando la estructura central.",
+                                                  "ventaja": "Resuelve la tension en el flanco de dama antes de que blancas la aumente mas.",
+                                                  "debilidad": "Cede aun mas espacio central a blancas, que recuperara el peon con ventaja de desarrollo."
+                                                },
+                                                "kind": "book",
+                                                "leafOf": {
+                                                  "lineId": "h02-defensa-simetrica",
+                                                  "name": "Defensa Simetrica (2...c5)",
+                                                  "userColor": "w",
+                                                  "overview": "Familia Gambito de Dama: negras contraataca de inmediato el centro con c5 en vez de sostener o capturar en c4, buscando cambios rapidos y una posicion abierta y dinamica. Blancas responde cambiando en d5 y desarrollando con naturalidad, quedando con una ligera ventaja de espacio y desarrollo gracias a los tiempos que negras pierde recolocando la dama."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "d4__d5__c4__Nf6",
+                "san": "Nf6",
+                "color": "b",
+                "explain": {
+                  "idea": "Defensa Marshall: ignora por completo la oferta de peon en c4, desarrollando de inmediato en vez de decidir el plan estructural.",
+                  "ventaja": "Desarrollo rapido que evita tener que decidir de entrada entre el Rehusado, la Eslava o el Aceptado.",
+                  "debilidad": "No hace nada por defender d5 ni disputar c4, permitiendo a blancas capturar en d5 con ganancia de tiempo y espacio."
+                },
+                "kind": "book",
+                "variantName": "Defensa Marshall (2...Nf6)",
+                "variantColorId": 9,
+                "children": [
+                  {
+                    "id": "d4__d5__c4__Nf6__cxd5",
+                    "san": "cxd5",
+                    "color": "w",
+                    "explain": {
+                      "idea": "Captura el peon central antes de que negras pueda sostenerlo, la respuesta mas natural y fuerte contra este planteamiento.",
+                      "ventaja": "Gana un peon momentaneamente y fuerza a negras a recapturar, perdiendo tiempo.",
+                      "debilidad": "Ninguna; es la continuacion mas directa y fuerte."
+                    },
+                    "kind": "book",
+                    "children": [
+                      {
+                        "id": "d4__d5__c4__Nf6__cxd5__Nxd5",
+                        "san": "Nxd5",
+                        "color": "b",
+                        "explain": {
+                          "idea": "Recupera el peon con el caballo, la unica recaptura razonable ya desarrollada.",
+                          "ventaja": "Recupera el material y coloca el caballo en una casilla central.",
+                          "debilidad": "El caballo en d5 sera blanco de e4 en la siguiente jugada, obligandolo a retroceder y perdiendo otro tiempo."
+                        },
+                        "kind": "book",
+                        "children": [
+                          {
+                            "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3",
+                            "san": "Nf3",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Desarrolla antes de ocupar el centro con e4, completando el desarrollo de piezas menores con naturalidad.",
+                              "ventaja": "Jugada flexible que prepara el enroque corto sin ninguna prisa.",
+                              "debilidad": "Ninguna relevante."
+                            },
+                            "kind": "book",
+                            "children": [
+                              {
+                                "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6",
+                                "san": "g6",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "Prepara el fianchetto del alfil de rey, el plan mas habitual de negras dentro de la Defensa Marshall para compensar la falta de espacio central.",
+                                  "ventaja": "El alfil en g7 controlara la larga diagonal, compensando en parte la ventaja de espacio de blancas.",
+                                  "debilidad": "Debilita ligeramente las casillas oscuras alrededor del futuro rey."
+                                },
+                                "kind": "book",
+                                "children": [
+                                  {
+                                    "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4",
+                                    "san": "e4",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Ocupa el centro con el segundo peon central, atacando de paso al caballo de d5 y ganando otro tiempo mas.",
+                                      "ventaja": "Centro amplio y fuerte, la clara ventaja de espacio que caracteriza toda la Defensa Marshall a favor de blancas.",
+                                      "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
+                                    },
+                                    "kind": "book",
+                                    "children": [
+                                      {
+                                        "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4__Nb6",
+                                        "san": "Nb6",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "Retira el caballo a una casilla razonable, presionando de reojo el peon c4 ya avanzado a e4... realmente vigilando d5 y c4 desde el flanco.",
+                                          "ventaja": "Pieza que sigue participando en la partida sin perder mas tiempo.",
+                                          "debilidad": "Ninguna relevante; es la retirada mas natural."
+                                        },
+                                        "kind": "book",
+                                        "children": [
+                                          {
+                                            "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4__Nb6__Nc3",
+                                            "san": "Nc3",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Desarrolla la ultima pieza menor del flanco de dama, completando un desarrollo rapido y comodo con una clara ventaja de espacio.",
+                                              "ventaja": "Pieza activa que corona un desarrollo modelo tras los tiempos ganados en las primeras jugadas.",
+                                              "debilidad": "Ninguna relevante."
+                                            },
+                                            "kind": "book",
+                                            "children": [
+                                              {
+                                                "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4__Nb6__Nc3__Bg7",
+                                                "san": "Bg7",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Completa el fianchetto, la ultima pieza menor de desarrollo natural antes del enroque.",
+                                                  "ventaja": "Presion de largo alcance sobre el centro desde la larga diagonal, compensando en parte la falta de espacio.",
+                                                  "debilidad": "Ninguna relevante; es la continuacion mas natural para completar el desarrollo."
+                                                },
+                                                "kind": "book",
+                                                "leafOf": {
+                                                  "lineId": "h02-defensa-marshall",
+                                                  "name": "Defensa Marshall (2...Nf6)",
+                                                  "userColor": "w",
+                                                  "overview": "Familia Gambito de Dama: negras ignora por completo el peon c4 y desarrolla de inmediato el caballo de rey, dejando que blancas capture en d5 con ganancia de tiempo. Blancas responde con el plan mas natural: recuperar el peon, ocupar el centro con e4 y desarrollar con comodidad, quedando con una clara ventaja de espacio frente a un planteamiento poco exigente de negras."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
           {
+            "id": "d4__d5__Bf4",
             "san": "Bf4",
             "color": "w",
             "explain": {
@@ -2160,6 +2208,7 @@ var REPERTOIRE_TREE = [
             "variantColorId": 9,
             "children": [
               {
+                "id": "d4__d5__Bf4__Nf6",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -2170,6 +2219,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "d4__d5__Bf4__Nf6__e3",
                     "san": "e3",
                     "color": "w",
                     "explain": {
@@ -2180,6 +2230,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__d5__Bf4__Nf6__e3__e6",
                         "san": "e6",
                         "color": "b",
                         "explain": {
@@ -2190,6 +2241,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3",
                             "san": "Nf3",
                             "color": "w",
                             "explain": {
@@ -2200,6 +2252,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6",
                                 "san": "Bd6",
                                 "color": "b",
                                 "explain": {
@@ -2210,6 +2263,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3",
                                     "san": "Bg3",
                                     "color": "w",
                                     "explain": {
@@ -2220,6 +2274,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O",
                                         "san": "O-O",
                                         "color": "b",
                                         "explain": {
@@ -2230,6 +2285,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3",
                                             "san": "Bd3",
                                             "color": "w",
                                             "explain": {
@@ -2240,6 +2296,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5",
                                                 "san": "c5",
                                                 "color": "b",
                                                 "explain": {
@@ -2250,6 +2307,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3",
                                                     "san": "c3",
                                                     "color": "w",
                                                     "explain": {
@@ -2260,6 +2318,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6",
                                                         "san": "Nc6",
                                                         "color": "b",
                                                         "explain": {
@@ -2270,6 +2329,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2",
                                                             "san": "Nbd2",
                                                             "color": "w",
                                                             "explain": {
@@ -2280,6 +2340,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2__Qc7",
                                                                 "san": "Qc7",
                                                                 "color": "b",
                                                                 "explain": {
@@ -2290,6 +2351,7 @@ var REPERTOIRE_TREE = [
                                                                 "kind": "book",
                                                                 "children": [
                                                                   {
+                                                                    "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2__Qc7__O-O",
                                                                     "san": "O-O",
                                                                     "color": "w",
                                                                     "explain": {
@@ -2300,6 +2362,7 @@ var REPERTOIRE_TREE = [
                                                                     "kind": "book",
                                                                     "children": [
                                                                       {
+                                                                        "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2__Qc7__O-O__b6",
                                                                         "san": "b6",
                                                                         "color": "b",
                                                                         "explain": {
@@ -2346,6 +2409,7 @@ var REPERTOIRE_TREE = [
             ]
           },
           {
+            "id": "trap__h05-trampa-rubinstein__2",
             "san": "Nf3",
             "color": "w",
             "explain": {
@@ -2363,6 +2427,7 @@ var REPERTOIRE_TREE = [
             "variantColorId": "trap",
             "children": [
               {
+                "id": "trap__h05-trampa-rubinstein__3",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -2378,6 +2443,7 @@ var REPERTOIRE_TREE = [
                 },
                 "children": [
                   {
+                    "id": "trap__h05-trampa-rubinstein__4",
                     "san": "c4",
                     "color": "w",
                     "explain": {
@@ -2393,6 +2459,7 @@ var REPERTOIRE_TREE = [
                     },
                     "children": [
                       {
+                        "id": "trap__h05-trampa-rubinstein__5",
                         "san": "e6",
                         "color": "b",
                         "explain": {
@@ -2408,6 +2475,7 @@ var REPERTOIRE_TREE = [
                         },
                         "children": [
                           {
+                            "id": "trap__h05-trampa-rubinstein__6",
                             "san": "Bg5",
                             "color": "w",
                             "explain": {
@@ -2423,6 +2491,7 @@ var REPERTOIRE_TREE = [
                             },
                             "children": [
                               {
+                                "id": "trap__h05-trampa-rubinstein__7",
                                 "san": "Nbd7",
                                 "color": "b",
                                 "explain": {
@@ -2438,6 +2507,7 @@ var REPERTOIRE_TREE = [
                                 },
                                 "children": [
                                   {
+                                    "id": "trap__h05-trampa-rubinstein__8",
                                     "san": "e3",
                                     "color": "w",
                                     "explain": {
@@ -2453,6 +2523,7 @@ var REPERTOIRE_TREE = [
                                     },
                                     "children": [
                                       {
+                                        "id": "trap__h05-trampa-rubinstein__9",
                                         "san": "Be7",
                                         "color": "b",
                                         "explain": {
@@ -2468,6 +2539,7 @@ var REPERTOIRE_TREE = [
                                         },
                                         "children": [
                                           {
+                                            "id": "trap__h05-trampa-rubinstein__10",
                                             "san": "Nc3",
                                             "color": "w",
                                             "explain": {
@@ -2483,6 +2555,7 @@ var REPERTOIRE_TREE = [
                                             },
                                             "children": [
                                               {
+                                                "id": "trap__h05-trampa-rubinstein__11",
                                                 "san": "O-O",
                                                 "color": "b",
                                                 "explain": {
@@ -2498,6 +2571,7 @@ var REPERTOIRE_TREE = [
                                                 },
                                                 "children": [
                                                   {
+                                                    "id": "trap__h05-trampa-rubinstein__12",
                                                     "san": "Rc1",
                                                     "color": "w",
                                                     "explain": {
@@ -2513,6 +2587,7 @@ var REPERTOIRE_TREE = [
                                                     },
                                                     "children": [
                                                       {
+                                                        "id": "trap__h05-trampa-rubinstein__13",
                                                         "san": "Re8",
                                                         "color": "b",
                                                         "explain": {
@@ -2528,6 +2603,7 @@ var REPERTOIRE_TREE = [
                                                         },
                                                         "children": [
                                                           {
+                                                            "id": "trap__h05-trampa-rubinstein__14",
                                                             "san": "Qc2",
                                                             "color": "w",
                                                             "explain": {
@@ -2543,6 +2619,7 @@ var REPERTOIRE_TREE = [
                                                             },
                                                             "children": [
                                                               {
+                                                                "id": "trap__h05-trampa-rubinstein__15",
                                                                 "san": "a6",
                                                                 "color": "b",
                                                                 "explain": {
@@ -2558,6 +2635,7 @@ var REPERTOIRE_TREE = [
                                                                 },
                                                                 "children": [
                                                                   {
+                                                                    "id": "trap__h05-trampa-rubinstein__16",
                                                                     "san": "cxd5",
                                                                     "color": "w",
                                                                     "explain": {
@@ -2573,6 +2651,7 @@ var REPERTOIRE_TREE = [
                                                                     },
                                                                     "children": [
                                                                       {
+                                                                        "id": "trap__h05-trampa-rubinstein__17",
                                                                         "san": "exd5",
                                                                         "color": "b",
                                                                         "explain": {
@@ -2588,6 +2667,7 @@ var REPERTOIRE_TREE = [
                                                                         },
                                                                         "children": [
                                                                           {
+                                                                            "id": "trap__h05-trampa-rubinstein__18",
                                                                             "san": "Bd3",
                                                                             "color": "w",
                                                                             "explain": {
@@ -2603,6 +2683,7 @@ var REPERTOIRE_TREE = [
                                                                             },
                                                                             "children": [
                                                                               {
+                                                                                "id": "trap__h05-trampa-rubinstein__19",
                                                                                 "san": "c6",
                                                                                 "color": "b",
                                                                                 "explain": {
@@ -2618,6 +2699,7 @@ var REPERTOIRE_TREE = [
                                                                                 },
                                                                                 "children": [
                                                                                   {
+                                                                                    "id": "trap__h05-trampa-rubinstein__20",
                                                                                     "san": "O-O",
                                                                                     "color": "w",
                                                                                     "explain": {
@@ -2633,6 +2715,7 @@ var REPERTOIRE_TREE = [
                                                                                     },
                                                                                     "children": [
                                                                                       {
+                                                                                        "id": "trap__h05-trampa-rubinstein__21",
                                                                                         "san": "Ne4",
                                                                                         "color": "b",
                                                                                         "explain": {
@@ -2646,8 +2729,10 @@ var REPERTOIRE_TREE = [
                                                                                           "tipo": "ofensiva",
                                                                                           "name": "Trampa Rubinstein"
                                                                                         },
+                                                                                        "isError": true,
                                                                                         "children": [
                                                                                           {
+                                                                                            "id": "trap__h05-trampa-rubinstein__22",
                                                                                             "san": "Bf4",
                                                                                             "color": "w",
                                                                                             "explain": {
@@ -2663,6 +2748,7 @@ var REPERTOIRE_TREE = [
                                                                                             },
                                                                                             "children": [
                                                                                               {
+                                                                                                "id": "trap__h05-trampa-rubinstein__23",
                                                                                                 "san": "f5",
                                                                                                 "color": "b",
                                                                                                 "explain": {
@@ -2676,8 +2762,10 @@ var REPERTOIRE_TREE = [
                                                                                                   "tipo": "ofensiva",
                                                                                                   "name": "Trampa Rubinstein"
                                                                                                 },
+                                                                                                "isError": true,
                                                                                                 "children": [
                                                                                                   {
+                                                                                                    "id": "trap__h05-trampa-rubinstein__24",
                                                                                                     "san": "Nxd5",
                                                                                                     "color": "w",
                                                                                                     "explain": {
@@ -2693,6 +2781,7 @@ var REPERTOIRE_TREE = [
                                                                                                     },
                                                                                                     "children": [
                                                                                                       {
+                                                                                                        "id": "trap__h05-trampa-rubinstein__25",
                                                                                                         "san": "cxd5",
                                                                                                         "color": "b",
                                                                                                         "explain": {
@@ -2708,6 +2797,7 @@ var REPERTOIRE_TREE = [
                                                                                                         },
                                                                                                         "children": [
                                                                                                           {
+                                                                                                            "id": "trap__h05-trampa-rubinstein__26",
                                                                                                             "san": "Bc7",
                                                                                                             "color": "w",
                                                                                                             "explain": {
@@ -2780,6 +2870,7 @@ var REPERTOIRE_TREE = [
         ]
       },
       {
+        "id": "d4__Nf6",
         "san": "Nf6",
         "color": "b",
         "explain": {
@@ -2790,6 +2881,7 @@ var REPERTOIRE_TREE = [
         "kind": "book",
         "children": [
           {
+            "id": "d4__Nf6__Bf4",
             "san": "Bf4",
             "color": "w",
             "explain": {
@@ -2802,6 +2894,7 @@ var REPERTOIRE_TREE = [
             "variantColorId": 11,
             "children": [
               {
+                "id": "d4__Nf6__Bf4__g6",
                 "san": "g6",
                 "color": "b",
                 "explain": {
@@ -2812,6 +2905,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "d4__Nf6__Bf4__g6__e3",
                     "san": "e3",
                     "color": "w",
                     "explain": {
@@ -2822,6 +2916,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__Nf6__Bf4__g6__e3__Bg7",
                         "san": "Bg7",
                         "color": "b",
                         "explain": {
@@ -2832,6 +2927,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3",
                             "san": "Nf3",
                             "color": "w",
                             "explain": {
@@ -2842,6 +2938,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O",
                                 "san": "O-O",
                                 "color": "b",
                                 "explain": {
@@ -2852,6 +2949,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3",
                                     "san": "h3",
                                     "color": "w",
                                     "explain": {
@@ -2862,6 +2960,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6",
                                         "san": "d6",
                                         "color": "b",
                                         "explain": {
@@ -2872,6 +2971,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2",
                                             "san": "Be2",
                                             "color": "w",
                                             "explain": {
@@ -2882,6 +2982,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7",
                                                 "san": "Nbd7",
                                                 "color": "b",
                                                 "explain": {
@@ -2892,6 +2993,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O",
                                                     "san": "O-O",
                                                     "color": "w",
                                                     "explain": {
@@ -2902,6 +3004,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O__c5",
                                                         "san": "c5",
                                                         "color": "b",
                                                         "explain": {
@@ -2912,6 +3015,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O__c5__c3",
                                                             "san": "c3",
                                                             "color": "w",
                                                             "explain": {
@@ -2922,6 +3026,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O__c5__c3__b6",
                                                                 "san": "b6",
                                                                 "color": "b",
                                                                 "explain": {
@@ -2964,6 +3069,7 @@ var REPERTOIRE_TREE = [
             ]
           },
           {
+            "id": "d4__Nf6__c4",
             "san": "c4",
             "color": "w",
             "explain": {
@@ -2976,6 +3082,7 @@ var REPERTOIRE_TREE = [
             "variantColorId": 11,
             "children": [
               {
+                "id": "d4__Nf6__c4__e6",
                 "san": "e6",
                 "color": "b",
                 "explain": {
@@ -2986,6 +3093,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "d4__Nf6__c4__e6__g3",
                     "san": "g3",
                     "color": "w",
                     "explain": {
@@ -2996,6 +3104,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__Nf6__c4__e6__g3__d5",
                         "san": "d5",
                         "color": "b",
                         "explain": {
@@ -3006,6 +3115,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__Nf6__c4__e6__g3__d5__Bg2",
                             "san": "Bg2",
                             "color": "w",
                             "explain": {
@@ -3016,6 +3126,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7",
                                 "san": "Be7",
                                 "color": "b",
                                 "explain": {
@@ -3026,6 +3137,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3",
                                     "san": "Nf3",
                                     "color": "w",
                                     "explain": {
@@ -3036,6 +3148,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O",
                                         "san": "O-O",
                                         "color": "b",
                                         "explain": {
@@ -3046,6 +3159,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O",
                                             "san": "O-O",
                                             "color": "w",
                                             "explain": {
@@ -3056,6 +3170,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4",
                                                 "san": "dxc4",
                                                 "color": "b",
                                                 "explain": {
@@ -3066,6 +3181,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2",
                                                     "san": "Qc2",
                                                     "color": "w",
                                                     "explain": {
@@ -3076,6 +3192,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2__a6",
                                                         "san": "a6",
                                                         "color": "b",
                                                         "explain": {
@@ -3086,6 +3203,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2__a6__Qxc4",
                                                             "san": "Qxc4",
                                                             "color": "w",
                                                             "explain": {
@@ -3096,6 +3214,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2__a6__Qxc4__b5",
                                                                 "san": "b5",
                                                                 "color": "b",
                                                                 "explain": {
@@ -3138,6 +3257,7 @@ var REPERTOIRE_TREE = [
             ]
           },
           {
+            "id": "d4__Nf6__Bg5",
             "san": "Bg5",
             "color": "w",
             "explain": {
@@ -3150,6 +3270,7 @@ var REPERTOIRE_TREE = [
             "variantColorId": 4,
             "children": [
               {
+                "id": "d4__Nf6__Bg5__e6",
                 "san": "e6",
                 "color": "b",
                 "explain": {
@@ -3160,6 +3281,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "d4__Nf6__Bg5__e6__e4",
                     "san": "e4",
                     "color": "w",
                     "explain": {
@@ -3170,6 +3292,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "d4__Nf6__Bg5__e6__e4__h6",
                         "san": "h6",
                         "color": "b",
                         "explain": {
@@ -3180,6 +3303,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6",
                             "san": "Bxf6",
                             "color": "w",
                             "explain": {
@@ -3190,6 +3314,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6",
                                 "san": "Qxf6",
                                 "color": "b",
                                 "explain": {
@@ -3200,6 +3325,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3",
                                     "san": "Nc3",
                                     "color": "w",
                                     "explain": {
@@ -3210,6 +3336,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6",
                                         "san": "d6",
                                         "color": "b",
                                         "explain": {
@@ -3220,6 +3347,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3",
                                             "san": "Nf3",
                                             "color": "w",
                                             "explain": {
@@ -3230,6 +3358,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7",
                                                 "san": "Nd7",
                                                 "color": "b",
                                                 "explain": {
@@ -3240,6 +3369,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2",
                                                     "san": "Qd2",
                                                     "color": "w",
                                                     "explain": {
@@ -3250,6 +3380,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2__g6",
                                                         "san": "g6",
                                                         "color": "b",
                                                         "explain": {
@@ -3260,6 +3391,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2__g6__O-O-O",
                                                             "san": "O-O-O",
                                                             "color": "w",
                                                             "explain": {
@@ -3270,6 +3402,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2__g6__O-O-O__Bg7",
                                                                 "san": "Bg7",
                                                                 "color": "b",
                                                                 "explain": {
@@ -3316,6 +3449,7 @@ var REPERTOIRE_TREE = [
     ]
   },
   {
+    "id": "e4",
     "san": "e4",
     "color": "w",
     "explain": {
@@ -3326,6 +3460,7 @@ var REPERTOIRE_TREE = [
     "kind": "book",
     "children": [
       {
+        "id": "e4__d5",
         "san": "d5",
         "color": "b",
         "explain": {
@@ -3336,6 +3471,7 @@ var REPERTOIRE_TREE = [
         "kind": "book",
         "children": [
           {
+            "id": "e4__d5__exd5",
             "san": "exd5",
             "color": "w",
             "explain": {
@@ -3346,6 +3482,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "e4__d5__exd5__Qxd5",
                 "san": "Qxd5",
                 "color": "b",
                 "explain": {
@@ -3356,6 +3493,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "e4__d5__exd5__Qxd5__Nc3",
                     "san": "Nc3",
                     "color": "w",
                     "explain": {
@@ -3366,6 +3504,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "e4__d5__exd5__Qxd5__Nc3__Qa5",
                         "san": "Qa5",
                         "color": "b",
                         "explain": {
@@ -3378,6 +3517,7 @@ var REPERTOIRE_TREE = [
                         "variantColorId": 7,
                         "children": [
                           {
+                            "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4",
                             "san": "d4",
                             "color": "w",
                             "explain": {
@@ -3388,6 +3528,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6",
                                 "san": "Nf6",
                                 "color": "b",
                                 "explain": {
@@ -3398,6 +3539,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3",
                                     "san": "Nf3",
                                     "color": "w",
                                     "explain": {
@@ -3408,6 +3550,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3__c6",
                                         "san": "c6",
                                         "color": "b",
                                         "explain": {
@@ -3418,6 +3561,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3__c6__Bc4",
                                             "san": "Bc4",
                                             "color": "w",
                                             "explain": {
@@ -3428,6 +3572,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3__c6__Bc4__Bf5",
                                                 "san": "Bf5",
                                                 "color": "b",
                                                 "explain": {
@@ -3452,207 +3597,9 @@ var REPERTOIRE_TREE = [
                                 ]
                               }
                             ]
-                          }
-                        ]
-                      },
-                      {
-                        "san": "Qd6",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Retirada moderna: en vez de ir a a5 (donde puede sufrir una clavada con Bd2), la dama va a d6, vigilando d4 y quedando fuera del alcance de ataques de tiempo inmediatos.",
-                          "ventaja": "Evita por completo las ideas de Nd5 y Bd2 con clavada que sufre la linea con 3...Qa5; la eleccion preferida al maximo nivel en los ultimos anios.",
-                          "debilidad": "Tapa momentaneamente la diagonal del propio alfil de rey, aunque la dama se reubicara pronto sin perder mas tiempos."
-                        },
-                        "kind": "book",
-                        "variantName": "Escandinava -- retirada moderna (3...Qd6)",
-                        "variantColorId": 4,
-                        "children": [
+                          },
                           {
-                            "san": "d4",
-                            "color": "w",
-                            "explain": {
-                              "idea": "Ocupa el centro con el segundo peon central, ganando espacio mientras negras sigue sin completar el desarrollo.",
-                              "ventaja": "Centro solido y mucho espacio, la compensacion natural de blancas por el tiempo perdido por negras con la dama.",
-                              "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
-                            },
-                            "kind": "book",
-                            "children": [
-                              {
-                                "san": "Nf6",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Empieza el desarrollo de piezas menores, presionando e4 (ya vacio) y preparando el enroque.",
-                                  "ventaja": "Jugada natural que acelera la seguridad del rey.",
-                                  "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
-                                },
-                                "kind": "book",
-                                "children": [
-                                  {
-                                    "san": "Nf3",
-                                    "color": "w",
-                                    "explain": {
-                                      "idea": "Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.",
-                                      "ventaja": "Jugada solida que completa el desarrollo rapido tipico de las lineas contra la Escandinava.",
-                                      "debilidad": "Ninguna relevante."
-                                    },
-                                    "kind": "book",
-                                    "children": [
-                                      {
-                                        "san": "a6",
-                                        "color": "b",
-                                        "explain": {
-                                          "idea": "Jugada tipica de las lineas modernas de la Escandinava: evita Nb5 atacando la dama en d6 y prepara ...b5 mas adelante.",
-                                          "ventaja": "Previene de forma profilactica la unica idea molesta de blancas contra la dama en d6.",
-                                          "debilidad": "Jugada algo lenta que no desarrolla ninguna pieza nueva."
-                                        },
-                                        "kind": "book",
-                                        "children": [
-                                          {
-                                            "san": "g3",
-                                            "color": "w",
-                                            "explain": {
-                                              "idea": "Prepara el fianchetto del alfil de rey, un plan solido y flexible muy popular en las lineas modernas contra la Escandinava.",
-                                              "ventaja": "El alfil en g2 presionara la larga diagonal y el flanco de dama de negras sin comprometerse con un desarrollo mas directo.",
-                                              "debilidad": "Cede algo de tiempo mientras negras completa su propio desarrollo."
-                                            },
-                                            "kind": "book",
-                                            "children": [
-                                              {
-                                                "san": "b5",
-                                                "color": "b",
-                                                "explain": {
-                                                  "idea": "Gana espacio en el flanco de dama, tal y como preparaba ...a6, y prepara el desarrollo del alfil de dama por b7.",
-                                                  "ventaja": "Plan activo tipico de las lineas modernas de la Escandinava con 3...Qd6, buscando contrajuego en el flanco de dama.",
-                                                  "debilidad": "Puede debilitar ligeramente las casillas del flanco de dama si blancas encuentra a4 mas adelante, aunque es un riesgo asumido en toda la teoria principal."
-                                                },
-                                                "kind": "book",
-                                                "leafOf": {
-                                                  "lineId": "h02-escandinava-qd6",
-                                                  "name": "Escandinava -- retirada moderna (3...Qd6)",
-                                                  "userColor": "b",
-                                                  "overview": "Familia Escandinava: en vez de retirar la dama a a5, negras la lleva a d6, una casilla que a primera vista parece rara (tapa el propio alfil de rey) pero que evita la clavada de Bd2/Nc3 de la linea con 3...Qa5 y mantiene la dama vigilando la casilla d4. Es la eleccion mas popular a nivel de elite dentro de toda la familia escandinava en los ultimos anios."
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "san": "Qd8",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Retirada ultra-solida: la dama vuelve a su casilla original, la opcion mas conservadora de toda la familia escandinava.",
-                          "ventaja": "Sin ningun objetivo de ataque futuro para blancas -- ni Bd2 ni Nb5 tienen sentido contra la dama en su casilla inicial.",
-                          "debilidad": "Pierde mas tiempo que las retiradas a a5 o d6, dejando a blancas con la maxima ventaja de desarrollo de toda la familia."
-                        },
-                        "kind": "book",
-                        "variantName": "Escandinava -- retirada ultra-solida (3...Qd8)",
-                        "variantColorId": 9,
-                        "children": [
-                          {
-                            "san": "d4",
-                            "color": "w",
-                            "explain": {
-                              "idea": "Ocupa el centro con el segundo peon central, aprovechando al maximo la ventaja de tiempo conseguida.",
-                              "ventaja": "Centro amplio y mucha ventaja de desarrollo, la compensacion mas clara de blancas dentro de toda la familia escandinava.",
-                              "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
-                            },
-                            "kind": "book",
-                            "children": [
-                              {
-                                "san": "Nf6",
-                                "color": "b",
-                                "explain": {
-                                  "idea": "Empieza por fin el desarrollo de piezas menores, ya urgente tras varias jugadas de dama.",
-                                  "ventaja": "Jugada natural que acelera la seguridad del rey.",
-                                  "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
-                                },
-                                "kind": "book",
-                                "children": [
-                                  {
-                                    "san": "Nf3",
-                                    "color": "w",
-                                    "explain": {
-                                      "idea": "Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.",
-                                      "ventaja": "Jugada solida que completa el desarrollo rapido tipico de las lineas contra la Escandinava.",
-                                      "debilidad": "Ninguna relevante."
-                                    },
-                                    "kind": "book",
-                                    "children": [
-                                      {
-                                        "san": "Bg4",
-                                        "color": "b",
-                                        "explain": {
-                                          "idea": "Clava el caballo de f3 para dificultar el desarrollo de blancas, buscando algo de contrajuego pese al tiempo perdido.",
-                                          "ventaja": "Pieza activa que presiona de inmediato el centro de blancas.",
-                                          "debilidad": "Deja que blancas rompa la clavada con h3 y gane otro tiempo mas."
-                                        },
-                                        "kind": "book",
-                                        "children": [
-                                          {
-                                            "san": "h3",
-                                            "color": "w",
-                                            "explain": {
-                                              "idea": "Pregunta al alfil de inmediato, ganando otro tiempo mas dentro de una linea ya muy favorable en desarrollo.",
-                                              "ventaja": "Tiempo extra que amplia aun mas la ventaja de desarrollo de blancas.",
-                                              "debilidad": "Debilita ligeramente el flanco de rey, un precio menor y asumido en toda la teoria principal."
-                                            },
-                                            "kind": "book",
-                                            "children": [
-                                              {
-                                                "san": "Bh5",
-                                                "color": "b",
-                                                "explain": {
-                                                  "idea": "Mantiene la clavada en vez de cambiar el alfil, buscando conservar algo de presion pese a la posicion incomoda.",
-                                                  "ventaja": "Sigue presionando el caballo de f3 y la posicion del rey de blancas.",
-                                                  "debilidad": "El alfil puede quedar atrapado mas adelante si blancas encuentra g4 seguido de Ne5, un riesgo real en esta linea."
-                                                },
-                                                "kind": "book",
-                                                "leafOf": {
-                                                  "lineId": "h02-escandinava-qd8",
-                                                  "name": "Escandinava -- retirada ultra-solida (3...Qd8)",
-                                                  "userColor": "b",
-                                                  "overview": "Familia Escandinava: la retirada mas conservadora de todas -- la dama vuelve a su casilla original, perdiendo mas tiempo que con Qa5 o Qd6 pero sin dejar ningun objetivo de ataque futuro para blancas. Es la eleccion de jugadores que priorizan la solidez absoluta sobre la actividad de la dama, muy dificil de sacar de la teoria conocida."
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "san": "Qa5",
-                        "color": "b",
-                        "explain": {
-                          "idea": "Negras retira la dama a a5, la retirada principal, manteniendo presion sobre c3 y e5.",
-                          "ventaja": "Casilla activa y segura para la dama.",
-                          "debilidad": "Ninguna en la teoria principal."
-                        },
-                        "kind": "trap",
-                        "trap": {
-                          "id": "h05-trampa-leonhardt",
-                          "tipo": "defensiva",
-                          "name": "Gambito Leonhardt (4.b4!?)"
-                        },
-                        "variantName": "Gambito Leonhardt (4.b4!?)",
-                        "variantColorId": "trap",
-                        "children": [
-                          {
+                            "id": "trap__h05-trampa-leonhardt__6",
                             "san": "b4",
                             "color": "w",
                             "explain": {
@@ -3666,8 +3613,11 @@ var REPERTOIRE_TREE = [
                               "tipo": "defensiva",
                               "name": "Gambito Leonhardt (4.b4!?)"
                             },
+                            "variantName": "Gambito Leonhardt (4.b4!?)",
+                            "variantColorId": "trap",
                             "children": [
                               {
+                                "id": "trap__h05-trampa-leonhardt__7",
                                 "san": "Qxb4",
                                 "color": "b",
                                 "explain": {
@@ -3683,6 +3633,7 @@ var REPERTOIRE_TREE = [
                                 },
                                 "children": [
                                   {
+                                    "id": "trap__h05-trampa-leonhardt__8",
                                     "san": "Nb5",
                                     "color": "w",
                                     "explain": {
@@ -3698,6 +3649,7 @@ var REPERTOIRE_TREE = [
                                     },
                                     "children": [
                                       {
+                                        "id": "trap__h05-trampa-leonhardt__9",
                                         "san": "Qa5",
                                         "color": "b",
                                         "explain": {
@@ -3713,6 +3665,7 @@ var REPERTOIRE_TREE = [
                                         },
                                         "children": [
                                           {
+                                            "id": "trap__h05-trampa-leonhardt__10",
                                             "san": "Bc4",
                                             "color": "w",
                                             "explain": {
@@ -3728,6 +3681,7 @@ var REPERTOIRE_TREE = [
                                             },
                                             "children": [
                                               {
+                                                "id": "trap__h05-trampa-leonhardt__11",
                                                 "san": "c6",
                                                 "color": "b",
                                                 "explain": {
@@ -3741,8 +3695,10 @@ var REPERTOIRE_TREE = [
                                                   "tipo": "defensiva",
                                                   "name": "Gambito Leonhardt (4.b4!?)"
                                                 },
+                                                "isError": true,
                                                 "children": [
                                                   {
+                                                    "id": "trap__h05-trampa-leonhardt__12",
                                                     "san": "Bxf7+",
                                                     "color": "w",
                                                     "explain": {
@@ -3777,12 +3733,207 @@ var REPERTOIRE_TREE = [
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "e4__d5__exd5__Qxd5__Nc3__Qd6",
+                        "san": "Qd6",
+                        "color": "b",
+                        "explain": {
+                          "idea": "Retirada moderna: en vez de ir a a5 (donde puede sufrir una clavada con Bd2), la dama va a d6, vigilando d4 y quedando fuera del alcance de ataques de tiempo inmediatos.",
+                          "ventaja": "Evita por completo las ideas de Nd5 y Bd2 con clavada que sufre la linea con 3...Qa5; la eleccion preferida al maximo nivel en los ultimos anios.",
+                          "debilidad": "Tapa momentaneamente la diagonal del propio alfil de rey, aunque la dama se reubicara pronto sin perder mas tiempos."
+                        },
+                        "kind": "book",
+                        "variantName": "Escandinava -- retirada moderna (3...Qd6)",
+                        "variantColorId": 4,
+                        "children": [
+                          {
+                            "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4",
+                            "san": "d4",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Ocupa el centro con el segundo peon central, ganando espacio mientras negras sigue sin completar el desarrollo.",
+                              "ventaja": "Centro solido y mucho espacio, la compensacion natural de blancas por el tiempo perdido por negras con la dama.",
+                              "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
+                            },
+                            "kind": "book",
+                            "children": [
+                              {
+                                "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6",
+                                "san": "Nf6",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "Empieza el desarrollo de piezas menores, presionando e4 (ya vacio) y preparando el enroque.",
+                                  "ventaja": "Jugada natural que acelera la seguridad del rey.",
+                                  "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
+                                },
+                                "kind": "book",
+                                "children": [
+                                  {
+                                    "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3",
+                                    "san": "Nf3",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.",
+                                      "ventaja": "Jugada solida que completa el desarrollo rapido tipico de las lineas contra la Escandinava.",
+                                      "debilidad": "Ninguna relevante."
+                                    },
+                                    "kind": "book",
+                                    "children": [
+                                      {
+                                        "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3__a6",
+                                        "san": "a6",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "Jugada tipica de las lineas modernas de la Escandinava: evita Nb5 atacando la dama en d6 y prepara ...b5 mas adelante.",
+                                          "ventaja": "Previene de forma profilactica la unica idea molesta de blancas contra la dama en d6.",
+                                          "debilidad": "Jugada algo lenta que no desarrolla ninguna pieza nueva."
+                                        },
+                                        "kind": "book",
+                                        "children": [
+                                          {
+                                            "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3__a6__g3",
+                                            "san": "g3",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Prepara el fianchetto del alfil de rey, un plan solido y flexible muy popular en las lineas modernas contra la Escandinava.",
+                                              "ventaja": "El alfil en g2 presionara la larga diagonal y el flanco de dama de negras sin comprometerse con un desarrollo mas directo.",
+                                              "debilidad": "Cede algo de tiempo mientras negras completa su propio desarrollo."
+                                            },
+                                            "kind": "book",
+                                            "children": [
+                                              {
+                                                "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3__a6__g3__b5",
+                                                "san": "b5",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Gana espacio en el flanco de dama, tal y como preparaba ...a6, y prepara el desarrollo del alfil de dama por b7.",
+                                                  "ventaja": "Plan activo tipico de las lineas modernas de la Escandinava con 3...Qd6, buscando contrajuego en el flanco de dama.",
+                                                  "debilidad": "Puede debilitar ligeramente las casillas del flanco de dama si blancas encuentra a4 mas adelante, aunque es un riesgo asumido en toda la teoria principal."
+                                                },
+                                                "kind": "book",
+                                                "leafOf": {
+                                                  "lineId": "h02-escandinava-qd6",
+                                                  "name": "Escandinava -- retirada moderna (3...Qd6)",
+                                                  "userColor": "b",
+                                                  "overview": "Familia Escandinava: en vez de retirar la dama a a5, negras la lleva a d6, una casilla que a primera vista parece rara (tapa el propio alfil de rey) pero que evita la clavada de Bd2/Nc3 de la linea con 3...Qa5 y mantiene la dama vigilando la casilla d4. Es la eleccion mas popular a nivel de elite dentro de toda la familia escandinava en los ultimos anios."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "e4__d5__exd5__Qxd5__Nc3__Qd8",
+                        "san": "Qd8",
+                        "color": "b",
+                        "explain": {
+                          "idea": "Retirada ultra-solida: la dama vuelve a su casilla original, la opcion mas conservadora de toda la familia escandinava.",
+                          "ventaja": "Sin ningun objetivo de ataque futuro para blancas -- ni Bd2 ni Nb5 tienen sentido contra la dama en su casilla inicial.",
+                          "debilidad": "Pierde mas tiempo que las retiradas a a5 o d6, dejando a blancas con la maxima ventaja de desarrollo de toda la familia."
+                        },
+                        "kind": "book",
+                        "variantName": "Escandinava -- retirada ultra-solida (3...Qd8)",
+                        "variantColorId": 9,
+                        "children": [
+                          {
+                            "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4",
+                            "san": "d4",
+                            "color": "w",
+                            "explain": {
+                              "idea": "Ocupa el centro con el segundo peon central, aprovechando al maximo la ventaja de tiempo conseguida.",
+                              "ventaja": "Centro amplio y mucha ventaja de desarrollo, la compensacion mas clara de blancas dentro de toda la familia escandinava.",
+                              "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
+                            },
+                            "kind": "book",
+                            "children": [
+                              {
+                                "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6",
+                                "san": "Nf6",
+                                "color": "b",
+                                "explain": {
+                                  "idea": "Empieza por fin el desarrollo de piezas menores, ya urgente tras varias jugadas de dama.",
+                                  "ventaja": "Jugada natural que acelera la seguridad del rey.",
+                                  "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
+                                },
+                                "kind": "book",
+                                "children": [
+                                  {
+                                    "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3",
+                                    "san": "Nf3",
+                                    "color": "w",
+                                    "explain": {
+                                      "idea": "Desarrolla la ultima pieza menor del flanco de rey y prepara el enroque corto.",
+                                      "ventaja": "Jugada solida que completa el desarrollo rapido tipico de las lineas contra la Escandinava.",
+                                      "debilidad": "Ninguna relevante."
+                                    },
+                                    "kind": "book",
+                                    "children": [
+                                      {
+                                        "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3__Bg4",
+                                        "san": "Bg4",
+                                        "color": "b",
+                                        "explain": {
+                                          "idea": "Clava el caballo de f3 para dificultar el desarrollo de blancas, buscando algo de contrajuego pese al tiempo perdido.",
+                                          "ventaja": "Pieza activa que presiona de inmediato el centro de blancas.",
+                                          "debilidad": "Deja que blancas rompa la clavada con h3 y gane otro tiempo mas."
+                                        },
+                                        "kind": "book",
+                                        "children": [
+                                          {
+                                            "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3__Bg4__h3",
+                                            "san": "h3",
+                                            "color": "w",
+                                            "explain": {
+                                              "idea": "Pregunta al alfil de inmediato, ganando otro tiempo mas dentro de una linea ya muy favorable en desarrollo.",
+                                              "ventaja": "Tiempo extra que amplia aun mas la ventaja de desarrollo de blancas.",
+                                              "debilidad": "Debilita ligeramente el flanco de rey, un precio menor y asumido en toda la teoria principal."
+                                            },
+                                            "kind": "book",
+                                            "children": [
+                                              {
+                                                "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3__Bg4__h3__Bh5",
+                                                "san": "Bh5",
+                                                "color": "b",
+                                                "explain": {
+                                                  "idea": "Mantiene la clavada en vez de cambiar el alfil, buscando conservar algo de presion pese a la posicion incomoda.",
+                                                  "ventaja": "Sigue presionando el caballo de f3 y la posicion del rey de blancas.",
+                                                  "debilidad": "El alfil puede quedar atrapado mas adelante si blancas encuentra g4 seguido de Ne5, un riesgo real en esta linea."
+                                                },
+                                                "kind": "book",
+                                                "leafOf": {
+                                                  "lineId": "h02-escandinava-qd8",
+                                                  "name": "Escandinava -- retirada ultra-solida (3...Qd8)",
+                                                  "userColor": "b",
+                                                  "overview": "Familia Escandinava: la retirada mas conservadora de todas -- la dama vuelve a su casilla original, perdiendo mas tiempo que con Qa5 o Qd6 pero sin dejar ningun objetivo de ataque futuro para blancas. Es la eleccion de jugadores que priorizan la solidez absoluta sobre la actividad de la dama, muy dificil de sacar de la teoria conocida."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
                       }
                     ]
                   }
                 ]
               },
               {
+                "id": "e4__d5__exd5__Nf6",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -3795,6 +3946,7 @@ var REPERTOIRE_TREE = [
                 "variantColorId": 10,
                 "children": [
                   {
+                    "id": "e4__d5__exd5__Nf6__d4",
                     "san": "d4",
                     "color": "w",
                     "explain": {
@@ -3805,6 +3957,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "e4__d5__exd5__Nf6__d4__Nxd5",
                         "san": "Nxd5",
                         "color": "b",
                         "explain": {
@@ -3815,6 +3968,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3",
                             "san": "Nf3",
                             "color": "w",
                             "explain": {
@@ -3825,6 +3979,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6",
                                 "san": "g6",
                                 "color": "b",
                                 "explain": {
@@ -3835,6 +3990,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4",
                                     "san": "c4",
                                     "color": "w",
                                     "explain": {
@@ -3845,6 +4001,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4__Nb6",
                                         "san": "Nb6",
                                         "color": "b",
                                         "explain": {
@@ -3855,6 +4012,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4__Nb6__Nc3",
                                             "san": "Nc3",
                                             "color": "w",
                                             "explain": {
@@ -3865,6 +4023,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4__Nb6__Nc3__Bg7",
                                                 "san": "Bg7",
                                                 "color": "b",
                                                 "explain": {
@@ -3903,6 +4062,7 @@ var REPERTOIRE_TREE = [
     ]
   },
   {
+    "id": "c4",
     "san": "c4",
     "color": "w",
     "explain": {
@@ -3913,6 +4073,7 @@ var REPERTOIRE_TREE = [
     "kind": "book",
     "children": [
       {
+        "id": "c4__e5",
         "san": "e5",
         "color": "b",
         "explain": {
@@ -3925,6 +4086,7 @@ var REPERTOIRE_TREE = [
         "variantColorId": 9,
         "children": [
           {
+            "id": "c4__e5__Nc3",
             "san": "Nc3",
             "color": "w",
             "explain": {
@@ -3935,6 +4097,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "c4__e5__Nc3__Nf6",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -3945,6 +4108,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "c4__e5__Nc3__Nf6__Nf3",
                     "san": "Nf3",
                     "color": "w",
                     "explain": {
@@ -3955,6 +4119,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "c4__e5__Nc3__Nf6__Nf3__Nc6",
                         "san": "Nc6",
                         "color": "b",
                         "explain": {
@@ -3965,6 +4130,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3",
                             "san": "g3",
                             "color": "w",
                             "explain": {
@@ -3975,6 +4141,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5",
                                 "san": "d5",
                                 "color": "b",
                                 "explain": {
@@ -3985,6 +4152,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5",
                                     "san": "cxd5",
                                     "color": "w",
                                     "explain": {
@@ -3995,6 +4163,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5",
                                         "san": "Nxd5",
                                         "color": "b",
                                         "explain": {
@@ -4005,6 +4174,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2",
                                             "san": "Bg2",
                                             "color": "w",
                                             "explain": {
@@ -4015,6 +4185,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6",
                                                 "san": "Nb6",
                                                 "color": "b",
                                                 "explain": {
@@ -4025,6 +4196,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O",
                                                     "san": "O-O",
                                                     "color": "w",
                                                     "explain": {
@@ -4035,6 +4207,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O__Be7",
                                                         "san": "Be7",
                                                         "color": "b",
                                                         "explain": {
@@ -4045,6 +4218,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O__Be7__d3",
                                                             "san": "d3",
                                                             "color": "w",
                                                             "explain": {
@@ -4055,6 +4229,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O__Be7__d3__O-O",
                                                                 "san": "O-O",
                                                                 "color": "b",
                                                                 "explain": {
@@ -4099,6 +4274,7 @@ var REPERTOIRE_TREE = [
         ]
       },
       {
+        "id": "c4__c5",
         "san": "c5",
         "color": "b",
         "explain": {
@@ -4111,6 +4287,7 @@ var REPERTOIRE_TREE = [
         "variantColorId": 4,
         "children": [
           {
+            "id": "c4__c5__Nf3",
             "san": "Nf3",
             "color": "w",
             "explain": {
@@ -4121,6 +4298,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "c4__c5__Nf3__Nf6",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -4131,6 +4309,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "c4__c5__Nf3__Nf6__g3",
                     "san": "g3",
                     "color": "w",
                     "explain": {
@@ -4141,6 +4320,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "c4__c5__Nf3__Nf6__g3__g6",
                         "san": "g6",
                         "color": "b",
                         "explain": {
@@ -4151,6 +4331,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2",
                             "san": "Bg2",
                             "color": "w",
                             "explain": {
@@ -4161,6 +4342,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7",
                                 "san": "Bg7",
                                 "color": "b",
                                 "explain": {
@@ -4171,6 +4353,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3",
                                     "san": "Nc3",
                                     "color": "w",
                                     "explain": {
@@ -4181,6 +4364,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6",
                                         "san": "Nc6",
                                         "color": "b",
                                         "explain": {
@@ -4191,6 +4375,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O",
                                             "san": "O-O",
                                             "color": "w",
                                             "explain": {
@@ -4201,6 +4386,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O",
                                                 "san": "O-O",
                                                 "color": "b",
                                                 "explain": {
@@ -4211,6 +4397,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4",
                                                     "san": "d4",
                                                     "color": "w",
                                                     "explain": {
@@ -4221,6 +4408,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4",
                                                         "san": "cxd4",
                                                         "color": "b",
                                                         "explain": {
@@ -4231,6 +4419,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4",
                                                             "san": "Nxd4",
                                                             "color": "w",
                                                             "explain": {
@@ -4241,6 +4430,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4__Nxd4",
                                                                 "san": "Nxd4",
                                                                 "color": "b",
                                                                 "explain": {
@@ -4251,6 +4441,7 @@ var REPERTOIRE_TREE = [
                                                                 "kind": "book",
                                                                 "children": [
                                                                   {
+                                                                    "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4__Nxd4__Qxd4",
                                                                     "san": "Qxd4",
                                                                     "color": "w",
                                                                     "explain": {
@@ -4261,6 +4452,7 @@ var REPERTOIRE_TREE = [
                                                                     "kind": "book",
                                                                     "children": [
                                                                       {
+                                                                        "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4__Nxd4__Qxd4__d6",
                                                                         "san": "d6",
                                                                         "color": "b",
                                                                         "explain": {
@@ -4311,6 +4503,7 @@ var REPERTOIRE_TREE = [
     ]
   },
   {
+    "id": "Nf3",
     "san": "Nf3",
     "color": "w",
     "explain": {
@@ -4323,6 +4516,7 @@ var REPERTOIRE_TREE = [
     "variantColorId": 9,
     "children": [
       {
+        "id": "Nf3__d5",
         "san": "d5",
         "color": "b",
         "explain": {
@@ -4333,6 +4527,7 @@ var REPERTOIRE_TREE = [
         "kind": "book",
         "children": [
           {
+            "id": "Nf3__d5__g3",
             "san": "g3",
             "color": "w",
             "explain": {
@@ -4343,6 +4538,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "Nf3__d5__g3__Nf6",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -4353,6 +4549,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "Nf3__d5__g3__Nf6__Bg2",
                     "san": "Bg2",
                     "color": "w",
                     "explain": {
@@ -4363,6 +4560,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "Nf3__d5__g3__Nf6__Bg2__e6",
                         "san": "e6",
                         "color": "b",
                         "explain": {
@@ -4373,6 +4571,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O",
                             "san": "O-O",
                             "color": "w",
                             "explain": {
@@ -4383,6 +4582,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7",
                                 "san": "Be7",
                                 "color": "b",
                                 "explain": {
@@ -4393,6 +4593,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3",
                                     "san": "d3",
                                     "color": "w",
                                     "explain": {
@@ -4403,6 +4604,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O",
                                         "san": "O-O",
                                         "color": "b",
                                         "explain": {
@@ -4413,6 +4615,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2",
                                             "san": "Nbd2",
                                             "color": "w",
                                             "explain": {
@@ -4423,6 +4626,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5",
                                                 "san": "c5",
                                                 "color": "b",
                                                 "explain": {
@@ -4433,6 +4637,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4",
                                                     "san": "e4",
                                                     "color": "w",
                                                     "explain": {
@@ -4443,6 +4648,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4__Nc6",
                                                         "san": "Nc6",
                                                         "color": "b",
                                                         "explain": {
@@ -4453,6 +4659,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4__Nc6__Re1",
                                                             "san": "Re1",
                                                             "color": "w",
                                                             "explain": {
@@ -4463,6 +4670,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4__Nc6__Re1__b5",
                                                                 "san": "b5",
                                                                 "color": "b",
                                                                 "explain": {
@@ -4509,6 +4717,7 @@ var REPERTOIRE_TREE = [
     ]
   },
   {
+    "id": "b3",
     "san": "b3",
     "color": "w",
     "explain": {
@@ -4521,6 +4730,7 @@ var REPERTOIRE_TREE = [
     "variantColorId": 1,
     "children": [
       {
+        "id": "b3__e5",
         "san": "e5",
         "color": "b",
         "explain": {
@@ -4531,6 +4741,7 @@ var REPERTOIRE_TREE = [
         "kind": "book",
         "children": [
           {
+            "id": "b3__e5__Bb2",
             "san": "Bb2",
             "color": "w",
             "explain": {
@@ -4541,6 +4752,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "b3__e5__Bb2__Nc6",
                 "san": "Nc6",
                 "color": "b",
                 "explain": {
@@ -4551,6 +4763,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "b3__e5__Bb2__Nc6__e3",
                     "san": "e3",
                     "color": "w",
                     "explain": {
@@ -4561,6 +4774,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "b3__e5__Bb2__Nc6__e3__Nf6",
                         "san": "Nf6",
                         "color": "b",
                         "explain": {
@@ -4571,6 +4785,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5",
                             "san": "Bb5",
                             "color": "w",
                             "explain": {
@@ -4581,6 +4796,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6",
                                 "san": "Bd6",
                                 "color": "b",
                                 "explain": {
@@ -4591,6 +4807,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2",
                                     "san": "Ne2",
                                     "color": "w",
                                     "explain": {
@@ -4601,6 +4818,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O",
                                         "san": "O-O",
                                         "color": "b",
                                         "explain": {
@@ -4611,6 +4829,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O",
                                             "san": "O-O",
                                             "color": "w",
                                             "explain": {
@@ -4621,6 +4840,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8",
                                                 "san": "Re8",
                                                 "color": "b",
                                                 "explain": {
@@ -4631,6 +4851,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8__d4",
                                                     "san": "d4",
                                                     "color": "w",
                                                     "explain": {
@@ -4641,6 +4862,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8__d4__exd4",
                                                         "san": "exd4",
                                                         "color": "b",
                                                         "explain": {
@@ -4651,6 +4873,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8__d4__exd4__Nxd4",
                                                             "san": "Nxd4",
                                                             "color": "w",
                                                             "explain": {
@@ -4695,6 +4918,7 @@ var REPERTOIRE_TREE = [
     ]
   },
   {
+    "id": "f4",
     "san": "f4",
     "color": "w",
     "explain": {
@@ -4707,6 +4931,7 @@ var REPERTOIRE_TREE = [
     "variantColorId": 5,
     "children": [
       {
+        "id": "f4__d5",
         "san": "d5",
         "color": "b",
         "explain": {
@@ -4717,6 +4942,7 @@ var REPERTOIRE_TREE = [
         "kind": "book",
         "children": [
           {
+            "id": "f4__d5__Nf3",
             "san": "Nf3",
             "color": "w",
             "explain": {
@@ -4727,6 +4953,7 @@ var REPERTOIRE_TREE = [
             "kind": "book",
             "children": [
               {
+                "id": "f4__d5__Nf3__Nf6",
                 "san": "Nf6",
                 "color": "b",
                 "explain": {
@@ -4737,6 +4964,7 @@ var REPERTOIRE_TREE = [
                 "kind": "book",
                 "children": [
                   {
+                    "id": "f4__d5__Nf3__Nf6__e3",
                     "san": "e3",
                     "color": "w",
                     "explain": {
@@ -4747,6 +4975,7 @@ var REPERTOIRE_TREE = [
                     "kind": "book",
                     "children": [
                       {
+                        "id": "f4__d5__Nf3__Nf6__e3__g6",
                         "san": "g6",
                         "color": "b",
                         "explain": {
@@ -4757,6 +4986,7 @@ var REPERTOIRE_TREE = [
                         "kind": "book",
                         "children": [
                           {
+                            "id": "f4__d5__Nf3__Nf6__e3__g6__Be2",
                             "san": "Be2",
                             "color": "w",
                             "explain": {
@@ -4767,6 +4997,7 @@ var REPERTOIRE_TREE = [
                             "kind": "book",
                             "children": [
                               {
+                                "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7",
                                 "san": "Bg7",
                                 "color": "b",
                                 "explain": {
@@ -4777,6 +5008,7 @@ var REPERTOIRE_TREE = [
                                 "kind": "book",
                                 "children": [
                                   {
+                                    "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O",
                                     "san": "O-O",
                                     "color": "w",
                                     "explain": {
@@ -4787,6 +5019,7 @@ var REPERTOIRE_TREE = [
                                     "kind": "book",
                                     "children": [
                                       {
+                                        "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O",
                                         "san": "O-O",
                                         "color": "b",
                                         "explain": {
@@ -4797,6 +5030,7 @@ var REPERTOIRE_TREE = [
                                         "kind": "book",
                                         "children": [
                                           {
+                                            "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3",
                                             "san": "d3",
                                             "color": "w",
                                             "explain": {
@@ -4807,6 +5041,7 @@ var REPERTOIRE_TREE = [
                                             "kind": "book",
                                             "children": [
                                               {
+                                                "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5",
                                                 "san": "c5",
                                                 "color": "b",
                                                 "explain": {
@@ -4817,6 +5052,7 @@ var REPERTOIRE_TREE = [
                                                 "kind": "book",
                                                 "children": [
                                                   {
+                                                    "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5",
                                                     "san": "Ne5",
                                                     "color": "w",
                                                     "explain": {
@@ -4827,6 +5063,7 @@ var REPERTOIRE_TREE = [
                                                     "kind": "book",
                                                     "children": [
                                                       {
+                                                        "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5__Nc6",
                                                         "san": "Nc6",
                                                         "color": "b",
                                                         "explain": {
@@ -4837,6 +5074,7 @@ var REPERTOIRE_TREE = [
                                                         "kind": "book",
                                                         "children": [
                                                           {
+                                                            "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5__Nc6__Nxc6",
                                                             "san": "Nxc6",
                                                             "color": "w",
                                                             "explain": {
@@ -4847,6 +5085,7 @@ var REPERTOIRE_TREE = [
                                                             "kind": "book",
                                                             "children": [
                                                               {
+                                                                "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5__Nc6__Nxc6__bxc6",
                                                                 "san": "bxc6",
                                                                 "color": "b",
                                                                 "explain": {
