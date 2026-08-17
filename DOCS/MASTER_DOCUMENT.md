@@ -79,8 +79,28 @@ progreso) queda pendiente de definir con Miguel Ángel.
 
 ## 3. Hoja de Ruta Estratégica
 
-### Hito 01 — Fundamentos y repertorio base (COMPLETADO)
+### Hito 01 — Fundamentos y repertorio base (EN PROGRESO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H01.md`)
+
+**Reapertura vía PCH (S6):** Miguel Ángel señaló, al cierre de la
+sesión, que la mecánica de entrenamiento de aperturas actual
+(heredada de S1, ver anexo) es demasiado rígida para el objetivo real
+-- "la idea original era aprender una apertura y sus movimientos, lo
+que tenemos es coger una línea de apertura y poner los movimientos
+desde el principio hasta el final sin más, sin posibilidad de
+estudiar variantes, sin explicación de si el movimiento elegido está
+recogido o no". Verificado real en el código antes de escribir esto:
+cada entrada de `repertoire.js`/`RepertoireCatalog.kt` es una lista
+plana e independiente de jugadas de principio a fin -- líneas que
+comparten las mismas jugadas iniciales (p. ej. todas las variantes
+del Gambito de Dama) están completamente duplicadas entre sí, sin
+ninguna estructura de árbol compartida, y el motor de línea fija solo
+sabe comparar contra "la siguiente jugada esperada" de una única
+secuencia, sin ningún concepto de variante ni de nombre de rama.
+Pendiente de diseño completo con Miguel Ángel al empezar la siguiente
+sesión -- ver hoja de ruta en el anexo H01, todavía sin arquitectura
+técnica cerrada (solo el objetivo de producto, tal como lo planteó
+Miguel Ángel).
 
 ### Hito 02 — Repertorio completo de blancas y escandinava completa (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H02.md`)
@@ -96,7 +116,7 @@ la práctica. 9 líneas finales cubriendo las 5 familias del alcance
 (Londres, Inglesa+Catalán, Reti, Trompowsky, flancos menores), todas
 por encima de la profundidad media de H01/H02.
 
-### Hito 04 — Entrenamiento de finales de partida y sección de problemas (EN PROGRESO)
+### Hito 04 — Entrenamiento de finales de partida y sección de problemas (COMPLETADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H04.md`)
 Acordado con Miguel Ángel al cierre de Hito 02, para después de
 Hito 03. Dos bloques nuevos de contenido, reutilizando la mecánica de
@@ -125,8 +145,15 @@ problemas se reconstruye desde la base pública de Lichess.
 **Reapertura cerrada en S6:** 267 problemas nuevos (banco táctico
 verificado) + 33 posiciones de solución larga ampliando Grandes
 Partidas, 321 entradas totales en el hito, todas verificadas con
-`chess.js` real. Pendiente solo la prueba en dispositivo real y la
-valoración de cierre definitivo con Miguel Ángel.
+`chess.js` real. Tras uso real en dispositivo: corregida ambigüedad
+de "rating" (dificultad del problema, no ELO de jugadores), corregido
+bug real del botón reiniciar con pieza cogida, añadido sistema de
+navegación/avance sin repetir/marcapáginas/favoritos, corregido bug
+real de chess.js (lanza excepción en vez de null en jugadas ilegales
+-- rompía el flujo al soltar en la misma casilla), añadido indicador
+"Juegan blancas/negras", y restaurado el modo toque-toque como
+función real e independiente del arrastre. **Dado por completado en
+S6** -- ver hoja de ruta cerrada en el anexo.
 
 ### Hito 05 — Trampas en las aperturas (PAUSADO)
 (Ver anexo `DOCS/ATTACHEDS/APERTURASAJEDREZ_ANNEX_H05.md`)

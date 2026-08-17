@@ -549,22 +549,14 @@ anterior sin cambios):
   -- Iniciación y Grandes Partidas, sin el parámetro, siguen
   exactamente igual que antes.
 
-1. Prueba en dispositivo real de todo el hito (finales, Iniciación,
-   Grandes Partidas ampliadas, Problemas de ajedrez) -- Miguel Ángel
-   pedirá la instalación cuando quiera probarlo; no instalar por
-   iniciativa propia sin que lo pida.
-2. Con todo cerrado y verificado en el repositorio, valorar con
-   Miguel Ángel si el Hito 04 queda completo de nuevo (PCH de vuelta
-   hacia H06, que sigue pausado con su hoja de ruta intacta) o si se
-   amplía más el alcance.
-2. Añadir las 33 posiciones de solución larga (7/9/11 semijugadas)
-   como ampliación de "Grandes Partidas" (`Nivel.TORNEO`), mismo
-   criterio de verificación y de "no inventar autoría" (partidas
-   anónimas de Lichess, sin nombre de jugador, con `GameUrl` como
-   referencia).
-3. Prueba en dispositivo real de todo el hito (finales, Iniciación,
-   Grandes Partidas ampliadas, Problemas de ajedrez) -- Miguel Ángel
-   pedirá la instalación cuando quiera probarlo.
-4. Con todo cerrado, valorar con Miguel Ángel si el Hito 04 queda
-   completo de nuevo (PCH de vuelta hacia H06, que queda pausado con
-   su hoja de ruta intacta) o si se amplía más el alcance.
+## HITO 04 DADO POR COMPLETADO (S6)
+
+Prueba en dispositivo real completada por Miguel Ángel. Todas las
+incidencias reales encontradas durante la prueba quedaron corregidas
+en la misma sesión (ver bloque anterior: ambigüedad de rating, bug
+del botón reiniciar, sistema de navegación, bug de excepciones en
+chess.js, indicador de turno, modo toque-toque). Sin ninguna
+incidencia pendiente. El hito EN PROGRESO pasa de vuelta a Hito 01
+(reapertura por PCH, ver `MASTER_DOCUMENT.md` §3 y
+`APERTURASAJEDREZ_ANNEX_H01.md`) -- H05 y H06 siguen pausados con sus
+hojas de ruta intactas, a la espera de reactivación futura.

@@ -153,21 +153,87 @@ actualizaciones. Decisiones cerradas:
   app no tiene esa arquitectura y no se justifica introducirla solo
   para esto, a diferencia de MiMoo que ya la tenía de antes.
 
+## REAPERTURA VÍA PCH (S6)
+
+Al cierre de una sesión larga (H04 dado por completado), Miguel Ángel
+señaló que la mecánica de entrenamiento de aperturas -- la base
+misma del Hito 01, sin tocar desde S1 -- se queda corta frente al
+objetivo real del proyecto. Cita textual: *"la idea original era
+aprender una apertura y sus movimientos, lo que tenemos, una línea
+con sus movimientos rígido, sin posibilidad alguna de estudiar las
+variantes, sin explicaciones, lo que es coger una línea de apertura y
+poner los movimientos desde el principio hasta el final sin más. La
+idea es aprender una apertura, cuando se elija un movimiento decir si
+está recogida esa variante o no, como se llama, usar colores para
+distinguir las ramas, etc."*
+
+**Verificado real en el código antes de escribir esto** (no se asume
+nada): cada entrada de `repertoire.js` / `RepertoireCatalog.kt` es
+una lista plana e independiente de jugadas de principio a fin. Líneas
+que comparten las mismas jugadas iniciales (p. ej. todas las
+variantes del Gambito de Dama, que arrancan igual 1.d4 d5 2.c4) están
+completamente duplicadas entre sí -- no existe ninguna estructura de
+árbol compartida. El motor de línea fija (`onDrop`/`processUserMove`
+en `game.js`) solo sabe comparar la jugada del usuario contra "la
+siguiente jugada esperada" de una única secuencia (`currentExpected()`
+avanzando por `line.moves` con `moveIndex`) -- no tiene ningún
+concepto de variante, de rama, ni de nombre de línea más allá del
+`name` de la línea completa.
+
+### Lo pedido por Miguel Ángel (textual, sin reinterpretar)
+
+1. Aprender una **apertura** (con todas sus variantes), no una única
+   línea rígida de principio a fin.
+2. Al elegir un movimiento, la app debe decir **si esa variante está
+   recogida** en el repertorio o no.
+3. Si está recogida, decir **cómo se llama** esa variante.
+4. **Usar colores para distinguir las ramas** (ramificaciones del
+   árbol de variantes).
+5. "etc." -- Miguel Ángel dejó la puerta abierta a más requisitos que
+   surjan al diseñar esto con detalle; no inventar ninguno por
+   iniciativa propia, preguntar en la próxima sesión.
+
+### Lo que NO está cerrado todavía (a diferencia del resto de hitos
+de este proyecto, aquí no hay ninguna decisión técnica tomada más
+allá de lo textual de arriba -- toca **diseño antes de código**, como
+siempre, empezando la siguiente sesión desde cero en este punto):
+
+- Modelo de datos: cómo se representa un árbol de variantes en vez de
+  una lista plana (¿nodos con hijos? ¿reutilizar el `repertoire.js`
+  actual con un campo nuevo de bifurcación? ¿fichero nuevo por
+  apertura?).
+- Mecánica de juego: ¿el usuario puede desviarse libremente de
+  cualquier variante conocida en cualquier momento, y la app solo
+  informa (sin bloquear), o sigue habiendo algún tipo de límite?
+- Qué pasa cuando el usuario juega una jugada que **no** está
+  recogida en ninguna variante del repertorio -- ¿se le avisa de que
+  "sale del libro"? ¿se sigue explorando la posición igualmente sin
+  más restricción?
+- Cómo se decide y se muestra el color de cada rama (¿un color fijo
+  por variante nombrada? ¿un color que se asigna dinámicamente la
+  primera vez que dos variantes se bifurcan?).
+- Alcance: ¿esto aplica de entrada a todo el repertorio ya construido
+  (H01+H02+H03, Gambito de Dama completo + Escandinava completa +
+  defensas contra el resto de aperturas), o se empieza por una
+  apertura piloto para validar el diseño antes de migrar todo?
+- Impacto en el registro de progreso actual (aciertos/fallos por
+  línea) -- ¿sigue teniendo sentido por línea, o pasa a ser por
+  variante/nodo del árbol?
+
 ## HOJA DE RUTA PARA LA SIGUIENTE SESIÓN
 
-~~1. Confirmar que `RELEASES_REPO_TOKEN` está añadido...~~ — cerrado
-en S1: token regenerado sin caducidad tras dos intentos fallidos
-(caducidad heredada de 1 día, luego repo `AperturasAjedrezReleases`
-vacío sin rama por defecto), workflow verificado en verde de punta a
-punta (build → PythonAnywhere → Release + `manifest.json`).
-
-~~2. Verificar en dispositivo real...~~ — cerrado en S1, confirmado
-por Miguel Ángel ("todo bien") tras la primera instalación manual
-(obligatoria por ser la primera vez, sin app previa que compruebe
-actualizaciones).
-
-~~3. Redactar variantes adicionales...~~ — pasa a ser el contenido
-íntegro del Hito 02, ver `APERTURASAJEDREZ_ANNEX_H02.md`.
+1. Sesión de diseño con Miguel Ángel (sin escribir código hasta
+   cerrar todos los puntos abiertos de arriba) para convertir la
+   petición textual en una arquitectura concreta: modelo de datos del
+   árbol de variantes, mecánica de juego libre con detección de
+   variante, criterio de color por rama, y alcance del primer lote de
+   migración.
+2. Una vez cerrado el diseño, migrar el repertorio existente (o el
+   subconjunto piloto acordado) del formato de líneas planas actual
+   al nuevo modelo, verificando con `chess.js` real cada variante
+   igual que se ha hecho siempre en este proyecto.
+3. Construir la UI de color por rama y el aviso de variante
+   reconocida/no reconocida.
 
 ## CIERRE DEL HITO (S1)
 
