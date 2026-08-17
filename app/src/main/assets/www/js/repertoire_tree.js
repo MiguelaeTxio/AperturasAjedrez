@@ -32,6 +32,10 @@ var REPERTOIRE_TREE = [
       "debilidad": "Ninguna real a este nivel; es la jugada mas solida y flexible para empezar."
     },
     "kind": "book",
+    "userColors": [
+      "b",
+      "w"
+    ],
     "children": [
       {
         "id": "d4__d5",
@@ -43,6 +47,10 @@ var REPERTOIRE_TREE = [
           "debilidad": "Dificulta el desarrollo del alfil de casillas claras de negras, que queda encerrado tras la cadena de peones."
         },
         "kind": "book",
+        "userColors": [
+          "b",
+          "w"
+        ],
         "children": [
           {
             "id": "d4__d5__c4",
@@ -54,6 +62,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Cede momentaneamente el control exclusivo del centro y abre ligeramente la posicion del rey mientras no se ha enrocado."
             },
             "kind": "book",
+            "userColors": [
+              "w"
+            ],
             "children": [
               {
                 "id": "d4__d5__c4__e6",
@@ -65,6 +76,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones e6-d5; liberarlo (o abrir el centro, en el caso del Tarrasch) es uno de los planes centrales de negras en el medio juego."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "children": [
                   {
                     "id": "d4__d5__c4__e6__Nc3",
@@ -76,6 +90,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante en este orden de jugadas."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__e6__Nc3__Nf6",
@@ -87,6 +104,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5",
@@ -98,6 +118,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "El alfil puede acabar siendo blanco de ...h6 y ...g5 mas adelante si negras busca contrajuego agresivo, aunque no es una amenaza inmediata."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Be7",
@@ -109,6 +132,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Deja pasar la opcion mas combativa ...h6 seguido de ...O-O; ambas son teoria principal."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "variantName": "Gambito de Dama Rehusado -- linea principal",
                                 "variantColorId": 11,
                                 "children": [
@@ -122,6 +148,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Encierra temporalmente al propio alfil de casillas claras de blancas, simetrico al problema que tiene negras con el suyo."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Be7__e3__O-O",
@@ -133,6 +162,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "leafOf": {
                                           "lineId": "h01-gambito-dama-rehusado",
                                           "name": "Gambito de Dama Rehusado -- linea principal",
@@ -154,6 +186,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Deja la clavada sin resolver un turno mas, aunque no supone ningun riesgo inmediato."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "variantName": "Defensa Ortodoxa -- linea clasica",
                                 "variantColorId": 7,
                                 "children": [
@@ -167,6 +202,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Encierra temporalmente al propio alfil de casillas claras de blancas."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3__Be7",
@@ -178,6 +216,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3__Be7__Nf3",
@@ -189,6 +230,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__e6__Nc3__Nf6__Bg5__Nbd7__e3__Be7__Nf3__O-O",
@@ -200,6 +244,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-ortodoxa-clasica",
                                                   "name": "Defensa Ortodoxa -- linea clasica",
@@ -223,6 +270,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "La supuesta clavada era ilusoria: hay una pieza detras (el caballo de d7) que puede recapturar sin problema."
                                     },
                                     "kind": "trap",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "trap": {
                                       "id": "h05-trampa-elefante",
                                       "tipo": "defensiva",
@@ -242,6 +292,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna."
                                         },
                                         "kind": "trap",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "trap": {
                                           "id": "h05-trampa-elefante",
                                           "tipo": "defensiva",
@@ -258,6 +311,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "El caballo f6 puede capturar sin problema: si Nxd5 se responde Bxd8, el rey blanco recibe jaque de alfil y pierde el derecho a enroque, perdiendo la partida a cambio de solo un peon."
                                             },
                                             "kind": "trap",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "trap": {
                                               "id": "h05-trampa-elefante",
                                               "tipo": "defensiva",
@@ -275,6 +331,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna -- la trampa esta consumada."
                                                 },
                                                 "kind": "trap",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "trap": {
                                                   "id": "h05-trampa-elefante",
                                                   "tipo": "defensiva",
@@ -291,6 +350,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "El alfil queda atrapado en d8 y el jaque que sigue le cuesta a blancas el enroque."
                                                     },
                                                     "kind": "trap",
+                                                    "userColors": [
+                                                      "w"
+                                                    ],
                                                     "trap": {
                                                       "id": "h05-trampa-elefante",
                                                       "tipo": "defensiva",
@@ -307,6 +369,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna."
                                                         },
                                                         "kind": "trap",
+                                                        "userColors": [
+                                                          "w"
+                                                        ],
                                                         "trap": {
                                                           "id": "h05-trampa-elefante",
                                                           "tipo": "defensiva",
@@ -323,6 +388,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "La dama queda clavada de inmediato contra el rey en la misma diagonal."
                                                             },
                                                             "kind": "trap",
+                                                            "userColors": [
+                                                              "w"
+                                                            ],
                                                             "trap": {
                                                               "id": "h05-trampa-elefante",
                                                               "tipo": "defensiva",
@@ -339,6 +407,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna."
                                                                 },
                                                                 "kind": "trap",
+                                                                "userColors": [
+                                                                  "w"
+                                                                ],
                                                                 "trap": {
                                                                   "id": "h05-trampa-elefante",
                                                                   "tipo": "defensiva",
@@ -355,6 +426,9 @@ var REPERTOIRE_TREE = [
                                                                       "debilidad": "El rey pierde el derecho a enroque y queda expuesto en el centro."
                                                                     },
                                                                     "kind": "trap",
+                                                                    "userColors": [
+                                                                      "w"
+                                                                    ],
                                                                     "trap": {
                                                                       "id": "h05-trampa-elefante",
                                                                       "tipo": "defensiva",
@@ -371,6 +445,9 @@ var REPERTOIRE_TREE = [
                                                                           "debilidad": "El rey negro tampoco puede enrocar, pero la ventaja material es decisiva."
                                                                         },
                                                                         "kind": "trap",
+                                                                        "userColors": [
+                                                                          "w"
+                                                                        ],
                                                                         "trap": {
                                                                           "id": "h05-trampa-elefante",
                                                                           "tipo": "defensiva",
@@ -412,6 +489,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna."
                                     },
                                     "kind": "trap",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "trap": {
                                       "id": "h05-trampa-cambridge-springs",
                                       "tipo": "defensiva",
@@ -430,6 +510,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna."
                                         },
                                         "kind": "trap",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "trap": {
                                           "id": "h05-trampa-cambridge-springs",
                                           "tipo": "defensiva",
@@ -446,6 +529,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Encierra el propio alfil de casillas claras."
                                             },
                                             "kind": "trap",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "trap": {
                                               "id": "h05-trampa-cambridge-springs",
                                               "tipo": "defensiva",
@@ -462,6 +548,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna -- linea principal solida y muy jugada a alto nivel."
                                                 },
                                                 "kind": "trap",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "trap": {
                                                   "id": "h05-trampa-cambridge-springs",
                                                   "tipo": "defensiva",
@@ -478,6 +567,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna."
                                                     },
                                                     "kind": "trap",
+                                                    "userColors": [
+                                                      "w"
+                                                    ],
                                                     "trap": {
                                                       "id": "h05-trampa-cambridge-springs",
                                                       "tipo": "defensiva",
@@ -494,6 +586,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna."
                                                         },
                                                         "kind": "trap",
+                                                        "userColors": [
+                                                          "w"
+                                                        ],
                                                         "trap": {
                                                           "id": "h05-trampa-cambridge-springs",
                                                           "tipo": "defensiva",
@@ -510,6 +605,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna."
                                                             },
                                                             "kind": "trap",
+                                                            "userColors": [
+                                                              "w"
+                                                            ],
                                                             "trap": {
                                                               "id": "h05-trampa-cambridge-springs",
                                                               "tipo": "defensiva",
@@ -526,6 +624,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna."
                                                                 },
                                                                 "kind": "trap",
+                                                                "userColors": [
+                                                                  "w"
+                                                                ],
                                                                 "trap": {
                                                                   "id": "h05-trampa-cambridge-springs",
                                                                   "tipo": "defensiva",
@@ -542,6 +643,9 @@ var REPERTOIRE_TREE = [
                                                                       "debilidad": "Pierde una pieza al zwischenzug tactico ...dxc4! seguido de ...cxd3! -- cae en la Trampa de la Cambridge Springs."
                                                                     },
                                                                     "kind": "trap",
+                                                                    "userColors": [
+                                                                      "w"
+                                                                    ],
                                                                     "trap": {
                                                                       "id": "h05-trampa-cambridge-springs",
                                                                       "tipo": "defensiva",
@@ -559,6 +663,9 @@ var REPERTOIRE_TREE = [
                                                                           "debilidad": "Ninguna -- es la jugada clave de la combinacion."
                                                                         },
                                                                         "kind": "trap",
+                                                                        "userColors": [
+                                                                          "w"
+                                                                        ],
                                                                         "trap": {
                                                                           "id": "h05-trampa-cambridge-springs",
                                                                           "tipo": "defensiva",
@@ -575,6 +682,9 @@ var REPERTOIRE_TREE = [
                                                                               "debilidad": "No ve el zwischenzug: antes de recapturar en f6, negras tiene una jugada intermedia mucho mas fuerte."
                                                                             },
                                                                             "kind": "trap",
+                                                                            "userColors": [
+                                                                              "w"
+                                                                            ],
                                                                             "trap": {
                                                                               "id": "h05-trampa-cambridge-springs",
                                                                               "tipo": "defensiva",
@@ -591,6 +701,9 @@ var REPERTOIRE_TREE = [
                                                                                   "debilidad": "Ninguna."
                                                                                 },
                                                                                 "kind": "trap",
+                                                                                "userColors": [
+                                                                                  "w"
+                                                                                ],
                                                                                 "trap": {
                                                                                   "id": "h05-trampa-cambridge-springs",
                                                                                   "tipo": "defensiva",
@@ -607,6 +720,9 @@ var REPERTOIRE_TREE = [
                                                                                       "debilidad": "El alfil que quedo en f6 sigue capturado y sin compensacion real: blancas termina la secuencia una pieza abajo."
                                                                                     },
                                                                                     "kind": "trap",
+                                                                                    "userColors": [
+                                                                                      "w"
+                                                                                    ],
                                                                                     "trap": {
                                                                                       "id": "h05-trampa-cambridge-springs",
                                                                                       "tipo": "defensiva",
@@ -623,6 +739,9 @@ var REPERTOIRE_TREE = [
                                                                                           "debilidad": "Ninguna."
                                                                                         },
                                                                                         "kind": "trap",
+                                                                                        "userColors": [
+                                                                                          "w"
+                                                                                        ],
                                                                                         "trap": {
                                                                                           "id": "h05-trampa-cambridge-springs",
                                                                                           "tipo": "defensiva",
@@ -676,6 +795,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Renuncia a la tension central que mantiene la linea principal; algunos jugadores de blancas prefieren mantener mas opciones sin definir la estructura tan pronto."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "variantName": "Gambito de Dama Rehusado -- Variante de Cambio",
                             "variantColorId": 4,
                             "children": [
@@ -689,6 +811,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "La columna c queda semiabierta para blancas, base del plan de minoria de peones que viene a continuacion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5",
@@ -700,6 +825,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna inmediata; jugada estandar del plan."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5__Be7",
@@ -711,6 +839,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Deja pasar la opcion mas combativa ...h6 seguido de ...O-O; ambas son teoria principal."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5__Be7__e3",
@@ -722,6 +853,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Encierra temporalmente al propio alfil de dama, ya reubicado en g5."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__e6__Nc3__Nf6__cxd5__exd5__Bg5__Be7__e3__O-O",
@@ -733,6 +867,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-qgd-cambio",
                                                   "name": "Gambito de Dama Rehusado -- Variante de Cambio",
@@ -760,6 +897,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "variantName": "Semi-Tarrasch",
                             "variantColorId": 11,
                             "children": [
@@ -773,6 +913,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Cede tiempo a blancas para ocupar el centro con e4 tras el cambio en d5."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5",
@@ -784,6 +927,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna; es la continuacion mas natural y fuerte."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5",
@@ -795,6 +941,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "El caballo en d5 sera blanco de e4 en la siguiente jugada, perdiendo un tiempo."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5__e4",
@@ -806,6 +955,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante; es la continuacion mas ambiciosa y fuerte."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__e6__Nc3__Nf6__Nf3__c5__cxd5__Nxd5__e4__Nxc3",
@@ -817,6 +969,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Cede el par de alfiles potencial a cambio de la simplificacion, aunque es una concesion menor y muy jugada en la practica."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-semi-tarrasch",
                                                   "name": "Semi-Tarrasch",
@@ -846,6 +1001,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El peon d5 quedara aislado tras los cambios en el centro, un objetivo a largo plazo para blancas durante toda la partida."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "variantName": "Defensa Tarrasch",
                         "variantColorId": 4,
                         "children": [
@@ -859,6 +1017,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna; es la continuacion mas natural y fuerte."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5",
@@ -870,6 +1031,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "El peon d5 aislado sera un objetivo constante para blancas, especialmente en los finales."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3",
@@ -881,6 +1045,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6",
@@ -892,6 +1059,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6__g3",
@@ -903,6 +1073,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Cede algo de tiempo mientras negras completa su desarrollo, aunque el plan compensa sobradamente a la larga gracias a la debilidad permanente del peon d5."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__e6__Nc3__c5__cxd5__exd5__Nf3__Nc6__g3__Nf6",
@@ -914,6 +1087,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-defensa-tarrasch",
                                                   "name": "Defensa Tarrasch",
@@ -947,6 +1123,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Cede el centro y el tiempo de desarrollo; el peon c4 no se puede sostener a largo plazo y blancas lo recuperara con ventaja de espacio."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "variantName": "Gambito de Dama Aceptado -- Sistema Alekhine",
                 "variantColorId": 11,
                 "children": [
@@ -960,6 +1139,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Deja el peon c4 en manos de negras un turno mas, aunque no supone ningun riesgo real."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__dxc4__Nf3__Nf6",
@@ -971,6 +1153,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "No hace nada por sostener el peon c4, que blancas recuperara pronto sin esfuerzo."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3",
@@ -982,6 +1167,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Encierra momentaneamente al propio alfil de dama, igual que en el Rehusado."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6",
@@ -993,6 +1181,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Sigue sin defender el peon c4, que blancas captura en la siguiente jugada sin ninguna compensacion para negras."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4",
@@ -1004,6 +1195,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna; es el objetivo de todo el plan desde la jugada 3."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5",
@@ -1015,6 +1209,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Puede dejar la estructura de peones algo suelta si blancas juega con precision (dxc5 seguido de recuperar el peon con ventaja de desarrollo)."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5__O-O",
@@ -1026,6 +1223,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad del rey."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__dxc4__Nf3__Nf6__e3__e6__Bxc4__c5__O-O__a6",
@@ -1037,6 +1237,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Jugada lenta que no desarrolla ninguna pieza; blancas puede aprovechar el tiempo con Qe2 o Rd1 presionando el centro."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-gambito-dama-aceptado",
                                                   "name": "Gambito de Dama Aceptado -- Sistema Alekhine",
@@ -1070,6 +1273,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Tapa momentaneamente la casilla natural de desarrollo del caballo de dama (b8), que tendra que salir por d7 en vez de c6."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "children": [
                   {
                     "id": "d4__d5__c4__c6__Nf3",
@@ -1081,6 +1287,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__c6__Nf3__Nf6",
@@ -1092,6 +1301,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3",
@@ -1103,6 +1315,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Permite a negras capturar en c4 y sostener el peon de mas con ...b5, el plan principal de la Eslava."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4",
@@ -1114,6 +1329,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Cede el centro por completo; si blancas juega con precision (a4) puede evitar que negras sostenga el peon comodamente."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "variantName": "Defensa Eslava -- linea principal",
                                 "variantColorId": 5,
                                 "children": [
@@ -1127,6 +1345,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Debilita ligeramente la casilla b4 y compromete el flanco de dama, aunque es un precio asumido en toda la teoria principal."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5",
@@ -1138,6 +1359,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "El alfil puede convertirse en objetivo de Nh4 o Qb3 mas adelante en algunas variantes, aunque no es una amenaza inmediata aqui."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5__e3",
@@ -1149,6 +1373,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Encierra temporalmente al propio alfil de dama, ya reubicado fuera en la practica gracias al orden de jugadas."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__dxc4__a4__Bf5__e3__e6",
@@ -1160,6 +1387,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-defensa-eslava",
                                                   "name": "Defensa Eslava -- linea principal",
@@ -1185,6 +1415,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Vuelve a encerrar el alfil de casillas claras, el mismo problema estructural que en el Rehusado puro, aunque compensado por la solidez general del sistema."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "variantName": "Semi-Eslava -- Variante Meran",
                                 "variantColorId": 8,
                                 "children": [
@@ -1198,6 +1431,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Encierra temporalmente al propio alfil de dama."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7",
@@ -1209,6 +1445,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7__Bd3",
@@ -1220,6 +1459,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna inmediata; jugada estandar del plan Meran."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__c6__Nf3__Nf6__Nc3__e6__e3__Nbd7__Bd3__dxc4",
@@ -1231,6 +1473,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Cede el centro por completo; si blancas recaptura con precision (Bxc4) seguido de e4, puede obtener una fuerte iniciativa central."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-semi-eslava-meran",
                                                   "name": "Semi-Eslava -- Variante Meran",
@@ -1258,6 +1503,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Renuncia a la tension central a cambio de simplicidad."
                             },
                             "kind": "trap",
+                            "userColors": [
+                              "w"
+                            ],
                             "trap": {
                               "id": "h05-trampa-eslava-bf4-e4",
                               "tipo": "ofensiva",
@@ -1276,6 +1524,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna inmediata."
                                 },
                                 "kind": "trap",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "trap": {
                                   "id": "h05-trampa-eslava-bf4-e4",
                                   "tipo": "ofensiva",
@@ -1292,6 +1543,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna."
                                     },
                                     "kind": "trap",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "trap": {
                                       "id": "h05-trampa-eslava-bf4-e4",
                                       "tipo": "ofensiva",
@@ -1308,6 +1562,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna inmediata."
                                         },
                                         "kind": "trap",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "trap": {
                                           "id": "h05-trampa-eslava-bf4-e4",
                                           "tipo": "ofensiva",
@@ -1324,6 +1581,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna."
                                             },
                                             "kind": "trap",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "trap": {
                                               "id": "h05-trampa-eslava-bf4-e4",
                                               "tipo": "ofensiva",
@@ -1340,6 +1600,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Cae en la Trampa del alfil en la Eslava: la jugada mas precisa era una jugada de espera como ...a6 o ...Bf5 antes de comprometerse."
                                                 },
                                                 "kind": "trap",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "trap": {
                                                   "id": "h05-trampa-eslava-bf4-e4",
                                                   "tipo": "ofensiva",
@@ -1357,6 +1620,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna -- el golpe esta completamente justificado tacticamente."
                                                     },
                                                     "kind": "trap",
+                                                    "userColors": [
+                                                      "w"
+                                                    ],
                                                     "trap": {
                                                       "id": "h05-trampa-eslava-bf4-e4",
                                                       "tipo": "ofensiva",
@@ -1373,6 +1639,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Abre la posicion justo cuando el caballo de f6 va a quedar clavado tras la recaptura de blancas."
                                                         },
                                                         "kind": "trap",
+                                                        "userColors": [
+                                                          "w"
+                                                        ],
                                                         "trap": {
                                                           "id": "h05-trampa-eslava-bf4-e4",
                                                           "tipo": "ofensiva",
@@ -1389,6 +1658,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna -- es el remate de la combinacion."
                                                             },
                                                             "kind": "trap",
+                                                            "userColors": [
+                                                              "w"
+                                                            ],
                                                             "trap": {
                                                               "id": "h05-trampa-eslava-bf4-e4",
                                                               "tipo": "ofensiva",
@@ -1434,6 +1706,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Objetivamente arriesgada: si blancas responde con precision (como en esta linea), negras queda con menos espacio y un peon avanzado que puede volverse debil en vez de fuerte."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "variantName": "Contragambito Albin -- respuesta principal",
                 "variantColorId": 10,
                 "children": [
@@ -1447,6 +1722,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna; es la continuacion practicamente obligada."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__e5__dxe5__d4",
@@ -1458,6 +1736,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El peon d4 queda sin apoyo inmediato y sera un objetivo constante durante toda la partida si blancas juega con precision."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__e5__dxe5__d4__Nf3",
@@ -1469,6 +1750,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna; es el plan mas fiable contra el Albin a nivel de club."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6",
@@ -1480,6 +1764,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna inmediata; jugada natural del plan de negras."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3",
@@ -1491,6 +1778,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Cede algo de tiempo mientras negras completa su desarrollo, aunque el plan compensa sobradamente a la larga."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3__Be6",
@@ -1502,6 +1792,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "No hace nada por resolver el problema de fondo del peon d4 avanzado, que sigue siendo un objetivo a largo plazo para blancas."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3__Be6__Bg2",
@@ -1513,6 +1806,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna; es el objetivo de todo el plan desde la jugada 5."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__e5__dxe5__d4__Nf3__Nc6__g3__Be6__Bg2__Qd7",
@@ -1524,6 +1820,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "El rey en el enroque largo puede quedar expuesto si blancas ataca el flanco de dama con a3-b4 mas adelante."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-contragambito-albin",
                                                   "name": "Contragambito Albin -- respuesta principal",
@@ -1551,6 +1850,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Cae en la Trampa Lasker: la jugada correcta es 4.Nf3, desarrollando primero."
                             },
                             "kind": "trap",
+                            "userColors": [
+                              "w"
+                            ],
                             "trap": {
                               "id": "h05-trampa-lasker-albin",
                               "tipo": "defensiva",
@@ -1570,6 +1872,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna."
                                 },
                                 "kind": "trap",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "trap": {
                                   "id": "h05-trampa-lasker-albin",
                                   "tipo": "defensiva",
@@ -1586,6 +1891,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "El alfil en d2 sera el objetivo del sacrificio tactico que sigue."
                                     },
                                     "kind": "trap",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "trap": {
                                       "id": "h05-trampa-lasker-albin",
                                       "tipo": "defensiva",
@@ -1602,6 +1910,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Aparentemente pierde una pieza sin compensacion si blancas no captura -- pero blancas casi siempre captura, por instinto natural."
                                         },
                                         "kind": "trap",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "trap": {
                                           "id": "h05-trampa-lasker-albin",
                                           "tipo": "defensiva",
@@ -1618,6 +1929,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Cae en la Trampa Lasker: la jugada correcta era 6.fxe3, aceptando doblar peones pero evitando el desastre tactico."
                                             },
                                             "kind": "trap",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "trap": {
                                               "id": "h05-trampa-lasker-albin",
                                               "tipo": "defensiva",
@@ -1635,6 +1949,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna."
                                                 },
                                                 "kind": "trap",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "trap": {
                                                   "id": "h05-trampa-lasker-albin",
                                                   "tipo": "defensiva",
@@ -1651,6 +1968,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "El rey queda expuesto en el centro y el peon de f2 sigue vivo, amenazando coronar."
                                                     },
                                                     "kind": "trap",
+                                                    "userColors": [
+                                                      "w"
+                                                    ],
                                                     "trap": {
                                                       "id": "h05-trampa-lasker-albin",
                                                       "tipo": "defensiva",
@@ -1667,6 +1987,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna -- es el golpe que da nombre a la Trampa Lasker."
                                                         },
                                                         "kind": "trap",
+                                                        "userColors": [
+                                                          "w"
+                                                        ],
                                                         "trap": {
                                                           "id": "h05-trampa-lasker-albin",
                                                           "tipo": "defensiva",
@@ -1710,6 +2033,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Bloquea el propio peon c7, dificultando el plan clasico de sostener el centro con c6; objetivamente algo dudosa a nivel teorico."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "variantName": "Defensa Chigorin -- respuesta principal",
                 "variantColorId": 7,
                 "children": [
@@ -1723,6 +2049,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__Nc6__Nf3__Bg4",
@@ -1734,6 +2063,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Deja que blancas rompa la clavada con h3 y luego gane el par de alfiles si negras captura en f3."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5",
@@ -1745,6 +2077,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna; es la continuacion mas fuerte y directa contra el planteamiento de negras."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3",
@@ -1756,6 +2091,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Cede el par de alfiles a cambio de nada material, una concesion estructural importante a largo plazo."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3",
@@ -1767,6 +2105,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Estructura de peones de rey daniada, aunque el par de alfiles compensa sobradamente segun la teoria establecida."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3__Qxd5",
@@ -1778,6 +2119,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "La dama queda en el centro, expuesta a perder otro tiempo si blancas encuentra Nc3 con ataque."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3__Qxd5__e3",
@@ -1789,6 +2133,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__Nc6__Nf3__Bg4__cxd5__Bxf3__gxf3__Qxd5__e3__e5",
@@ -1800,6 +2147,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Puede abrir aun mas la posicion en un momento en el que blancas tiene el par de alfiles, generalmente favorable a la parte con los dos alfiles."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-defensa-chigorin",
                                                   "name": "Defensa Chigorin -- respuesta principal",
@@ -1833,6 +2183,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Pierde un tiempo de desarrollo central y expone el alfil a ser atacado pronto con Qb3 o cxd5, ganando tiempo blancas."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "variantName": "Defensa Baltica",
                 "variantColorId": 8,
                 "children": [
@@ -1846,6 +2199,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante en este orden de jugadas."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__Bf5__Nc3__e6",
@@ -1857,6 +2213,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3",
@@ -1868,6 +2227,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6",
@@ -1879,6 +2241,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3",
@@ -1890,6 +2255,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Saca la dama pronto, lo que puede dar a negras un tiempo de desarrollo si encuentra la forma de atacarla mas adelante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3__Qc8",
@@ -1901,6 +2269,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "La dama queda algo pasiva en c8, con menos actividad que si hubiera podido desarrollarse de forma mas natural."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3__Qc8__Bg5",
@@ -1912,6 +2283,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna inmediata."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__Bf5__Nc3__e6__Nf3__Nf6__Qb3__Qc8__Bg5__c6",
@@ -1923,6 +2297,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Jugada algo pasiva que no desarrolla ninguna pieza nueva, dejando a blancas con la iniciativa del planteamiento."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-defensa-baltica",
                                                   "name": "Defensa Baltica",
@@ -1956,6 +2333,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Tras los cambios centrales, la dama de negras puede acabar perdiendo tiempos, similar a lo que ocurre en la Escandinava."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "variantName": "Defensa Simetrica (2...c5)",
                 "variantColorId": 0,
                 "children": [
@@ -1969,6 +2349,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna; es la continuacion mas fuerte y natural."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__c5__cxd5__Qxd5",
@@ -1980,6 +2363,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "La dama queda en el centro, expuesta a perder otro tiempo con Nc3 -- el mismo problema estructural que la Escandinava."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3",
@@ -1991,6 +2377,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna; es la jugada mas natural y fuerte."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6",
@@ -2002,6 +2391,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "La dama sigue relativamente expuesta y puede volver a perder tiempos mas adelante."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3",
@@ -2013,6 +2405,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3__Nf6",
@@ -2024,6 +2419,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3__Nf6__e4",
@@ -2035,6 +2433,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante; es la continuacion mas ambiciosa y fuerte."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__c5__cxd5__Qxd5__Nc3__Qd6__Nf3__Nf6__e4__cxd4",
@@ -2046,6 +2447,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Cede aun mas espacio central a blancas, que recuperara el peon con ventaja de desarrollo."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-defensa-simetrica",
                                                   "name": "Defensa Simetrica (2...c5)",
@@ -2079,6 +2483,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "No hace nada por defender d5 ni disputar c4, permitiendo a blancas capturar en d5 con ganancia de tiempo y espacio."
                 },
                 "kind": "book",
+                "userColors": [
+                  "w"
+                ],
                 "variantName": "Defensa Marshall (2...Nf6)",
                 "variantColorId": 9,
                 "children": [
@@ -2092,6 +2499,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna; es la continuacion mas directa y fuerte."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "w"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__c4__Nf6__cxd5__Nxd5",
@@ -2103,6 +2513,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El caballo en d5 sera blanco de e4 en la siguiente jugada, obligandolo a retroceder y perdiendo otro tiempo."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "w"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3",
@@ -2114,6 +2527,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "w"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6",
@@ -2125,6 +2541,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Debilita ligeramente las casillas oscuras alrededor del futuro rey."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4",
@@ -2136,6 +2555,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4__Nb6",
@@ -2147,6 +2569,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la retirada mas natural."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4__Nb6__Nc3",
@@ -2158,6 +2583,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__c4__Nf6__cxd5__Nxd5__Nf3__g6__e4__Nb6__Nc3__Bg7",
@@ -2169,6 +2597,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural para completar el desarrollo."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-defensa-marshall",
                                                   "name": "Defensa Marshall (2...Nf6)",
@@ -2204,6 +2635,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "El alfil puede convertirse en objetivo de un futuro ...Nh5 o ...Qb6 en algunas lineas, aunque no es una amenaza inmediata aqui."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "variantName": "Sistema Londres -- respuesta clasica con Bd6",
             "variantColorId": 9,
             "children": [
@@ -2217,6 +2651,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "d4__d5__Bf4__Nf6__e3",
@@ -2228,6 +2665,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Encierra temporalmente al alfil de dama ya desarrollado en f4 solo en el sentido de reducir su movilidad por detras de la cadena, aunque ya esta fuera de la cadena de peones."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "d4__d5__Bf4__Nf6__e3__e6",
@@ -2239,6 +2679,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones, el mismo problema estructural de siempre contra sistemas de peon en d4."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3",
@@ -2250,6 +2693,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6",
@@ -2261,6 +2707,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Invita al cambio Bxd6 si blancas lo desea, aunque normalmente blancas prefiere retirarse a g3 para mantener la pareja de alfiles activa."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3",
@@ -2272,6 +2721,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Pierde un tiempo respecto a cambiar directamente, aunque es la eleccion mas ambiciosa en la practica."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O",
@@ -2283,6 +2735,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3",
@@ -2294,6 +2749,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Si negras cambia con ...Bxg3, blancas debe recapturar con hxg3 abriendo la columna h, una concesion menor pero real que hay que vigilar."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5",
@@ -2305,6 +2763,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Cede parcialmente el control de d5 si blancas encuentra el momento de cambiar ahi, aunque no es una debilidad inmediata."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3",
@@ -2316,6 +2777,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna relevante; es la continuacion mas solida y natural."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6",
@@ -2327,6 +2791,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2",
@@ -2338,6 +2805,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2__Qc7",
@@ -2349,6 +2819,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna relevante a este nivel de la apertura."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "children": [
                                                                   {
                                                                     "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2__Qc7__O-O",
@@ -2360,6 +2833,9 @@ var REPERTOIRE_TREE = [
                                                                       "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                                                     },
                                                                     "kind": "book",
+                                                                    "userColors": [
+                                                                      "b"
+                                                                    ],
                                                                     "children": [
                                                                       {
                                                                         "id": "d4__d5__Bf4__Nf6__e3__e6__Nf3__Bd6__Bg3__O-O__Bd3__c5__c3__Nc6__Nbd2__Qc7__O-O__b6",
@@ -2371,6 +2847,9 @@ var REPERTOIRE_TREE = [
                                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                                         },
                                                                         "kind": "book",
+                                                                        "userColors": [
+                                                                          "b"
+                                                                        ],
                                                                         "leafOf": {
                                                                           "lineId": "h03-londres-clasica",
                                                                           "name": "Sistema Londres -- respuesta clasica con Bd6",
@@ -2418,6 +2897,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna."
             },
             "kind": "trap",
+            "userColors": [
+              "w"
+            ],
             "trap": {
               "id": "h05-trampa-rubinstein",
               "tipo": "ofensiva",
@@ -2436,6 +2918,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna."
                 },
                 "kind": "trap",
+                "userColors": [
+                  "w"
+                ],
                 "trap": {
                   "id": "h05-trampa-rubinstein",
                   "tipo": "ofensiva",
@@ -2452,6 +2937,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna."
                     },
                     "kind": "trap",
+                    "userColors": [
+                      "w"
+                    ],
                     "trap": {
                       "id": "h05-trampa-rubinstein",
                       "tipo": "ofensiva",
@@ -2468,6 +2956,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Encierra momentaneamente el alfil de casillas claras."
                         },
                         "kind": "trap",
+                        "userColors": [
+                          "w"
+                        ],
                         "trap": {
                           "id": "h05-trampa-rubinstein",
                           "tipo": "ofensiva",
@@ -2484,6 +2975,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna inmediata."
                             },
                             "kind": "trap",
+                            "userColors": [
+                              "w"
+                            ],
                             "trap": {
                               "id": "h05-trampa-rubinstein",
                               "tipo": "ofensiva",
@@ -2500,6 +2994,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "A diferencia de la Trampa del Elefante, aqui el orden de jugadas que sigue si expone a negras a la Trampa Rubinstein mas adelante."
                                 },
                                 "kind": "trap",
+                                "userColors": [
+                                  "w"
+                                ],
                                 "trap": {
                                   "id": "h05-trampa-rubinstein",
                                   "tipo": "ofensiva",
@@ -2516,6 +3013,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Encierra el alfil de casillas claras propio, tipico de la Ortodoxa."
                                     },
                                     "kind": "trap",
+                                    "userColors": [
+                                      "w"
+                                    ],
                                     "trap": {
                                       "id": "h05-trampa-rubinstein",
                                       "tipo": "ofensiva",
@@ -2532,6 +3032,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna."
                                         },
                                         "kind": "trap",
+                                        "userColors": [
+                                          "w"
+                                        ],
                                         "trap": {
                                           "id": "h05-trampa-rubinstein",
                                           "tipo": "ofensiva",
@@ -2548,6 +3051,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna."
                                             },
                                             "kind": "trap",
+                                            "userColors": [
+                                              "w"
+                                            ],
                                             "trap": {
                                               "id": "h05-trampa-rubinstein",
                                               "tipo": "ofensiva",
@@ -2564,6 +3070,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna inmediata."
                                                 },
                                                 "kind": "trap",
+                                                "userColors": [
+                                                  "w"
+                                                ],
                                                 "trap": {
                                                   "id": "h05-trampa-rubinstein",
                                                   "tipo": "ofensiva",
@@ -2580,6 +3089,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna."
                                                     },
                                                     "kind": "trap",
+                                                    "userColors": [
+                                                      "w"
+                                                    ],
                                                     "trap": {
                                                       "id": "h05-trampa-rubinstein",
                                                       "tipo": "ofensiva",
@@ -2596,6 +3108,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Es precisamente esta jugada (en vez de una mas cautelosa) la que permite mas adelante la irrupcion tactica de blancas en el centro."
                                                         },
                                                         "kind": "trap",
+                                                        "userColors": [
+                                                          "w"
+                                                        ],
                                                         "trap": {
                                                           "id": "h05-trampa-rubinstein",
                                                           "tipo": "ofensiva",
@@ -2612,6 +3127,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna."
                                                             },
                                                             "kind": "trap",
+                                                            "userColors": [
+                                                              "w"
+                                                            ],
                                                             "trap": {
                                                               "id": "h05-trampa-rubinstein",
                                                               "tipo": "ofensiva",
@@ -2628,6 +3146,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "No hace nada por el centro justo cuando blancas esta a punto de abrirlo con cxd5."
                                                                 },
                                                                 "kind": "trap",
+                                                                "userColors": [
+                                                                  "w"
+                                                                ],
                                                                 "trap": {
                                                                   "id": "h05-trampa-rubinstein",
                                                                   "tipo": "ofensiva",
@@ -2644,6 +3165,9 @@ var REPERTOIRE_TREE = [
                                                                       "debilidad": "Ninguna."
                                                                     },
                                                                     "kind": "trap",
+                                                                    "userColors": [
+                                                                      "w"
+                                                                    ],
                                                                     "trap": {
                                                                       "id": "h05-trampa-rubinstein",
                                                                       "tipo": "ofensiva",
@@ -2660,6 +3184,9 @@ var REPERTOIRE_TREE = [
                                                                           "debilidad": "Deja el peon d5 como blanco potencial de ataque."
                                                                         },
                                                                         "kind": "trap",
+                                                                        "userColors": [
+                                                                          "w"
+                                                                        ],
                                                                         "trap": {
                                                                           "id": "h05-trampa-rubinstein",
                                                                           "tipo": "ofensiva",
@@ -2676,6 +3203,9 @@ var REPERTOIRE_TREE = [
                                                                               "debilidad": "Ninguna."
                                                                             },
                                                                             "kind": "trap",
+                                                                            "userColors": [
+                                                                              "w"
+                                                                            ],
                                                                             "trap": {
                                                                               "id": "h05-trampa-rubinstein",
                                                                               "tipo": "ofensiva",
@@ -2692,6 +3222,9 @@ var REPERTOIRE_TREE = [
                                                                                   "debilidad": "La casilla d5 queda ahora solo protegida por el peon c6, lo que sera relevante en la combinacion tactica que sigue."
                                                                                 },
                                                                                 "kind": "trap",
+                                                                                "userColors": [
+                                                                                  "w"
+                                                                                ],
                                                                                 "trap": {
                                                                                   "id": "h05-trampa-rubinstein",
                                                                                   "tipo": "ofensiva",
@@ -2708,6 +3241,9 @@ var REPERTOIRE_TREE = [
                                                                                       "debilidad": "Ninguna."
                                                                                     },
                                                                                     "kind": "trap",
+                                                                                    "userColors": [
+                                                                                      "w"
+                                                                                    ],
                                                                                     "trap": {
                                                                                       "id": "h05-trampa-rubinstein",
                                                                                       "tipo": "ofensiva",
@@ -2724,6 +3260,9 @@ var REPERTOIRE_TREE = [
                                                                                           "debilidad": "Deja preparado el terreno para el golpe tactico de blancas: la casilla d5 y la diagonal a la dama negra quedan mas debiles de lo que parece."
                                                                                         },
                                                                                         "kind": "trap",
+                                                                                        "userColors": [
+                                                                                          "w"
+                                                                                        ],
                                                                                         "trap": {
                                                                                           "id": "h05-trampa-rubinstein",
                                                                                           "tipo": "ofensiva",
@@ -2741,6 +3280,9 @@ var REPERTOIRE_TREE = [
                                                                                               "debilidad": "Ninguna."
                                                                                             },
                                                                                             "kind": "trap",
+                                                                                            "userColors": [
+                                                                                              "w"
+                                                                                            ],
                                                                                             "trap": {
                                                                                               "id": "h05-trampa-rubinstein",
                                                                                               "tipo": "ofensiva",
@@ -2757,6 +3299,9 @@ var REPERTOIRE_TREE = [
                                                                                                   "debilidad": "Debilita definitivamente el control sobre d5 y abre la posicion en el momento equivocado -- cae en la Trampa Rubinstein."
                                                                                                 },
                                                                                                 "kind": "trap",
+                                                                                                "userColors": [
+                                                                                                  "w"
+                                                                                                ],
                                                                                                 "trap": {
                                                                                                   "id": "h05-trampa-rubinstein",
                                                                                                   "tipo": "ofensiva",
@@ -2774,6 +3319,9 @@ var REPERTOIRE_TREE = [
                                                                                                       "debilidad": "Ninguna -- el golpe esta completamente justificado tacticamente."
                                                                                                     },
                                                                                                     "kind": "trap",
+                                                                                                    "userColors": [
+                                                                                                      "w"
+                                                                                                    ],
                                                                                                     "trap": {
                                                                                                       "id": "h05-trampa-rubinstein",
                                                                                                       "tipo": "ofensiva",
@@ -2790,6 +3338,9 @@ var REPERTOIRE_TREE = [
                                                                                                           "debilidad": "Expone la dama al golpe decisivo que sigue."
                                                                                                         },
                                                                                                         "kind": "trap",
+                                                                                                        "userColors": [
+                                                                                                          "w"
+                                                                                                        ],
                                                                                                         "trap": {
                                                                                                           "id": "h05-trampa-rubinstein",
                                                                                                           "tipo": "ofensiva",
@@ -2806,6 +3357,9 @@ var REPERTOIRE_TREE = [
                                                                                                               "debilidad": "Ninguna -- es el remate de la combinacion."
                                                                                                             },
                                                                                                             "kind": "trap",
+                                                                                                            "userColors": [
+                                                                                                              "w"
+                                                                                                            ],
                                                                                                             "trap": {
                                                                                                               "id": "h05-trampa-rubinstein",
                                                                                                               "tipo": "ofensiva",
@@ -2879,6 +3433,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Permite la clavada inmediata del Trompowsky (Bg5), aunque no supone un problema real con buen juego."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "children": [
           {
             "id": "d4__Nf6__Bf4",
@@ -2890,6 +3447,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna inmediata; el plan de blancas es independiente de lo que juegue negras."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "variantName": "Sistema Londres -- respuesta moderna con fianchetto g6",
             "variantColorId": 11,
             "children": [
@@ -2903,6 +3463,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Cede el centro momentaneamente a blancas, que puede ganar espacio con e4 mas adelante si negras no reacciona a tiempo."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "d4__Nf6__Bf4__g6__e3",
@@ -2914,6 +3477,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Renuncia a la posibilidad mas ambiciosa de e4, dejando que negras complete su fianchetto sin problemas."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "d4__Nf6__Bf4__g6__e3__Bg7",
@@ -2925,6 +3491,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3",
@@ -2936,6 +3505,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O",
@@ -2947,6 +3519,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3",
@@ -2958,6 +3533,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Jugada algo lenta que cede un tiempo de desarrollo, aunque es la eleccion mas solida en la practica."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6",
@@ -2969,6 +3547,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2",
@@ -2980,6 +3561,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Jugada menos activa que Bd3 en otras variantes, pero mas solida aqui frente al alfil de negras en g7."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7",
@@ -2991,6 +3575,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O",
@@ -3002,6 +3589,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O__c5",
@@ -3013,6 +3603,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna inmediata; es la continuacion mas activa y natural del plan."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O__c5__c3",
@@ -3024,6 +3617,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante; es la continuacion mas solida y natural."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "d4__Nf6__Bf4__g6__e3__Bg7__Nf3__O-O__h3__d6__Be2__Nbd7__O-O__c5__c3__b6",
@@ -3035,6 +3631,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "leafOf": {
                                                                   "lineId": "h03-londres-fianchetto",
                                                                   "name": "Sistema Londres -- respuesta moderna con fianchetto g6",
@@ -3078,6 +3677,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Cede momentaneamente la exclusividad del centro, igual que en cualquier gambito de dama."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "variantName": "Inglesa -- Catalan (transposicion via 1.d4 Nf6 2.c4 e6 3.g3 d5)",
             "variantColorId": 11,
             "children": [
@@ -3091,6 +3693,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones si se juega d5."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "d4__Nf6__c4__e6__g3",
@@ -3102,6 +3707,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna inmediata; el plan es lento pero muy solido."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "d4__Nf6__c4__e6__g3__d5",
@@ -3113,6 +3721,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El peon de d5 quedara bajo presion constante de el alfil de blancas en g2 durante toda la partida."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "d4__Nf6__c4__e6__g3__d5__Bg2",
@@ -3124,6 +3735,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7",
@@ -3135,6 +3749,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3",
@@ -3146,6 +3763,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O",
@@ -3157,6 +3777,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O",
@@ -3168,6 +3791,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4",
@@ -3179,6 +3805,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "El peon c4 sera dificil de sostener a largo plazo frente a la presion del alfil de blancas en g2 y una futura Qc2."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2",
@@ -3190,6 +3819,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte del sistema."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2__a6",
@@ -3201,6 +3833,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Cede tiempo de desarrollo mientras blancas completa el resto de piezas con ventaja de espacio en el centro."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2__a6__Qxc4",
@@ -3212,6 +3847,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "d4__Nf6__c4__e6__g3__d5__Bg2__Be7__Nf3__O-O__O-O__dxc4__Qc2__a6__Qxc4__b5",
@@ -3223,6 +3861,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Debilita las casillas negras del flanco de dama (c6, c5), un factor a largo plazo que blancas puede explotar en el medio juego."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "leafOf": {
                                                                   "lineId": "h03-catalana",
                                                                   "name": "Inglesa -- Catalan (transposicion via 1.d4 Nf6 2.c4 e6 3.g3 d5)",
@@ -3266,6 +3907,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "El alfil puede acabar siendo blanco de ...Ne4 con tiempo si negras busca la respuesta mas combativa."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "variantName": "Trompowsky -- respuesta solida con ...e6",
             "variantColorId": 4,
             "children": [
@@ -3279,6 +3923,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones si se juega d5 mas adelante."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "d4__Nf6__Bg5__e6__e4",
@@ -3290,6 +3937,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante; es la continuacion mas ambiciosa y natural del sistema."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "d4__Nf6__Bg5__e6__e4__h6",
@@ -3301,6 +3951,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Debilita ligeramente el flanco de rey, un precio menor y habitual en toda la teoria de esta linea."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6",
@@ -3312,6 +3965,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Cede el par de alfiles a cambio de la ventaja estructural, una concesion tipica y aceptada en esta linea."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6",
@@ -3323,6 +3979,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "La dama puede perder tiempos si blancas encuentra Nc3 seguido de Nd5 mas adelante."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3",
@@ -3334,6 +3993,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6",
@@ -3345,6 +4007,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3",
@@ -3356,6 +4021,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7",
@@ -3367,6 +4035,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2",
@@ -3378,6 +4049,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna relevante; es la continuacion mas tipica del sistema."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2__g6",
@@ -3389,6 +4063,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2__g6__O-O-O",
@@ -3400,6 +4077,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Enroques opuestos implican riesgo mutuo; negras tambien podra buscar contrajuego en el flanco de dama."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "d4__Nf6__Bg5__e6__e4__h6__Bxf6__Qxf6__Nc3__d6__Nf3__Nd7__Qd2__g6__O-O-O__Bg7",
@@ -3411,6 +4091,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "leafOf": {
                                                                   "lineId": "h03-trompowsky",
                                                                   "name": "Trompowsky -- respuesta solida con ...e6",
@@ -3458,6 +4141,9 @@ var REPERTOIRE_TREE = [
       "debilidad": "Ninguna real a este nivel; es una de las dos jugadas principales para empezar la partida."
     },
     "kind": "book",
+    "userColors": [
+      "b"
+    ],
     "children": [
       {
         "id": "e4__d5",
@@ -3469,6 +4155,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Tras el cambio de peones, la dama de negras tendra que salir pronto y blancas puede ganar tiempo atacandola con piezas menores."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "children": [
           {
             "id": "e4__d5__exd5",
@@ -3480,6 +4169,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna; es la continuacion practicamente obligada para no perder tiempo defendiendo e4."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "children": [
               {
                 "id": "e4__d5__exd5__Qxd5",
@@ -3491,6 +4183,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "La dama queda expuesta en el centro, blanco facil para Nc3 con ganancia de tiempo -- el precio principal de toda la Escandinava."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "e4__d5__exd5__Qxd5__Nc3",
@@ -3502,6 +4197,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna; es la jugada mas natural y fuerte en la posicion."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "e4__d5__exd5__Qxd5__Nc3__Qa5",
@@ -3513,6 +4211,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "La dama sigue fuera y puede volver a perder tiempos si blancas encuentra Nd5 o Bd2 con ideas de ganar mas tiempo."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "variantName": "Escandinava -- linea principal (2...Qxd5)",
                         "variantColorId": 7,
                         "children": [
@@ -3526,6 +4227,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6",
@@ -3537,6 +4241,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3",
@@ -3548,6 +4255,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3__c6",
@@ -3559,6 +4269,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Jugada algo lenta que no desarrolla ninguna pieza nueva; blancas puede seguir ganando tiempo de desarrollo con Bd2 o Bc4."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3__c6__Bc4",
@@ -3570,6 +4283,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna inmediata; jugada estandar del plan principal contra la Escandinava."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "e4__d5__exd5__Qxd5__Nc3__Qa5__d4__Nf6__Nf3__c6__Bc4__Bf5",
@@ -3581,6 +4297,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna inmediata; es la continuacion mas natural para completar el desarrollo de piezas menores."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-escandinava-principal",
                                                   "name": "Escandinava -- linea principal (2...Qxd5)",
@@ -3608,6 +4327,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Objetivamente algo dudoso segun el analisis de motor, pero muy peligroso en la practica si negras no conoce la teoria."
                             },
                             "kind": "trap",
+                            "userColors": [
+                              "b"
+                            ],
                             "trap": {
                               "id": "h05-trampa-leonhardt",
                               "tipo": "defensiva",
@@ -3626,6 +4348,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "La dama sigue expuesta a nuevos ataques de tiempo."
                                 },
                                 "kind": "trap",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "trap": {
                                   "id": "h05-trampa-leonhardt",
                                   "tipo": "defensiva",
@@ -3642,6 +4367,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Objetivamente dudosa, pero muy peligrosa en la practica."
                                     },
                                     "kind": "trap",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "trap": {
                                       "id": "h05-trampa-leonhardt",
                                       "tipo": "defensiva",
@@ -3658,6 +4386,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna en apariencia -- pero es exactamente la jugada que blancas esta esperando para continuar la trampa."
                                         },
                                         "kind": "trap",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "trap": {
                                           "id": "h05-trampa-leonhardt",
                                           "tipo": "defensiva",
@@ -3674,6 +4405,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna -- la trampa esta casi lista."
                                             },
                                             "kind": "trap",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "trap": {
                                               "id": "h05-trampa-leonhardt",
                                               "tipo": "defensiva",
@@ -3690,6 +4424,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Cae en la trampa: la jugada correcta era 6...Nf6, controlando la casilla h5 y evitando el ataque que sigue."
                                                 },
                                                 "kind": "trap",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "trap": {
                                                   "id": "h05-trampa-leonhardt",
                                                   "tipo": "defensiva",
@@ -3707,6 +4444,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna -- es el remate tactico de toda la linea del Gambito Leonhardt."
                                                     },
                                                     "kind": "trap",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "trap": {
                                                       "id": "h05-trampa-leonhardt",
                                                       "tipo": "defensiva",
@@ -3744,6 +4484,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Tapa momentaneamente la diagonal del propio alfil de rey, aunque la dama se reubicara pronto sin perder mas tiempos."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "variantName": "Escandinava -- retirada moderna (3...Qd6)",
                         "variantColorId": 4,
                         "children": [
@@ -3757,6 +4500,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6",
@@ -3768,6 +4514,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3",
@@ -3779,6 +4528,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3__a6",
@@ -3790,6 +4542,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Jugada algo lenta que no desarrolla ninguna pieza nueva."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3__a6__g3",
@@ -3801,6 +4556,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Cede algo de tiempo mientras negras completa su propio desarrollo."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "e4__d5__exd5__Qxd5__Nc3__Qd6__d4__Nf6__Nf3__a6__g3__b5",
@@ -3812,6 +4570,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Puede debilitar ligeramente las casillas del flanco de dama si blancas encuentra a4 mas adelante, aunque es un riesgo asumido en toda la teoria principal."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-escandinava-qd6",
                                                   "name": "Escandinava -- retirada moderna (3...Qd6)",
@@ -3841,6 +4602,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Pierde mas tiempo que las retiradas a a5 o d6, dejando a blancas con la maxima ventaja de desarrollo de toda la familia."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "variantName": "Escandinava -- retirada ultra-solida (3...Qd8)",
                         "variantColorId": 9,
                         "children": [
@@ -3854,6 +4618,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6",
@@ -3865,6 +4632,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3",
@@ -3876,6 +4646,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3__Bg4",
@@ -3887,6 +4660,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Deja que blancas rompa la clavada con h3 y gane otro tiempo mas."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3__Bg4__h3",
@@ -3898,6 +4674,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Debilita ligeramente el flanco de rey, un precio menor y asumido en toda la teoria principal."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "e4__d5__exd5__Qxd5__Nc3__Qd8__d4__Nf6__Nf3__Bg4__h3__Bh5",
@@ -3909,6 +4688,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "El alfil puede quedar atrapado mas adelante si blancas encuentra g4 seguido de Ne5, un riesgo real en esta linea."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-escandinava-qd8",
                                                   "name": "Escandinava -- retirada ultra-solida (3...Qd8)",
@@ -3942,6 +4724,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "El peon d5 queda momentaneamente en manos de blancas un turno mas, aunque negras lo recupera sin problemas la jugada siguiente."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "variantName": "Escandinava Moderna (2...Nf6)",
                 "variantColorId": 10,
                 "children": [
@@ -3955,6 +4740,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "e4__d5__exd5__Nf6__d4__Nxd5",
@@ -3966,6 +4754,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El caballo en d5 puede ser blanco de c4 mas adelante, obligandolo a retroceder."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3",
@@ -3977,6 +4768,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6",
@@ -3988,6 +4782,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Debilita ligeramente las casillas oscuras alrededor del rey, aunque el fianchetto lo compensa de sobra."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4",
@@ -3999,6 +4796,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Debilita ligeramente d4, aunque es un precio asumido en toda la teoria principal de esta linea."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4__Nb6",
@@ -4010,6 +4810,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la retirada mas natural y solida."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4__Nb6__Nc3",
@@ -4021,6 +4824,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "e4__d5__exd5__Nf6__d4__Nxd5__Nf3__g6__c4__Nb6__Nc3__Bg7",
@@ -4032,6 +4838,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural para completar el desarrollo."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "leafOf": {
                                                   "lineId": "h02-escandinava-moderna",
                                                   "name": "Escandinava Moderna (2...Nf6)",
@@ -4071,6 +4880,9 @@ var REPERTOIRE_TREE = [
       "debilidad": "No ocupa el centro de inmediato, dejando que negras responda con la misma libertad."
     },
     "kind": "book",
+    "userColors": [
+      "b"
+    ],
     "children": [
       {
         "id": "c4__e5",
@@ -4082,6 +4894,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Ninguna relevante a este nivel; es la continuacion mas natural y fiable."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "variantName": "Inglesa -- respuesta simetrica tipo Siciliana Inversa",
         "variantColorId": 9,
         "children": [
@@ -4095,6 +4910,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna relevante; es la continuacion mas natural y flexible."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "children": [
               {
                 "id": "c4__e5__Nc3__Nf6",
@@ -4106,6 +4924,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "c4__e5__Nc3__Nf6__Nf3",
@@ -4117,6 +4938,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "c4__e5__Nc3__Nf6__Nf3__Nc6",
@@ -4128,6 +4952,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3",
@@ -4139,6 +4966,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas tipica del sistema."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5",
@@ -4150,6 +4980,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Si blancas cambia en d5, negras debera recapturar con una pieza, cediendo algo de tiempo si blancas encuentra despues Ng5 o similar."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5",
@@ -4161,6 +4994,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna; es la continuacion mas natural y fuerte."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5",
@@ -4172,6 +5008,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "El caballo puede ser blanco de un futuro Bg2 combinado con Nxd5, aunque no es una amenaza inmediata."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2",
@@ -4183,6 +5022,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6",
@@ -4194,6 +5036,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Pierde un tiempo respecto a mantener el caballo en el centro, aunque es la eleccion mas solida."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O",
@@ -4205,6 +5050,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O__Be7",
@@ -4216,6 +5064,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O__Be7__d3",
@@ -4227,6 +5078,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante; es la continuacion mas natural del sistema."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "c4__e5__Nc3__Nf6__Nf3__Nc6__g3__d5__cxd5__Nxd5__Bg2__Nb6__O-O__Be7__d3__O-O",
@@ -4238,6 +5092,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "leafOf": {
                                                                   "lineId": "h03-inglesa-inversa-siciliana",
                                                                   "name": "Inglesa -- respuesta simetrica tipo Siciliana Inversa",
@@ -4283,6 +5140,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Ninguna relevante a este nivel; es una continuacion solida y muy probada."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "variantName": "Inglesa -- respuesta simetrica pura con doble fianchetto (1.c4 c5)",
         "variantColorId": 4,
         "children": [
@@ -4296,6 +5156,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna relevante; es la continuacion mas natural y flexible."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "children": [
               {
                 "id": "c4__c5__Nf3__Nf6",
@@ -4307,6 +5170,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "c4__c5__Nf3__Nf6__g3",
@@ -4318,6 +5184,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante; es la continuacion mas tipica del sistema."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "c4__c5__Nf3__Nf6__g3__g6",
@@ -4329,6 +5198,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la continuacion mas natural para mantener la simetria."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2",
@@ -4340,6 +5212,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7",
@@ -4351,6 +5226,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la jugada mas natural para mantener la simetria."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3",
@@ -4362,6 +5240,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6",
@@ -4373,6 +5254,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O",
@@ -4384,6 +5268,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O",
@@ -4395,6 +5282,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4",
@@ -4406,6 +5296,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Cede la casilla d4 a una pieza negra si el cambio se resuelve de forma favorable para negras."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4",
@@ -4417,6 +5310,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna; es la continuacion mas solida y natural."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4",
@@ -4428,6 +5324,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante; es la recaptura mas natural."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4__Nxd4",
@@ -4439,6 +5338,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Entrega la recaptura a la dama blanca, que queda temporalmente centralizada."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "children": [
                                                                   {
                                                                     "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4__Nxd4__Qxd4",
@@ -4450,6 +5352,9 @@ var REPERTOIRE_TREE = [
                                                                       "debilidad": "La dama puede recibir un tiempo si negras encuentra despues ...Nc6 o una jugada similar con ganancia de tiempo."
                                                                     },
                                                                     "kind": "book",
+                                                                    "userColors": [
+                                                                      "b"
+                                                                    ],
                                                                     "children": [
                                                                       {
                                                                         "id": "c4__c5__Nf3__Nf6__g3__g6__Bg2__Bg7__Nc3__Nc6__O-O__O-O__d4__cxd4__Nxd4__Nxd4__Qxd4__d6",
@@ -4461,6 +5366,9 @@ var REPERTOIRE_TREE = [
                                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural para cerrar el desarrollo basico de la linea."
                                                                         },
                                                                         "kind": "book",
+                                                                        "userColors": [
+                                                                          "b"
+                                                                        ],
                                                                         "leafOf": {
                                                                           "lineId": "h03-inglesa-simetrica",
                                                                           "name": "Inglesa -- respuesta simetrica pura con doble fianchetto (1.c4 c5)",
@@ -4512,6 +5420,9 @@ var REPERTOIRE_TREE = [
       "debilidad": "No define ningun plan concreto todavia, cediendo a negras la misma libertad de eleccion."
     },
     "kind": "book",
+    "userColors": [
+      "b"
+    ],
     "variantName": "Reti -- estructura de fianchetto simetrico",
     "variantColorId": 9,
     "children": [
@@ -4525,6 +5436,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Ninguna relevante a este nivel."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "children": [
           {
             "id": "Nf3__d5__g3",
@@ -4536,6 +5450,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna relevante; es la continuacion mas tipica del sistema."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "children": [
               {
                 "id": "Nf3__d5__g3__Nf6",
@@ -4547,6 +5464,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "Nf3__d5__g3__Nf6__Bg2",
@@ -4558,6 +5478,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "Nf3__d5__g3__Nf6__Bg2__e6",
@@ -4569,6 +5492,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "El alfil de casillas claras de negras queda temporalmente encerrado tras la cadena de peones."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O",
@@ -4580,6 +5506,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7",
@@ -4591,6 +5520,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3",
@@ -4602,6 +5534,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna relevante; es la continuacion mas natural del sistema."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O",
@@ -4613,6 +5548,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2",
@@ -4624,6 +5562,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5",
@@ -4635,6 +5576,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna inmediata; es la continuacion mas activa y natural."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4",
@@ -4646,6 +5590,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Cede el control de d4 momentaneamente, un factor menor que blancas acepta a cambio del espacio ganado."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4__Nc6",
@@ -4657,6 +5604,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4__Nc6__Re1",
@@ -4668,6 +5618,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "Nf3__d5__g3__Nf6__Bg2__e6__O-O__Be7__d3__O-O__Nbd2__c5__e4__Nc6__Re1__b5",
@@ -4679,6 +5632,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "leafOf": {
                                                                   "lineId": "h03-reti-fianchetto-doble",
                                                                   "name": "Reti -- estructura de fianchetto simetrico",
@@ -4726,6 +5682,9 @@ var REPERTOIRE_TREE = [
       "debilidad": "No disputa el centro de inmediato, dejando que negras ocupe el espacio central sin oposicion."
     },
     "kind": "book",
+    "userColors": [
+      "b"
+    ],
     "variantName": "Larsen (1.b3) -- respuesta central con ...e5",
     "variantColorId": 1,
     "children": [
@@ -4739,6 +5698,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Ninguna relevante a este nivel; es la continuacion mas natural."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "children": [
           {
             "id": "b3__e5__Bb2",
@@ -4750,6 +5712,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "children": [
               {
                 "id": "b3__e5__Bb2__Nc6",
@@ -4761,6 +5726,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "b3__e5__Bb2__Nc6__e3",
@@ -4772,6 +5740,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Jugada algo pasiva que cede la iniciativa central a negras."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "b3__e5__Bb2__Nc6__e3__Nf6",
@@ -4783,6 +5754,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5",
@@ -4794,6 +5768,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "El alfil puede perder tiempo si negras encuentra ...a6 mas adelante, obligando a definir su posicion."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6",
@@ -4805,6 +5782,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2",
@@ -4816,6 +5796,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Casilla algo pasiva para el caballo comparado con f3, aunque coherente con el plan de Larsen."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O",
@@ -4827,6 +5810,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O",
@@ -4838,6 +5824,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8",
@@ -4849,6 +5838,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8__d4",
@@ -4860,6 +5852,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "Cede el control exclusivo de d4 si negras cambia, aunque abre lineas favorables para el alfil de blancas."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8__d4__exd4",
@@ -4871,6 +5866,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna; es la continuacion mas natural tras la tension central."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "b3__e5__Bb2__Nc6__e3__Nf6__Bb5__Bd6__Ne2__O-O__O-O__Re8__d4__exd4__Nxd4",
@@ -4882,6 +5880,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Ninguna relevante; es la continuacion mas natural y fuerte."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "leafOf": {
                                                               "lineId": "h03-larsen",
                                                               "name": "Larsen (1.b3) -- respuesta central con ...e5",
@@ -4927,6 +5928,9 @@ var REPERTOIRE_TREE = [
       "debilidad": "Debilita ligeramente la diagonal a7-g1 y la casilla e3, un factor que negras puede explotar con un desarrollo preciso."
     },
     "kind": "book",
+    "userColors": [
+      "b"
+    ],
     "variantName": "Bird (1.f4) -- respuesta con ...d5 y fianchetto de rey",
     "variantColorId": 5,
     "children": [
@@ -4940,6 +5944,9 @@ var REPERTOIRE_TREE = [
           "debilidad": "Ninguna relevante a este nivel; es la continuacion mas natural."
         },
         "kind": "book",
+        "userColors": [
+          "b"
+        ],
         "children": [
           {
             "id": "f4__d5__Nf3",
@@ -4951,6 +5958,9 @@ var REPERTOIRE_TREE = [
               "debilidad": "Ninguna relevante; es la continuacion mas natural del sistema."
             },
             "kind": "book",
+            "userColors": [
+              "b"
+            ],
             "children": [
               {
                 "id": "f4__d5__Nf3__Nf6",
@@ -4962,6 +5972,9 @@ var REPERTOIRE_TREE = [
                   "debilidad": "Ninguna relevante; es la respuesta mas natural en la posicion."
                 },
                 "kind": "book",
+                "userColors": [
+                  "b"
+                ],
                 "children": [
                   {
                     "id": "f4__d5__Nf3__Nf6__e3",
@@ -4973,6 +5986,9 @@ var REPERTOIRE_TREE = [
                       "debilidad": "Jugada algo pasiva que no aprovecha al maximo el espacio ganado con f4."
                     },
                     "kind": "book",
+                    "userColors": [
+                      "b"
+                    ],
                     "children": [
                       {
                         "id": "f4__d5__Nf3__Nf6__e3__g6",
@@ -4984,6 +6000,9 @@ var REPERTOIRE_TREE = [
                           "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                         },
                         "kind": "book",
+                        "userColors": [
+                          "b"
+                        ],
                         "children": [
                           {
                             "id": "f4__d5__Nf3__Nf6__e3__g6__Be2",
@@ -4995,6 +6014,9 @@ var REPERTOIRE_TREE = [
                               "debilidad": "Ninguna relevante; es la continuacion mas natural del sistema."
                             },
                             "kind": "book",
+                            "userColors": [
+                              "b"
+                            ],
                             "children": [
                               {
                                 "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7",
@@ -5006,6 +6028,9 @@ var REPERTOIRE_TREE = [
                                   "debilidad": "Ninguna relevante; es la continuacion mas natural del plan."
                                 },
                                 "kind": "book",
+                                "userColors": [
+                                  "b"
+                                ],
                                 "children": [
                                   {
                                     "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O",
@@ -5017,6 +6042,9 @@ var REPERTOIRE_TREE = [
                                       "debilidad": "Ninguna; es la jugada mas natural para completar la seguridad basica."
                                     },
                                     "kind": "book",
+                                    "userColors": [
+                                      "b"
+                                    ],
                                     "children": [
                                       {
                                         "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O",
@@ -5028,6 +6056,9 @@ var REPERTOIRE_TREE = [
                                           "debilidad": "Ninguna; es la jugada mas natural para completar el desarrollo basico."
                                         },
                                         "kind": "book",
+                                        "userColors": [
+                                          "b"
+                                        ],
                                         "children": [
                                           {
                                             "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3",
@@ -5039,6 +6070,9 @@ var REPERTOIRE_TREE = [
                                               "debilidad": "Ninguna relevante; es la continuacion mas natural del sistema."
                                             },
                                             "kind": "book",
+                                            "userColors": [
+                                              "b"
+                                            ],
                                             "children": [
                                               {
                                                 "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5",
@@ -5050,6 +6084,9 @@ var REPERTOIRE_TREE = [
                                                   "debilidad": "Ninguna inmediata; es la continuacion mas activa y natural."
                                                 },
                                                 "kind": "book",
+                                                "userColors": [
+                                                  "b"
+                                                ],
                                                 "children": [
                                                   {
                                                     "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5",
@@ -5061,6 +6098,9 @@ var REPERTOIRE_TREE = [
                                                       "debilidad": "El caballo puede ser cambiado por el de negras en c6, perdiendo parte de su fuerza si eso ocurre."
                                                     },
                                                     "kind": "book",
+                                                    "userColors": [
+                                                      "b"
+                                                    ],
                                                     "children": [
                                                       {
                                                         "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5__Nc6",
@@ -5072,6 +6112,9 @@ var REPERTOIRE_TREE = [
                                                           "debilidad": "Ninguna relevante; es la continuacion mas natural en la posicion."
                                                         },
                                                         "kind": "book",
+                                                        "userColors": [
+                                                          "b"
+                                                        ],
                                                         "children": [
                                                           {
                                                             "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5__Nc6__Nxc6",
@@ -5083,6 +6126,9 @@ var REPERTOIRE_TREE = [
                                                               "debilidad": "Cede la pieza mas activa de blancas a cambio de la simplificacion, una concesion menor y muy jugada en la practica."
                                                             },
                                                             "kind": "book",
+                                                            "userColors": [
+                                                              "b"
+                                                            ],
                                                             "children": [
                                                               {
                                                                 "id": "f4__d5__Nf3__Nf6__e3__g6__Be2__Bg7__O-O__O-O__d3__c5__Ne5__Nc6__Nxc6__bxc6",
@@ -5094,6 +6140,9 @@ var REPERTOIRE_TREE = [
                                                                   "debilidad": "Estructura de peones duplicados en la columna c, una concesion menor tipica de esta linea."
                                                                 },
                                                                 "kind": "book",
+                                                                "userColors": [
+                                                                  "b"
+                                                                ],
                                                                 "leafOf": {
                                                                   "lineId": "h03-bird",
                                                                   "name": "Bird (1.f4) -- respuesta con ...d5 y fianchetto de rey",

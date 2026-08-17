@@ -544,6 +544,28 @@ console.log(`OK -- cobertura exacta: ${expectedIds.size} ids originales, ${found
 // 9) Serializar el bosque (quitando campos internos de construccion:
 //    _seq, lineIds como Set) a JSON para inspeccion + a JS final.
 // ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// 9.7) Color(es) de usuario alcanzables desde cada nodo. Necesario
+//    porque una misma raiz (p. ej. "d4") puede llevar a hojas
+//    entrenadas desde userColor distinto (Gambito de Dama = blancas,
+//    pero las defensas de H03 contra 1.d4 que no sea Gambito de Dama
+//    = negras) -- el motor necesita saber, en cada nodo, si sigue
+//    siendo valido para el color que se esta entrenando en esa
+//    sesion, para no mezclar ramas de sesiones distintas al elegir
+//    la jugada del rival.
+// ---------------------------------------------------------------
+function computeUserColors (node) {
+  const colors = new Set();
+  if (node.leafOf) colors.add(node.leafOf.userColor);
+  node.children.forEach(child => {
+    computeUserColors(child);
+    child.userColors.forEach(uc => colors.add(uc));
+  });
+  node.userColors = colors;
+  return colors;
+}
+forestRoot.children.forEach(computeUserColors);
+
 function serialize (node, pathSans) {
   const out = {};
   if (node.san !== null) {
@@ -553,6 +575,7 @@ function serialize (node, pathSans) {
     out.color = node.color;
     out.explain = node.explain;
     out.kind = node.kind;
+    out.userColors = [...node.userColors].sort();
     if (node.kind === 'trap') {
       out.trap = node.trap;
       if (node.isError) out.isError = true;
