@@ -6,6 +6,28 @@
   var MAX_ATTEMPTS = 3
   var OPPONENT_PAUSE_MS = 550
 
+  // S7 (reapertura H01): modo arbol de aperturas. Si la URL trae
+  // "opening" (primera jugada de la familia, p. ej. "d4"), el motor
+  // entra en un camino completamente nuevo que recorre REPERTOIRE_TREE
+  // en vez de line.moves/moveIndex -- ver treeXxx() mas abajo. Todo el
+  // resto del fichero (finales, problemas, trampas legacy mientras
+  // convivan, estructuras) sigue exactamente igual, sin tocar.
+  function openingRootParam () {
+    var params = new URLSearchParams(window.location.search)
+    return params.get('opening')
+  }
+  function openingColorParam () {
+    var params = new URLSearchParams(window.location.search)
+    var c = params.get('color')
+    return (c === 'w' || c === 'b') ? c : null
+  }
+  function openingTargetParam () {
+    var params = new URLSearchParams(window.location.search)
+    return params.get('target')
+  }
+
+  var isTreeMode = !!openingRootParam()
+
   function selectedLineId () {
     var params = new URLSearchParams(window.location.search)
     return params.get('line')
@@ -92,7 +114,9 @@
   var sessionFallos = 0
   var SESSION_ADVANCE_PAUSE_MS = 1400
 
-  var line = findLine(sessionQueue ? sessionQueue[sessionIndex] : selectedLineId())
+  var line = isTreeMode
+    ? { id: 'opening-root', name: 'Recorrido de apertura', overview: 'Juega con naturalidad -- las variantes se van reconociendo segun aparecen.', userColor: openingColorParam() || 'w', moves: [] }
+    : findLine(sessionQueue ? sessionQueue[sessionIndex] : selectedLineId())
   var userColor = line.userColor || 'w'
   var opponentColor = userColor === 'w' ? 'b' : 'w'
   // H04: si la linea trae "startFen" (finales), la partida arranca
@@ -110,7 +134,300 @@
   // abajo para el porque de este diseño.
   var selectedSquare = null
 
+  // ---- Estado exclusivo del modo arbol (S7, reapertura H01) ----
+  var treeUserColor = line.userColor // ya resuelto arriba (openingColorParam() o 'w')
+  var treeOpponentColor = treeUserColor === 'w' ? 'b' : 'w'
+  var treeRootNode = null
+  var treeCursor = null // null = todavia no se ha jugado ninguna jugada
+  var treeTargetPath = null // array de nodos raiz->hoja, solo en modo dirigido
+  if (isTreeMode) {
+    var rootSan = openingRootParam()
+    treeRootNode = REPERTOIRE_TREE.filter(function (r) { return r.san === rootSan })[0] || null
+    var targetId = openingTargetParam()
+    if (treeRootNode && targetId) {
+      treeTargetPath = treeFindPathToId(treeRootNode, targetId)
+    }
+  }
+
+  // ---- Funciones del motor de arbol (S7, reapertura H01) ----
+
+  function treeFindPathToId (node, targetId, pathSoFar) {
+    pathSoFar = pathSoFar || []
+    var here = pathSoFar.concat([node])
+    if (node.id === targetId) return here
+    if (!node.children) return null
+    for (var i = 0; i < node.children.length; i++) {
+      var found = treeFindPathToId(node.children[i], targetId, here)
+      if (found) return found
+    }
+    return null
+  }
+
+  function treeTurnColor () {
+    return treeCursor === null ? 'w' : (treeCursor.color === 'w' ? 'b' : 'w')
+  }
+
+  function treeChildrenOf (cursor) {
+    var raw = cursor === null ? (treeRootNode ? [treeRootNode] : []) : (cursor.children || [])
+    return raw.filter(function (n) { return n.userColors.indexOf(treeUserColor) !== -1 })
+  }
+
+  // Candidatos legales para la jugada que toca ahora mismo. En el
+  // turno del rival se excluyen las ramas de trampa defensiva (la
+  // tentacion es tuya, nunca la juega el motor) -- las ofensivas si
+  // entran, tal como se diseño con Miguel Angel. En tu turno entran
+  // todas: las de libro (correctas) y las de trampa defensiva (la
+  // jugada tentadora que hay que reconocer y evitar).
+  function treeCandidates (cursor) {
+    var turn = treeTurnColor()
+    var children = treeChildrenOf(cursor).filter(function (n) { return n.color === turn })
+    if (turn === treeOpponentColor) {
+      return children.filter(function (n) {
+        return n.kind === 'book' || (n.kind === 'trap' && n.trap.tipo === 'ofensiva')
+      })
+    }
+    return children
+  }
+
+  function treeProgressTotal (nodeId) {
+    if (!window.AndroidBridge) return 0
+    try {
+      var raw = window.AndroidBridge.getProgress(nodeId)
+      var p = raw ? JSON.parse(raw) : null
+      return ((p && p.aciertos) || 0) + ((p && p.fallos) || 0)
+    } catch (e) {
+      return 0
+    }
+  }
+
+  // Recorrido ponderado: prioriza la rama con menos intentos
+  // acumulados (punto 2 del diseno cerrado -- cobertura real del
+  // arbol en vez de repetir siempre lo mas practicado). Empate ->
+  // eleccion aleatoria entre las empatadas, no siempre la primera.
+  function treePickWeighted (candidates) {
+    if (candidates.length === 0) return null
+    var totals = candidates.map(function (c) { return treeProgressTotal(c.id) })
+    var min = Math.min.apply(null, totals)
+    var tied = candidates.filter(function (c, i) { return totals[i] === min })
+    return tied[Math.floor(Math.random() * tied.length)]
+  }
+
+  function treeNextOnTargetPath () {
+    if (!treeTargetPath) return null
+    var idx = treeCursor === null ? 0 : treeTargetPath.indexOf(treeCursor) + 1
+    if (idx <= 0 && treeCursor !== null) return null // treeCursor no esta en el camino objetivo
+    return idx < treeTargetPath.length ? treeTargetPath[idx] : null
+  }
+
+  function treeChooseForTurn (candidates) {
+    var pinned = treeNextOnTargetPath()
+    if (pinned && candidates.indexOf(pinned) !== -1) return pinned
+    return treePickWeighted(candidates)
+  }
+
+  function treeShowVariantBadge (node) {
+    if (!elVariantBadge) return
+    if (node && node.variantName) {
+      elVariantBadge.textContent = node.variantName
+      elVariantBadge.style.display = ''
+      elVariantBadge.style.background = node.variantColorId === 'trap'
+        ? TREE_TRAP_COLOR
+        : TREE_PALETTE[node.variantColorId % TREE_PALETTE.length]
+    } else {
+      elVariantBadge.style.display = 'none'
+    }
+  }
+
+  function treeAdvanceTo (node, move, statusOverride) {
+    treeCursor = node
+    line.id = node.id
+    if (node.variantName) line.name = node.variantName
+    if (node.leafOf && node.leafOf.overview) line.overview = node.leafOf.overview
+    treeShowVariantBadge(node)
+    loadInitialProgress()
+    showExplanation(node)
+    highlightMove(move.from, move.to)
+
+    var candidates = treeCandidates(node)
+    if (candidates.length === 0) {
+      setStatus(statusOverride || (node.leafOf ? 'Rama completada: ' + node.leafOf.name + '.' : 'Fin de la linea conocida.'))
+      return
+    }
+    if (statusOverride) {
+      // Mensaje especial (p. ej. "el rival cae en la trampa"): se deja
+      // visible una pausa antes de que treeBeginTurn lo sobreescriba
+      // con el aviso normal de turno -- si no, se pisa en el mismo
+      // tick y nunca llega a verse.
+      setStatus(statusOverride)
+      window.setTimeout(treeBeginTurn, SESSION_ADVANCE_PAUSE_MS)
+    } else {
+      treeBeginTurn()
+    }
+  }
+
+  function treeBeginTurn () {
+    var turn = treeTurnColor()
+    var candidates = treeCandidates(treeCursor)
+    if (candidates.length === 0) {
+      setStatus(treeCursor && treeCursor.leafOf ? 'Rama completada: ' + treeCursor.leafOf.name + '.' : 'Fin de la linea conocida.')
+      return
+    }
+    if (turn === treeOpponentColor) {
+      setStatus('El rival esta pensando...')
+      window.setTimeout(treePlayOpponentMove, OPPONENT_PAUSE_MS)
+    } else {
+      setStatus('Tu turno.')
+    }
+  }
+
+  function treePlayOpponentMove () {
+    clearTurnLabel()
+    var candidates = treeCandidates(treeCursor)
+    if (candidates.length === 0) return
+    var chosen = treeChooseForTurn(candidates)
+    var move = game.move(chosen.san)
+    if (!move) {
+      setStatus('Error interno: jugada del arbol invalida (' + chosen.san + ').')
+      return
+    }
+    board.position(game.fen())
+    var msg = (chosen.kind === 'trap' && chosen.isError)
+      ? 'El rival cae en la ' + chosen.trap.name + '. Castigalo.'
+      : null
+    treeAdvanceTo(chosen, move, msg)
+  }
+
+  // Revela la continuacion correcta -- se usa tanto tras 3 fallos
+  // "fuera de repertorio" como, con pausa breve, justo despues de caer
+  // en una trampa defensiva (para no dejarte a medias sin saber que
+  // jugar en su lugar).
+  function treeRevealExpected () {
+    clearTurnLabel()
+    var candidates = treeCandidates(treeCursor).filter(function (c) { return c.kind === 'book' })
+    if (candidates.length === 0) candidates = treeCandidates(treeCursor)
+    var chosen = treeChooseForTurn(candidates)
+    if (!chosen) return
+    var move = game.move(chosen.san)
+    board.position(game.fen())
+    treeAdvanceTo(chosen, move)
+  }
+
+  window.onTreeTorpeDialogClosed = treeRevealExpected // alias directo, sin envoltorio extra
+
+  function treeProcessUserMove (source, target) {
+    var candidates = treeCandidates(treeCursor)
+    if (treeTurnColor() !== treeUserColor) return false
+
+    var move = safeMove({ from: source, to: target, promotion: 'q' })
+    if (move === null) return false
+
+    var matched = null
+    for (var i = 0; i < candidates.length; i++) {
+      if (candidates[i].san === move.san) { matched = candidates[i]; break }
+    }
+
+    if (matched && matched.kind === 'trap' && matched.isError) {
+      // Caida real en una trampa defensiva documentada: se deshace,
+      // cuenta como fallo, y se explica -- sin esperar a 3 intentos,
+      // el reconocimiento es el objetivo pedagogico inmediato aqui.
+      game.undo()
+      attemptsThisMove = 0
+      recordAttempt(false, matched.id)
+      setStatus('Esto es la ' + matched.trap.name + ': ' + matched.explain.debilidad)
+      window.setTimeout(treeRevealExpected, SESSION_ADVANCE_PAUSE_MS)
+      return false
+    }
+
+    if (matched) {
+      attemptsThisMove = 0
+      recordAttempt(true, matched.id)
+      window.setTimeout(function () { treeAdvanceTo(matched, move) }, 0)
+      return true
+    }
+
+    // Jugada legal pero fuera del arbol conocido en este punto.
+    game.undo()
+    attemptsThisMove++
+
+    if (attemptsThisMove >= MAX_ATTEMPTS) {
+      setStatus('Jugada revelada tras 3 fallos.')
+      if (window.AndroidBridge) {
+        window.AndroidBridge.showTorpeDialog()
+      } else {
+        window.alert('torpe como una oruga')
+        window.onTreeTorpeDialogClosed()
+      }
+      return false
+    }
+
+    setStatus('Fuera de repertorio (' + attemptsThisMove + '/' + MAX_ATTEMPTS + '). Intentalo de nuevo.')
+    return false
+  }
+
+  function treeRestart () {
+    cancelAnyDrag()
+    game.reset()
+    treeCursor = null
+    attemptsThisMove = 0
+    line.id = 'opening-root'
+    board.position('start')
+    clearHighlights()
+    elExplain.innerHTML = ''
+    treeShowVariantBadge(null)
+    loadInitialProgress()
+    treeBeginTurn()
+  }
+
+  var TREE_PALETTE = ['#c0392b', '#2980b9', '#27ae60', '#8e44ad', '#d35400', '#16a085', '#2c3e50', '#f39c12', '#7f8c8d', '#2471a3', '#229954', '#a04000']
+  var TREE_TRAP_COLOR = '#e74c3c'
+
+  // Ganchos de depuracion SOLO para el arnes de pruebas de Node
+  // (scripts/../verify/test_tree_engine.js) -- nunca se activan en la
+  // app real: requieren que el propio arnes ponga
+  // window.__ENABLE_TREE_TEST_HOOKS__ antes de cargar este fichero.
+  if (isTreeMode && typeof window !== 'undefined' && window.__ENABLE_TREE_TEST_HOOKS__) {
+    window.__debugCursorId = function () { return treeCursor ? treeCursor.id : null }
+    window.__debugTurnColor = treeTurnColor
+    window.__debugLineName = function () { return line.name }
+    window.__debugCandidatesSan = function () {
+      return treeCandidates(treeCursor).map(function (c) { return c.san + '(' + c.color + ',' + c.kind + ')' })
+    }
+    window.__debugUserMove = function (san) {
+      var candidates = treeCandidates(treeCursor)
+      var target = null
+      for (var i = 0; i < candidates.length; i++) {
+        if (candidates[i].san === san) { target = candidates[i]; break }
+      }
+      if (!target) return false
+      // Resolvemos from/to reales sobre la posicion actual de chess.js
+      // probando el SAN directamente (mismo resultado que arrastrar la
+      // pieza en el tablero real).
+      var mv = game.move(san)
+      if (!mv) return false
+      game.undo()
+      return treeProcessUserMove(mv.from, mv.to)
+    }
+    window.__debugRunPendingTimers = function () {
+      var guard = 0
+      while (window.__pendingTimers && window.__pendingTimers.length && guard++ < 1000) {
+        var next = window.__pendingTimers.shift()
+        next()
+      }
+    }
+    window.__debugRunOneTimer = function () {
+      if (!window.__pendingTimers || !window.__pendingTimers.length) return false
+      var next = window.__pendingTimers.shift()
+      next()
+      return true
+    }
+    window.__debugStatusText = function () {
+      return elStatus.textContent
+    }
+  }
+
+
   var elStatus = document.getElementById('status')
+  var elVariantBadge = document.getElementById('variantBadge')
   var elProgress = document.getElementById('progress')
   var elSessionProgress = document.getElementById('sessionProgress')
   var elLineName = document.getElementById('lineName')
@@ -286,14 +603,14 @@
     refreshProgressLabel()
   }
 
-  function recordAttempt (correct) {
+  function recordAttempt (correct, idOverride) {
     if (correct) { aciertos++ } else { fallos++ }
     if (sessionQueue) {
       if (correct) { sessionAciertos++ } else { sessionFallos++ }
     }
     refreshProgressLabel()
     if (window.AndroidBridge) {
-      window.AndroidBridge.recordAttempt(line.id, correct)
+      window.AndroidBridge.recordAttempt(idOverride || line.id, correct)
     }
   }
 
@@ -498,12 +815,22 @@
   }
 
   // Expuesta para que Kotlin la llame tras cerrar el dialogo bloqueante
-  // "torpe como una oruga".
+  // "torpe como una oruga". Unico punto de entrada real (el puente
+  // nativo no conoce el modo activo) -- bifurca segun isTreeMode.
   window.onTorpeDialogClosed = function () {
-    revealExpectedMove()
+    if (isTreeMode) {
+      treeRevealExpected()
+    } else {
+      revealExpectedMove()
+    }
   }
 
   function onDragStart (source, piece) {
+    if (isTreeMode) {
+      if (game.isGameOver && game.isGameOver()) return false
+      if (treeTurnColor() !== treeUserColor) return false
+      return piece.charAt(0) === treeUserColor
+    }
     if (game.isGameOver && game.isGameOver()) return false
     if (isFreeMode()) {
       return piece.charAt(0) === userColor
@@ -589,7 +916,7 @@
     if (!selectedSquare) return
     var from = selectedSquare
     deselectSquare()
-    var moved = processUserMove(from, square)
+    var moved = isTreeMode ? treeProcessUserMove(from, square) : processUserMove(from, square)
     if (moved) {
       board.position(game.fen())
       highlightMove(from, square)
@@ -611,8 +938,12 @@
     if (isFreeMode()) {
       return onDropFreeMode(source, target)
     }
-    var expected = currentExpected()
-    if (!expected || expected.color !== userColor) { updateTurnLabel(); return 'snapback' }
+    if (isTreeMode) {
+      if (treeTurnColor() !== treeUserColor) { updateTurnLabel(); return 'snapback' }
+    } else {
+      var expected = currentExpected()
+      if (!expected || expected.color !== userColor) { updateTurnLabel(); return 'snapback' }
+    }
 
     if (source === target) {
       // BUG real corregido antes (chess.js lanza excepcion en vez de
@@ -634,7 +965,7 @@
     // pendiente, se complete la jugada o no.
     deselectSquare()
 
-    var moved = processUserMove(source, target)
+    var moved = isTreeMode ? treeProcessUserMove(source, target) : processUserMove(source, target)
     updateTurnLabel()
     if (!moved) return 'snapback'
     // Exito: no se devuelve 'snapback' -- se deja que chessboard.js
@@ -685,6 +1016,7 @@
   }
 
   function restartLine () {
+    if (isTreeMode) { treeRestart(); return }
     cancelAnyDrag()
     if (line.startFen) {
       game.load(line.startFen)
@@ -758,7 +1090,11 @@
     }
     refreshNavBar()
 
-    beginLine()
+    if (isTreeMode) {
+      treeBeginTurn()
+    } else {
+      beginLine()
+    }
   }
 
   document.addEventListener('DOMContentLoaded', init)

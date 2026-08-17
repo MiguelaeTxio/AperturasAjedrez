@@ -22,6 +22,16 @@ html, body {
   text-align: center;
 }
 
+#variantBadge {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
 #progress {
   font-size: 14px;
   color: #cccccc;
