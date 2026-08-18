@@ -450,6 +450,128 @@ function test5 () {
 
 test5();
 
+// -----------------------------------------------------------------
+// TEST 6: deshacer/rehacer dentro de la partida actual -- pedido por
+// Miguel Angel tras probar en dispositivo real (S7). Juega unas
+// cuantas jugadas, retrocede, comprueba que no se puede mover en modo
+// repaso, avanza de nuevo, vuelve al final y confirma que la sesion
+// sigue viva (se puede seguir jugando con normalidad).
+// -----------------------------------------------------------------
+function test6 () {
+  console.log('\n=== TEST 6: deshacer/rehacer dentro de la partida actual ===');
+  const store = {};
+
+  const discovery = newSession('?opening=d4&color=w', {});
+  function findLeafPath (node, id, acc) {
+    acc = acc.concat([node]);
+    if (node.leafOf && node.leafOf.lineId === id) return acc;
+    if (!node.children) return null;
+    for (const c of node.children) { const r = findLeafPath(c, id, acc); if (r) return r; }
+    return null;
+  }
+  const discRoot = discovery.sandbox.REPERTOIRE_TREE.filter(r => r.san === 'd4')[0];
+  const discPath = findLeafPath(discRoot, 'h01-gambito-dama-rehusado', []);
+  const leafId = discPath[discPath.length - 1].id;
+
+  const { sandbox } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(leafId), store);
+  const w = sandbox.window;
+
+  // Jugamos 3 jugadas de blancas (con las respuestas de negras
+  // dirigidas por target de por medio) para tener historial de sobra.
+  w.__debugRunPendingTimers();
+  ['d4', 'c4', 'Nc3'].forEach(san => {
+    const ok = w.__debugUserMove(san);
+    if (!ok) throw new Error('Jugada de preparacion rechazada: ' + san);
+    w.__debugRunPendingTimers();
+  });
+
+  const stateAtEnd = w.__debugHistoryState();
+  console.log('Historial tras 3 jugadas de blancas (+ respuestas de negras):', stateAtEnd);
+  if (stateAtEnd.length < 5) throw new Error('Se esperaban al menos 5 jugadas en el historial (3 blancas + 2 negras) -- FALLO. length=' + stateAtEnd.length);
+  if (!w.__debugCanDragNow()) throw new Error('En la posicion viva deberia poder mover -- FALLO');
+
+  const fenAtEnd = stateAtEnd.fen;
+  w.__debugGoBack();
+  const stateBack1 = w.__debugHistoryState();
+  console.log('Tras 1 deshacer:', stateBack1);
+  if (stateBack1.index !== stateAtEnd.index - 1) throw new Error('El indice no retrocedio correctamente -- FALLO');
+  if (stateBack1.fen === fenAtEnd) throw new Error('El tablero no cambio al deshacer -- FALLO');
+  if (w.__debugCanDragNow()) throw new Error('En modo repaso NO deberia poder mover -- FALLO (esto es exactamente lo que pidio Miguel Angel que se impidiera)');
+
+  w.__debugGoBack();
+  const stateBack2 = w.__debugHistoryState();
+  console.log('Tras 2 deshacer:', stateBack2);
+  if (stateBack2.index !== stateAtEnd.index - 2) throw new Error('El segundo deshacer no funciono -- FALLO');
+
+  w.__debugGoForward();
+  const stateFwd1 = w.__debugHistoryState();
+  console.log('Tras 1 rehacer:', stateFwd1);
+  if (stateFwd1.index !== stateBack2.index + 1) throw new Error('El rehacer no funciono -- FALLO');
+  if (stateFwd1.fen !== stateBack1.fen) throw new Error('El rehacer no reproduce exactamente la misma posicion que hubo antes -- FALLO');
+
+  w.__debugGoLive();
+  const stateLive = w.__debugHistoryState();
+  console.log('Tras "ir al final":', stateLive);
+  if (stateLive.index !== stateAtEnd.index || stateLive.fen !== fenAtEnd) throw new Error('"Ir al final" no reprodujo exactamente la posicion viva original -- FALLO');
+  if (!w.__debugCanDragNow()) throw new Error('Tras volver al final deberia poder volver a mover -- FALLO');
+
+  // Confirmamos que la sesion sigue realmente viva: se puede seguir jugando.
+  console.log('Candidatos reales en la posicion viva:', w.__debugCandidatesSan());
+  const nextBookSan = w.__debugCandidatesSan()[0].split('(')[0];
+  const ok = w.__debugUserMove(nextBookSan);
+  if (!ok) throw new Error('Tras "ir al final" la sesion deberia seguir jugable con normalidad -- FALLO (intentado: ' + nextBookSan + ')');
+  console.log('OK -- deshacer/rehacer funciona, bloquea el movimiento en modo repaso, y "ir al final" deja la sesion exactamente como estaba y jugable.');
+}
+
+test6();
+
+// -----------------------------------------------------------------
+// TEST 7: barra primero/anterior/siguiente/ultimo entre variantes --
+// pedido junto con el test 6. Comprueba que cambiar de variante
+// reinicia la partida y apunta de verdad a otra hoja del arbol.
+// -----------------------------------------------------------------
+function test7 () {
+  console.log('\n=== TEST 7: barra de navegacion entre variantes ===');
+  const store = {};
+
+  const discovery = newSession('?opening=d4&color=w', {});
+  const discRoot = discovery.sandbox.REPERTOIRE_TREE.filter(r => r.san === 'd4')[0];
+  const family = discovery.sandbox.REPERTOIRE_FAMILIES.find(f => f.rootSan === 'd4' && f.userColor === 'w');
+  if (!family || family.variants.length < 2) throw new Error('La familia Gambito de Dama deberia tener al menos 2 variantes -- FALLO');
+  const firstTargetId = family.variants[0].nodeId;
+
+  const { sandbox } = newSession('?opening=d4&color=w&target=' + encodeURIComponent(firstTargetId), store);
+  const w = sandbox.window;
+
+  console.log('Variante inicial:', w.__debugVariantIndex() + 1, '/', w.__debugVariantTotal());
+  if (w.__debugVariantIndex() !== 0) throw new Error('Deberia empezar en el indice 0 -- FALLO. Fue: ' + w.__debugVariantIndex());
+  if (w.__debugVariantTotal() !== family.variants.length) throw new Error('El total de variantes no coincide con el catalogo -- FALLO');
+
+  // Jugamos una jugada para tener algo de estado, luego cambiamos de variante.
+  w.__debugRunPendingTimers();
+  w.__debugUserMove('d4');
+  w.__debugRunPendingTimers();
+  const cursorAntes = w.__debugCursorId();
+  console.log('cursorId tras jugar en la variante 1:', cursorAntes);
+
+  w.__debugSwitchVariant(1);
+  console.log('Tras cambiar a la variante 2:', w.__debugVariantIndex() + 1, '/', w.__debugVariantTotal());
+  if (w.__debugVariantIndex() !== 1) throw new Error('El cambio de variante no actualizo el indice -- FALLO');
+  if (w.__debugCursorId() !== null) throw new Error('Cambiar de variante deberia reiniciar la partida (cursor null) -- FALLO. Fue: ' + w.__debugCursorId());
+  const stateTrasSwitch = w.__debugHistoryState();
+  if (stateTrasSwitch.length !== 0) throw new Error('El historial deberia haberse vaciado al cambiar de variante -- FALLO');
+
+  // Vuelta de ronda: desde el ultimo indice, "siguiente" debe volver al primero.
+  w.__debugSwitchVariant(w.__debugVariantTotal() - 1);
+  w.__debugSwitchVariant(w.__debugVariantTotal()); // fuera de rango -> vuelta de ronda al 0
+  if (w.__debugVariantIndex() !== 0) throw new Error('La vuelta de ronda (siguiente tras el ultimo) no funciono -- FALLO. Fue: ' + w.__debugVariantIndex());
+
+  console.log('OK -- la barra de variantes cambia de verdad de hoja, reinicia la partida, y da la vuelta de ronda en los extremos.');
+}
+
+test7();
+
+
 
 console.log('\n=== TODOS LOS TESTS PASARON ===');
 

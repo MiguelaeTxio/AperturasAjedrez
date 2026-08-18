@@ -147,12 +147,24 @@
   var treeCursor = null // null = todavia no se ha jugado ninguna jugada
   var treeTargetPath = null // array de nodos raiz->hoja, solo en modo dirigido
   var treeActiveColorId = null // colorId de la ultima variante/trampa reconocida en esta rama
+  var treeHistory = [] // nodos jugados en esta sesion, en orden real (usuario + rival)
+  var treeHistoryIndex = -1 // posicion que se esta VIENDO ahora mismo; -1 = posicion inicial
+  var treeFamily = null // familia activa (REPERTOIRE_FAMILIES), para la barra de variantes
+  var treeVariantIndex = -1 // indice del target actual dentro de treeFamily.variants
   if (isTreeMode) {
     var rootSan = openingRootParam()
     treeRootNode = REPERTOIRE_TREE.filter(function (r) { return r.san === rootSan })[0] || null
     var targetId = openingTargetParam()
     if (treeRootNode && targetId) {
       treeTargetPath = treeFindPathToId(treeRootNode, targetId)
+    }
+    if (typeof REPERTOIRE_FAMILIES !== 'undefined') {
+      treeFamily = REPERTOIRE_FAMILIES.filter(function (f) {
+        return f.rootSan === rootSan && f.userColor === treeUserColor
+      })[0] || null
+      if (treeFamily && targetId) {
+        treeVariantIndex = treeFamily.variants.findIndex(function (v) { return v.nodeId === targetId })
+      }
     }
   }
 
@@ -265,6 +277,18 @@
     // usa el resalte neutro de siempre.
     highlightMove(move.from, move.to, treeActiveColorId !== null ? treeColorIdToHex(treeActiveColorId) : null)
 
+    // Historial de jugadas de esta sesion (deshacer/rehacer). Si por
+    // algun motivo se llega aqui sin estar en la posicion viva (no
+    // deberia pasar -- el arrastre esta deshabilitado fuera de la
+    // posicion viva), se descarta el "futuro" antes de anadir la
+    // jugada nueva, igual que cualquier editor deshacer/rehacer.
+    if (treeHistoryIndex < treeHistory.length - 1) {
+      treeHistory = treeHistory.slice(0, treeHistoryIndex + 1)
+    }
+    treeHistory.push(node)
+    treeHistoryIndex = treeHistory.length - 1
+    refreshMoveNavBar()
+
     var candidates = treeCandidates(node)
     if (candidates.length === 0) {
       setStatus(statusOverride || (node.leafOf ? 'Rama completada: ' + node.leafOf.name + '.' : 'Fin de la linea conocida.'))
@@ -280,6 +304,91 @@
     } else {
       treeBeginTurn()
     }
+  }
+
+  // ---- Deshacer/rehacer dentro de la partida actual (S7) ----
+  // Distinto de treeRestart (que vuelve al principio del todo): aqui
+  // se navega jugada a jugada por el historial ya jugado, sin perder
+  // el resto de la partida -- se puede "rehacer" hacia delante otra
+  // vez, y solo se pierde el futuro si se juega una jugada nueva
+  // estando retrocedido (ver treeAdvanceTo).
+
+  function isTreeAtLivePosition () {
+    return treeHistoryIndex === treeHistory.length - 1
+  }
+
+  // Reconstruye el estado completo (tablero, cursor, color activo,
+  // insignia, explicacion) para la posicion treeHistory[newIndex] --
+  // unica fuente de verdad para deshacer, rehacer e "ir al final".
+  function treeSyncToHistoryIndex (newIndex) {
+    game.reset()
+    for (var i = 0; i <= newIndex; i++) {
+      game.move(treeHistory[i].san)
+    }
+    treeHistoryIndex = newIndex
+    treeCursor = newIndex < 0 ? null : treeHistory[newIndex]
+    line.id = treeCursor ? treeCursor.id : 'opening-root'
+
+    treeActiveColorId = null
+    for (var j = newIndex; j >= 0; j--) {
+      if (treeHistory[j].variantName) { treeActiveColorId = treeHistory[j].variantColorId; break }
+    }
+    if (treeCursor && treeCursor.variantName) line.name = treeCursor.variantName
+    if (treeCursor && treeCursor.leafOf && treeCursor.leafOf.overview) line.overview = treeCursor.leafOf.overview
+
+    board.position(game.fen())
+    treeShowVariantBadge(treeCursor)
+    loadInitialProgress()
+    showExplanation(treeCursor)
+
+    if (newIndex < 0) {
+      clearHighlights()
+    } else {
+      var mv = game.history({ verbose: true })[newIndex]
+      highlightMove(mv.from, mv.to, treeActiveColorId !== null ? treeColorIdToHex(treeActiveColorId) : null)
+    }
+
+    refreshMoveNavBar()
+
+    if (isTreeAtLivePosition()) {
+      treeBeginTurn()
+    } else {
+      setStatus('Viendo la jugada ' + (newIndex + 1) + ' de ' + treeHistory.length + ' -- modo repaso, pulsa "Volver al final" para seguir jugando.')
+    }
+  }
+
+  function treeGoBack () {
+    if (treeHistoryIndex < 0) return
+    cancelAnyDrag()
+    deselectSquare()
+    treeSyncToHistoryIndex(treeHistoryIndex - 1)
+  }
+
+  function treeGoForward () {
+    if (treeHistoryIndex >= treeHistory.length - 1) return
+    cancelAnyDrag()
+    deselectSquare()
+    treeSyncToHistoryIndex(treeHistoryIndex + 1)
+  }
+
+  function treeGoLive () {
+    if (isTreeAtLivePosition()) return
+    cancelAnyDrag()
+    deselectSquare()
+    treeSyncToHistoryIndex(treeHistory.length - 1)
+  }
+
+  function refreshMoveNavBar () {
+    if (!elMoveNavBar) return
+    if (!isTreeMode || treeHistory.length === 0) {
+      elMoveNavBar.style.display = 'none'
+      return
+    }
+    elMoveNavBar.style.display = 'flex'
+    elMoveBack.disabled = treeHistoryIndex < 0
+    elMoveForward.disabled = treeHistoryIndex >= treeHistory.length - 1
+    elMoveNavLabel.textContent = (treeHistoryIndex + 1) + ' / ' + treeHistory.length
+    elMoveLive.style.display = isTreeAtLivePosition() ? 'none' : ''
   }
 
   function treeBeginTurn () {
@@ -386,6 +495,8 @@
     game.reset()
     treeCursor = null
     treeActiveColorId = null
+    treeHistory = []
+    treeHistoryIndex = -1
     attemptsThisMove = 0
     line.id = 'opening-root'
     board.position('start')
@@ -393,7 +504,56 @@
     elExplain.innerHTML = ''
     treeShowVariantBadge(null)
     loadInitialProgress()
+    refreshMoveNavBar()
+    refreshTreeVariantNavBar()
     treeBeginTurn()
+  }
+
+  // ---- Barra primero/anterior/siguiente/ultimo ENTRE variantes (S7) ----
+  // Distinta del historial de arriba (esa navega DENTRO de la partida
+  // actual): esta cambia que variante/trampa se esta practicando,
+  // dentro de la misma familia -- solo tiene sentido en modo dirigido
+  // (target presente). Reutiliza el navBar de Problemas de ajedrez
+  // (mismos ids) porque ambos usos son mutuamente excluyentes.
+
+  function isTreeVariantNavigable () {
+    return !!(isTreeMode && treeFamily && treeVariantIndex !== -1)
+  }
+
+  function treeSwitchToVariant (newIndex) {
+    if (!isTreeVariantNavigable()) return
+    var n = treeFamily.variants.length
+    if (n === 0) return
+    if (newIndex < 0) newIndex = n - 1
+    if (newIndex >= n) newIndex = 0
+    treeVariantIndex = newIndex
+    treeTargetPath = treeFindPathToId(treeRootNode, treeFamily.variants[newIndex].nodeId)
+    treeRestart()
+  }
+
+  function refreshTreeVariantNavBar () {
+    if (!elNavBar) return
+    if (!isTreeVariantNavigable()) {
+      elNavBar.style.display = 'none'
+      return
+    }
+    elNavBar.style.display = 'flex'
+    elNavNumberInput.value = treeVariantIndex + 1
+    elNavNumberInput.max = treeFamily.variants.length
+    elNavTotal.textContent = '/ ' + treeFamily.variants.length
+    // Favoritos no aplica (todavia) a variantes del arbol -- se
+    // ocultan en vez de dejarlos con un comportamiento roto.
+    elNavFav.style.display = 'none'
+    elNavFavList.style.display = 'none'
+  }
+
+  function treeGoToVariantNumber () {
+    var n = parseInt(elNavNumberInput.value, 10)
+    if (isNaN(n) || n < 1 || n > treeFamily.variants.length) {
+      setStatus('Numero fuera de rango (1-' + treeFamily.variants.length + ').')
+      return
+    }
+    treeSwitchToVariant(n - 1)
   }
 
   var TREE_PALETTE = ['#c0392b', '#2980b9', '#27ae60', '#8e44ad', '#d35400', '#16a085', '#2c3e50', '#f39c12', '#7f8c8d', '#2471a3', '#229954', '#a04000']
@@ -441,6 +601,18 @@
     window.__debugStatusText = function () {
       return elStatus.textContent
     }
+    window.__debugGoBack = treeGoBack
+    window.__debugGoForward = treeGoForward
+    window.__debugGoLive = treeGoLive
+    window.__debugCanDragNow = function () {
+      return isTreeAtLivePosition() && treeTurnColor() === treeUserColor
+    }
+    window.__debugHistoryState = function () {
+      return { index: treeHistoryIndex, length: treeHistory.length, fen: game.fen() }
+    }
+    window.__debugSwitchVariant = treeSwitchToVariant
+    window.__debugVariantIndex = function () { return treeVariantIndex }
+    window.__debugVariantTotal = function () { return treeFamily ? treeFamily.variants.length : 0 }
     window.__debugColorForNode = function (nodeId) {
       // Busca el nodo por id en el arbol activo y devuelve el hex que
       // le correspondería en el resalte del tablero (o null si no
@@ -478,6 +650,11 @@
   var elNavGo = document.getElementById('navGoBtn')
   var elNavFav = document.getElementById('navFavBtn')
   var elNavFavList = document.getElementById('navFavListBtn')
+  var elMoveNavBar = document.getElementById('moveNavBar')
+  var elMoveBack = document.getElementById('moveBackBtn')
+  var elMoveForward = document.getElementById('moveForwardBtn')
+  var elMoveNavLabel = document.getElementById('moveNavLabel')
+  var elMoveLive = document.getElementById('moveLiveBtn')
 
   function isNavigable () {
     return !!(navCategory && fullQueueIds)
@@ -871,6 +1048,7 @@
 
   function onDragStart (source, piece) {
     if (isTreeMode) {
+      if (!isTreeAtLivePosition()) return false // modo repaso: solo se puede ver, no mover
       if (game.isGameOver && game.isGameOver()) return false
       if (treeTurnColor() !== treeUserColor) return false
       return piece.charAt(0) === treeUserColor
@@ -983,7 +1161,7 @@
       return onDropFreeMode(source, target)
     }
     if (isTreeMode) {
-      if (treeTurnColor() !== treeUserColor) { updateTurnLabel(); return 'snapback' }
+      if (!isTreeAtLivePosition() || treeTurnColor() !== treeUserColor) { updateTurnLabel(); return 'snapback' }
     } else {
       var expected = currentExpected()
       if (!expected || expected.color !== userColor) { updateTurnLabel(); return 'snapback' }
@@ -1133,6 +1311,21 @@
       elNavFavList.addEventListener('click', toggleFavoritesView)
     }
     refreshNavBar()
+
+    if (isTreeVariantNavigable()) {
+      elNavFirst.addEventListener('click', function () { treeSwitchToVariant(0) })
+      elNavPrev.addEventListener('click', function () { treeSwitchToVariant(treeVariantIndex - 1) })
+      elNavNext.addEventListener('click', function () { treeSwitchToVariant(treeVariantIndex + 1) })
+      elNavLast.addEventListener('click', function () { treeSwitchToVariant(treeFamily.variants.length - 1) })
+      elNavGo.addEventListener('click', treeGoToVariantNumber)
+      refreshTreeVariantNavBar()
+    }
+
+    if (isTreeMode) {
+      elMoveBack.addEventListener('click', treeGoBack)
+      elMoveForward.addEventListener('click', treeGoForward)
+      elMoveLive.addEventListener('click', treeGoLive)
+    }
 
     if (isTreeMode) {
       treeBeginTurn()

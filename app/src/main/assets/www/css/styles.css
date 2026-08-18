@@ -104,7 +104,11 @@ html, body {
 
 /* Barra de navegacion de Problemas de ajedrez (S6) -- oculta por
    defecto, game.js la muestra (display: flex) solo cuando la sesion
-   viene marcada como navegable (query param "navcat"). */
+   viene marcada como navegable (query param "navcat"). S7: reutilizada
+   tal cual (mismos ids) para navegar entre variantes/trampas dentro de
+   una familia del arbol de aperturas en modo dirigido -- ambos usos
+   son mutuamente excluyentes (isNavigable() nunca es cierto a la vez
+   que isTreeMode), asi que no hace falta duplicar el HTML/CSS. */
 #navBar {
   display: none;
   flex-direction: row;
@@ -134,6 +138,50 @@ html, body {
   color: #ffd43b;
   font-size: 18px;
   padding: 6px 10px;
+}
+
+/* Barra de deshacer/rehacer dentro de la partida actual del modo
+   arbol (S7) -- distinta de #navBar (esa navega ENTRE variantes,
+   esta navega DENTRO de la partida que se esta jugando ahora mismo).
+   Oculta por defecto; game.js la muestra solo en modo arbol y en
+   cuanto hay al menos una jugada en el historial. */
+#moveNavBar {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  width: 92vw;
+  max-width: 480px;
+  font-size: 13px;
+}
+
+#moveNavBar button {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+}
+
+#moveNavBar button:disabled {
+  opacity: 0.4;
+}
+
+#moveNavBar button:active:not(:disabled) {
+  background-color: #4a4a4a;
+}
+
+#moveNavLabel {
+  color: #cccccc;
+  min-width: 90px;
+  text-align: center;
+}
+
+#moveLiveBtn {
+  background-color: #2471a3 !important;
 }
 
 #navNumberInput {
